@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>jQuery and JavaScript</title>
+    <meta charset="utf-8">
+  </head>
+
+  <body>
+
+    <div id="exercise2" style="text-align: center;">
+      <img src="http://brennaobrien.com/LLC-JavaScript/exercises/assets/plush-android.jpg" width="195" height="195" />
+      <br />
+
+      <!-- removed onclick and replaced with jQuery's click event referencing the class name-->
+      <button class="add">Add</button>
+      <button class="removeItem">Remove</button>
+      
+      <br />
+      Quantity
+      <input type="text" id="updateQuantity" value="0" readonly style="text-align:center; width: 20px; border: 1px solid #ccc;"/>
+      <br />
+      <br />
+      Total Cost:
+      <input type="text" id="updateTotal" value="" readonly style="border: 1px solid #ccc;"/>
+      <br />
+      <br />
+
+       <!-- removed onclick and replaced with jQuery's click event -->
+      <button class="checkout">Check out now!</button>
+    </div>
+
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="jquery-javascript.js"></script>
+  </body>
+</html>
+

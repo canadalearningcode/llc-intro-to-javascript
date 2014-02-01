@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Ladies Learning Code - Intro to JavaScript</title>
+  <meta name="viewport" content="width=1280">
+
+  <!-- CoderDeck core and extension CSS files -->
+  <link rel="stylesheet" href="src/deck.js/core/deck.core.css" type="text/css">
+  <link rel="stylesheet" href="src/deck.js/extensions/navigation/deck.navigation.css">
+  <link rel="stylesheet" href="src/deck.js/extensions/status/deck.status.css">
+  <link rel="stylesheet" href="src/deck.js/extensions/hash/deck.hash.css">
+  <link rel="stylesheet" href="src/deck.js/extensions/menu/deck.menu.css">
+  <link rel="stylesheet" href="src/css/prettify.css">
+  <link rel="stylesheet" href="src/css/deck.coder.css">
+  <link rel="stylesheet" href="src/codemirror/lib/codemirror.css">
+  <link rel="stylesheet" href="src/codemirror/theme/default.css">
+
+  <!-- Custom for LLC -->
+  <link href='http://fonts.googleapis.com/css?family=Istok+Web' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Podkova' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" id='style-theme-link' href="src/css/coderdeck.css" type="text/css" >
+  <style type="text/css"></style>
+</head>
+
+<body class="deck-container">
+
+	<script type='text/coderdeck' id='coderdeck-default'>
+      <html>
+        <head>
+          <script src='src/jquery.min.js'>SCRIPTEND</head>
+        <body>CODE</body>
+      </html>
+      </script>
+    
+      <script type='text/coderdeck' id='coderdeck-style-example'>
+      <html>
+        <title>test</title>
+        <style>CODE</style>
+        <body>
+        </body>
+      </html>
+    </script>
+    
+  <div id="presentation">
+  <!-- **************************************** -->  
+ 
+     <!-- SLIDE:  -->
+    <article class='slide slide-subhead'>
+      <h1>jQuery Hands-on</h1>
+      <p>Intro to jQuery and External JavaScript Files</p>
+    </article>
+        
+    <!-- SLIDE: jQuery -->
+    <article class='slide slide-subhead'>
+      
+     
+      <p style="background:#0f1923;width:250px;padding-top:25px;margin:150px auto 40px;"><img src="assets/logo_jquery.gif" /></p>
+      <p>The Write Less, Do More, JavaScript Library</p>
+    </article>
+
+	  <!-- SLIDE: jQuery Intro -->
+    <article class='slide slide-list'>
+      <h2>jQuery: A brief introduction</h2>
+        
+		  <p>jQuery is a cross-browser JavaScript library designed to simplify client-side scripting, manipulating HTML pages, animating and handling events.</p>
+
+      <p><strong>jQuery is still JavaScript.</strong> It is a library of functions built on top of JavaScript to simplify your program. It does, however, have it's own syntax as well.</p>
+
+      <p>The library contains many, many built-in functions and methods. It's not an easy task to remember them all.  Never fear, jQuery has documented their API here: <a href="http://api.jquery.com/" target="_blank">http://api.jquery.com</a>.</p>
+
+      <p>Let dive in and see how jQuery methods compare to using just JavaScript alone.</p>
+    </article>
+
+
+    <!-- SLIDE: jQuery vs JavaScript : How to run the code-->
+    <article class='slide slide-list'>
+      <h2>jQuery vs JavaScript</h2>
+      <p>Including inline JavaScript into your web page only requires the code to be written between the <code>&lt;script&gt&lt;/script&gt</code> tags.</p>
+      <p>In jQuery, the document needs to be "ready". This bit of code needs to wrap all of your jQuery: <code>$(document).ready(function(){});</code>. Your code goes between the curly braces <code>{}</code>, and will only run once the DOM is ready.</p>
+      
+<pre class="prettyprint">
+&lt;script&gt;
+  // JavaScript code here
+&lt;/script&gt;
+
+&lt;script&gt;    
+  $(document).ready(function(){
+     //jQuery code here
+  });
+&lt;/script&gt;
+</pre>
+    </article>
+
+    <!-- SLIDE: More on document.ready -->
+    <article class='slide slide-list'>
+      <h2>More on $(document).ready</h2>
+      <p>Remember <code>document.write()</code>? The functionality is similar. <code>document</code> is the object, <code>write()</code> is the method we use to pass in parameters. (<a href="js_dom.html#slide-4" target="_blank">see slide</a>)</p>
+
+      <p>In jQuery syntax, the <code>$</code> is simply a shorcut for a function called <code>jQuery</code>. It is how you access all of the functionality in the library. To select the <code>document</code> jQuery style, it looks like this:</p>
+<pre class="prettyprint">
+$(document)
+</pre>
+      <p><code>.ready()</code> specifies a function to execute when the DOM is loaded.</p>
+<pre class="prettyprint">
+$(document).ready();
+</pre>
+      <p>An "anonymous function" needs to be passed into the above code to execute the jQuery code.</p>
+<pre class="prettyprint">
+//syntax for anonymous function
+function(){
+   code goes here
+}
+
+// pass the anonymous function in the ready() method    
+$(document).ready(function(){
+   jQuery code here
+});
+
+</pre>
+    </article>
+
+    <!-- SLIDE: jQuery vs JavaScript - DOM reference-->
+    <article class='slide slide-list'>
+      <h2>jQuery vs JavaScript (cont)</h2>
+        
+      <p>Remember <code>document.getElementById</code>?<br />
+      <strong>jQuery</strong> makes it easier to reference objects in the DOM.</p>
+
+<pre class="prettyprint">
+&lt;div <strong>id="status"</strong>&gt;
+  &lt;p&gt;Loading...&lt;/p&gt;
+  &lt;p&gt;&lt;img src="assets/loading.gif"&gt;&lt;/p&gt;
+&lt;/div&gt;
+</pre>
+
+<pre class="prettyprint">
+// JavaScript
+document.getElementById("status")
+
+// jQuery 
+$("#status")
+</pre>
+      <div class="reminders">
+        <p>Your HTML tag must have an <code>id</code> attribute in order to do this!<br />
+          Use <code>#name</code> to reference and <code>ID</code> and <code>.name</code> to reference a <code>class</code></p>
+      </div>
+    </article>
+      
+
+    <!-- SLIDE: jQuery vs JavaScript - Replacing text -->
+    <article class='slide slide-list'>
+      <h2>jQuery vs JavaScript (cont)</h2>
+      <p>Let's see how the JavaScript <code>innerHTML</code> example can be done with jQuery
+        to replace what's already in an element.</p>
+<textarea class='coder-editor coder-editor-full'>
+<div id="javascript">Replace this text with JavaScript</div>
+<div id="jquery">Replace this text with jQuery</div>
+
+<script>
+  // The JavaScript way
+  var statusDiv = document.getElementById("javascript");
+  //statusDiv.innerHTML = "NEW TEXT! Done with JavaScript."
+
+  // The jQuery way
+  $(document).ready(function(){
+    var statusDiv = $("#jquery");
+    // NOTE: when using a variable as the selector,
+    // it does not have to be contained in quotes
+    //$(statusDiv).html("NEW TEXT! Done with jQuery.");
+  });
+</script>
+
+<style>
+div {
+  border: 1px solid #666;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  margin: 20px auto;
+  padding: 10px;
+  width: 200px;
+  text-align: center;
+  font-family: Helvetica, Arial, sans-serif;
+}
+</style></textarea>
+    </article>
+
+    <!-- SLIDE: jQuery vs JavaScript (cont) - dot notation -->
+    <article class='slide slide-list'>
+      <h2>jQuery vs JavaScript (cont)</h2>
+      <p>You can also use "dot notation" to write the statement in one line instead of declaring a variable.</p>
+<textarea class='coder-editor coder-editor-full'>
+<div id="javascript">Replace this text with JavaScript</div>
+<div id="jquery">Replace this text with jQuery</div>
+
+<script>
+  // The JavaScript way
+  document.getElementById("javascript").innerHTML = "NEW TEXT! Done with JavaScript."
+
+  // The jQuery way
+  $(document).ready(function(){
+    $("#jquery").html("NEW TEXT! Done with jQuery.");
+  });
+</script>
+
+<style>
+div {
+  border: 1px solid #666;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  margin: 20px auto;
+  padding: 10px;
+  width: 200px;
+  text-align: center;
+  font-family: Helvetica, Arial, sans-serif;
+}
+</style></textarea>
+    </article>
+
+
+    <!-- SLIDE: EXTERNAL JS FILES -->
+    <article class='slide slide-subhead'>
+      <h1>External JavaScript</h1>
+      <p>Keeping it organized, working with others<br> and adding libraries</p>
+    </article>
+   
+    <!-- SLIDE: SCRIPT TAG-->
+    <article class='slide slide-list'>
+      <h2>&lt;script src=""&gt;</h2>
+      <p>As you write bigger pieces of JavaScript, you will want to start putting your code into their own files so they are easier to manage. Or you might want to enlist the help of others to write JavaScript for your website so you can work on different sections separately. A big site could have thousands of lines of code written by many different people!</p>
+      <p>To link to an external JavaScript file:</p>
+      <pre class="prettyprint">
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;JavaScript example!&lt;/title&gt;
+    <strong>&lt;script src="scripts.js"&gt;&lt;/script&gt;</strong>  
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div id="example"&gt;This is an example.&lt;/div&gt;    
+  &lt;/body&gt;
+&lt;/html&gt;
+      </pre>
+      <div class="reminders">
+        <p>You might see script tags with the type attribute, <code>type="text/javascript"</code>, when looking at older code. We used to have to specify this, but it's no longer required in HTML5.</p>
+      </div>
+    </article>   
+      
+    <!-- SLIDE: EXTERNAL FILES -->
+    <article class='slide slide-list'>
+      <h2>In the external file</h2>
+      <p>In the <a href="http://brennaobrien.com/LLC-JavaScript/exercises/scripts.js" target="_blank">external JavaScript file (scripts.js)</a> you don't include script tags; just JavaScript code. </p>
+      <p>View this example: <a href="http://brennaobrien.com/LLC-JavaScript/exercises/external-javascript.html" target="_blank">http://brennaobrien.com/LLC-JavaScript/exercises/external-javascript.html</a></p>
+    </article>
+      
+    <!-- SLIDE: SCRIPT TAG GOTCHAS -->
+    <article class='slide slide-list'>
+      <h2>script tag gotchas</h2>
+      <p>Even though you're not writing JavaScript between the script tags, you must use a closing <code>&lt;/script&gt;</code> tag. A self-closing tag such as <code>&lt;script src="scripts.js" /&gt;</code> will <strong>not</strong> work. The correct way is highlighted below:</p>
+
+<pre class="prettyprint">
+&lt;script src="scripts.js"&gt;&lt;/script&gt;
+</pre>
+    </article>
+
+
+    <!-- SLIDE: Included jQuery -->
+    <article class='slide slide-list'>
+      <h2>jQuery: Getting started</h2>
+      <p>To make use of the jQuery library, it needs to be included on the web page using an external file. There are two ways to include the file.</p>
+
+      <p>1. <a href="http://jquery.com/download" target="_blank">Download</a> the jQuery library and include it with your files.</p>
+<pre class="prettyprint">
+&lt;script src="jquery.js"&gt;&lt;/script&gt;
+</pre>
+      <p>2. Link directly to the CDN (Content Delivery Network) hosted copies.</p>
+<pre class="prettyprint">
+&lt;script src="http://code.jquery.com/jquery-1.9.1.min.js"&gt;&lt;/script&gt;
+</pre>
+      <div class="hint single-line">
+        <p>Download instructions: <a href="http://jquery.com/download" target="_blank">http://jquery.com/download</a></p>
+      </div>
+    </article>
+
+    <!-- SLIDE: Including jQuery Gotchas -->
+    <article class='slide slide-list'>
+      <h2>Gotchas!</h2>
+      <p>When adding your own custom-written jQuery/JavaScript files, make sure to include it <strong>after</strong> the jQuery file to ensure that the library loads first.</p>
+
+<pre class="prettyprint">
+&lt;script src="jquery.js"&gt;&lt;/script&gt;
+&lt;script src="custom.js"&gt;&lt;/script&gt;
+</pre>
+    </article>
+
+    <!-- SLIDE: jQuery Selectors: Syntax Review -->
+    <article class='slide slide-list'>
+      <h2>jQuery Selectors: Syntax Review</h2>
+      <p>Selectors are always surrounded by single or double quotes, except when referencing a variable.</p>
+<pre class="prettyprint">
+  &lt;div class="name"&gtClass selector&lt;div&gt
+  &lt;div id="name"&gtID selector&lt;div&gt
+
+  $(".name") - referencing a class
+  $("#name") - referencing an ID
+  $("div") - referencing an HTML element
+
+  var selector = $("name");
+  $(selector) - referencing a variable
+</p>
+    </article>
+
+
+    <!-- SLIDE: jQuery Events - Click-->
+    <article class='slide slide-list'>
+      <h2>jQuery Events</h2>
+      <p>Just like <a href="js_functions.html#slide-4" target="_blank">Javascript functions</a>, we can execute the code on an event. A very common event is the <code>click</code> event.</p>
+
+<pre class="prettyprint">
+$(selector).click(function(){ 
+  //code to execute
+});
+</pre>
+      <p><code>click()</code> triggers a click event, the <code>selector</code> is the element to be clicked and <code>function</code> goes between the parenthesis to run a function, containing one more commands.</p>
+<textarea class='coder-editor coder-editor-full'>
+<a href="#">click me!</a>
+<p>click me again!</p>
+
+<script>
+  $(document).ready(function(){
+
+    // replace 'selector' with the element to add the click event to
+    $(selector).click(function(){
+      alert("clicked!");
+    });
+
+  });
+</script>
+</textarea>
+<script type="coder-solution">
+<a class="target" href="#">click me!</a>
+<p class="target">click me again!</p>
+
+SCRIPT
+  $(document).ready(function(){
+
+    $("p").click(function(){
+      alert("Click event on a paragraph.");
+    });
+    $("a").click(function(){
+      alert("Click event on a link.");
+    });
+    $(".target").click(function(){
+      alert("Click event on a class.");
+    });
+
+  });
+SCRIPTEND
+</script>
+    </article>
+
+    <!-- SLIDE: jQuery and JavaScript-->
+    <article class='slide slide-list'>
+      <h2>jQuery AND JavaScript</h2>
+      <p>jQuery may have its own syntax and methods but it's still JavaScript at its core. Let's look at a previous example and see how jQuery and JavaScript work together.</p>
+
+      <p>In the exercises folder, open <a href="exercises/jquery-javascript.html" target="_blank">jquery-javascript.html</a> and <a href="exercises/jquery-javascript.js" target="_blank">jquery-javascript.js</a>.</p>
+      <p>While it works using pure JavaScript, the functions are currently being called "inline" by adding an <code>onclick</code> directly in the element. It's best practice to avoid inline event handlers.</p>
+
+      <p>Let's use the jQuery <code>click()</code> method instead and use it to select the element and pass the related function.</p>
+    </article>
+
+
+    <!-- SLIDE: jQuery Effects -->
+    <article class='slide slide-list'>
+      <h2>jQuery Effects</h2>
+        
+		  <p>There are many handy built in methods that make it simpler to add effects.  The full list is available <a href="http://api.jquery.com/category/effects/" target="_blank">here</a>. It's searchable and provides explanations and examples.</p>
+      <p>Here's an example of how to use the <code>.hide()</code> and <code>.show()</code> methods.</p>
+		
+<textarea class='coder-editor coder-editor-full'>
+<a class="hide" href="#">Hide</a> | <a class="show" href="#">Show</a> 
+<div id="box">
+  <p>jQuery is a fast and concise JavaScript Library that simplifies HTML document traversing, event handling, animating, and Ajax interactions for rapid web development. jQuery is designed to change the way that you write JavaScript.</p>
+</div>
+
+<script>
+$(document).ready(function(){
+  // Click event on the anchor link with a class of 'hide'
+  $('.hide').click(function(){
+    // code to be executed - hide the "box" div
+    $('#box').hide();
+  });
+
+  $('.show').click(function(){
+     $('#box').show();
+  });
+});
+</script>
+<style>
+  #box {
+    background-color: #B1009A;
+    padding: 20px;
+    margin-top: 10px;
+    font: 18px verdana, arial, sans-serif;
+  }
+  a {
+    font: 14px verdana, arial, sans-serif;
+    text-decoration: none;
+  }	
+</style>
+</textarea>
+    </article>
+
+      <!-- SLIDE: jQuery Effects -->
+      <article class='slide slide-list'>
+        <h2><span class="smaller">Mini-exercise (20 mins)</span><br>jQuery Effects</h2>
+        <p>Let's practice adding some more jQuery effects and using external javascript files.</p>
+        <ol>
+          <li>In the exercises folder, open the <a href="exercises/jquery-effects.html" target="_blank">jquery-effects.html</a> into your text editor. HTML and CSS is already provided.</li>
+          <li>Include the jQuery library using one of the CDN hosted links listed <a href="http://jquery.com/download/" target="_blank">here</a>.</li>
+          <li>Create your own external file called 'jquery-effects.js' to write your own jQuery and included it in the HTML page.</li>
+          <li>Reference the previous example and add click events using the classes supplied in the <code>&lt;a&gt</code> links, to add the following effects:
+            <ul>
+              <li><code>show()</code></li>
+              <li><code>hide()</code></li>
+              <li><code>slideDown()</code></li>
+              <li><code>slideToggle()</code></li>
+              <li><code>fadeOut()</code></li>
+              <li><code>fadeIn()</code></li>
+            </ul>
+          </li>
+        </ol>
+        <div class="hint">
+          <p>jQuery effects documentation: <a href="http://api.jquery.com/category/effects/" target="_blank">http://api.jquery.com/category/effects/</a><br> 
+            jQuery click event documentation: <a href="http://api.jquery.com/click/" target="_blank">http://api.jquery.com/click/</a><br>
+          Solutions posted in the solutions folder.</p>
+        </div>
+
+      </article>
+      
+     <!-- SLIDE: Next section -->
+    <article class='slide slide-list'>
+      <p class="centered vertically_centered"><a href="resources.html"><img src="assets/next_section_icon.gif" width="230" height="70" alt="Click to go to next section" /></a></p>
+    </article>
+
+  <!-- **************************************** -->  
+  </div>
+  <!-- END div id=presentation -->
+
+  <script src='src/jquery.min.js'></script>
+  <script src="src/modernizr.js"></script>
+
+  <!-- Update these paths to point to the correct files. -->
+  <script src="src/jquery.tmpl.min.js"></script>
+  <script src="src/deck.js/core/deck.core.js"></script>
+
+  <!-- Code Mirror -->
+  <script src="src/codemirror/lib/codemirror.js"></script>
+  <script src="src/codemirror/mode/xml/xml.js"></script>
+  <script src="src/codemirror/mode/css/css.js"></script>
+  <script src="src/codemirror/mode/javascript/javascript.js"></script>
+  <script src="src/codemirror/mode/htmlmixed/htmlmixed.js"></script>
+
+  <!-- Prettify -->
+  <script src="src/prettify.js"></script>
+
+  <!-- Deck Core and extensions -->
+  <script src="src/deck.js/extensions/status/deck.status.js"></script>
+  <script src="src/deck.js/extensions/navigation/deck.navigation.js"></script>
+  <script src='src/deck.coder.js'></script>
+  <script src="src/deck.js/extensions/hash/deck.hash.js"></script>
+  <script src="src/deck.js/extensions/menu/deck.menu.js"></script>
+
+  <script>
+      $(function() {
+        $.deck('.slide');
+      });
+  </script>
+</body>
+</html>

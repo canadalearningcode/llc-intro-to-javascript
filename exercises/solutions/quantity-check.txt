@@ -1,0 +1,73 @@
+<script>
+
+  var quantity = 0;   
+
+  function addItem(){ 
+    quantity = quantity + 1;
+    refreshTotal();
+  }
+  
+  function removeItem(){
+    /* 1. Use a conditional if or if/else statement on the "quantity" variable 
+          to avoid having negative products. */
+    /* *** YOUR CODE _BELOW_ HERE **** */
+
+    if ( quantity > 0 ) {
+      quantity = quantity - 1; 
+    }else{
+      // do nothing
+    }
+
+    /* *** YOUR CODE ^ABOVE^ HERE **** */
+    refreshTotal();
+  }  
+
+  function checkout() {
+    /* 2. Use a conditional if/else statement on the "quantity" variable 
+          to determine if the shopping cart is (or is not) empty, then
+          show the correct popup message. */
+    /* *** YOUR CODE _BELOW_ HERE **** */
+
+    if ( quantity <= 0 ) {
+      alert( "Sorry, you don't have anything in your cart!" );
+    }else{
+      alert( "Thank you for your order!" );
+    }
+    
+    /* *** YOUR CODE ^ABOVE^ HERE **** */
+  } 
+  
+  function refreshTotal() {       
+
+    // calculate the totalCost with a fixed price of $20.  
+    var totalCost = quantity * 20;
+
+    // then update the quantity text field
+    document.getElementById('updateQuantity').value = quantity;
+
+    // update the total cost text field
+    // 3. A nice to have: Put a dollar sign in front of the total cost
+    /* *** YOUR CODE _BELOW_ HERE **** */
+
+    document.getElementById('updateTotal').value = "$" + totalCost;
+
+    /* *** YOUR CODE ^ABOVE^ HERE **** */
+  }
+</script>
+
+<div id="exercise2" style="text-align: center;">
+  <img src="http://brennaobrien.com/LLC-JavaScript/exercises/assets/plush-android.jpg" width="195" height="195" />
+  <br />
+  <button onclick="addItem();">Add</button>
+  <button onclick="removeItem();">Remove</button>
+  <br />
+  Quantity
+  <input type="text" id="updateQuantity" value="0" readonly style="text-align:center; width: 20px; border: 1px solid #ccc;"/>
+  <br />
+  <br />
+  Total Cost:
+  <input type="text" id="updateTotal" value="" readonly style="border: 1px solid #ccc;"/>
+  <br />
+  <br />
+  <button onclick="checkout();">Check out now!</button>
+</div>

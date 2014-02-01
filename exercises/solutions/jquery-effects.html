@@ -1,0 +1,56 @@
+ <html>
+  <head>
+    <title>jQuery Effects</title>    
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="jquery-effects.js"></script>
+	<style>
+		#container {
+			margin: 0 auto;
+			width: 600px;
+			padding-top: 10px;
+			text-align: center;
+		}
+		#box {
+			height: 300px;
+			width: 600px;
+			background-color: #B1009A;
+			margin-top: 10px;
+		}
+		h1 {
+			font: 18px Verdana, Arial, sans-serif;
+		}
+		ul {
+			margin: 0;
+			padding: 0;
+			list-style-type: none;
+		}
+		ul li {
+			display: inline-block;
+			border: 1px solid #999;
+			padding: 6px 10px;
+		}
+		a {
+			font: 14px Verdana, Arial, sans-serif;
+			text-decoration: none
+		}		
+	</style>
+  </head>
+  <body>
+	<div id="container">  
+		<h1>jQuery effects</h1>
+		<p><a href="http://api.jquery.com/category/effects/">http://api.jquery.com/category/effects/</a></p>
+		<ul>
+			<!-- these classes are used as the selectors -->
+			<li><a class="hide" href="#">Hide</a></li>
+			<li><a class="show" href="#">Show</a></li>
+			<li><a class="fade" href="#">Fade</a></li>
+			<li><a class="toggle" href="#">Toggle</a></li>
+			<li><a class="slide-up" href="#">Slide Up</a></li>
+			<li><a class="slide-toggle" href="#">Slide Toggle</a></li>
+		</ul> 
+
+		<!-- this is the id that the effects are being added to -->
+		<div id="box"></div>
+	</div>
+  </body>
+</html>

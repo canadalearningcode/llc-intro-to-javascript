@@ -1,0 +1,27 @@
+<script>
+  function validateForm() {
+
+    // automagically get the typed values from the form
+    var address = document.getElementById("address").value;
+
+    /* 1. Use a conditional if/else statement on the "address" variable 
+       to determine if the address field is (or is not) blank, 
+       then show the proper error or confirmation alert message. */
+
+    /* *** YOUR CODE _BELOW_ HERE **** */
+
+    if ( address == "" ) {
+      alert( "Sorry there are errors. Form fields cannot be blank!" );
+    }else {
+      alert( "Thank you for your order!" );
+    }
+
+    /* *** YOUR CODE ^ABOVE^ HERE **** */
+  }
+</script>
+
+Address:
+<input type="text" id="address" />
+<br />
+<br />
+<button onclick="validateForm()">Check out now!</button>

@@ -1,0 +1,18 @@
+<script>
+
+  /* 1. Declare a "name" and an "address" variable 
+        to remember the values entered into the prompt popup: */
+  var name = prompt("What's your name?");
+  var address = prompt("Your mailing address?");
+
+  document.write("<b>Confirm Shipping Label:</b><br />");
+  
+  /* 2a. Output the name: */
+  document.write(name); 
+
+  document.write("<br />"); //just a line break
+
+   /* 2b. Output the address: */
+  document.write(address);
+
+</script>

@@ -1,0 +1,25 @@
+<script>
+
+  var tshirtPrice = 25;
+  var androidPrice = 10;
+  var discountPercentage = 15;
+
+  /* 1. What is the cost of one t-shirt and one android? */
+  var subTotal;
+  //subTotal = **********
+  document.write("Sub-Total: " + subTotal);
+  document.write("<br />");
+
+  /* Guess what? Ladies Learning Code students get a percentage discount!
+     2. Figure out how much the discount will be. */
+  var discountAmount;
+  //discountAmount = **********
+  document.write("Discount Amount: " + discountAmount);
+  document.write("<br />");
+  
+  /* 3. Apply the discount to get the final price. */
+  var finalTotal;
+  //finalTotal = **********
+  document.write("Final Total: " + finalTotal);
+
+</script>

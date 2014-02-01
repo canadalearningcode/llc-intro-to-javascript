@@ -1,0 +1,44 @@
+/* Slide: Who loves LadiesLearningCode? */
+#loveLLC button, #loveLLC #update {
+	float: left;
+	font-size: 13px; line-height: 20px;
+}
+#loveLLC button img {
+	float: left;
+	padding-right: 5px;
+}
+#loveLLC #update {
+	border: 1px solid #ccc;
+	margin: 2px 0 0 4px;
+	padding: 2px 6px 0;	
+	float: left;
+}
+
+
+/* Slide: Mini-exercise #2, Slide: Mini-exercise #5 */
+.item {
+	width: 200px;
+	text-align: center;
+	border: 1px solid #ccc;
+	padding: 5px 5px 20px;
+	margin: 0 auto;
+}
+	.item button {
+		margin-bottom: 5px;
+	}	
+	.item input#updateQuantity {
+		width: 22px;
+	}
+	.item input#updateTotal {
+		width: 66px;
+	}
+
+
+/* Slide: While Loop in Action */
+table#temperature {
+border: 1px solid #C12AAA;
+  }
+  table#temperature tr td {
+	border: 1px solid #C12AAA;
+	padding: 4px;
+  }

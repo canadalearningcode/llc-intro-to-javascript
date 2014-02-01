@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Ladies Learning Code - Intro to JavaScript</title>
+  <meta name="viewport" content="width=1280">
+
+  <!-- CoderDeck core and extension CSS files -->
+  <link rel="stylesheet" href="src/deck.js/core/deck.core.css" type="text/css">
+  <link rel="stylesheet" href="src/deck.js/extensions/navigation/deck.navigation.css">
+  <link rel="stylesheet" href="src/deck.js/extensions/status/deck.status.css">
+  <link rel="stylesheet" href="src/deck.js/extensions/hash/deck.hash.css">
+  <link rel="stylesheet" href="src/deck.js/extensions/menu/deck.menu.css">
+  <link rel="stylesheet" href="src/css/prettify.css">
+  <link rel="stylesheet" href="src/css/deck.coder.css">
+  <link rel="stylesheet" href="src/codemirror/lib/codemirror.css">
+  <link rel="stylesheet" href="src/codemirror/theme/default.css">
+
+  <!-- Custom for LLC -->
+  <link href='http://fonts.googleapis.com/css?family=Istok+Web' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Podkova' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" id='style-theme-link' href="src/css/coderdeck.css" type="text/css" >
+  <style type="text/css"></style>
+
+</head>
+
+<body class="deck-container">
+
+	<script type='text/coderdeck' id='coderdeck-default'>
+      <html>
+        <head>
+          <script src='src/jquery.min.js'>SCRIPTEND</head>
+        <body>CODE</body>
+      </html>
+      </script>
+    
+      <script type='text/coderdeck' id='coderdeck-style-example'>
+      <html>
+        <title>test</title>
+        <style>CODE</style>
+        <body>
+        </body>
+      </html>
+    </script>
+    
+    <div id="presentation">
+    <!-- **************************************** -->
+     
+      <!-- SLIDE:  -->
+      <article class='slide slide-subhead'>
+        <h1>Going Beyond JavaScript Basics</h1>
+        <p>You're getting to be quite the pro!</p>
+      </article>
+      
+      <!-- SLIDE:  -->
+      <article class='slide slide-subhead'>
+        <h1>Debugging!</h1>
+        <p>Squash those crawly things in your code.</p>
+      </article>
+      
+      <!-- SLIDE:  -->
+      <article class='slide slide-list'>
+        <h2>What's a Bug?</h2>
+        <p>As <a href="http://en.wikipedia.org/wiki/Grace_Hopper#Anecdotes" target="_blank">the story</a> goes, the term &quot;software bug&quot; got its name because a real moth flew into a computer system causing strange, unexpected behaviours to happen in a computer program. </p>
+        <p>Nowadays, bugs are mostly due to human error in one of two areas:</p>
+        <ol>
+        <li>
+        Syntax - missing semi-colons, typos, case-sensitivity</li>
+        <li>
+        Logic - trying to access a variable that doesn't exist yet, writing an incorrect conditional test</li></ol>
+        <p>Luckily there's a few things to help us hunt them down quicker...</p>
+      </article>
+      
+      <!-- SLIDE:  -->
+      <article class='slide slide-list'>
+        <h2>Chrome Developer Console</h2>
+        <p>Use the built in developer tools in Chrome to debug your code. (Firefox+Firebug is similar but not exactly the same.)</p>
+        <p>[Settings Icon] &gt; Tools &gt; Developer Tools ( Cmd+Opt+I for Mac, Ctrl+Shift+I for Windows) Click on the Console tab.</p>
+        <p><img src="assets/ChromeConsole.gif" width="632" height="84" alt="Chrome debugger tabs" /></p>
+    </article>
+
+    <!-- SLIDE:  -->
+    <article class='slide slide-list'>
+      <h2>Right click &gt; Inspect Element</h2>
+      <p>Easiest way to remember is to right-click on any web page and select "Inspect Element". In the new panel, select the "Console" tab to see JavaScript errors or to play in the console sandbox.</p>
+      <p><img src="assets/ChromeInspector.gif" width="243" height="248" alt="Right click to see Inspect Element in the popup" /></p>
+    </article>
+      
+    <!-- SLIDE:  -->
+    <article class='slide slide-list'>
+      <h2>Inspecting the DOM</h2>
+      <p>You can inspect any webpage with the debugger. </p>
+      <p>Let's open up the Ladies Learning Code Events page: <a href="http://ladieslearningcode.com/events/" target="_blank">http://ladieslearningcode.com/events/</a>.</p>
+      <p>How can we use the console to find out how many events are listed on this page?</p>
+    </article>
+
+    <!-- SLIDE:  -->
+    <article class='slide slide-list'>
+      <h2>More info</h2>
+      <ul>
+        <li><a href="https://developers.google.com/chrome-developer-tools/docs/overview" target="_blank">Chrome Developer Tools: Overview</a></li>
+        <li>Video: <a href="http://www.youtube.com/watch?v=N8SS-rUEZPg" target="_blank">Google I/O 2011: Chrome Dev Tools Reloaded</a></li>
+        <li>Video: <a href="https://www.youtube.com/watch?v=3pxf3Ju2row" target="_blank">Google I/O 2012 - Chrome Developer Tools Evolution</a></li>
+      </ul>
+    </article>
+
+    <!-- SLIDE: Next section -->
+    <!-- <article class='slide slide-list'>
+      <p class="centered vertically_centered"><a href="jquery-indepth.html"><img src="assets/next_section_icon.gif" width="230" height="70" alt="Click to go to next section" /></a></p>
+    </article> -->
+
+</div>
+  <!-- END div id=presentation -->
+
+  <script src='src/jquery.min.js'></script>
+  <script src="src/modernizr.js"></script>
+
+  <!-- Update these paths to point to the correct files. -->
+  <script src="src/jquery.tmpl.min.js"></script>
+  <script src="src/deck.js/core/deck.core.js"></script>
+
+  <!-- Code Mirror -->
+  <script src="src/codemirror/lib/codemirror.js"></script>
+  <script src="src/codemirror/mode/xml/xml.js"></script>
+  <script src="src/codemirror/mode/css/css.js"></script>
+  <script src="src/codemirror/mode/javascript/javascript.js"></script>
+  <script src="src/codemirror/mode/htmlmixed/htmlmixed.js"></script>
+
+  <!-- Prettify -->
+  <script src="src/prettify.js"></script>
+
+  <!-- Deck Core and extensions -->
+  <script src="src/deck.js/extensions/status/deck.status.js"></script>
+  <script src="src/deck.js/extensions/navigation/deck.navigation.js"></script>
+  <script src='src/deck.coder.js'></script>
+  <script src="src/deck.js/extensions/hash/deck.hash.js"></script>
+  <script src="src/deck.js/extensions/menu/deck.menu.js"></script>
+
+  <script>
+      $(function() {
+        $.deck('.slide');
+      });
+  </script>
+</body>
+</html>

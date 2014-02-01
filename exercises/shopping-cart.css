@@ -1,0 +1,130 @@
+/*font-family: 'Fascinate', cursive;
+font-family: 'Titan One', cursive;*/
+body {
+	margin: 0;
+	padding: 0;
+	font-family: Verdana, Arial, sans-serif;
+}
+header {
+	padding-left: 95px;
+}
+h1 {
+	color: #B1009A;
+	font: 70px 'Fascinate', cursive;
+	margin: 5px 0;
+	float: left;
+}
+h2 {
+	font: normal 18px Georgia, serif;
+	padding: 30px 0 0 20px;
+	float: left;
+}
+#container {
+	margin: 0 auto;
+	width: 960px;
+}
+
+
+#shoppingForm {
+	width: 960px;
+}
+fieldset {
+	margin: 0;
+	padding: 0;
+}
+legend {
+	padding-top: 20px;
+}
+
+#productListings {
+	float: left;
+	width: 680px;
+	margin-bottom: 40px;
+	font-size: 12px;
+}
+	#productListings .item {
+		float: left;
+		padding: 10px;
+		width: 195px;
+	}
+	#productListings .item ul {
+		list-style-type: none;
+		padding: 0;
+		margin: 0;
+	}
+	#productListings .item ul li {	
+		display: inline-block;
+		padding: 2px 0;
+	}
+	#productListings .item img { 
+		border: 1px solid #CCC;
+	}
+	#productListings .item input#updateQuantity {
+		width: 15px;
+		height: 10px;
+	}
+	#productListings fieldset {
+		border: 2px solid #B1009A;
+		margin-bottom: 10px;
+		padding: 10px 14px;
+	}
+
+#additionalInfo {
+	float: right;
+	border: 2px solid #CCC;
+	font-size: 14px;
+	padding: 20px;
+	width: 220px;
+	margin-bottom: 15px;
+} 
+	#additionalInfo fieldset {
+		border: none;
+		padding: 0;
+		margin: 0;
+	}
+	#additionalInfo h3 {
+		padding-top: 0;
+		margin: 0 0 10px;
+		font: 21px 'Titan One',cursive;
+	}
+	#additionalInfo #shippingInfo label, #additionalInfo #billingInfo label, #additionalInfo #finalTotal label {
+		float: left;
+		margin-bottom: 4px;
+		padding-top: 3px;
+		width: 90px;
+	}
+	#additionalInfo #shippingInfo input, #additionalInfo #billingInfo input, #additionalInfo #finalTotal input {
+		margin-bottom: 5px;
+		width: 120px;
+	}
+	#additionalInfo #shippingInfo, #additionalInfo #billingInfo {
+		margin-bottom: 20px;
+	}
+	#additionalInfo button {
+		float: right;
+	}
+
+	#additionalInfo label#same_as_billing_label {
+	  padding-top: 0;
+	  width: 115px;
+	  padding-bottom: 5px;
+	}
+	#additionalInfo input#same_as_billing {
+	  width: 25px;
+	  margin-bottom: 15px;
+	} 
+	#additionalInfo .non-editable label {
+	  color: #ccc;
+	}
+	#additionalInfo .non-editable label#same_as_billing_label {
+	  color: #000;
+	}
+
+input.readonly {
+	border: 1px solid #ccc;
+}
+
+button {
+	
+}
+

@@ -1,0 +1,46 @@
+<script>
+
+  /* 1. Set 'quantity' to start at 0. This will be used
+        to hold the value for the quantity of ordered robots */   
+  var quantity;
+  quantity = 0;   
+    
+  // CODE BETWEEN THE CURLY BRACES BELOW WILL EXECUTE
+  // EACH TIME YOU PRESS THE 'ADD' BUTTON 
+  function addItem() {
+
+    /* 2. Set the variable 'quantity' to INCREASE by 1: */
+    quantity = quantity + 1; 
+         
+    refreshTotal();
+  }
+
+  // CODE BETWEEN THE CURLY BRACES BELOW WILL EXECUTE
+  // EACH TIME YOU PRESS THE 'REMOVE' BUTTON 
+  function removeItem() {
+
+    /* 3. Set the variable 'quantity' to DECREASE by 1: */
+    quantity = quantity - 1;  
+       
+    refreshTotal();
+  }   
+
+  // CODE BETWEEN THE CURLY BRACES BELOW WILL EXECUTE
+  // ON DEMAND, IN ORDER TO UPDATE THE HTML TEXT FIELD
+  function refreshTotal() {
+    document.getElementById('updateQuantity').value = quantity;
+  }
+
+</script>
+
+<link rel="stylesheet" href="exercises/slides.css" type="text/css" />
+<div class="item">
+  <img src="http://brennaobrien.com/LLC-JavaScript/exercises/assets/plush-android.jpg" width="195" height="195" />
+  <br />
+  <button onclick="addItem();">Add</button>
+  <button onclick="removeItem();">Remove</button>
+  <br />
+  Quantity
+  <input type="text" id="updateQuantity" value="0" readonly />
+  <br />
+</div>

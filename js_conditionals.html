@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Ladies Learning Code - Intro to JavaScript</title>
+  <meta name="viewport" content="width=1280">
+
+  <!-- CoderDeck core and extension CSS files -->
+  <link rel="stylesheet" href="src/deck.js/core/deck.core.css" type="text/css">
+  <link rel="stylesheet" href="src/deck.js/extensions/navigation/deck.navigation.css">
+  <link rel="stylesheet" href="src/deck.js/extensions/status/deck.status.css">
+  <link rel="stylesheet" href="src/deck.js/extensions/hash/deck.hash.css">
+  <link rel="stylesheet" href="src/deck.js/extensions/menu/deck.menu.css">
+  <link rel="stylesheet" href="src/css/prettify.css">
+  <link rel="stylesheet" href="src/css/deck.coder.css">
+  <link rel="stylesheet" href="src/codemirror/lib/codemirror.css">
+  <link rel="stylesheet" href="src/codemirror/theme/default.css">
+
+  <!-- Custom for LLC -->
+  <link href='http://fonts.googleapis.com/css?family=Istok+Web' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Podkova' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" id='style-theme-link' href="src/css/coderdeck.css" type="text/css" >
+  <style type="text/css"></style>
+</head>
+
+<body class="deck-container">
+	<script type='text/coderdeck' id='coderdeck-default'>
+	  <html>
+	    <head>
+	      <script src='src/jquery.min.js'>SCRIPTEND</head>
+	    <body>CODE</body>
+	  </html>
+	  </script>
+	
+	  <script type='text/coderdeck' id='coderdeck-style-example'>
+	  <html>
+	    <title>test</title>
+	    <style>CODE</style>
+	    <body>
+	      <h1>I'm a H1 heading</h1>
+	      <h2>I'm a H2 heading</h2>
+	      <p>Pargraph of text &lt;p&gt; here</p>
+	      <div class='stuff'>I'm a div &lt;div&gt; with class "stuff"</div>
+	      <div id='my-div'>I'm a &lt;div&gt; with id "my-div"</div>
+	    </body>
+	  </html>
+	</script>
+	
+  <div id="presentation">
+  <!-- **************************************** -->  
+
+    <!-- SLIDE: JS THEORY Part 3 -->
+    <article class='slide slide-subhead'>
+      <h1>JavaScript Part 3</h1>
+      <p>Making decisions with conditionals</p>
+    </article>
+
+    <!-- SLIDE:  -->
+    <article class='slide slide-list'>
+      <h2>Conditional Statements</h2>
+      <p>Let's pretend to be your wise but nagging grandmother right now:</p>
+      <ul>
+      <li>I hear it's cold out: bring a sweater!</li>
+      <li>The weather network says it's going to rain: take your umbrella!</li>
+      <li>It's cold and snowing: wearing your warm boots!</li>
+      </ul>
+      <p>All these things make logical sense to us as grown up humans but computers are a blank slate. </p>
+      <p>As a programmer, you try to give the computer the smarts to act on its own based on possible circumstances or events by using <span class="keyword">CONDITIONALS</span>.</p>
+    </article>
+    
+    
+    <!-- SLIDE:  -->
+<article class='slide slide-list'>
+        <h2><code>If</code> Conditionals</h2>
+        <p>...</p>
+        <table>
+        <tr>
+          <td width="45%">
+            <p>A basic conditional test looks like this:</p>
+            <p>IF the weather is raining<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+                THEN bring an umbrella</p>
+            </td>
+            <td width="10%"></td>
+          <td width="45%">
+            <p>In JavaScript,<br>
+      it might look like this:</p>
+            <pre class="prettyprint" style="font-size: 24px; border: none;">
+if ( weather == rain ) {
+    bringUmbrella();
+}
+            </pre>
+           
+
+          </td>
+        </tr>
+        </table>
+        <div class="reminders">
+                    <p>The <strong>round</strong> brackets <code>()</code>
+ group together a condition to test.</p>
+      <p>The <strong>curly</strong> braces <code>{}</code>
+ group together a set of statements to execute.<p>
+        </div>
+      </article>
+      
+          <!-- SLIDE:  -->
+      <article class='slide slide-list'>
+        <h3>Important! <br>
+Assignment is not the same as equality</h3>
+<br>
+        <p>Drill this into your head. Tattoo it to your arm! So many errors happen because of this key difference:</p><br>
+        <table width="100%" style="font-size: 26px;">
+        <tr>
+          <td width="50%" class="centered">
+            <strong>=<br>
+            assignment<br>
+            </strong> <br><br>
+            Store a value to a variable:
+            <br><br>
+            var kitten = "Fluffy";
+            </td>
+            <td width="50%" class="centered">
+            <strong> ==<br>
+            equality<br>
+            </strong> <br><br>
+            Compare a value to another value:
+            <br><br>
+            if ( kitten == cat )
+            </td>
+        </tr>
+        </table>
+      </article>
+      
+    <!-- SLIDE:  -->
+      <article class='slide slide-list'>
+        <h2>Using Several <code>If</code> Conditionals</h2>
+        <p>Sometimes it can be rainy but warm, or rainy and cold. You react to each thing individually.</p>
+        <p>Use several if statements when you're testing mutually <em>inclusive</em> scenarios.</p>
+        <table>
+        <tr>
+          <td width="50%"><br><br>
+            <p>IF the weather is raining     <br>
+&nbsp;&nbsp;&nbsp;&nbsp;THEN bring an umbrella <br>
+<br>
+IF the temperature is below 10°C     <br>
+&nbsp;&nbsp;&nbsp;&nbsp;THEN wear a sweater</p>
+            </td>
+          <td width="5%"></td>
+          <td width="45%">
+            <p class="sidenote">In JavaScript...</p>
+<pre class="prettyprint" style="font-size: 24px; border: none;">
+if ( weather == rain ) {
+    bringUmbrella();
+}
+
+if ( temperature < 10 ) {
+    wearSweater();
+}
+</pre>
+          </td>
+        </tr>
+        </table>
+</article>
+
+      
+          <!-- SLIDE:  -->
+      <article class='slide slide-list'>
+        <h2><code>if/else</code> Conditionals</h2>
+        <p>Sometimes there's a catch-all state that you want to happen if your previous tests don't happen.</p>
+        <table width="100%">
+        <tr>
+          <td width="50%"><br><br>
+            <p>IF the weather is raining<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;THEN bring an umbrella<br><br>
+            OTHERWISE<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;dress normally</p>
+            </td>
+            <td width="5%"></td>
+          <td width="45%">
+            <p class="sidenote">In JavaScript...</p>
+            <pre class="prettyprint"  style="font-size: 24px; border: none;">
+if ( weather == rain ) {
+    bringUmbrella();
+} else {
+    dressNormally();
+}
+            </pre>
+            </td>
+        </tr>
+        </table>
+      </article>
+      
+           <!-- SLIDE:  -->
+<article class='slide slide-list'>
+        <h2><code>if/else else if</code> Conditionals</h2>
+        <p>It shouldn't snow and rain at the same time so sometimes these conditions are mutually <em>exclusive</em>. </p>
+        <table>
+        <tr>
+          <td width="45%"><br><br>
+            <p>
+            IF the weather is raining<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;THEN bring an umbrella<br><br>
+            BUT IF the weather is snowing<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;THEN wear warm boots<br><br>
+            OTHERWISE<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;dress normally</p>
+            </td>
+            <td width="5%"></td>
+          <td width="50%">
+            <p class="sidenote">In JavaScript...</p>
+            <pre class="prettyprint" style="font-size: 24px; border: none;">
+if ( weather == rain ) {
+    bringUmbrella();
+} else if ( weather == snow ) {
+    wearWarmBoots();
+} else {
+    dressNormally();
+}
+            </pre>
+          </td>
+        </tr>
+        </table>
+      </article>
+      
+      
+          <!-- SLIDE:  -->
+      <article class='slide slide-list'>
+        <h2>Conditionals used for UI elements</h2>
+        <p>A basic conditional that your browser does internally is to react to mouse clicks on a HTML element.</p>
+        <p><img src="assets/thenewdesignguidelines-pull.gif" width="121" height="221" alt="" align="left" style="margin-right: 30px;"/></p>
+        
+        <p><br>
+<code>&lt;button onclick=&quot;animate()&quot;&gt;Pull&lt;/button&gt;</code></p>
+        <p>IF a user has clicked on a button<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;THEN call the animate() function.</p>
+        <br  clear="all" />
+        <table>
+        <tr>
+          <td></td>
+            <td></td>
+        </tr>
+        </table>
+      </article>
+
+      
+      <!-- SLIDE:  -->
+      <article class='slide slide-list'>
+        <h2>...And Interactivity</h2>
+        <p>Notice how the brush acts when you speed up / slow down, or get close to other lines. You can even change brushes.</p>
+        <p class="centered"><img src="assets/LLC_sketch.gif" width="506" height="400" alt="Procedural Drawing by Mr. Doob" /></p>
+        <p class="sidenote centered"><a href="http://mrdoob.com/projects/harmony/" target="_blank">http://mrdoob.com/projects/harmony/</a></p>
+      </article>
+
+    
+    
+    <!-- SLIDE:  -->
+<article class='slide slide-list'>
+        <h2>...And Games!</h2>
+        <p>(Notice how the birds fly differently based on how far you pull them back in the slingshot, and in what direction.)</p>
+        <p class="centered"><img src="assets/AngryBirds.png" width="498" height="228" alt="Angry Birds" /></p>
+        <p class="sidenote centered"><a href="http://chrome.angrybirds.com/" target="_blank">http://chrome.angrybirds.com/</a></p>
+      </article>
+      
+      
+      <!-- SLIDE:  -->
+<article class='slide slide-list'>
+        <h2>Conditional Statements Summary</h2>
+        <div><br><br>
+          <table width="100%" style="font-size: 24px;">
+              <tr>
+                <th width="33%" align="left">If Statement </th>
+                <th width="33%" align="left">If...else statement </th>
+                <th width="33%" align="left">If...else if...else statement</th>
+              </tr>
+              <tr>
+              <td colspan="3"><br>
+</td>
+              </tr>
+              <tr>
+                <td>
+<pre class="prettyprint"  style="font-size: 18px; border: none;">
+if (condition) {<br>
+ // do something<br>
+}
+</pre>
+                </td>
+                <td>
+<pre class="prettyprint"  style="font-size: 18px; border: none;">
+if (condition) {<br>
+  // do something<br>
+} else {<br>
+  // otherwise do this<br>
+}
+</pre>
+                </td>
+                <td>
+<pre class="prettyprint" style="font-size: 18px; border: none;">
+if (condition) {<br>
+  // do something<br>
+} else if (condition2) {<br>
+  // do something else<br>
+} else {<br>
+  // otherwise do this<br>
+}
+</pre>
+                </td>
+              </tr>
+          </table>
+        </div>
+        <br>
+        <p>&nbsp;</p>
+      </article>
+    
+    <!-- SLIDE:  -->
+      <article class='slide slide-list'>
+        <h2>Testing Conditions</h2>
+        <p>What does a condition actually look like?</p>
+        <p><code> if ( condition ) { ... } </code></p>
+        <p>Let's try also comparing Booleans using variables, Numbers, and Strings.</p>
+<textarea class="coder-editor coder-editor-full">SCRIPT
+
+// PURE BOOLEANS
+if ( true ) {  
+  document.write( "#1 this works. <br />" );
+} 
+
+if ( false ) {  
+  document.write( "#2 will not work. <br />" );
+}
+
+SCRIPTEND</textarea>
+<script type="coder-solution">SCRIPT
+
+// PURE BOOLEANS
+if ( true ) {  
+  document.write( "#1 this works. <br />" );
+}
+
+if ( false ) {  
+  document.write( "#2 will not work. <br />" );
+}
+
+// COMPARING VARIABLES AS BOOLEANS
+var isSunday = false;
+var isSaturday = true;
+
+if ( isSunday == true ) {
+  document.write( "#3 Yeah, laundry day! <br />" );
+}
+
+if ( isSaturday == true ) {
+  document.write( "#4 Yay, one more day til the weekend is over! <br />" );
+}
+
+// COMPARING NUMBERS
+if ( 1 &lt; 2 ) {
+  document.write( "#5 works. <br />" );
+}
+
+if ( 2 &gt; 1 ) {
+  document.write( "#6 works. <br />" );
+}
+
+// COMPARING STRINGS
+var emptyString = "";
+var filledString = "Woot! Conditionals!";
+
+if ( emptyString == "" ) {
+  document.write( "#7 Yep, the string was empty. <br />" );
+}
+
+if ( filledString == "" ) {
+  document.write( "#8 won't work. <br />" );
+}
+
+if ( filledString == "Woot! Conditionals!" ) {
+  document.write( "#9 Code strong. <br />" );
+}
+
+SCRIPTEND</script>
+      </article>        
+
+    <!-- SLIDE:  -->
+    <article class='slide slide-list'>
+      <h3>
+        Cheat Sheet:  Comparison and Logical Operators
+      </h3>
+    <p class="reminders">
+      Here's a <strong>cheat sheet</strong> of different operators that can be used in conditional statements. </p>
+      <p class="sidenote">Using these two variables, <code>var two = 2</code> and <code>var ten = 10</code>  , the examples below show how the statements would return true using the various operators.
+      </p>
+      <table class="comparison-table" style="float:left; margin-right:20px;">
+        <tr>
+          <th colspan="3" align="left">Comparison operators</th>
+        </tr>
+        <tr>
+          <td width="15%">==</td>
+          <td width="50%">is equal to</td>
+          <td width="35%">ten == two * 5</td>
+        </tr>
+        <tr>
+          <td width="15%">===</td>
+          <td width="50%">
+            is exactly equal to
+            <br />
+            (value and type)
+          </td>
+          <td width="35%">
+            ten === 10
+            <br />
+            ten === "10" (false)
+          </td>
+        </tr>
+        <tr>
+          <td width="15%">!=</td>
+          <td width="50%">is not equal to</td>
+          <td width="35%">ten !== two</td>
+        </tr>
+        <tr>
+          <td width="15%">&gt;</td>
+          <td width="50%">greater than</td>
+          <td width="35%">ten &gt; two</td>
+        </tr>
+        <tr>
+          <td width="15%">&lt;</td>
+          <td width="50%">less than</td>
+          <td width="35%">
+            two
+                &lt; ten
+          </td>
+        </tr>
+        <tr>
+          <td width="15%">&gt;=</td>
+          <td width="50%">greater than or equal to</td>
+          <td width="35%">
+            ten &gt;= two * 5
+            <br />
+            ten &gt;= two * 5 + 1
+          </td>
+        </tr>
+        <tr>
+          <td width="15%">&lt;=</td>
+          <td width="50%">less than for equal to</td>
+          <td width="35%">
+            two
+                        &lt;= ten
+            <br />
+            two
+                        &lt;= 2
+          </td>
+        </tr>
+      </table>
+      <table class="comparison-table" style="float:left;">
+        <tr>
+          <th colspan="3" align="left">Logical operators</th>
+        </tr>
+        <tr>
+          <td width="15%">&amp;&amp;</td>
+          <td width="20%">and</td>
+          <td width="65%">
+            (ten
+            &lt; 11 &amp;&amp; ten &gt; 9)
+          </td>
+        </tr>
+        <tr>
+          <td width="15%">||</td>
+          <td width="20%">or</td>
+          <td width="65%">(ten == 10 || two == 2)</td>
+        </tr>
+        <tr>
+          <td width="15%">!</td>
+          <td width="20%">not</td>
+          <td width="65%">!(ten == two)</td>
+        </tr>
+      </table>
+        <br  clear="all" />
+    </article>
+
+
+    <!-- SLIDE:  -->
+    <article class='slide slide-list'>
+      <h3>More Conditional  Examples</h3>
+      <p>
+        Let's look at some examples.  What do you think the output will be? Uncomment the code to be executed for each condition to see if the result is what you expected. Try changing the variable values too!
+      </p>
+<textarea class='coder-editor coder-editor-full'>
+<script>
+var regularPrice = 200;
+var salePrice = 19.99;
+
+if ( salePrice < regularPrice ) {
+  //document.write("#1 You've got to buy that robot! <br />");
+} 
+
+
+if ( salePrice > regularPrice ) {
+  //document.write("#2 Don't buy that robot <br />");
+} else {
+  //document.write("#2 Buy two in different colours! <br />");
+}
+
+if ( salePrice > regularPrice ) {
+  //document.write("#3 Don't buy that robot");
+} else if ( salePrice == regularPrice) {
+  //document.write("#3 Only buy it if you reeeaallly want it! <br />");
+} else {
+  //document.write("#3 Buy two in different colours! <br />");
+}
+</script>
+      </textarea>
+    </article>
+    
+    <!-- SLIDE:  -->
+    <article class='slide slide-list'>
+      <h2>Variables, Operators, Concatenation and Conditionals</h2>
+      <p>Now that we know what <span class="keyword">variables</span>, <span class="keyword">operators</span> and <span class="keyword">conditionals</span> are, let's put them all into action using dynamic content. </p>
+<textarea class='coder-editor coder-editor-full'>
+<script>
+
+  var yourBudget = 100; // all you've got is $100
+  var robotPrice = 20;  // a default price of $20 for now
+
+  /* Instead of a fixed value, get a dynamic price via a prompt popup: */
+  //var robotPrice = prompt("How much is that robot?");
+
+  if ( robotPrice <= yourBudget ) {
+    document.write("$" + robotPrice + " fits into my budget. Buy it!");
+  } else {
+    document.write("$" + robotPrice + "? Good Lawd! I can't afford that!");
+  }
+
+</script></textarea>
+<script type="coder-solution">SCRIPT
+
+  var yourBudget = 100; // all you've got is $100
+  //var robotPrice = 20;  // a default price of $20 for now
+
+  /* Instead of a fixed value, get a dynamic price via a prompt popup: */
+  var robotPrice = prompt("How much is that robot?");
+
+  if ( robotPrice <= yourBudget ) {
+    document.write("$" + robotPrice + " fits into my budget. Buy it!");
+  } else {
+    document.write("$" + robotPrice + "? Good Lawd! I can't afford that!");
+  }
+
+SCRIPTEND</script>
+    </article>
+
+    <!-- SLIDE:  -->
+    <article class='slide slide-list'>
+      <h2><div class="smaller">Mini-exercise (10 minutes)</div>
+        Quantity Check</h2>
+      <p>Uh-oh! Someone can attempt to put a negative number of products in their shopping cart! (This is based on the previous Quantity mini-exercise so it should look very familiar!)
+      </p>
+      <div class="hint">
+        <p>1. Use a conditional test to avoid a negative quantity. Typically this involves comparing against the number 0 and you can go about it in a few ways with the same result.<br />
+        2. Similarly, warn the user that they are attempting to check out with an empty basket.<br />
+        3. Bonus: Practice your concatention and display the price using a dollar sign.
+      </div>
+
+<textarea class='coder-editor coder-editor-full' data-save='exercise-quantity-check'>
+<script>
+
+  var quantity = 0;   
+
+  function addItem(){ 
+    quantity = quantity + 1;
+    refreshTotal();
+  }
+  
+  function removeItem(){
+    /* 1. Use a conditional if or if/else statement on the "quantity" variable 
+          to avoid having negative products. */
+    /* *** YOUR CODE _BELOW_ HERE **** */
+
+    quantity = quantity - 1; 
+
+    /* *** YOUR CODE ^ABOVE^ HERE **** */
+    refreshTotal();
+  }  
+
+  function checkout() {
+    /* 2. Use a conditional if/else statement on the "quantity" variable 
+          to determine if the shopping cart is (or is not) empty, then
+          show the correct popup message. */
+    /* *** YOUR CODE _BELOW_ HERE **** */
+
+    alert( "Sorry, you don't have anything in your cart!" );
+    alert( "Thank you for your order!" );
+    
+    /* *** YOUR CODE ^ABOVE^ HERE **** */
+  } 
+  
+  function refreshTotal() {       
+
+    // calculate the totalCost with a fixed price of $20.  
+    var totalCost = quantity * 20;
+
+    // then update the quantity text field
+    document.getElementById('updateQuantity').value = quantity;
+
+    // update the total cost text field
+    // 3. A nice to have: Put a dollar sign in front of the total cost
+    /* *** YOUR CODE _BELOW_ HERE **** */
+
+    document.getElementById('updateTotal').value = totalCost;
+
+    /* *** YOUR CODE ^ABOVE^ HERE **** */
+  }
+</script>
+
+<div id="exercise2" style="text-align: center;">
+  <img src="http://brennaobrien.com/LLC-JavaScript/exercises/assets/plush-android.jpg" width="195" height="195" />
+  <br />
+  <button onclick="addItem();">Add</button>
+  <button onclick="removeItem();">Remove</button>
+  <br />
+  Quantity
+  <input type="text" id="updateQuantity" value="0" readonly style="text-align:center; width: 20px; border: 1px solid #ccc;"/>
+  <br />
+  <br />
+  Total Cost:
+  <input type="text" id="updateTotal" value="" readonly style="border: 1px solid #ccc;"/>
+  <br />
+  <br />
+  <button onclick="checkout();">Check out now!</button>
+</div>
+</textarea>
+
+      <p class="solution-link">If you get stuck, <a href="exercises/solutions/quantity-check.txt" target="_blank">click here</a> for  the full solution.<br />Or if you want to reset, <a href="exercises/solutions/quantity-check-org.txt" target="_blank">click here</a> for the original code.</p>
+
+    </article>
+
+    <!-- SLIDE:  -->
+    <article class='slide slide-list'>
+      <h2><div class="smaller">Mini-exercise (5-10 minutes)</div>
+        Form validation
+      </h2>
+      <p>
+        Let's revisit the shipping information form again -- however you don't want someone to be able to submit their order if they haven't filled out their address!
+      </p>
+      <p>
+        You have been supplied with 1 variable (<code>address</code>). After you press the &quot;Check out now!&quot; button, <code>address</code> which will <em>automagically</em> update to what is typed into the text field.
+      </p>
+      <div class="hint">
+        <p>1. Use a conditional test so someone cannot supply a blank address.<br />Hint: If you don't type anything into the address field, you get an <span class="keyword">empty string</span>. Remember that an empty string is simply two quotes with nothing inbetween them. e.g. <code>var emptyString = <strong>""</strong>;</code>)
+      </p>
+    </div>
+      
+<textarea class='coder-editor coder-editor-full' data-save='exercise-form-validation'>
+<script>
+  function validateForm() {
+
+    // automagically get the typed values from the form
+    var address = document.getElementById("address").value;
+
+    /* 1. Use a conditional if/else statement on the "address" variable 
+       to determine if the address field is (or is not) blank, 
+       then show the proper error or confirmation alert message. */
+
+    /* *** YOUR CODE _BELOW_ HERE **** */
+
+    alert( "Sorry there are errors. Form fields cannot be blank!" );
+    alert( "Thank you for your order!" );
+
+    /* *** YOUR CODE ^ABOVE^ HERE **** */
+  }
+</script>
+
+Address:
+<input type="text" id="address" />
+<br />
+<br />
+<button onclick="validateForm()">Check out now!</button>
+</textarea>
+
+      <p class="solution-link">If you get stuck, <a href="exercises/solutions/form-validation.txt" target="_blank">click here</a> for  the full solution.<br />Or if you want to reset, <a href="exercises/solutions/form-validation-org.txt" target="_blank">click here</a> for the original code.</p>
+
+    </article>
+
+    <!-- SLIDE:  -->
+    <article class='slide slide-list'>
+      <h2><div class="smaller">Mini-exercise (15-20 minutes)</div>
+        Complex form validation</h2>
+      <p>
+        Now here's a more complex shopping form that you require all fields to be filled in. You have been supplied with 3 additional variables which will automagically update: <code>name</code>, <code>city</code>, and <code>postal</code>.
+      </p>
+      
+      <div class="hint">
+        <p>1. Use a conditional to verify that ALL the fields have been filled in. (Hint: How do you test for something AND something else OR another thing at one time? Try looking at the cheatsheet on <a href="#slide-12" target="_blank">Slide #12</a> of this section.)
+      </div>
+
+<textarea class='coder-editor coder-editor-full' data-save='exercise-complex-form-validation'>
+<script>
+function validateForm() {
+
+  // automagically get the typed values from the form
+  var name = document.getElementById("name").value;
+  var address = document.getElementById("address").value;
+  var city = document.getElementById("city").value;
+  var postal = document.getElementById("postal").value;
+
+  /* *** YOUR CODE _BELOW_ HERE **** */
+  
+  /* 1. Use a conditional if/else statement to test for 
+  blank fields and alert the proper message. 
+  Below are some alerts you can use. */
+
+  alert( "Sorry there are errors. Form fields cannot be blank!" );
+  alert( "Thank you for your order!" );
+  
+
+  /* *** YOUR CODE ^ABOVE^ HERE **** */
+}
+</script>
+
+Name:
+<input type="text" id="name" />
+<br />
+Address:
+<input type="text" id="address" />
+<br />
+City:
+<input type="text" id="city" />
+<br />
+Postal Code:
+<input type="text" id="postal" />
+<br />
+<br />
+<button onclick="validateForm()">Check out now!</button>
+</textarea>
+
+    <p class="solution-link">If you get stuck, <a href="exercises/solutions/complex-form-validation.txt" target="_blank">click here</a> for the full solution.<br />Or if you want to reset, <a href="exercises/solutions/complex-form-validation-org.txt" target="_blank">click here</a> for the original code.</p>
+
+    </article>
+
+    <!-- SLIDE: Next section -->
+    <article class='slide slide-list'>
+      <p class="centered vertically_centered"><a href="js_objects.html"><img src="assets/next_section_icon.gif" width="230" height="70" alt="Click to go to next section" /></a></p>
+    </article>
+
+  <!-- **************************************** -->  
+  </div>
+  <!-- END div id=presentation -->
+
+  <div class="centered" style="padding:5px;">(Use the left and right keyboard arrow keys to navigate within sections. Click the "next" arrow to move to the next section.)</div>
+
+  <script src='src/jquery.min.js'></script>
+  <script src="src/modernizr.js"></script>
+
+  <!-- Update these paths to point to the correct files. -->
+  <script src="src/jquery.tmpl.min.js"></script>
+  <script src="src/deck.js/core/deck.core.js"></script>
+
+  <!-- Code Mirror -->
+  <script src="src/codemirror/lib/codemirror.js"></script>
+  <script src="src/codemirror/mode/xml/xml.js"></script>
+  <script src="src/codemirror/mode/css/css.js"></script>
+  <script src="src/codemirror/mode/javascript/javascript.js"></script>
+  <script src="src/codemirror/mode/htmlmixed/htmlmixed.js"></script>
+
+  <!-- Prettify -->
+  <script src="src/prettify.js"></script>
+
+  <!-- Deck Core and extensions -->
+  <script src="src/deck.js/extensions/status/deck.status.js"></script>
+  <script src="src/deck.js/extensions/navigation/deck.navigation.js"></script>
+  <script src='src/deck.coder.js'></script>
+  <script src="src/deck.js/extensions/hash/deck.hash.js"></script>
+  <script src="src/deck.js/extensions/menu/deck.menu.js"></script>
+  <script>
+  $(function() {
+    $.deck('.slide');
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Planet Robot - Shipping</title>
+  <link rel="stylesheet" href="http://brennaobrien.com/LLC-JavaScript/exercises/shopping-cart.css" type="text/css" media="screen" />
+  <style>
+  /* Override the styles in the final CSS file */
+  #productListings {
+    margin: 10px;
+  }
+  #productListings .item ul li {
+  	display: block;
+  }
+  .price {
+  	font-weight: bold;
+  }
+  .discounted {
+  	color: #B1009A;
+  }
+  #saleNotice {
+  	width: 680px;
+  	text-align: center;
+  	line-height: 1em;
+  }
+  #saleNotice h3 {
+  	color: #B1009A;
+  }  
+  </style>
+
+  <script type="text/javascript">
+
+	// Use the productPrices array to calculate a populate the salePrices array
+  	var productPrices = new Array();
+  	productPrices[0] = 17.99;
+  	productPrices[1] = 25.00;
+  	productPrices[2] = 13.99;
+  	productPrices[3] = 9.99;
+  	productPrices[4] = 24.99;
+  	productPrices[5] = 8.99;
+  	productPrices[6] = 24.99;
+  	productPrices[7] = 10.00;
+  	productPrices[8] = 5.99;
+
+	function showSalePrices(password) {
+		var submittedPassword = document.getElementById("password").value;
+		if ( submittedPassword == "llc" ) {
+/* *** YOUR CODE _BELOW_ HERE **** */
+
+	  	var salePrices = new Array();
+
+	  	/* 1. Create a loop to get the value of each productPrices value */
+	  	/* 2. Discount each original price by 50% 
+	  	      and save this new price to the salePrices array
+	  	      at the matching index.  */ 
+
+
+
+	  	/* 3. updatePrices() accepts one parameter: an array of prices
+	  	      to automagically update the webpage's prices in purple text.
+	  	      So pass in the salesPrices array as a parameter to the updatePrices function. */
+		updatePrices();
+
+/* *** YOUR CODE ^ABOVE^ HERE **** */
+		}else{
+			alert("Sorry, that password didn't work.")
+		}
+	}
+
+  	function updatePrices(priceList){
+
+  		// get references to all html containers with class="price"
+  		var priceContainers = document.getElementsByClassName("price");
+  		var totalPriceContainers = priceContainers.length;
+
+  		if ( priceList != null && priceList.length > 0 ) {
+
+  			// truncate the passed in array (just in case extra items were added by accident.)
+  			if ( priceList.length > totalPriceContainers )
+  				priceList.length = totalPriceContainers;  
+
+  			// update the html containers with the "price" class
+  			for (var i=0; i<priceList.length; i++ ) {
+  				priceContainers[i].innerHTML = "$" + priceList[i];
+  				priceContainers[i].setAttribute("class", "price discounted");
+  			}
+
+  		}else{
+  			//there were no prices passed in!!
+  			alert("There were no sale prices passed in! HINT: Check your parameter when you call updatePrices().")
+  		}
+  	}
+
+  </script>
+
+</head>
+<body>
+
+  <div id="saleNotice">
+	  	<h3>Special members only sale!</h3>
+	  	<p>Enter in your secret passcode here to see the great prices:</p>
+	  	<div>
+	  		<input type="text" id="password" value="" />
+	  		<button onclick="showSalePrices()">Unlock prices</button>
+	  	</div>
+  	</div>
+
+	<div id="productListings">
+		<fieldset>
+			<div class="item">
+				<ul>
+					<li><img src="assets/earbuds.jpg" width="195" height="195" /></li>
+					<li>Transformers Ear buds</li>
+					<li class="price">$17.99</li>
+				</ul>
+			</div>
+			<div class="item">
+				<ul>
+					<li><img src="assets/gold-usb.jpg" width="195" height="195" /></li>
+					<li>Gold Robot USB</li>
+					<li class="price">$25.00</li>
+				</ul>					
+			</div>
+			<div class="item">
+				<ul>
+					<li><img src="assets/nesting-dolls.jpg" width="195" height="195" /></li>
+					<li>Robots &amp; Ninjas Nesting Dolls</li>
+					<li class="price">$13.99</li>
+				</ul>
+			</div>
+			<div class="item">
+				<ul>
+					<li><img src="assets/plush-android.jpg" width="195" height="195" /></li>
+					<li>Plush Android</li>
+					<li class="price">$9.99</li>
+				</ul>
+			</div>
+			<div class="item">
+				<ul>
+					<li><img src="assets/salt-pepper-shakers.jpg" width="195" height="195" /></li>
+					<li>Salt &amp; Pepper Shakers</li>
+					<li class="price">$24.99</li>
+				</ul>			
+			</div>
+			<div class="item">
+				<ul>
+					<li><img src="assets/stencil-kit.jpg" width="195" height="195" /></li>
+					<li>Stencil &amp; Pen Kit</li>
+					<li class="price">$8.99</li>
+				</ul>
+			</div>
+			<div class="item">	
+				<ul>
+					<li><img src="assets/t-shirt.jpg" width="195" height="195" /></li>
+					<li>T-shirt</li>
+					<li class="price">$24.99</li>
+				</ul>
+			</div>
+			<div class="item">
+				<ul>
+					<li><img src="assets/tea-infuser.jpg" width="195" height="195" /></li>
+					<li>Tea Infuser</li>
+					<li class="price">$10.00</li>
+				</ul>	
+			</div>
+			<div class="item">
+				<ul>
+					<li><img src="assets/wrapping-paper.jpg" width="195" height="195" /></li>
+					<li>Wrapping paper</li>
+					<li class="price">$5.99</li>
+				</ul>	
+			</div>				
+		</fieldset>
+	</div>
+	
+</body>
+</html>
