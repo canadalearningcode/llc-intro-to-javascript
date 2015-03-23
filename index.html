@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>Ladies Learning Code - Intro to JavaScript</title>
-  <meta name="viewport" content="width=device-width">
+  <meta name="viewport" content="width=1280">
 
   <!-- CoderDeck core and extension CSS files -->
   <link rel="stylesheet" href="src/deck.js/core/deck.core.css" type="text/css">
@@ -17,7 +17,6 @@
   <link rel="stylesheet" href="src/codemirror/theme/default.css">
 
   <!-- Custom for LLC -->
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Istok+Web' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Podkova' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" id='style-theme-link' href="src/css/coderdeck.css" type="text/css" >
@@ -25,38 +24,452 @@
 </head>
 
 <body class="deck-container">
-	<script type='text/coderdeck' id='coderdeck-default'>
-	  <html>
-	    <head>
-	      <script src='src/jquery.min.js'>SCRIPTEND</head>
-	    <body>CODE</body>
-	  </html>
-	  </script>
-	
-	  <script type='text/coderdeck' id='coderdeck-style-example'>
-	  <html>
-	    <title>test</title>
-	    <style>CODE</style>
-	    <body>
-	      <h1>I'm a H1 heading</h1>
-	      <h2>I'm a H2 heading</h2>
-	      <p>Pargraph of text &lt;p&gt; here</p>
-	      <div class='stuff'>I'm a div &lt;div&gt; with class "stuff"</div>
-	      <div id='my-div'>I'm a &lt;div&gt; with id "my-div"</div>
-	    </body>
-	  </html>
-	</script>
-	
+  <script type='text/coderdeck' id='coderdeck-default'>
+    <html>
+      <head>
+        <script src='src/jquery.min.js'>SCRIPTEND</head>
+      <body>CODE</body>
+    </html>
+    </script>
+  
+    <script type='text/coderdeck' id='coderdeck-style-example'>
+    <html>
+      <title>test</title>
+      <style>CODE</style>
+      <body>
+        <h1>I'm a H1 heading</h1>
+        <h2>I'm a H2 heading</h2>
+        <p>Pargraph of text &lt;p&gt; here</p>
+        <div class='stuff'>I'm a div &lt;div&gt; with class "stuff"</div>
+        <div id='my-div'>I'm a &lt;div&gt; with id "my-div"</div>
+      </body>
+    </html>
+  </script>
+  
   <div id="presentation">
   <!-- **************************************** -->  
+    <article class='slide slide-list'>
+      <h1 class="welcome">
+        Welcome to Ladies Learning Code!
+      </h1>
+      <p class="sponsor">In partnership with:<br>
+      <img src="assets/telus.png" width="300" alt="Telus logo"></p>
+      
+    </article>
+    <!-- SLIDE: Workshop intro -->
+    <article class='slide slide-title intro'>
+      <h1>Introduction to JavaScript</h1>
+  
+      <div class="instructor_holder">
+        <!-- <h2>Your instructor today</h2>
+        <p>Your name & pic</p>
+        <p><a href="mailto:">email</a><br>
+        <a href="http://" target="_blank">website</a><br>
+        <a href="http://twitter.com/" target="_blank">twitter</a></p>
+        <br> -->
+        <p>(Interactive code slides thanks to <a href="http://cykod.github.com/CoderDeck/" target="_blank" style="color: #999;">CoderDeck</a>!)</p>
+      </div>
+    </article>
+
+    <!-- SLIDE: Course Outline -->
+    <article class='slide slide-list'>
+      <h2>Course Outline</h2>
+      <h3 style="margin-top: 1em;">The morning</h3>
+      <ul>
+        <li><a href="index.html#slide-3">Development Environment: tools you need to get started</a></li>
+        <li><a href="index.html#slide-7">Technology Overview: Programming and JavaScript</a></li>
+        <li><a href="js_quick_start.html">Part 1: Getting started with variables and operators</a></li>
+        <li><a href="js_functions.html">Part 2: Functions</a></li>
+      </ul>
+      <h3 style="margin-top: 1em;">Afternoon</h3>
+      <ul>
+        <li><a href="js_conditionals.html">Part 3: Making decisions with conditionals</a></li>
+        <li><a href="js_objects.html">Part 4: Objects</a></li>
+        <li><a href="js_dom.html">Part 5: The DOM and manipulating objects on a HTML page</a></li>
+        <!-- <li><a href="js_arrays_loops.html">Part ??: Arrays and Loops</a></li> -->
+      </ul>
+      <h3 style="margin-top: 1em;">Homestretch</h3>
+      <ul>
+        <li><a href="jquery-indepth.html">jQuery Hands-on</a></li>
+        <li><a href="resources.html">Where to go from here?</a></li>
+      </ul>
+    </article>
+
+    <!-- SLIDE: Next section -->
+    <!-- <article class='slide slide-list'>
+      <p class="centered vertically_centered"><a href="tech_overview.html"><img src="assets/next_section_icon.gif" width="230" height="70" alt="Click to go to next section" /></a></p>
+    </article> -->
+    
+
+    <!-- SLIDE: Development Environment -->
+    <article class='slide slide-subhead'>
+      <h1>Development Environment</h1>
+      <p><strike style="color: #ccc;">&nbsp;3&nbsp;</strike> 2 tools you need to get started</p>
+    </article>
+
+    <!-- SLIDE: Web Browser -->
+    <article class='slide slide-list'>
+      <h2>1. Web Browser</h2>
+      <p>
+        Choose a modern web browser that has good, built-in development tools to help make building web pages easier.
+      </p>
+      <div class="centered contains_sidebyside_icons">
+        <a href="https://www.google.com/chrome" target="_blank"><img src="assets/new-chrome-logo.png" width="125" height="125" alt="Chrome" /></a>
+        <br/>
+        <a href="https://www.google.com/chrome" target="_blank">Google Chrome</a>
+      </div>
+      <br clear="all" />
+      <br />
+      <br />
+      <br />
+      <p class="sidenote centered">
+        (If you are unable to install Chrome:
+        <br />
+        install
+        <a href="http://www.mozilla.org/en-US/firefox/new/" target="_blank">Firefox</a> <b>and</b>
+        <a href="http://getfirebug.com/" target="_blank">Firebug</a>
+        .)
+      </p>
+    </article>
+
+    <!-- SLIDE: Code Editor -->
+    <article class='slide slide-list'>
+      <h2>2. Code Editor</h2>
+      <p>
+        There are many, many free and paid options* but let's keep it simple for our mentors today and just use the same editor.
+      </p>
+      <div class="centered contains_sidebyside_icons">
+        <a href="http://www.sublimetext.com" target="_blank"><img src="assets/SublimeTextIcon.jpg" width="125" height="125" alt="Sublime Text 2" /></a>
+        <br />
+        <a href="http://www.sublimetext.com/" target="_blank">Sublime Text</a>
+      </div>
+      <br clear="all" />
+      <br />
+      <br />
+      <br />
+      <p class="sidenote centered">
+         *Others include: <a href="http://macromates.com/" target="_blank">TextMate</a>, <a href="http://notepad-plus-plus.org/" target="_blank">Notepad++</a>, and <a href="http://www.barebones.com/products/textwrangler/" target="_blank">Text Wrangler</a>.
+        <br />
+        Ask a group of developers what they use and arguments will ensue -- it's a very personal choice! ;)
+      </p>
+    </article>
+
+    <!-- SLIDE: FTP -->
+    <article class='slide slide-list'>
+      <h2>3. File Transfer Program (FTP)</h2>
+      <p style="color: #999;">
+        Do you already have your own hosted website? FTP software will let you copy the files you work on today to somewhere where the rest of the world can see them!
+      </p>
+      <div class="centered contains_sidebyside_icons">
+        <a href="http://cyberduck.ch/" target="_blank"><img src="assets/Cyberduck_icon.png" width="125" height="125" alt="CyberDuck" /></a>
+        <br />
+        <a href="http://cyberduck.ch/" target="_blank">CyberDuck</a>
+      </div>
+      <br clear="all" />
+      <br />
+      <br />
+      <br />
+      <p class="sidenote centered" style="color: #999;">
+        Again, there are many, many free and paid options.
+        <br />
+        <a href="http://filezilla-project.org/" target="_blank">FileZilla</a>
+        is good when you're more advanced.
+      </p>
+    </article>
+
+    <!-- new slide -->
+    <article class='slide slide-subhead'>
+      <h1>Technology Overview</h1>
+      <p>Programming and JavaScript</p>
+    </article>
+
+    <!-- SLIDE: What is JavaScript? -->
+    <article class='slide slide-list'>
+      <h2>What is JavaScript?</h2>
+      <p class="centered" style="font-size: 2.5em; margin-top: 2em;">
+        It's a
+        <span class="keyword">programming language</span>
+        <br><br>
+    designed to <strong>run in your web browser</strong> to
+        <br><br>
+        <strong>manipulate content on web pages</strong>.
+      </p>
+    </article>
+
+    <!-- SLIDE: What is JavaScript? -->
+    <article class='slide slide-list'>
+      <h2>What is JavaScript?</h2>
+      <p class="centered" style="font-size: 2.5em; margin-top: 2em;">
+        It's a
+        <span class="keyword highlight">programming language</span>
+        <br><br>
+    designed to <strong>run in your web browser</strong> to
+        <br><br>
+        <strong>manipulate content on web pages</strong>.
+      </p>
+    </article>
+    
+    <!-- SLIDE: What is Programming? -->
+    <article class='slide slide-list'>
+      <h2>What is Programming?</h2>
+      <p>
+        A
+        <span class="keyword">program</span>
+        is a <strong>set of instructions</strong>
+        meant for a computer to execute.
+      </p>
+      <p>Computers are fast but blind.</p>
+      <p class="centered"><img src="assets/blindfold.gif" width="377" height="270" alt="As the first step to our new system integration, please take a blind fold."></p>
+    </article>
+
+    <!-- SLIDE: Instructions -->
+    <article class='slide slide-list'>
+      <h2>Better Code = Clearer Instructions</h2>
+      <p>
+      Think about a tourist that stops you to ask for directions:</p>
+      <p>
+      <strong>The clearer the instructions, the more likely they will get to their destination. </strong></p>
+<p class="centered"><img src="assets/Map.png" width="252" height="222" alt="Give clear directions" /></p>
+</article>
+
+
+    <!-- SLIDE: Instructions -->
+    <article class='slide slide-list'>
+      <h2>Break it down</h2>
+<p>Suppose I want a computer to say hello to using my name. </p>
+<p><strong>Break down the steps</strong> as much as possible: </p>
+<ol>
+    <li>Allow me to type in my name.</li>
+          <li>Remember my name.</li>
+          <li>Say &quot;Hello&quot; and repeat back my name.</li>
+          </ol>
+      </p>
+
+</article>
+
+
+    <!-- SLIDE:  What is a Programming Language? -->
+    <article class='slide slide-list'>
+      <h2>What is a Programming Language?</h2>
+      <p>
+      Programming is about having a <strong>conversation</strong> with your computer. </p>
+      <p>
+        Computers only understand things when you speak to them in a certain way. Much like English or any other natural language, programming is about sticking to grammar rules -- this is called
+        <span class="keyword">syntax</span>
+        .
+      </p>         
+        <p><img src="assets/beepbeep.jpg" height="300" alt="Beep beep" align="left" style="margin-right: 40px;" /> Computers have come a long way since their binary days (<code>0 1 0 0 1 0 0 0 0 1 0 0 0 1 0 1 0 1 0 0 1 1 0 0 0 1 0 0 1 1 0 0 0 1 0 0 1 1 1 1</code>) so meet them half-way.</p>
+        <br  clear="all" />
+    </article>
+
+    <!-- SLIDE:  What is a Programming Language? -->
+    <article class='slide slide-list'>
+      <h2>Example Programming Syntaxes</h2>
+      <p>Different programming languages have different syntax.</p>
+      <p>Here are two ways a computer could say hi to me:</p>
+      <p>
+        <strong>Java</strong></p>
+      <pre class="prettyprint">Scanner userInput = new Scanner(System.in);
+String name;
+System.out.print("What's your name? ");
+name = userInput.next();
+System.out.println("Hello, " + name);</pre>
+      
+      <p>
+        <strong>JavaScript</strong> ( <a href="exercises/hello-javascript.html" target="_blank">Try it out now!</a>
+        )</p>
+        
+      <pre class="prettyprint">var name;
+name = window.prompt("What's your name?",'');
+document.write("Hello, " + name);</pre>
+      
+    </article>
+    
+    <!-- SLIDE: JavaScript versus Java -->
+    <article class='slide slide-list'>
+      <h2>JavaScript versus Java</h2>
+      <p>
+      They might vaguely look the same (as a lot of programming languages do) but <strong>they are not related at all</strong>. </p>
+      <p class="centered">
+        <img src="assets/llcodedotcom_hamster.gif" width="544" height="220" alt="Java is to JavaScript as ham is to hamster." />
+      </p>
+      <p class="centered sidenote">(Java was really popular at the time so Netscape just hijacked the name.) </p>
+    </article>
+    
+    
+        <!-- SLIDE: What is JavaScript? -->
+    <article class='slide slide-list'>
+      <h2>What is JavaScript?</h2>
+      <p class="centered" style="font-size: 2.5em; margin-top: 2em;">
+        It's a
+        <span class="keyword">programming language</span>
+        <br><br>
+    designed to <strong class="highlight">run in your web browser</strong> to
+        <br><br>
+        <strong>manipulate content on web pages</strong>.
+      </p>
+    </article>
+    
+    <!-- SLIDE:  JavaScript in the Browser -->
+    <article class='slide slide-list'>
+      <h2>JavaScript in the Browser</h2>
+      <p>
+        C++, Java, and .NET are also programming languages but they can be run directly by the <strong>operating system</strong>
+        (e.g. Windows, Mac, Linux).
+      </p>
+      <p>
+        JavaScript is typically meant to be run in a
+        <strong>web browser</strong>
+        (e.g. Safari, Firefox, Chrome, Internet Explorer).
+      </p>
+      <p class="centered">
+        <img src="assets/scripting.gif" width="586" height="224" alt="Different programmig languages and the environments they run in" />
+      </p>
+    </article>
+
+    <!-- SLIDE:  Web Programming Languages: Server-side vs Client-side-->
+    <article class='slide slide-list'>
+      <h2>Web Programming Languages: Server-side vs Client-side</h2>
+      <p><img src="assets/clientversusserver.gif" width="400" height="400" alt="" align="right" style="margin-left: 30px;" /></p>
+      <p>
+      Java, .NET, PHP or Ruby can be considered <strong>server-side or &quot;back-end&quot;</strong> web technology because the code is typically compiled and executed by the <em>operating system</em> of a computer serving up web pages. </p>
+      <p>
+      JavaScript is referred to as a <strong>client-side or &quot;front-end&quot;</strong> web technology because it's interpreted by the <em>web browser</em>. </p>
+
+    </article>
+
+    <!-- SLIDE:  -->
+    <article class='slide slide-list'>
+      <h3>Simple Client-Side Code Check</h3>
+      <p><br>
+        <img src="assets/llcodedotcom_viewsource.gif" width="468" height="362" alt="Right-click to View Source" align="left" style="margin-right: 50px;" />
+      </p>
+      <p>
+        <br>
+At any time, someone can <strong>right-click and &quot;view source&quot;</strong> on a web page to see all the JavaScript that went into it.</p>
+<p class="sidenote">(I suggest that you do this yourself every time you see something you like!)</p>
+      </p>
+      <br  clear="all" />
+      <p>
+        Whereas for server-side code, it's sometimes a mystery what technology is running on a server.
+      </p>
+    </article>
+
+    
+        <!-- SLIDE: What is JavaScript? -->
+    <article class='slide slide-list'>
+      <h2>What is JavaScript?</h2>
+      <p class="centered" style="font-size: 2.5em; margin-top: 2em;">
+        It's a
+        <span class="keyword">programming language</span>
+        <br><br>
+    designed to <strong>run in your web browser</strong> to
+        <br><br>
+        <strong class="highlight">manipulate content on web pages</strong>.
+      </p>
+    </article>
+
+    <!-- SLIDE: The Web Triad -->
+    <article class='slide slide-list'>
+      <h2>The Web Triad</h2>
+      <p>
+        JavaScript was meant to manipulate webpages written in HTML and works in tandem with CSS.
+      </p>
+      <table width="100%">
+      <tr>
+      <td width="33%" class="centered"><strong>HTML</strong> (Hypertext Markup Language) <br>
+          is the markup language.</td>
+      <td width="33%" class="centered"><strong>CSS</strong> (Cascading Style Sheets) <br>
+          is the style sheet language.</td>
+      <td width="33%" class="centered"><strong>JavaScript</strong><br>
+          is the programming language.</td>
+      </tr>
+            <tr>
+      <td class="centered"><img src="assets/TRIAD-html.gif" width="267" height="241" alt="content layer"></td>
+      <td class="centered"><img src="assets/TRIAD-css.gif" width="261" height="241" alt="Presentation Layer" /></td>
+      <td class="centered"><img src="assets/TRIAD-js.gif" width="274" height="241" alt="Behaviour Layer" /></td>
+      </tr>
+            <tr>
+      <td class="centered">It should define the <strong>content</strong>.</td>
+      <td class="centered">It should define the <strong>presentation</strong></td>
+      <td class="centered">It should define <strong>behaviour</strong>.</td>
+      </tr>
+      </table>
+    </article>
+
+    <!-- SLIDE:  -->
+    <article class='slide slide-list'>
+      <h2>JavaScript in Different Browsers</h2>
+      <p class="reminders">
+        For the most part, JavaScript will run the same in various web browsers but sometimes they say &quot;hi&quot; with different accents.</p><p> Imagine a British accent versus a Texas accent -- it's still English underneath but there's some variations and unique slang.</p>
+        <p>This is especially noticeable with newer &quot;HTML5&quot; features.<br>
+<span class="sidenote"> <em>Insert Internet Explorer joke here. ;)</em></span></p>
+      
+    </article>
+
+    <!-- SLIDE:  -->
+    <article class='slide slide-list'>
+      <h2>A JavaScript Experiment</h2>
+      <p>
+        JavaScript is essential for &quot;AJAX&quot;, &quot;Web 2.0&quot;, and &quot;HTML5&quot; websites.
+      </p>
+      <p>
+        <strong>Try this experiment:</strong> Turn off JavaScript in your web browser. Go to the JavaScript settings for Chrome (
+        <code>chrome://settings/content</code>
+        ) and select &quot;Do not allow any site to run JavaScript&quot;
+      </p>
+      <p>Then  visit your daily sites.</p>
+      <p>
+        e.g.
+        <a href="http://google.com" target="_blank">Google</a>
+        ,
+        <a href="http://facebook.com" target="_blank">Facebook</a>
+        ,
+        <a href="http://twitter.com" target="_blank">Twitter</a>
+      </p>
+      <p> <em>(Remember to turn JavaScript back on to see this presentation!)</em> 
+      </p>
+    </article>
+
+    <!-- SLIDE:  -->
+    <article class='slide slide-list'>
+      <h2>A JavaScript Experiment: Results</h2>
+      <p>Note the sometimes subtle and sometimes major differences:</p>
+      <ul>
+        <li>
+          No search auto-completion and instant page refreshes on google.com
+        </li>
+        <li>
+          No inline video content or lightboxed photo viewers on facebook.com -- not to mention broken &quot;Like&quot; buttons and inability to comment on posts!
+        </li>
+        <li>
+          On twitter.com - the "more" link doesn't work, can't expand tweets inline, the media gallery doesn't show.
+        </li>
+        <li>
+        And you can't <strong>see</strong> it but most analytics tracking won't work either. </li>
+      </ul>
+      <p>
+        <strong>The modern web just sort of gives up without JavaScript!</strong>
+      </p>
+    </article>
+
+    <!-- SLIDE:  -->
+    <article class='slide slide-list'>
+      <h3>JavaScript helps make very nice websites!</h3>
+      <p>
+        Especially &quot;one-page apps&quot; where the experience is very seamless. 
+      </p>
+      <p class="centered">
+      <a href="http://thenewdesignguidelines.derekevanharms.com/" target="_blank"><img src="assets/thenewdesignguidelines.gif" width="800" height="479" alt="The new web design guidelines" /></a>      <br>
+
+      
+      <span class="sidenote">Like
+        <a href="http://thenewdesignguidelines.derekevanharms.com/" target="_blank">this one</a></span></p>
+    </article>
 
     <!-- SLIDE: Next section -->
     <article class='slide slide-list'>
-      <div class="centered get-started">
-        <p>Before we begin, download the <strong>zip</strong> file containing the slides and hands-on exercise code from: <a href="https://github.com/ladieslearningcode/JavaScript">https://github.com/ladieslearningcode/JavaScript</a></p>
-        <h2>Let's get started!</h2>
-        <p><a href="intro.html"><img src="assets/next_section_icon.gif" width="230" height="70" alt="Click to go to next section" /></a></p>
-      </div>
+      <p class="centered vertically_centered"><a href="js_quick_start.html"><img src="assets/next_section_icon.gif" width="230" height="70" alt="Click to go to next section" /></a></p>
     </article>
   
   <!-- **************************************** -->  

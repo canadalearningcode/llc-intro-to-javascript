@@ -204,7 +204,7 @@ want to write a longer message */
       <p><span class="keyword">Declare</span> variables with the keyword <strong><code>var</code></strong>.</p>
       <pre class='prettyprint'>var email;</pre>
       <p><span class="keyword">Assign</span> a value to the variable using the equals (<code>=</code>) sign.</p>
-      <pre class='prettyprint'>email = "hi@brennaobrien.com";</pre>
+      <pre class='prettyprint'>email = "hi@youremail.com";</pre>
       <p>Now the computer will remember my email address!</p>
       <div class="reminders">
         <p>Take note that the value of the variable is written between quotes.<br />
@@ -274,10 +274,10 @@ SCRIPTEND</script>
       <p>Ending a statement with a semicolon is like ending a sentence with a period.</p>
       <p>You can also declare a variable with one or two statements.</p>
 <pre class='prettyprint'>var email;
-email = "hi@brennaobrien.com";
+email = "hi@youremail.com";
 </pre>
 <p>is the same as</p>
-<pre class='prettyprint'>var email = "hi@brennaobrien.com";</pre>
+<pre class='prettyprint'>var email = "hi@youremail.com";</pre>
     </article>
 
 
@@ -289,7 +289,7 @@ email = "hi@brennaobrien.com";
       <p>Below is an example of a variable for your name. Try creating another variable for your email address.  Output the values using <code>document.write()</code>.</p>
 <textarea class='coder-editor coder-editor-full'>SCRIPT
 
-  var name = "Brenna";
+  var name = "Your Name";
   document.write(name);
 
   document.write("<br />"); //just a line break
@@ -299,12 +299,12 @@ email = "hi@brennaobrien.com";
 SCRIPTEND</textarea>
 <script type='coder-solution'>SCRIPT
   
-  var name = "Brenna";
+  var name = "Your Name";
   document.write(name);
 
   document.write("<br />"); //just a line break
 
-  var email = "hi@brennaobrien.com";
+  var email = "hi@youremail.com";
   document.write(email);
 
 SCRIPTEND</script>
@@ -448,8 +448,8 @@ SCRIPTEND</script>
       JavaScript ignores whitespace except when used in a string.</p>
 <pre class="prettyprint">
 // both statements are the same to JavaScript
-var name=&quot;Brenna&quot;;
-var name = &quot;Brenna&quot;;
+var name=&quot;Your Name&quot;;
+var name = &quot;Your Name&quot;;
 </pre>
 <textarea class='coder-editor coder-editor-full'>SCRIPT
 
@@ -646,7 +646,7 @@ SCRIPTEND</script>
       <p>You can concatenate variables, strings or a combination of both.</p>  
 <textarea class='coder-editor coder-editor-full'>
 <script>
-  document.write("Hello " + "Brenna." + "<br />");
+  document.write("Hello " + "Your Name." + "<br />");
 
   var greeting = "Hello";
   var name = " Your name.";

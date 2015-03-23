@@ -3,7 +3,7 @@ html, body {
   color: #222;
   margin: 0;
   padding: 0;
-  /*background: url(../../assets/ladieslearningcode-125x125.gif) 10px -10px no-repeat;*/
+  background: url(../../assets/ladieslearningcode-125x125.gif) 10px -10px no-repeat;
   /*border-top: 7px #b1009a solid;*/
 }
 h1, h2, h3 {
@@ -379,4 +379,12 @@ span.marker {
   .instructor_holder a {
     text-decoration: none;
   }
+
+.csstransforms .deck-container h1.welcome {
+  top: 34%;
+}
+.deck-container p.sponsor {
+  text-align: center;
+  margin-top: 30%;
+}
 
