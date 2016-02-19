@@ -6,3 +6,18 @@
               url(../img/banner-home1.jpg) no-repeat;
   background-size: cover;
 }
+
+.steps {
+  img {
+    vertical-align: top;
+    margin: 0 20px 40px 10px;
+    width: 275px;
+  }
+}
+.triad {
+  img {
+    float: left;
+    margin-right: 20px;
+    width: 40%;
+  }
+}

@@ -98,29 +98,37 @@
       </ul>
     </section>
 
-    <section class="slide title">
-      <h1>Development Environment</h1>
-      <h2>Tools you need to get started</h2>
+    <section class="slide title" data-markdown>
+      <script type="text/template">
+        # Development Environment
+        ## Tools you need to get started
+      </script>
+    </section> 
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Web Browser
+
+        Choose a modern web browser that has good, built-in development tools to help make building web pages easier. Today we'll all use [Google Chrome](https://www.google.com/chrome) for simplicity.
+
+        [![Chrome](framework/img/workshop/new-chrome-logo.png)](https://www.google.com/chrome/browser/)
+
+        ---
+        ###Resource
+        Get more info about browsers here: http://browsehappy.com
+
+      </script>
     </section>
 
-    <section class="slide centered">
-      <h1>Web Browser</h1>
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Code Editor
 
-      <p>Choose a modern web browser that has good, built-in development tools to help make building web pages easier. Choose Firefox or Chrome! (Today we'll all use Chrome for simplicity) </p>
-      <p><a href="https://www.google.com/chrome/browser/"><img src="framework/img/workshop/new-chrome-logo.png" alt="Chrome"/></a></p>
-
-      <p><a href="https://www.google.com/chrome">Google Chrome</a></p>
-    </section>
-
-    <section class="slide centered">
-      <h1>Code Editor</h1>
-
-      <p>There are many, many free and paid options but let's keep it simple for our mentors today and just one of these two to edit our code.</p>
-
-      <p>
-        <a href="http://brackets.io/"><img width="200"  src="framework/img/workshop/brackets-logo.png" alt="Brackets"/></a>
-        <a href="https://atom.io/"><img width="200" src="framework/img/workshop/atom-logo.png" alt="Atom"/></a>
-      </p>
+        There are many, many free and paid options. Today we'll be using [Atom](https://atom.io/). If you cannot download Atom, try [Brackets](http://brackets.io/).
+        
+        ![Atom Logo](framework/img/workshop/atom-logo.png)
+        ![Brackets Logo](framework/img/workshop/brackets-logo.png)
+      </script>
     </section>
 
     <section class="slide">
@@ -181,180 +189,217 @@
       <p>The command you input into the console gets <em>evaluated</em> and a value is returned back to you.</p>
     </section>
 
-    <section class="slide title">
-      <h1>Technology Overview</h1>
-      <h2>Programming and JavaScript</h2>
+    <section class="slide title" data-markdown>
+      <script type="text/template">
+        # Technology Overview
+        ## Programming and JavaScript
+      </script>
     </section>
 
-    <section class="slide title">
-      <h1>What is JavaScript?</h1>
-      <h2 class="delayed">It's a programming language</h2>
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #What is JavaScript?
+        
+        It's a programming language.<!-- .element: class="delayed" -->
+        
+        A program is a set of instructions meant for a computer to execute.  Computers are fast but blind.<br><br><!-- .element: class="delayed" -->
+        ![rawbot computers](framework/img/workshop/rawbot-computers.png)<!-- .element: style="height:45vh;" -->
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Programming is giving instructions to your computer
+
+        Think about a tourist that stops you to ask for directions. The clearer the instructions, the more likely they will get to their destination.
+
+        ![rawbot directions](framework/img/workshop/rawbot-directions.png) <!-- .element: style="height:50vh;" -->
+      </script>
+    </section>
+    
+    <section class="slide steps" data-markdown>
+      <script type="text/template">
+        # Break your goal down into steps
+        
+        Suppose I want a computer to say hello using my name. **Break down the steps** as much as possible:
+        
+        <ol>
+          <li class="delayed">
+            <img src="framework/img/workshop/name-text-rawbot.gif" alt="allow to type name"> Allow me to type in my name.
+          </li>
+          <li class="delayed">
+            <img src="framework/img/workshop/remember-name-rawbot.gif" alt="remember my name"> Remember my name.
+          </li>
+          <li class="delayed">
+            <img src="framework/img/workshop/say-my-name-rawbot.png" alt="say hello"> Say "Hello" and repeat back my name.
+          </li>
+        </ol>
+      </script>
+    </section>
+    
+    <section class="slide highlight" data-markdown>
+      <script type="text/template">
+        # Speak the computer's language
+
+        Programming is like having a conversation with your computer. Computers only understand instructions when you speak to them in a language they can understand. 
+        
+        Much like Japanese, English or any other natural language, programming is about sticking to "grammar rules" called *syntax*.
+
+        **Syntax** is the set of rules that defines the combinations of symbols that are a correctly structured document or fragment in that language.
+      </script>
     </section>
 
-    <section class="slide">
-      <h2>What is Programming?</h2>
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Speak the computer's language
 
-      <p>A program is a set of instructions meant for a computer to execute</p>
-      <p>Computers are fast but blind</p>
-      <img src="framework/img/workshop/rawbot-computers.png" alt="rawbot computers" style="height:50vh" />
+        Computers have come a long way since their binary days so meet them half-way.
+
+        ![computer binary](framework/img/workshop/rawbot-binary.png)
+      </script>
     </section>
-
-    <section class="slide">
-      <h2>Programming is giving instructions to your computer</h2>
-      <p>Think about a tourist that stops you to ask for directions:</p>
-      <p>The clearer the instructions, the more likely they will get to their destination.</p>
-      <p><img src="framework/img/workshop/rawbot-directions.png" alt="rawbot directions" style="height:50vh"/></p>
-    </section>
-
-    <section class="slide">
-      <h2>Break your goal down into steps</h2>
-
-      <p>Suppose I want a computer to say hello using my name.</p>
-
-      <p><b>Break down the steps</b> as much as possible:
-
-      <ol>
-        <li class="delayed">Allow me to type in my name.
-          <p><img class="right-align" src="framework/img/workshop/name-text-rawbot.gif" alt="allow to type name" height="100"/></p>
-        </li>
-        <li class="delayed">Remember my name.
-          <p><img class="right-align" src="framework/img/workshop/remember-name-rawbot.gif" alt="remember my nane" height="80"/></p>
-        </li>
-        <li class="delayed">Say "Hello" and repeat back my name.
-          <p><img class="right-align" src="framework/img/workshop/say-my-name-rawbot.png" alt="say hello" height="80"/></p>
-        </li>
-      </ol>
-    </section>
-
-    <section class="slide">
-      <h2>Speak the computer's language</h2>
-
-      <p class="delayed">Programming is like having a conversation with your computer. You write to it using a programming language and give it instructions this way.</p>
-
-      <p class="delayed">Computers only understand instructions when you speak to them in a language they can understand. Much like Japanese, English or any other natural language, programming is about sticking to grammar rules called <span class="highlight-text">syntax.</span></p>
-
-      <small class="delayed">Syntax - is the set of rules that defines the combinations of symbols that are considered to be a correctly structured document or fragment in that language.</small>
-    </section>
-
-    <section class="slide">
-      <h2>Speak the computer's language</h2>
-
-      <p>Computers have come a long way since their binary days</p>
-      <p><img src="framework/img/workshop/rawbot-binary.png" alt="computer binary"/></p>
-      <p>(<code>0 1 0 0 1 0 0 0 0 1 0 0 0 1 0 1 0 1 0 0 1 1 0 0 0 1 0 0 1 1 0 0 0 1 0 0 1 1 1 1</code>) so meet them half-way.</p>
-    </section>
-
+    
     <section class="slide title">
       <h1>Sample Code Incoming!!<br /><br />
       <img src="framework/img/workshop/rawbot-face.png" alt="robot face" /></h1>
     </section>
 
-    <section class="slide">
-      <h2>Example Programming Syntaxes</h2>
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Example Programming Syntaxes
+        
+        ![](framework/img/workshop/hi-rawbot.png)<!-- .element: style="width:250px;float:right;"-->
+        Different programming languages have different syntax. Here are two ways a computer could say hi:
 
-      <p>Different programming languages have different syntax.</p>
+        ## Java
+        
+        ```
+        Scanner userInput = new Scanner(System.in);
+        String name;
+        System.out.print("What's your name? ");
+        name = userInput.next();
+        System.out.println("Hello, " + name);
+        ```
+        
+        ## Javascript
+        ```
+        var name;
+        name = window.prompt("What's your name?",'');
+        document.write("Hello, " + name);
+        ```
+      </script>
+    </section>
+  
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # JavaScript versus Java
 
-      <p>Here are two ways a computer could say hi to me:
-        <img src="framework/img/workshop/hi-rawbot.png" align="right" height="100">
-      </p>
+        They might vaguely look the same (as a lot of programming languages do) but they are not related at all.
 
-      <h3>Java</h3>
+        ![java javascript](framework/img/workshop/java-javascript-rawbot.png)
 
-      <pre><code>Scanner userInput = new Scanner(System.in);
-String name;
-System.out.print("What's your name? ");
-name = userInput.next();
-System.out.println("Hello, " + name);</code></pre>
+        (Java was really popular at the time so Netscape just hijacked the name.)<!-- .element: class="note" -->
+      </script>    
+    </section>
+    
+    <section class="slide centered" data-markdown>
+      <script type="text/template">
+        # JavaScript in the Browser
 
-      <h3>Javascript</h3>
-      <pre><code>var name;
-name = window.prompt("What's your name?",'');
-document.write("Hello, " + name);</code></pre>
+        C++, Java, and .NET are also programming languages but they can be run directly by the operating system (e.g. Windows, Mac, Linux).
+
+        ![computer diagram](framework/img/workshop/computer-diagram-os-languages.gif)<!-- .element: style="height:55vh;width:auto;" -->
+      </script>
+    </section>
+    
+    <section class="slide centered" data-markdown>
+      <script type="text/template">
+        # JavaScript in the Browser
+
+        JavaScript is typically meant to be run in a web browser<br> (e.g. Safari, Firefox, Chrome, Internet Explorer).
+
+        ![javascript gears diagram](framework/img/workshop/javascript-gears.gif)<!-- .element: style="height:55vh;width:auto;" -->
+      </script>
     </section>
 
-    <section class="slide">
-      <h2>JavaScript versus Java</h2>
+    <section class="slide centered" data-markdown>
+      <script type="text/template">
+        # Server-side vs Client-side
 
-      <p>They might vaguely look the same (as a lot of programming languages do) but they are not related at all.</p>
+        ![front end back end diagram](framework/img/workshop/backend-frond-end-gif.gif)
 
-      <p><img src="framework/img/workshop/java-javascript-rawbot.png" alt="java javascript"/></p>
-      <small>(Java was really popular at the time so Netscape just hijacked the name.)</small>
+        **JavaScript** is often referred to as a _client-side_ or _"front-end"_ web technology because it is interpreted by the web browser.
+      </script>
+    </section>
+    
+    <section class="slide centered" data-markdown>
+      <script type="text/template">
+        # Server-side vs client-side
+
+        ![computer diagram](framework/img/workshop/backend-frond-end-server-gif.gif)<!-- .element: width="62%" -->
+
+        Java, .NET, PHP or Ruby can be considered *server-side* or *"back-end"* web technology because the code is typically compiled and executed by the operating system of a computer serving up web pages. 
+        
+        
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Simple Client-Side Code Check
+        
+        ![computer diagram](framework/img/workshop/llcodedotcom_viewsource.gif)<!-- .element: class="left" -->
+
+        On any web page, you can **right-click** and **view source** OR **CTRL/CMD-U** to see all the client side language code. That includes JavaScript as well as HTML and CSS. (Try it!) 
+
+        For server-side code, it can't be seen in the browser so it's sometimes a mystery what technology is running on a server.
+        
+        JavaScript can be used for server-side programs too, but today we'll be focusing on the browser.
+      </script>
     </section>
 
-    <section class="slide title">
-      <h1>What is JavaScript?</h1>
-      <h2 class="delayed">It's a programming language</h2>
-      <h2 class="delayed">that was designed to run in your web browser</h2>
+    <section class="slide triad" data-markdown>
+      <script type="text/template">
+        # The Web Triad: HTML, CSS, JavaScript
+
+        **JavaScript** was meant to manipulate webpages written in **HTML** and works in tandem with **CSS**.
+
+        ![web triad html diagram](framework/img/workshop/web-triad-html.png)
+
+        **HTML** (Hypertext Markup Language) is the markup language.
+
+        it should define the **content**.
+      </script>
     </section>
+    
+    <section class="slide triad" data-markdown>
+      <script type="text/template">
+        # The Web Triad: HTML, CSS, JavaScript
+        
+        **JavaScript** was meant to manipulate webpages written in **HTML** and works in tandem with **CSS**.
 
-    <section class="slide centered">
-      <h2>JavaScript in the Browser</h2>
+        ![web triad css diagram](framework/img/workshop/web-triad-css.png)
 
-      <p class="delayed bigger-text">C++, Java, and .NET are also programming languages but they can be run directly by the operating system (e.g. Windows, Mac, Linux). </p>
-      <img class="delayed" src="framework/img/workshop/computer-diagram-os-languages.gif" alt="computer diagram" height="460" />
+        **CSS** (Cascading Style Sheets) is the style sheet language.
+
+        it should define the **presentation**
+      </script>
     </section>
+    
+    <section class="slide triad" data-markdown>
+      <script type="text/template">
+        # The Web Triad: HTML, CSS, JavaScript
+        
+        **JavaScript** was meant to manipulate webpages written in **HTML** and works in tandem with **CSS**.
 
-    <section class="slide centered">
-      <h2>JavaScript in the Browser</h2>
+        ![web triad javscript diagram](framework/img/workshop/web-triad-javascript.gif)
 
-      <p class="delayed bigger-text">JavaScript is typically meant to be run in a web browser (e.g. Safari, Firefox, Chrome, Internet Explorer).</p>
-      <img class="delayed" src="framework/img/workshop/javascript-gears.gif" alt="javascript gears diagram" height="450" />
+        **JavaScript** is the programming language
+
+        it should define the **behaviour**
+      </script>
     </section>
-
-    <section class="slide centered">
-      <h2>Web Programming Languages: Server-side vs Client-side</h2>
-
-      <img class="delayed" src="framework/img/workshop/backend-frond-end-gif.gif" alt="front end back end diagram" height="450" />
-      <p class="delayed"><span class="highlight-text">javascript</span> is often referred to as a <span class="highlight-text">client-side or "front-end"</span> web technology because it is interpreted by the web browser.</p>
-   </section>
-
-    <section class="slide centered">
-      <h2>web programming languages: server-side vs client-side</h2>
-
-      <img class="delayed" src="framework/img/workshop/backend-frond-end-server-gif.gif" alt="computer diagram" height="450" />
-      <p class="delayed"><span class="highlight-text">Java, .NET, PHP or Ruby</span> can be considered <span class="highlight-text">server-side or "back-end"</span> web technology because the code is typically compiled and executed by the operating system of a computer serving up web pages. JavaScript can be used for server-side programs too, but today we'll be focusing on the browser.  </p>
-    </section>
-
-    <section class="slide">
-      <h2>Simple Client-Side Code Check</h2>
-
-      <img class="delayed" src="framework/img/workshop/llcodedotcom_viewsource.gif" alt="computer diagram" align="left" style="margin:30px" />
-      <p class="delayed bigger-text">At any time, someone can <span class="highlight-text">right-click and "view source" OR CTRL/CMD-U</span> on a web page to see all the JavaScript that went into it.</p>
-      <small class="delayed">(I suggest that you do this yourself every time you see something you like!)</small><br /><br /><br /><br /><br />
-      <p class="delayed bigger-text">Whereas for server-side code, it's sometimes a mystery what technology is running on a server.</p>
-    </section>
-
-    <section class="slide title">
-      <h1>What is JavaScript?</h1>
-      <h2 class="delayed">It's a programming language</h2>
-      <h2 class="delayed">that was designed to run in your web browser</h2>
-      <h2 class="delayed">to manipulate content on web pages.</h2>
-    </section>
-
-    <section class="slide">
-      <h2>The Web Triad</h2>
-      <p><span class="highlight-text">JavaScript</span> was meant to manipulate webpages written in <span class="highlight-text">HTML</span> and works in tandem with <span class="highlight-text">CSS</span>. </p>
-      <img class="delayed" src="framework/img/workshop/web-triad-html.png" alt="web triad html diagram" height="550" align="left"/>
-      <p class="delayed bigger-text"><span class="highlight-text">HTML</span> (Hypertext Markup Language) is the markup language</p>
-      <p class="delayed bigger-text">it should define the <span class="highlight-text">content</span></p>
-    </section>
-
-    <section class="slide">
-      <h2>The Web Triad</h2>
-      <p><span class="highlight-text">JavaScript</span> was meant to manipulate webpages written in <span class="highlight-text">HTML</span> and works in tandem with <span class="highlight-text">CSS</span>. </p>
-      <img class="delayed" src="framework/img/workshop/web-triad-css.png" alt="web triad css diagram" height="550" align="left"/>
-      <p class="delayed bigger-text"><span class="highlight-text">CSS</span> (Cascading Style Sheets) is the style sheet language.</p>
-      <p class="delayed bigger-text">it should define the <span class="highlight-text">presentation</span></p>
-    </section>
-
-    <section class="slide">
-      <h2>The Web Triad</h2>
-      <p><span class="highlight-text">JavaScript</span> was meant to manipulate webpages written in <span class="highlight-text">HTML</span> and works in tandem with <span class="highlight-text">CSS</span>. </p>
-      <img class="delayed" src="framework/img/workshop/web-triad-javascript.gif" alt="web triad javscript diagram" align="left" height="550"/>
-      <p class="delayed bigger-text"><span class="highlight-text">JavaScript</span> is the programming language</p>
-      <p class="delayed bigger-text">it should define the <span class="highlight-text">behaviour</span></p>
-    </section>
-
+    
     <section class="slide">
       <h2>JavaScript in Different Browsers</h2>
       <p class="delayed"><img src="framework/img/workshop/rawbot-reminder.png" alt="robot reminder" align="left" height="80"/>Usually JavaScript will run the same way in various browsers.</p>
