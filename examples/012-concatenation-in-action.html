@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <title>JavaScript example!</title>
+    <script>
+      var quantity = 0;
+
+      function addItem(){
+        quantity = quantity + 1;
+        refreshTotal();
+      }
+      function removeItem(){
+        quantity = quantity - 1;
+        refreshTotal();
+      }
+      function refreshTotal() {
+        //this will update the HTML textfield
+        document.getElementById('updateQuantity').value = quantity;
+
+        //EXAMPLE: Use concatenation to add a human readable $ sign to the price
+        var totalCost = quantity * 20; //quantity * fixed price OF $20
+        //var totalCostToShow =
+
+        //this will update the HTML textfield
+        document.getElementById('updateTotal').value = totalCost;
+      }
+    </script>
+    <link rel="stylesheet" href="exercises/slides.css" type="text/css" media="screen" />
+  </head>
+  <body>
+    <div class="item">
+      <img src="../exercises/assets/plush-android.jpg" width="195" height="195" /><br />
+      <button onclick="addItem();">Add</button>
+      <button onclick="removeItem();">Remove</button><br />
+      Quantity
+      <input type="text" id="updateQuantity" value="0" readonly /><br />
+      Total Cost:
+      <input type="text" id="updateTotal" value="0" readonly />
+    </div>
+  </body>
+</html>

@@ -1,0 +1,70 @@
+<html>
+  <head>
+    <title>jQuery</title>    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$('a.hide').click(function(){
+			     $('#box').hide();
+			});
+			$('a.show').click(function(){
+			     $('#box').show();
+			});
+			$('a.fade').click(function(){
+			     $('#box').fadeOut();
+			});
+			$('a.toggle').click(function(){
+			     $('#box').toggle();
+			});
+			$('a.slide-up').click(function(){
+			     $('#box').slideUp();
+			});
+			$('a.slide-toggle').click(function(){
+			     $('#box').slideToggle();
+			});
+			
+			$("a").click(function(){
+				//$("a").removeClass("active");
+				//$("a").addClass("active");
+				//$(this).addClass("active");
+			});
+ 		});
+	</script>
+	<style>
+		#container {
+			margin: 0 auto;
+			width: 320px;
+			padding-top: 10px;
+		}
+		#box {
+			height: 60px;
+			width: 240px;
+			background-color: blue;
+			padding: 40px;
+			margin-top: 10px;
+		}
+		a {
+			font: 14px Georgia, serif;
+			text-decoration: none
+		}
+		a.active {
+			color: pink;
+		}		
+	</style>
+  </head>
+  <body>
+	<div id="container">  
+		<p>jQuery effects</p> 
+		<a class="hide" href="#">Hide</a> | 
+		<a class="show" href="#">Show</a> |
+		<a class="fade" href="#">Fade</a> |
+		<a class="toggle" href="#">Toggle</a> |
+		<a class="slide-up" href="#">Slide Up</a> |
+		<a class="slide-toggle" href="#">Slide Toggle</a>
+		
+		<div id="box"></div>
+		
+		<p>See full API: <a href="http://api.jquery.com/">http://api.jquery.com</a></p>
+	</div>
+  </body>
+</html>

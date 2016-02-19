@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Shoes n' Cupcakes</title>
+	<link href='http://fonts.googleapis.com/css?family=Allura' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="shopping-cart.css">
+	<script type="text/javascript">
+		var productArray = new Array();
+		productArray[0]=99.99;
+		productArray[1]=39;
+		productArray[2]=79.99;
+		productArray[3]=59.99;
+		productArray[4]=2.50;
+		productArray[5]=25;
+		productArray[6]=30;
+		productArray[7]=15;
+		
+		//Calculates totals for selected items
+		function itemTotal() {
+			var totalPrice = 0;
+			//gets the value of the checked form items
+			var selectedProducts = document.shoppingForm.elements["product"];
+			
+	  		for (i=0; i < productArray.length; i++) {
+				//checks for selected checkboxes	
+	    		if (selectedProducts[i].checked) { 
+					//Updates the totalPrice to reflect the total of selected items
+					totalPrice = totalPrice + productArray[selectedProducts[i].value];					
+				} 
+	  		}
+			//returns the value of the total of selected items
+			return totalPrice;
+		}				
+
+		//Gets the item totals and outputs it into the final total input box
+		function calculateTotal(){
+			/* the value of totalPrice returned in the itemTotal() function is now 
+			being declared as the value of finalTotal */
+			var finalTotal = itemTotal();s
+			document.getElementById('totalPrice').value = ("$" + finalTotal.toFixed(2));
+		}		
+	</script>
+</head>
+
+<body>
+	<div id="container">
+		<header>
+			<h1>Shoes n' Cupcakes</h1>
+			<h2>Sweet treats for your mouth or your feet!</h2>
+		</header>
+		<form action="" id="shoppingForm" name="shoppingForm" onsubmit="return false;">
+			<div id="productListings">
+				<fieldset>
+					<div class="item">
+						<img src="assets/booties.jpg" alt="Booties" /><br />			
+						<input id="product0" type="checkbox" name="product" value="0" onclick="calculateTotal()" >
+						<label for="product0">$99.99</label>
+					</div>				
+					<div class="item">
+						<img src="assets/flats.jpg" alt="Flats" /><br />			
+						<input id="product1" type="checkbox" name="product" value="1" onclick="calculateTotal()">
+						<label for="product1">$39.00</label>
+					</div>
+					<div class="item">
+						<img src="assets/pumps.jpg" alt="Pumps" /><br />				
+						<input id="product2" type="checkbox" name="product" value="2" onclick="calculateTotal()">
+						<label for="product2">$79.99</label>
+					</div>
+					<div class="item">
+						<img src="assets/sandals.jpg"  alt="Sandals" /><br />				
+						<input id="product3" type="checkbox" name="product" value="3" onclick="calculateTotal()">
+						<label for="product3">$59.99</label>
+					</div>
+				</fieldset>
+	
+				<fieldset>
+					<div class="item">			
+						<img src="assets/cupcake.jpg" width="280" height="180" alt="Cupcake" /><br />
+						<input id="product4" type="checkbox" name="product" value="4" onclick="calculateTotal()" >
+						<label for="product4">Cupcake ($2.50)</label>
+					</div>
+					<div class="item">		
+						<img src="assets/cupcakes-dozen.jpg" width="280" height="180" alt="Cupcakes Dozen" /><br />	
+						<input id="product5" type="checkbox" name="product" value="5" onclick="calculateTotal()">
+						<label for="product5">Cupcakes - 1 dozen ($25)</label>
+					</div>
+					<div class="item">	
+						<img src="assets/cupcakes-bouquet.jpg" width="280" height="180" alt="Cupcakes Bouquet" /><br />		
+						<input id="product6" type="checkbox" name="product" value="6" onclick="calculateTotal()">
+						<label for="product6">Cupcake bouquet ($30)</label>
+					</div>
+					<div class="item">	
+						<img src="assets/cupcakes-baby.jpg" width="280" height="180" alt="Cupcake" /><br />		
+						<input id="product7" type="checkbox" name="product" value="7" onclick="calculateTotal()">
+						<label for="product7">Babycakes - 1 dozen ($15)</label>
+					</div>
+				</fieldset>
+			</div><!-- close #productListings -->
+			
+			<div id="additionalInfo">
+				<label for="totalPrice"><h3>Total:</h3></label>
+				<input type="text" id="totalPrice" value="$0">
+			</div>
+			
+		</form>
+	</div><!-- close #container -->
+</body>
+</html>
+

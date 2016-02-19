@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <title>JavaScript example!</title>
+
+<!-- SOLUTION -->
+<script>
+  /* 1. set var 'quantity' below to start at 0. This is the variable will be used to hold
+the value for the quantity of robots */
+  var quantity = 0;
+
+  function addItem(){
+    //2. set the variable 'quantity' to increase by 1 HERE
+    quantity = quantity + 1;
+
+    refreshTotal();
+  }
+  function removeItem(){
+    //3. set the variable 'quantity' to decrease by 1 HERE
+    quantity = quantity - 1;
+
+    refreshTotal();
+  }
+  function refreshTotal() {
+    var totalCost = quantity * 20; //quantity * fixed price
+    document.getElementById('updateQuantity').value = quantity; //updates
+  }
+</script>
+
+<link rel="stylesheet" href="exercises/slides.css" type="text/css" />
+<div class="item">
+  <img src="exercises/assets/plush-android.jpg" width="195" height="195" />
+  <br />
+  <button onclick="addItem();">Add</button>
+  <button onclick="removeItem();">Remove</button>
+  <br />
+  Quantity
+  <input type="text" id="updateQuantity" value="0" readonly />
+  <br />
+</div>
+
+
+  </head>
+  <body>
+  </body>
+</html>

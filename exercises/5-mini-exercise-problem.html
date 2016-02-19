@@ -1,0 +1,57 @@
+<html>
+  <head>
+    <title>JavaScript example!</title>
+    <script>
+  function validateForm() {
+
+    // automagically get the typed values from the form
+    var name = document.getElementById("name").value;
+    var address = document.getElementById("address").value;
+    var city = document.getElementById("city").value;
+    var postal = document.getElementById("postal").value;
+
+    /* *** YOUR CODE _BELOW_ HERE **** */
+
+    /* 1. Declare 4 variables named
+          "nameIsBlank", "addressIsBlank", "cityIsBlank", and "postalIsBlank"
+          that will each hold Boolean values. */
+
+
+    /* 2a. Use conditional if/else statements on the variables
+           "name", "address", "city", and "postal" to determine
+           if each individual field is not blank.
+
+       2b. Update their respective Boolean variables based on their
+           individual if/else statements. */
+
+
+    /* 3. In a final conditional, test ALL FOUR fields
+          and alert the proper message  */
+
+    // below are some alert messages you can use
+    alert( "Sorry there are errors. Form fields cannot be blank!" );
+    alert( "Thank you for your order!" );
+
+    /* *** YOUR CODE ^ABOVE^ HERE **** */
+  }
+</script>
+        Name:
+        <input type="text" id="name" />
+        <br />
+        Address:
+        <input type="text" id="address" />
+        <br />
+        City:
+        <input type="text" id="city" />
+        <br />
+        Postal Code:
+        <input type="text" id="postal" />
+        <br />
+        <br />
+        <button onclick="validateForm()">Check out now!</button>
+      
+
+  </head>
+  <body>
+  </body>
+</html>

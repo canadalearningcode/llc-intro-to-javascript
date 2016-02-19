@@ -1,510 +1,2376 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Ladies Learning Code - Intro to JavaScript</title>
-  <meta name="viewport" content="width=1280">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>Ladies Learning Code</title>
+  <link rel="stylesheet" href="framework/css/slideshow.css" data-noprefix>
+  <link rel="stylesheet" href="framework/css/fonts.css" data-noprefix>
+  <link rel="stylesheet" href="framework/css/highlightjs/github.css" data-noprefix>
+  <link rel="stylesheet" href="framework/css/styles.css" data-noprefix>
+  <link rel="shortcut icon" href="framework/img/workshop/favicon.ico">
 
-  <!-- CoderDeck core and extension CSS files -->
-  <link rel="stylesheet" href="src/deck.js/core/deck.core.css" type="text/css">
-  <link rel="stylesheet" href="src/deck.js/extensions/navigation/deck.navigation.css">
-  <link rel="stylesheet" href="src/deck.js/extensions/status/deck.status.css">
-  <link rel="stylesheet" href="src/deck.js/extensions/hash/deck.hash.css">
-  <link rel="stylesheet" href="src/deck.js/extensions/menu/deck.menu.css">
-  <link rel="stylesheet" href="src/css/prettify.css">
-  <link rel="stylesheet" href="src/css/deck.coder.css">
-  <link rel="stylesheet" href="src/codemirror/lib/codemirror.css">
-  <link rel="stylesheet" href="src/codemirror/theme/default.css">
-
-  <!-- Custom for LLC -->
-  <link href='http://fonts.googleapis.com/css?family=Istok+Web' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Podkova' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" id='style-theme-link' href="src/css/coderdeck.css" type="text/css" >
-  <style type="text/css"></style>
+  <!-- Takes care of CSS3 prefixes -->
+  <script src="framework/scripts/prefixfree.min.js"></script>  
+  <!-- opens all links in a new window -->
+  <base target="_blank">
 </head>
 
-<body class="deck-container">
-  <script type='text/coderdeck' id='coderdeck-default'>
-    <html>
-      <head>
-        <script src='src/jquery.min.js'>SCRIPTEND</head>
-      <body>CODE</body>
-    </html>
-    </script>
-  
-    <script type='text/coderdeck' id='coderdeck-style-example'>
-    <html>
-      <title>test</title>
-      <style>CODE</style>
-      <body>
-        <h1>I'm a H1 heading</h1>
-        <h2>I'm a H2 heading</h2>
-        <p>Pargraph of text &lt;p&gt; here</p>
-        <div class='stuff'>I'm a div &lt;div&gt; with class "stuff"</div>
-        <div id='my-div'>I'm a &lt;div&gt; with id "my-div"</div>
-      </body>
-    </html>
-  </script>
-  
-  <div id="presentation">
-  <!-- **************************************** -->  
-    <article class='slide slide-list'>
-      <h1 class="welcome">
-        Welcome to Ladies Learning Code!
-      </h1>
-      <p class="sponsor">In partnership with:<br>
-      <img src="assets/telus.png" width="300" alt="Telus logo"></p>
+<!-- Timer/progress bar: Define the presentation duration using "data-duration" in minutes. -->
+<body class="en" data-duration="360">
+  <main>
+    <section class="slide welcome highlight">
+      <h1><img class="logo-stacked" src="framework/img/llc-logo-stacked-white.png" alt="Ladies Learning Code logo">Welcome!</h1>
       
-    </article>
-    <!-- SLIDE: Workshop intro -->
-    <article class='slide slide-title intro'>
-      <h1>Introduction to JavaScript</h1>
-  
-      <div class="instructor_holder">
-        <!-- <h2>Your instructor today</h2>
-        <p>Your name & pic</p>
-        <p><a href="mailto:">email</a><br>
-        <a href="http://" target="_blank">website</a><br>
-        <a href="http://twitter.com/" target="_blank">twitter</a></p>
-        <br> -->
-        <p>(Interactive code slides thanks to <a href="http://cykod.github.com/CoderDeck/" target="_blank" style="color: #999;">CoderDeck</a>!)</p>
+      <div class="instructions">
+        <!-- ADD WIFI INFO HERE -->
+        <h2>Get Connected</h2>
+        <p><strong>Wifi:</strong> wifi network</p>
+        <p><strong>Password:</strong> wifi password</p>
+        <hr>
+        
+        <h2>Download<br> & Install</h2>
+        <ol class="downloads">
+          <li>Learner files (zip file): <a href="https://github.com/ladieslearningcode/workshop-repo-name/archive/master.zip">http://bit.ly/create-custom-url</a>
+            <ul>
+              <li>unzip the learner file (<em>extract all</em> if you’re on a PC)</li>
+              <li>open <em>slides.html</em> in the browser to view the slides</li>
+            </ul>
+          </li>
+          <li>Atom Editor: <a href="http://atom.io">http://atom.io</a></li>
+          <li>Chrome Browser: <a href="https://www.google.ca/chrome/browser/desktop/">https://www.google.ca/chrome</a></li>
+          </li>
+        </ol>
       </div>
-    </article>
+      <footer>
+        <a class="left" rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" src="framework/img/cc-by-nc.png" /></a>
+        <p class="left">Created by <a href="medium.com/@pearlchen">Pearl Chen</a> and <a href="http://christinatruong.com">Christina Truong</a> for <a prefix="cc: http://creativecommons.org/ns#" href="http://ladieslearningcode.com" property="cc:attributionName" rel="cc:attributionURL">Ladies Learning Code</a></p>
+        <p class="right">Use the left <span class="arrow">&#8592;</span> and right <span class="arrow">&#8594;</span> arrow keys to navigate</p>
+      </footer>
+    </section> 
 
-    <!-- SLIDE: Course Outline -->
-    <article class='slide slide-list'>
+    <section class="slide intro">
+      <img class="logo" src="framework/img/llc-logo-white.png" alt="Ladies Learning Code logo">
+      <h1 class="heading-bg">
+        <span>Introduction to<br>
+        JavaScript</span>
+      </h1>
+      
+      <!-- FILL IN INSTRUCTOR DETAILS -->
+      <img class="instructor" src="http://placehold.it/225x225" alt="Instructor Name">
+      <h2><span class="cursive">with</span> Instructor name</h2>  
+      <ul>
+        <li><a href="mailto:">hello@email.com</a></li>
+        <li><a href="http://website.com">website.com</a></li>
+        <li><a href="http://twitter.com/">@twitter</a></li>
+      </ul>
+      
+      <div class="sponsor">
+        <p>In partnership with<br> <img src="framework/img/telus-logo-white.svg" alt="Telus"></p>
+      </div>
+      <footer>
+        <a class="left" rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" src="framework/img/cc-by-nc.png" /></a>
+        <p class="left">Created by <a href="medium.com/@pearlchen">Pearl Chen</a> and <a href="http://christinatruong.com">Christina Truong</a> for <a prefix="cc: http://creativecommons.org/ns#" href="http://ladieslearningcode.com" property="cc:attributionName" rel="cc:attributionURL">Ladies Learning Code</a></p>
+        <p class="right">Use the left <span class="arrow">&#8592;</span> and right <span class="arrow">&#8594;</span> arrow keys to navigate</p>
+      </footer>
+    </section> 
+
+
+    <section class="slide">
       <h2>Course Outline</h2>
-      <h3 style="margin-top: 1em;">The morning</h3>
+      <h3 class="delayed">The morning</h3>
       <ul>
-        <li><a href="index.html#slide-3">Development Environment: tools you need to get started</a></li>
-        <li><a href="index.html#slide-7">Technology Overview: Programming and JavaScript</a></li>
-        <li><a href="js_quick_start.html">Part 1: Getting started with variables and operators</a></li>
-        <li><a href="js_functions.html">Part 2: Functions</a></li>
+        <li class="delayed">Development Environment: tools you need to get started</li>
+        <li class="delayed">Technology Overview: Programming and JavaScript</li>
+        <li class="delayed">Technology Overview: Programming and JavaScript</li>
+        <li class="delayed">Part 2: Functions</li>
       </ul>
-      <h3 style="margin-top: 1em;">Afternoon</h3>
+      <h3 class="delayed">Afternoon</h3>
       <ul>
-        <li><a href="js_conditionals.html">Part 3: Making decisions with conditionals</a></li>
-        <li><a href="js_objects.html">Part 4: Objects</a></li>
-        <li><a href="js_dom.html">Part 5: The DOM and manipulating objects on a HTML page</a></li>
-        <!-- <li><a href="js_arrays_loops.html">Part ??: Arrays and Loops</a></li> -->
+        <li class="delayed">Part 3: Making decisions with conditionals</li>
+        <li class="delayed">Part 4: Objects</li>
+        <li class="delayed">Part 5: The DOM and manipulating objects on a HTML page</li>
       </ul>
-      <h3 style="margin-top: 1em;">Homestretch</h3>
+      <h3 class="delayed">Homestretch</h3>
       <ul>
-        <li><a href="jquery-indepth.html">jQuery Hands-on</a></li>
-        <li><a href="resources.html">Where to go from here?</a></li>
+        <li class="delayed">jQuery Hands-on</li>
+        <li class="delayed">Where to go from here?</li>
       </ul>
-    </article>
+    </section>
 
-    <!-- SLIDE: Next section -->
-    <!-- <article class='slide slide-list'>
-      <p class="centered vertically_centered"><a href="tech_overview.html"><img src="assets/next_section_icon.gif" width="230" height="70" alt="Click to go to next section" /></a></p>
-    </article> -->
-    
-
-    <!-- SLIDE: Development Environment -->
-    <article class='slide slide-subhead'>
+    <section class="slide title">
       <h1>Development Environment</h1>
-      <p><strike style="color: #ccc;">&nbsp;3&nbsp;</strike> 2 tools you need to get started</p>
-    </article>
+      <h2>Tools you need to get started</h2>
+    </section>
 
-    <!-- SLIDE: Web Browser -->
-    <article class='slide slide-list'>
-      <h2>1. Web Browser</h2>
+    <section class="slide centered">
+      <h1>Web Browser</h1>
+
+      <p>Choose a modern web browser that has good, built-in development tools to help make building web pages easier. Choose Firefox or Chrome! (Today we'll all use Chrome for simplicity) </p>
+      <p><a href="https://www.google.com/chrome/browser/"><img src="framework/img/workshop/new-chrome-logo.png" alt="Chrome"/></a></p>
+
+      <p><a href="https://www.google.com/chrome">Google Chrome</a></p>
+    </section>
+
+    <section class="slide centered">
+      <h1>Code Editor</h1>
+
+      <p>There are many, many free and paid options but let's keep it simple for our mentors today and just one of these two to edit our code.</p>
+
       <p>
-        Choose a modern web browser that has good, built-in development tools to help make building web pages easier.
+        <a href="http://brackets.io/"><img width="200"  src="framework/img/workshop/brackets-logo.png" alt="Brackets"/></a>
+        <a href="https://atom.io/"><img width="200" src="framework/img/workshop/atom-logo.png" alt="Atom"/></a>
       </p>
-      <div class="centered contains_sidebyside_icons">
-        <a href="https://www.google.com/chrome" target="_blank"><img src="assets/new-chrome-logo.png" width="125" height="125" alt="Chrome" /></a>
-        <br/>
-        <a href="https://www.google.com/chrome" target="_blank">Google Chrome</a>
-      </div>
-      <br clear="all" />
-      <br />
-      <br />
-      <br />
-      <p class="sidenote centered">
-        (If you are unable to install Chrome:
-        <br />
-        install
-        <a href="http://www.mozilla.org/en-US/firefox/new/" target="_blank">Firefox</a> <b>and</b>
-        <a href="http://getfirebug.com/" target="_blank">Firebug</a>
-        .)
-      </p>
-    </article>
+    </section>
 
-    <!-- SLIDE: Code Editor -->
-    <article class='slide slide-list'>
-      <h2>2. Code Editor</h2>
+    <section class="slide">
+      <h2>Using the Code Editor</h2>
+
+      <ul>
+        <li class="delayed">Open the code editor</li>
+        <li class="delayed">Find the zip folder that we downloaded</li>
+        <li class="delayed">Unzip the zip folder</li>
+        <li class="delayed">Drag the folder to the code editor</li>
+      </ul>
+
+      <p class="delayed">Your sidebar should now have to following items</p>
+      <p class="delayed"><img src="framework/img/workshop/codeeditorsidebar.png" alt="sidebar preview" /></p>
+   </section>
+
+    <section class="slide">
+      <h2>THE CONSOLE</h2>
+
+      <p>The console is an interactive tool, built into the browser. We can use this tool to enter commands and interact directly with a web page, log diagnostic information and check for errors. We'll be using it today to practice writing some JavaScript code. The console in Chrome looks like this:</p>
+
       <p>
-        There are many, many free and paid options* but let's keep it simple for our mentors today and just use the same editor.
+        <img src="framework/img/workshop/the_console_x.jpg" alt="the console"/>
       </p>
-      <div class="centered contains_sidebyside_icons">
-        <a href="http://www.sublimetext.com" target="_blank"><img src="assets/SublimeTextIcon.jpg" width="125" height="125" alt="Sublime Text 2" /></a>
-        <br />
-        <a href="http://www.sublimetext.com/" target="_blank">Sublime Text</a>
-      </div>
-      <br clear="all" />
-      <br />
-      <br />
-      <br />
-      <p class="sidenote centered">
-         *Others include: <a href="http://macromates.com/" target="_blank">TextMate</a>, <a href="http://notepad-plus-plus.org/" target="_blank">Notepad++</a>, and <a href="http://www.barebones.com/products/textwrangler/" target="_blank">Text Wrangler</a>.
-        <br />
-        Ask a group of developers what they use and arguments will ensue -- it's a very personal choice! ;)
-      </p>
-    </article>
 
-    <!-- SLIDE: FTP -->
-    <article class='slide slide-list'>
-      <h2>3. File Transfer Program (FTP)</h2>
-      <p style="color: #999;">
-        Do you already have your own hosted website? FTP software will let you copy the files you work on today to somewhere where the rest of the world can see them!
-      </p>
-      <div class="centered contains_sidebyside_icons">
-        <a href="http://cyberduck.ch/" target="_blank"><img src="assets/Cyberduck_icon.png" width="125" height="125" alt="CyberDuck" /></a>
-        <br />
-        <a href="http://cyberduck.ch/" target="_blank">CyberDuck</a>
-      </div>
-      <br clear="all" />
-      <br />
-      <br />
-      <br />
-      <p class="sidenote centered" style="color: #999;">
-        Again, there are many, many free and paid options.
-        <br />
-        <a href="http://filezilla-project.org/" target="_blank">FileZilla</a>
-        is good when you're more advanced.
-      </p>
-    </article>
+      <p><strong>Note the <code>&gt;</code> symbol.</strong> It is used by the console to represent a space for you to enter your input but you don't have to actually type it.</p>
+    </section>
 
-    <!-- new slide -->
-    <article class='slide slide-subhead'>
+    <section class="slide">
+      <h2>ACCESSING THE CONSOLE</h2>
+
+      <p>In Chrome, there are a couple ways to open the Console tab.</p>
+      <p>Use the keyboard shortcut: <br>
+        <code>COMMAND + OPTION + J</code> (MAC) <br>
+        <code>CONTROL + SHIFT + J</code> (WINDOWS/LINUX).
+      </p>
+      <p>OR</p>
+
+      <p>Select: <code>View &gt; Developer &gt; JavaScript Console</code>.</p>
+
+      <p>You can open the console when viewing <em>any</em> HTML page but let’s use this blank HTML page, <a href="framework/console.html">console.html</a> so we can have a blank slate to practice with throughout the day. </p>
+
+      <p>Open <a href="framework/console.html">console.html</a> now and take a moment to practice opening and closing the console until you’re comfortable with it.</p>
+
+      <div class="presenter-notes">
+        <p>Re-iterate to the class to keep console.html open in a tab to refer back to for the console exercises.  A blank document was created rather than opening the console in the slide deck so any errors showing won't confuse the learners and take away from the lesson explaining things not needed for the task at hand.</p>
+      </div>
+    </section>
+
+    <section class="slide">
+      <h2>Mini-exercise</h2>
+      <p>Let's experiment with typing some input into the console. Return to <strong>console.html</strong> and open the console. After the <code>&gt;</code> symbol, type your favorite number and press the enter/return key. </p>
+      <p>You will see something like this:</p>
+      <p><img src="framework/img/workshop/console-number.gif" alt="console number"></p>
+      <p>The <code>&gt;</code> symbol is used by the console to represent a space for your input.<br>The <code>&lt;</code> symbol is used by the console to represent the <strong>returned value</strong> of your input.  </p>
+      <p>You can also input text BUT when using text, make sure you put it in quotes (more on this soon).</p>
+      <p><img src="framework/img/workshop/console-string.gif" alt="console string"></p>
+      <p>The command you input into the console gets <em>evaluated</em> and a value is returned back to you.</p>
+    </section>
+
+    <section class="slide title">
       <h1>Technology Overview</h1>
-      <p>Programming and JavaScript</p>
-    </article>
+      <h2>Programming and JavaScript</h2>
+    </section>
 
-    <!-- SLIDE: What is JavaScript? -->
-    <article class='slide slide-list'>
-      <h2>What is JavaScript?</h2>
-      <p class="centered" style="font-size: 2.5em; margin-top: 2em;">
-        It's a
-        <span class="keyword">programming language</span>
-        <br><br>
-    designed to <strong>run in your web browser</strong> to
-        <br><br>
-        <strong>manipulate content on web pages</strong>.
-      </p>
-    </article>
+    <section class="slide title">
+      <h1>What is JavaScript?</h1>
+      <h2 class="delayed">It's a programming language</h2>
+    </section>
 
-    <!-- SLIDE: What is JavaScript? -->
-    <article class='slide slide-list'>
-      <h2>What is JavaScript?</h2>
-      <p class="centered" style="font-size: 2.5em; margin-top: 2em;">
-        It's a
-        <span class="keyword highlight">programming language</span>
-        <br><br>
-    designed to <strong>run in your web browser</strong> to
-        <br><br>
-        <strong>manipulate content on web pages</strong>.
-      </p>
-    </article>
-    
-    <!-- SLIDE: What is Programming? -->
-    <article class='slide slide-list'>
+    <section class="slide">
       <h2>What is Programming?</h2>
-      <p>
-        A
-        <span class="keyword">program</span>
-        is a <strong>set of instructions</strong>
-        meant for a computer to execute.
-      </p>
-      <p>Computers are fast but blind.</p>
-      <p class="centered"><img src="assets/blindfold.gif" width="377" height="270" alt="As the first step to our new system integration, please take a blind fold."></p>
-    </article>
 
-    <!-- SLIDE: Instructions -->
-    <article class='slide slide-list'>
-      <h2>Better Code = Clearer Instructions</h2>
-      <p>
-      Think about a tourist that stops you to ask for directions:</p>
-      <p>
-      <strong>The clearer the instructions, the more likely they will get to their destination. </strong></p>
-<p class="centered"><img src="assets/Map.png" width="252" height="222" alt="Give clear directions" /></p>
-</article>
+      <p>A program is a set of instructions meant for a computer to execute</p>
+      <p>Computers are fast but blind</p>
+      <img src="framework/img/workshop/rawbot-computers.png" alt="rawbot computers" style="height:50vh" />
+    </section>
 
+    <section class="slide">
+      <h2>Programming is giving instructions to your computer</h2>
+      <p>Think about a tourist that stops you to ask for directions:</p>
+      <p>The clearer the instructions, the more likely they will get to their destination.</p>
+      <p><img src="framework/img/workshop/rawbot-directions.png" alt="rawbot directions" style="height:50vh"/></p>
+    </section>
 
-    <!-- SLIDE: Instructions -->
-    <article class='slide slide-list'>
-      <h2>Break it down</h2>
-<p>Suppose I want a computer to say hello to using my name. </p>
-<p><strong>Break down the steps</strong> as much as possible: </p>
-<ol>
-    <li>Allow me to type in my name.</li>
-          <li>Remember my name.</li>
-          <li>Say &quot;Hello&quot; and repeat back my name.</li>
-          </ol>
-      </p>
+    <section class="slide">
+      <h2>Break your goal down into steps</h2>
 
-</article>
+      <p>Suppose I want a computer to say hello using my name.</p>
 
+      <p><b>Break down the steps</b> as much as possible:
 
-    <!-- SLIDE:  What is a Programming Language? -->
-    <article class='slide slide-list'>
-      <h2>What is a Programming Language?</h2>
-      <p>
-      Programming is about having a <strong>conversation</strong> with your computer. </p>
-      <p>
-        Computers only understand things when you speak to them in a certain way. Much like English or any other natural language, programming is about sticking to grammar rules -- this is called
-        <span class="keyword">syntax</span>
-        .
-      </p>         
-        <p><img src="assets/beepbeep.jpg" height="300" alt="Beep beep" align="left" style="margin-right: 40px;" /> Computers have come a long way since their binary days (<code>0 1 0 0 1 0 0 0 0 1 0 0 0 1 0 1 0 1 0 0 1 1 0 0 0 1 0 0 1 1 0 0 0 1 0 0 1 1 1 1</code>) so meet them half-way.</p>
-        <br  clear="all" />
-    </article>
+      <ol>
+        <li class="delayed">Allow me to type in my name.
+          <p><img class="right-align" src="framework/img/workshop/name-text-rawbot.gif" alt="allow to type name" height="100"/></p>
+        </li>
+        <li class="delayed">Remember my name.
+          <p><img class="right-align" src="framework/img/workshop/remember-name-rawbot.gif" alt="remember my nane" height="80"/></p>
+        </li>
+        <li class="delayed">Say "Hello" and repeat back my name.
+          <p><img class="right-align" src="framework/img/workshop/say-my-name-rawbot.png" alt="say hello" height="80"/></p>
+        </li>
+      </ol>
+    </section>
 
-    <!-- SLIDE:  What is a Programming Language? -->
-    <article class='slide slide-list'>
+    <section class="slide">
+      <h2>Speak the computer's language</h2>
+
+      <p class="delayed">Programming is like having a conversation with your computer. You write to it using a programming language and give it instructions this way.</p>
+
+      <p class="delayed">Computers only understand instructions when you speak to them in a language they can understand. Much like Japanese, English or any other natural language, programming is about sticking to grammar rules called <span class="highlight-text">syntax.</span></p>
+
+      <small class="delayed">Syntax - is the set of rules that defines the combinations of symbols that are considered to be a correctly structured document or fragment in that language.</small>
+    </section>
+
+    <section class="slide">
+      <h2>Speak the computer's language</h2>
+
+      <p>Computers have come a long way since their binary days</p>
+      <p><img src="framework/img/workshop/rawbot-binary.png" alt="computer binary"/></p>
+      <p>(<code>0 1 0 0 1 0 0 0 0 1 0 0 0 1 0 1 0 1 0 0 1 1 0 0 0 1 0 0 1 1 0 0 0 1 0 0 1 1 1 1</code>) so meet them half-way.</p>
+    </section>
+
+    <section class="slide title">
+      <h1>Sample Code Incoming!!<br /><br />
+      <img src="framework/img/workshop/rawbot-face.png" alt="robot face" /></h1>
+    </section>
+
+    <section class="slide">
       <h2>Example Programming Syntaxes</h2>
+
       <p>Different programming languages have different syntax.</p>
-      <p>Here are two ways a computer could say hi to me:</p>
-      <p>
-        <strong>Java</strong></p>
-      <pre class="prettyprint">Scanner userInput = new Scanner(System.in);
+
+      <p>Here are two ways a computer could say hi to me:
+        <img src="framework/img/workshop/hi-rawbot.png" align="right" height="100">
+      </p>
+
+      <h3>Java</h3>
+
+      <pre><code>Scanner userInput = new Scanner(System.in);
 String name;
 System.out.print("What's your name? ");
 name = userInput.next();
-System.out.println("Hello, " + name);</pre>
-      
-      <p>
-        <strong>JavaScript</strong> ( <a href="exercises/hello-javascript.html" target="_blank">Try it out now!</a>
-        )</p>
-        
-      <pre class="prettyprint">var name;
+System.out.println("Hello, " + name);</code></pre>
+
+      <h3>Javascript</h3>
+      <pre><code>var name;
 name = window.prompt("What's your name?",'');
-document.write("Hello, " + name);</pre>
-      
-    </article>
-    
-    <!-- SLIDE: JavaScript versus Java -->
-    <article class='slide slide-list'>
+document.write("Hello, " + name);</code></pre>
+    </section>
+
+    <section class="slide">
       <h2>JavaScript versus Java</h2>
-      <p>
-      They might vaguely look the same (as a lot of programming languages do) but <strong>they are not related at all</strong>. </p>
-      <p class="centered">
-        <img src="assets/llcodedotcom_hamster.gif" width="544" height="220" alt="Java is to JavaScript as ham is to hamster." />
-      </p>
-      <p class="centered sidenote">(Java was really popular at the time so Netscape just hijacked the name.) </p>
-    </article>
-    
-    
-        <!-- SLIDE: What is JavaScript? -->
-    <article class='slide slide-list'>
-      <h2>What is JavaScript?</h2>
-      <p class="centered" style="font-size: 2.5em; margin-top: 2em;">
-        It's a
-        <span class="keyword">programming language</span>
-        <br><br>
-    designed to <strong class="highlight">run in your web browser</strong> to
-        <br><br>
-        <strong>manipulate content on web pages</strong>.
-      </p>
-    </article>
-    
-    <!-- SLIDE:  JavaScript in the Browser -->
-    <article class='slide slide-list'>
+
+      <p>They might vaguely look the same (as a lot of programming languages do) but they are not related at all.</p>
+
+      <p><img src="framework/img/workshop/java-javascript-rawbot.png" alt="java javascript"/></p>
+      <small>(Java was really popular at the time so Netscape just hijacked the name.)</small>
+    </section>
+
+    <section class="slide title">
+      <h1>What is JavaScript?</h1>
+      <h2 class="delayed">It's a programming language</h2>
+      <h2 class="delayed">that was designed to run in your web browser</h2>
+    </section>
+
+    <section class="slide centered">
       <h2>JavaScript in the Browser</h2>
-      <p>
-        C++, Java, and .NET are also programming languages but they can be run directly by the <strong>operating system</strong>
-        (e.g. Windows, Mac, Linux).
-      </p>
-      <p>
-        JavaScript is typically meant to be run in a
-        <strong>web browser</strong>
-        (e.g. Safari, Firefox, Chrome, Internet Explorer).
-      </p>
-      <p class="centered">
-        <img src="assets/scripting.gif" width="586" height="224" alt="Different programmig languages and the environments they run in" />
-      </p>
-    </article>
 
-    <!-- SLIDE:  Web Programming Languages: Server-side vs Client-side-->
-    <article class='slide slide-list'>
+      <p class="delayed bigger-text">C++, Java, and .NET are also programming languages but they can be run directly by the operating system (e.g. Windows, Mac, Linux). </p>
+      <img class="delayed" src="framework/img/workshop/computer-diagram-os-languages.gif" alt="computer diagram" height="460" />
+    </section>
+
+    <section class="slide centered">
+      <h2>JavaScript in the Browser</h2>
+
+      <p class="delayed bigger-text">JavaScript is typically meant to be run in a web browser (e.g. Safari, Firefox, Chrome, Internet Explorer).</p>
+      <img class="delayed" src="framework/img/workshop/javascript-gears.gif" alt="javascript gears diagram" height="450" />
+    </section>
+
+    <section class="slide centered">
       <h2>Web Programming Languages: Server-side vs Client-side</h2>
-      <p><img src="assets/clientversusserver.gif" width="400" height="400" alt="" align="right" style="margin-left: 30px;" /></p>
-      <p>
-      Java, .NET, PHP or Ruby can be considered <strong>server-side or &quot;back-end&quot;</strong> web technology because the code is typically compiled and executed by the <em>operating system</em> of a computer serving up web pages. </p>
-      <p>
-      JavaScript is referred to as a <strong>client-side or &quot;front-end&quot;</strong> web technology because it's interpreted by the <em>web browser</em>. </p>
 
-    </article>
+      <img class="delayed" src="framework/img/workshop/backend-frond-end-gif.gif" alt="front end back end diagram" height="450" />
+      <p class="delayed"><span class="highlight-text">javascript</span> is often referred to as a <span class="highlight-text">client-side or "front-end"</span> web technology because it is interpreted by the web browser.</p>
+   </section>
 
-    <!-- SLIDE:  -->
-    <article class='slide slide-list'>
-      <h3>Simple Client-Side Code Check</h3>
-      <p><br>
-        <img src="assets/llcodedotcom_viewsource.gif" width="468" height="362" alt="Right-click to View Source" align="left" style="margin-right: 50px;" />
-      </p>
-      <p>
-        <br>
-At any time, someone can <strong>right-click and &quot;view source&quot;</strong> on a web page to see all the JavaScript that went into it.</p>
-<p class="sidenote">(I suggest that you do this yourself every time you see something you like!)</p>
-      </p>
-      <br  clear="all" />
-      <p>
-        Whereas for server-side code, it's sometimes a mystery what technology is running on a server.
-      </p>
-    </article>
+    <section class="slide centered">
+      <h2>web programming languages: server-side vs client-side</h2>
 
-    
-        <!-- SLIDE: What is JavaScript? -->
-    <article class='slide slide-list'>
-      <h2>What is JavaScript?</h2>
-      <p class="centered" style="font-size: 2.5em; margin-top: 2em;">
-        It's a
-        <span class="keyword">programming language</span>
-        <br><br>
-    designed to <strong>run in your web browser</strong> to
-        <br><br>
-        <strong class="highlight">manipulate content on web pages</strong>.
-      </p>
-    </article>
+      <img class="delayed" src="framework/img/workshop/backend-frond-end-server-gif.gif" alt="computer diagram" height="450" />
+      <p class="delayed"><span class="highlight-text">Java, .NET, PHP or Ruby</span> can be considered <span class="highlight-text">server-side or "back-end"</span> web technology because the code is typically compiled and executed by the operating system of a computer serving up web pages. JavaScript can be used for server-side programs too, but today we'll be focusing on the browser.  </p>
+    </section>
 
-    <!-- SLIDE: The Web Triad -->
-    <article class='slide slide-list'>
+    <section class="slide">
+      <h2>Simple Client-Side Code Check</h2>
+
+      <img class="delayed" src="framework/img/workshop/llcodedotcom_viewsource.gif" alt="computer diagram" align="left" style="margin:30px" />
+      <p class="delayed bigger-text">At any time, someone can <span class="highlight-text">right-click and "view source" OR CTRL/CMD-U</span> on a web page to see all the JavaScript that went into it.</p>
+      <small class="delayed">(I suggest that you do this yourself every time you see something you like!)</small><br /><br /><br /><br /><br />
+      <p class="delayed bigger-text">Whereas for server-side code, it's sometimes a mystery what technology is running on a server.</p>
+    </section>
+
+    <section class="slide title">
+      <h1>What is JavaScript?</h1>
+      <h2 class="delayed">It's a programming language</h2>
+      <h2 class="delayed">that was designed to run in your web browser</h2>
+      <h2 class="delayed">to manipulate content on web pages.</h2>
+    </section>
+
+    <section class="slide">
       <h2>The Web Triad</h2>
-      <p>
-        JavaScript was meant to manipulate webpages written in HTML and works in tandem with CSS.
-      </p>
-      <table width="100%">
-      <tr>
-      <td width="33%" class="centered"><strong>HTML</strong> (Hypertext Markup Language) <br>
-          is the markup language.</td>
-      <td width="33%" class="centered"><strong>CSS</strong> (Cascading Style Sheets) <br>
-          is the style sheet language.</td>
-      <td width="33%" class="centered"><strong>JavaScript</strong><br>
-          is the programming language.</td>
-      </tr>
-            <tr>
-      <td class="centered"><img src="assets/TRIAD-html.gif" width="267" height="241" alt="content layer"></td>
-      <td class="centered"><img src="assets/TRIAD-css.gif" width="261" height="241" alt="Presentation Layer" /></td>
-      <td class="centered"><img src="assets/TRIAD-js.gif" width="274" height="241" alt="Behaviour Layer" /></td>
-      </tr>
-            <tr>
-      <td class="centered">It should define the <strong>content</strong>.</td>
-      <td class="centered">It should define the <strong>presentation</strong></td>
-      <td class="centered">It should define <strong>behaviour</strong>.</td>
-      </tr>
-      </table>
-    </article>
+      <p><span class="highlight-text">JavaScript</span> was meant to manipulate webpages written in <span class="highlight-text">HTML</span> and works in tandem with <span class="highlight-text">CSS</span>. </p>
+      <img class="delayed" src="framework/img/workshop/web-triad-html.png" alt="web triad html diagram" height="550" align="left"/>
+      <p class="delayed bigger-text"><span class="highlight-text">HTML</span> (Hypertext Markup Language) is the markup language</p>
+      <p class="delayed bigger-text">it should define the <span class="highlight-text">content</span></p>
+    </section>
 
-    <!-- SLIDE:  -->
-    <article class='slide slide-list'>
+    <section class="slide">
+      <h2>The Web Triad</h2>
+      <p><span class="highlight-text">JavaScript</span> was meant to manipulate webpages written in <span class="highlight-text">HTML</span> and works in tandem with <span class="highlight-text">CSS</span>. </p>
+      <img class="delayed" src="framework/img/workshop/web-triad-css.png" alt="web triad css diagram" height="550" align="left"/>
+      <p class="delayed bigger-text"><span class="highlight-text">CSS</span> (Cascading Style Sheets) is the style sheet language.</p>
+      <p class="delayed bigger-text">it should define the <span class="highlight-text">presentation</span></p>
+    </section>
+
+    <section class="slide">
+      <h2>The Web Triad</h2>
+      <p><span class="highlight-text">JavaScript</span> was meant to manipulate webpages written in <span class="highlight-text">HTML</span> and works in tandem with <span class="highlight-text">CSS</span>. </p>
+      <img class="delayed" src="framework/img/workshop/web-triad-javascript.gif" alt="web triad javscript diagram" align="left" height="550"/>
+      <p class="delayed bigger-text"><span class="highlight-text">JavaScript</span> is the programming language</p>
+      <p class="delayed bigger-text">it should define the <span class="highlight-text">behaviour</span></p>
+    </section>
+
+    <section class="slide">
       <h2>JavaScript in Different Browsers</h2>
-      <p class="reminders">
-        For the most part, JavaScript will run the same in various web browsers but sometimes they say &quot;hi&quot; with different accents.</p><p> Imagine a British accent versus a Texas accent -- it's still English underneath but there's some variations and unique slang.</p>
-        <p>This is especially noticeable with newer &quot;HTML5&quot; features.<br>
-<span class="sidenote"> <em>Insert Internet Explorer joke here. ;)</em></span></p>
-      
-    </article>
+      <p class="delayed"><img src="framework/img/workshop/rawbot-reminder.png" alt="robot reminder" align="left" height="80"/>Usually JavaScript will run the same way in various browsers.</p>
+      <p class="delayed">But, browsers are software programs written by many different people/companies (people programming things just like you!), so sometimes they say "hi" with different accents.</p>
+      <p class="delayed">Imagine a British accent versus a Texas accent.</p>
+      <p class="delayed">This is especially noticeable with newer "HTML5" features.</p>
+      <img class="delayed" src="framework/img/workshop/browser-war-illustration.jpg" alt="browser war" height="300"/>
+    </section>
 
-    <!-- SLIDE:  -->
-    <article class='slide slide-list'>
+    <section class="slide">
       <h2>A JavaScript Experiment</h2>
-      <p>
-        JavaScript is essential for &quot;AJAX&quot;, &quot;Web 2.0&quot;, and &quot;HTML5&quot; websites.
-      </p>
-      <p>
-        <strong>Try this experiment:</strong> Turn off JavaScript in your web browser. Go to the JavaScript settings for Chrome (
-        <code>chrome://settings/content</code>
-        ) and select &quot;Do not allow any site to run JavaScript&quot;
-      </p>
-      <p>Then  visit your daily sites.</p>
-      <p>
-        e.g.
-        <a href="http://google.com" target="_blank">Google</a>
-        ,
-        <a href="http://facebook.com" target="_blank">Facebook</a>
-        ,
-        <a href="http://twitter.com" target="_blank">Twitter</a>
-      </p>
-      <p> <em>(Remember to turn JavaScript back on to see this presentation!)</em> 
-      </p>
-    </article>
+      <p>JavaScript is essential for "AJAX", "Web 2.0", and "HTML5" websites. All these terms refer to various methods of making interactive web pages using Javascript. </p>
+      <p class="delayed">Try this experiment: Turn off JavaScript in your web browser. Go to the JavaScript settings for Chrome ( <a href="chrome://settings/content">chrome://settings/content</a> ) and select "Do not allow any site to run JavaScript" </p>
+      <p class="delayed">Then visit your daily sites.</p>
+      <p class="delayed">e.g. <a href="http://google.com">Google</a>, <a href="http://facebook.com">Facebook</a> , <a href="http://twitter.com">Twitter</a></p>
+      <p class="delayed">(Remember to turn JavaScript back on to see this presentation!)</p>
+    </section>
 
-    <!-- SLIDE:  -->
-    <article class='slide slide-list'>
+    <section class="slide">
       <h2>A JavaScript Experiment: Results</h2>
       <p>Note the sometimes subtle and sometimes major differences:</p>
       <ul>
-        <li>
-          No search auto-completion and instant page refreshes on google.com
-        </li>
-        <li>
-          No inline video content or lightboxed photo viewers on facebook.com -- not to mention broken &quot;Like&quot; buttons and inability to comment on posts!
-        </li>
-        <li>
-          On twitter.com - the "more" link doesn't work, can't expand tweets inline, the media gallery doesn't show.
-        </li>
-        <li>
-        And you can't <strong>see</strong> it but most analytics tracking won't work either. </li>
+        <li class="delayed">No search auto-completion and instant page refreshes on google.com</li>
+        <li class="delayed">No inline video content or lightboxed photo viewers on facebook.com -- not to mention broken "Like" buttons and inability to comment on posts!</li>
+        <li class="delayed">On twitter.com - older tweets don't load at the bottom of the page. Warning message on top of page. Navigation doesn't work. Popups don't work.</li>
+        <li class="delayed">And you can't see it but most analytics tracking won't work either.</li>
       </ul>
-      <p>
-        <strong>The modern web just sort of gives up without JavaScript!</strong>
+      <p class="delayed bigger-text"><img src="framework/img/workshop/rawbot-reminder.png" alt="robot reminder" align="left" height="80"/>The modern web just sort of gives up without JavaScript!</p>
+    </section>
+
+    <section class="slide centered">
+      <h2>JavaScript helps us make nice websites</h2>
+      <p>Especially "one-page apps" where the experience is very seamless. </p>
+      <a href="http://thenewdesignguidelines.derekevanharms.com/"><img class="delayed" src="framework/img/workshop/thenewdesignguidelines.gif" alt="web triad javscript diagram" /></a>
+      <p>Like <a href="http://thenewdesignguidelines.derekevanharms.com/">this one</a></p>
+    </section>
+
+    <section class="slide title">
+      <h1>Javascript Theory Hands-on</h1>
+      <h2>Part 1</h2>
+    </section>
+
+   <section class="slide centered">
+     <p>As the owner of the thriving store, <span class="highlight-text">Planet Robots</span>, you have to make sure you have a top notch website.</p>
+     <img class="delayed" src="framework/img/workshop/planet-robot-website.png" alt="planet robots website" />
+    </section>
+
+    <section class="slide">
+      <h2>JavaScript Exercise Overview</h2>
+      <p class="delayed">You'll want to do things like offer online shopping, print shipping labels and tempt loyal customers with members only sales!</p>
+      <p class="delayed">You'll also want to make sure that everything works properly as well.</p>
+      <p class="delayed">That means customers shouldn't be able to submit empty forms and product totals must be calculated properly in their shopping carts.</p>
+      <p class="delayed">In order to create a website that can handle these requirements, we will need to learn how to use <strong>functions</strong>, <strong>variables</strong> and <strong>conditionals</strong>.</p>
+    </section>
+
+
+    <section class="slide title">
+      <h1>Functions</h1>
+    </section>
+
+    <section class="slide">
+      <h2 class="delayed">Intro to Functions</h2>
+      <p class="delayed">What is something that you do that's very repetitive or a hassle? Wouldn't it be great if it was automated?</p>
+      <p class="delayed"><strong>Paying for parking:</strong></p>
+      <table class="delayed" cellspacing="0" width="100%" >
+        <thead>
+          <tr>
+            <td><strong>The Old Way</strong></td>
+            <td><strong>The Improved Way</strong></td>
+          </tr>
+        </thead>
+        <tr>
+          <td>
+            <ol>
+              <li>Find bank machine</li>
+              <li>Pull out bank card</li>
+              <li>Get money out from ATM</li>
+              <li>Buy chips so you can make change</li>
+              <li>Put change into machine</li>
+              <li>Take receipt</li>
+            </ol>
+          </td>
+          <td valign="top">
+            <ol>
+              <li>Pull the PayPass credit card from your wallet</li>
+              <li>Tap</li>
+              <li>Take receipt</li>
+            </ol>
+          </td>
+        </tr>
+      </table>
+    </section>
+
+    <section class="slide">
+      <h2>Intro to Functions</h2>
+      <p class="delayed">We can think of step 2 as a function. We can't see all the steps that happen but we know that performing the action of tapping the card will execute some instructions that will allow us to pay automatically.</p>
+      <h3 class="delayed">The improved way</h3>
+      <ol>
+        <li class="delayed">Pull the PayPass credit card from your wallet</li>
+        <li class="delayed"><span class="highlight-color">Tap</span></li>
+        <li class="delayed">Take receipt</li>
+      </ol>
+    </section>
+
+    <section class="slide">
+      <h2>Intro to Functions</h2>
+      <p><span class="highlight-text">Functions</span> are used to make the code "do things."</p>
+      <p>To get the function to execute, you have to <span class="highlight-text">call the function</span> by using the function <em>name</em> followed by <em>round brackets</em>.</p>
+      <p>If the credit card tap was a function in JavaScript, it could look something like this:</p>
+      <code>tapCard()</code>
+    </section>
+
+    <section class="slide">
+      <h2>Intro to Functions</h2>
+      <p>We can create our own functions but there are already some handy ones built into JavaScript. There are three functions that are useful for testing and writing code.</p>
+      <p>If the credit card tap was a function in JavaScript, it could look something like this:</p>
+      <code>tapCard()</code>
+    </section>
+
+    <section class="slide">
+      <h2>Functions in JavaScript</h2>
+      <p><span class="highlight-text">Functions</span> are pieces of code that are reusable. You declare a function like a variable, but instead of holding a single value, a function holds a series of instructions. When you 'call' or 'invoke' a function, the instructions are executed. Sometimes they are also called methods when found on an object - more on that in a bit!</p>
+      <p data-markdown>`prompt()` and `alert()` show popups in the browser.</p>
+      <p data-markdown>`document.write()` and outputs text onto the page, aka the document.</p>
+      <p><iframe height='268' width scrolling='no' src='http://codepen.io/floridaelago/embed/zGwBYK/?height=268&theme-id=0&default-tab=result' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/floridaelago/pen/zGwBYK/'>zGwBYK</a> by Florida Ivanne ELago (<a href='http://codepen.io/floridaelago'>@floridaelago</a>) on <a href='http://codepen.io'>CodePen</a></iframe></p>
+
+
+    <small class="delayed"><img src="framework/img/workshop/rawbot-reminder.png" alt="robot reminder" align="left" height="80"/><code>document.write();</code> is a quick and easy way to output text onto the page but is not best practice for use in "the real world." <code>console.log();</code> is better. Here's some more <a href="http://stackoverflow.com/questions/4743730/what-is-console-log-and-how-do-i-use-it" target="_blank">info</a>.</small>
+    </section>
+
+    <section class="slide">
+      <h2>Comments</h2>
+      <p class="delayed">Sometimes you want to write notes to yourself (and others!) to organize blocks of code or leave explanations, but you want the browser to ignore it. Use comments!</p>
+      <div data-markdown class="delayed">
+        ```javascript
+        // This is how you leave a single line comment.
+
+        // You can write many single line comments.
+        // Just make sure to add the double backslash
+        // for every new line.
+        ```
+      </div>
+      <p class="delayed">Here's another way to comment larger blocks of text.</p>
+      <div data-markdown class="delayed">
+        ```javascript
+        /* This is how you leave
+        multi-line comments for when you
+        want to write a longer message */
+        ```
+      </div>
+      <p class="delayed">Multi-line comments are great for "hiding" large blocks of code so you can try something new without erasing your old code. Don't forget to remove the old code later if you decide that you don't need it though!</p>
+    </section>
+
+    <section class="slide title">
+      <h1>Variables</h1>
+    </section>
+
+    <section class="slide">
+      <h2>Variables</h2>
+      <p class="delayed"><span class="highlight-text">Variables</span> are like containers or a box. They are used to <strong>store values</strong> so you can use them later on, when you need them.</p>
+      <img class="delayed" src="framework/img/workshop/boxes.jpg" alt="boxes" />
+    </section>
+
+   <section class="slide">
+      <h2>Variables (cont'd)</h2>
+      <p class="delayed bigger-text">
+        <img src="framework/img/workshop/rawbot-losing-memory.png" alt="robot losing memory" align="right" height="170"/>
+        Variables are also like the computer's short-term memory. It doesn't remember anything unless you tell it to. In this example, the computer can't remember anyone's name!
       </p>
-    </article>
+      <div class="delayed">
+        <pre><code>prompt("What's your name?");
+document.write("Hello....?");</code></pre>
 
-    <!-- SLIDE:  -->
-    <article class='slide slide-list'>
-      <h3>JavaScript helps make very nice websites!</h3>
-      <p>
-        Especially &quot;one-page apps&quot; where the experience is very seamless. 
-      </p>
-      <p class="centered">
-      <a href="http://thenewdesignguidelines.derekevanharms.com/" target="_blank"><img src="assets/thenewdesignguidelines.gif" width="800" height="479" alt="The new web design guidelines" /></a>      <br>
+        <a href="examples/001-what-is-your-name.html"><img src="framework/img/workshop/rawbot-run.png" alt="run code" align="right" /></a>
+      </div>
+    </section>
 
-      
-      <span class="sidenote">Like
-        <a href="http://thenewdesignguidelines.derekevanharms.com/" target="_blank">this one</a></span></p>
-    </article>
+    <section class="slide centered">
+      <h2>Variables Syntax</h2>
+      <br /><br />
+      <img class="delayed" src="framework/img/workshop/syntax-variable-assign.gif" alt="variable assignment" />
+    </section>
 
-    <!-- SLIDE: Next section -->
-    <article class='slide slide-list'>
-      <p class="centered vertically_centered"><a href="js_quick_start.html"><img src="assets/next_section_icon.gif" width="230" height="70" alt="Click to go to next section" /></a></p>
-    </article>
+    <section class="slide">
+      <h2>Variables How-to</h2>
+      <p class="delayed">Declare variables with the keyword var.</p>
+      <pre class="delayed"><code>var email;</code></pre>
+      <p class="delayed">Assign a value to the variable using the <span class="highlight-text">equals (=) sign</span>. End the <span class="highlight-text">statement</span> with a semicolon (;). </p>
+      <pre class="delayed"><code>var email = "hello@isanybodyoutthere.com";</code></pre>
+      <p class="delayed">Now the computer will remember my email address!</p>
+
+      <small class="delayed"><img class="delayed" src="framework/img/workshop/rawbot-reminder.png" alt="robot reminder" align="left" height="80"/>Statements are commands that tell the computer what to do.
+Ending the statement with a semicolon is like ending a sentence
+with a period. It tells the computer that the statement is done. </small>
+    </section>
+
+    <section class="slide">
+      <h2>Variables (cont'd)</h2>
+      <p>In a web checkout form that asks for your name and address, variables can be used to store this information. The stored information can then be used to create things like shipping labels.</p>
+      <p><img src="framework/img/workshop/var-shipping-example.jpg" alt="shipping example" /></p>
+    </section>
+
+    <section class="slide">
+      <h2>Aside: Statements</h2>
+      <p><span class="highlight-text">Statements</span> are commands that tell the computer what to do. End a statement with a semicolon (<code>;</code>) to tell the computer that the statement is done.</p>
+      <p>Ending a statement with a semicolon is like ending a sentence with a period.</p>
+      <p>You can also declare a variable with one or two statements.</p>
+      <div data-markdown>
+        ```javascript
+        var email;
+        email = "hi@youremail.com";
+        ```
+      </div>
+      <p>is the same as</p>
+      <div data-markdown>
+        ```javascript
+        var email = "hi@youremail.com";
+        ```
+      </div>
+    </section>
+
+    <section class="slide">
+      <h2>Say My Name, Say My Name</h2>
+      <p class="delayed">Let's try creating some variables.</p>
+      <p class="delayed">Below is an example of a variable for your name. Try creating another variable for your email address. Output the values using <code>document.write()</code>.</p>
+      <p><iframe height='268' scrolling='no' src='http://codepen.io/floridaelago/embed/LVyZNO/?height=268&theme-id=0&default-tab=result' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'></iframe></p>
+    </section>
+
+    <section class="slide">
+      <h2>Assigning Variables</h2>
+      <p style="color: #D63A3A">Important</p>
+      <p>Using the equals (<code>=</code>) symbol in Javascript is NOT the same as in math.</p>
+      <p><code>var total = 1 + 1</code> is not the same as <code>1 + 1 = 2</code></p>
+      <p><code>var total = 1 + 1</code> means:</p>
+      <p><em>evaluate</em> everything to the <em>right</em> of the equals sign (e.g. <code>1 + 1</code>), then <em>assign</em> this value (e.g. the number <code>2</code>) to the variable on the <em>left</em> side.</p>
+      <p>You will see later that we can re-assign new values to an existing variable.</p>
+    </section>
+
+    <section class="slide">
+      <h2>Various Variables</h2>
+      <p>Variables can hold different kinds of values.</p>
+      <h3>1. Numeric variable (integers &amp; decimals)</h3>
+      <pre><code>var someIntegerNumber = 10;
+var someDecimalNumber = 10.5;</code></pre>
+      <h3>2. String variable (letters, words &amp; sentences)</h3>
+       <pre><code>var singleWordString = "hello";
+var sentenceString = "Hello, good day to you!";
+var numberString = "10";</code></pre>
+      <h3>3. Boolean variable (true/false)</h3>
+       <pre><code>var isSaturday = false;
+var isSunday = true;</code></pre>
+    </section>
+
+    <section class="slide">
+      <h2>Whitespace in JavaScript</h2>
+      <p class="delayed">Whitespace refers to blank characters and includes space characters, tabs and line breaks.</p>
+      <p class="delayed">JavaScript ignores whitespace except when used in a string.</p>
+      <div data-markdown class="delayed">
+        ```javascript
+        var name="Ladies Learning Code";
+        //same as
+        var name = "Ladies Learning Code";
+        //but not the same as
+        var name = "Ladies     Learning       Code";
+        ```
+      </div>
+      <div data-markdown class="delayed">
+        ```javascript
+        alert("Whitespace     in    a    string.");
+        document.write("Whitespace     in    a    string.");
+        ```
+      </div>
+      <a href="examples/003-whitespace-in-javascript.html"><img class="delayed" src="framework/img/workshop/rawbot-run.png" alt="run code" align="right" /></a>
+    </section>
+
+    <section class="slide">
+      <h2>Mini-exercise #1 (5-10 minutes)</h2>
+      <p>Here's a test shipping form. Right now, after you press Run, the shipping label is blank. How do we fix this? </p>
+      <small><img src="framework/img/workshop/rawbot-hint.png" alt="robot hint" align="left" height="80"/>(1) Use variables to store your name and address!<br />
+      (2) To verify that your variables are working, uncomment out the document.write() lines and replace ********** with the actual name of your variables.</small>
+      <p class="highlight-color"><b>File:</b> exercises/1-mini-exercise-problem.html</p>
+      <div data-markdown>
+        ```javascript
+        //The web browser will ask you for your shipping details.
+        //Declare a "name" and an "address" variable to remember the values.
+        prompt("What's your name?");
+        prompt("Your mailing address?");
+
+        //Confirm that your package will be shipped to the right place!
+        document.write("<b>Confirm Shipping Label:</b><br />");
+        /*
+        document.write(**********); //output the name
+        document.write("<br />"); //just a line break
+        document.write(**********); //output the address
+        */
+        ```
+      </div>
+      <a href="exercises/1-mini-exercise-problem.html"><img src="framework/img/workshop/rawbot-run.png" alt="run code" align="right" /></a>
+    </section>
+
+    <section class="slide">
+      <h2>JavaScript Arithmetic Operators</h2>
+      <p>We can use JavaScript to do math using arithmetic operators.</p>
+      <p>The arithmetic operators in JavaScript are (+) for addition, (-) for subtraction, (*) for multiplication and (/) for division.</p>
+      <div data-markdown>
+        ```javascript
+        document.write(20 + 20);
+        ```
+      </div>
+      <a href="examples/004-arithmetic-operators.html"><img src="framework/img/workshop/rawbot-run.png" alt="run code" align="right" /></a>
+    </section>
+
+    <section class="slide">
+      <h2>Arithmetic Operators and Variables</h2>
+      <p>Getting JavaScript to do math can be very useful. For example, we can use it to calculate totals in a shopping cart form.</p>
+      <p>Instead of using just numbers, JavaScript can do math using variables with numerical values.</p>
+      <div data-markdown>
+        ```javascript
+        var tshirtPrice = 25;
+        var androidPrice = 10;
+        document.write(tshirtPrice + androidPrice);
+        ```
+      </div>
+      <a href="examples/005-arithmetic-operators-and-variables.html"><img src="framework/img/workshop/rawbot-run.png" alt="run code" align="right" /></a>
+    </section>
+
+    <section class="slide">
+      <h2>Arithmetic Operators, Numbers &amp; Strings</h2>
+      <p>Remember there were different variable types? Arithmetic operators can only be performed on numerical values.</p>
+      <p>But numbers can be declared as strings too, so be careful!</p>
+      <p>If you put double quotes (" ") or single quotes (' ') around the value, the computer will thinks it's a string.</p>
+      <div data-markdown>
+        ```javascript
+        var firstNumber = "20";
+        var secondNumber = 10;
+        document.write(firstNumber + secondNumber);
+        ```
+      </div>
+      <a href="examples/006-arithmetic-operators-and-strings.html"><img src="framework/img/workshop/rawbot-run.png" alt="run code" align="right" /></a>
+    </section>
+
+    <section class="slide">
+      <h2>Shopping Cart: Totals and Discounts</h2>
+      <p>Let's try applying some arithmetic operations to our shopping cart.</p>
+      <small><img src="framework/img/workshop/rawbot-reminder.png" alt="robot reminder" align="left" height="50"/>addition (+), subtraction (-), multiplication (*), division (/)</small>
+      <p class="highlight-color">File: examples/007-shopping-cart.html</p>
+      <div data-markdown>
+        ```javascript
+        var tshirtPrice = 25;
+        var androidPrice = 10;
+        var discountPercentage = 15;
+
+        // What is the cost of one t-shirt and one android?
+        var total;
+        //total = **********
+        document.write(total);
+        document.write("<br />");
+
+        // Guess what?  Ladies Learning Code gets 15% off!
+        // Figure out how much the discount will be.
+        var discountAmount;
+        //discountAmount = **********
+        //document.write(discountAmount);
+        document.write("<br />");
+
+        // Apply the discount to get the final price.
+        var finalTotal
+        //finalTotal = **********
+        //document.write(finalTotal);
+        ```
+      </div>
+      <a href="examples/007-shopping-cart.html"><img src="framework/img/workshop/rawbot-run.png" alt="run code" align="right" /></a>
+    </section>
+
+    <section class="slide">
+      <h2>Re-assigning Variables</h2>
+      <p>Even after a variable has been declared with a value, we can still <span class="highlight-text">re-assign</span> the value. For example, we may want to increase or decrease values by </p>
+      <p>1. This will come in handy when we discuss <span class="highlight-text">Loops</span> later on. </p>
+      <p class="highlight-color">File: examples/008-reassigning-variables.html</p>
+      <div data-markdown>
+        ```javascript
+        //declaring variable
+        var numberOfCookies = 0;
+
+        //re-assigning the value by adding 1
+        numberOfCookies = numberOfCookies + 1;
+        alert("I will only have " + numberOfCookies + ".");
+
+        //declaring another variable
+        var remainingCookies = 4;
+
+        //re-assigning the value by subtracting 1
+        remainingCookies = remainingCookies - 1;
+        alert("I just ate a cookie. Now I have " + remainingCookies + " left.");
+        ```
+      </div>
+      <a href="examples/008-reassigning-variables.html"><img src="framework/img/workshop/rawbot-run.png" alt="run code" align="right" /></a>
+    </section>
+
+    <section class="slide">
+      <h2>Who loves LadiesLearningCode?</h2>
+      <p>Don't worry about the function or unfamiliar parts right now. You will be familiar with them soon enough.</p>
+      <p>Run it and see what happens!</p>
+      <div data-markdown>
+        ```javascript
+        var loves = 0;
+        function moreLove(){
+          //re-assigning the value of the love variable
+          loves = loves + 1;
+          document.getElementById('update').innerHTML = loves;
+        }
+        ```
+      </div>
+      <div data-markdown>
+        ```html
+        &lt;link rel="stylesheet" type="text/css" href="exercises/slides.css">
+        &lt;div id="loveLLC">
+          &lt;button onclick="moreLove();">
+            &lt;img src="exercises/assets/llc-logo.png" /> Love!
+          &lt;/button>
+          &lt;p id="update">0</p>
+        &lt;/div>
+        ```
+      </div>
+      <a href="examples/009-love-llc.html"><img src="framework/img/workshop/rawbot-run.png" alt="run code" align="right" /></a>
+    </section>
+
+    <section class="slide">
+      <h2>Mini-exercise #2: Go! (5-10 minutes)</h2>
+      <small><img src="framework/img/workshop/rawbot-hint.png" alt="robot reminder" align="left" height="50"/>How do we increase or decrease the value of the variable?</small>
+      <p class="highlight-color">File: exercises/2-mini-exercise-problem.html</p>
+      <div data-markdown>
+        ```javscript
+        /* 1. set var 'quantity' to start at 0. This will be
+        used to hold the value for the quantity of robots */
+        var quantity =
+
+        function addItem(){
+          // CODE HERE EXECUTES WHEN YOU PRESS THE 'ADD' BUTTON
+          //2. set the variable 'quantity' to increase by 1 HERE
+
+          refreshTotal();
+        }
+        function removeItem(){
+          // CODE HERE EXECUTES WHEN YOU PRESS THE 'REMOVE' BUTTON
+          //3. set the variable 'quantity' to decrease HERE
+
+          refreshTotal();
+        }
+        function refreshTotal() {
+          var totalCost = quantity * 20; //quantity * fixed price
+          document.getElementById('updateQuantity').value = quantity; //updates
+        }            ```
+      </div>
+      <div data-markdown>
+        ```html
+        &lt;link rel="stylesheet" href="exercises/slides.css" type="text/css" />
+        &lt;div class="item">
+          &lt;img src="exercises/assets/plush-android.jpg" width="195" height="195" />
+          &lt;br />
+          &lt;button onclick="addItem();">Add</button>
+          &lt;button onclick="removeItem();">Remove</button>
+          &lt;br />
+          Quantity
+          &lt;input type="text" id="updateQuantity" value="0" readonly />
+          &lt;br />
+        &lt;/div>
+        ```
+      </div>
+      <a href="exercises/2-mini-exercise-problem.html"><img src="framework/img/workshop/rawbot-run.png" alt="run code" align="right" /></a>
+    </section>
+
+    <section class="slide">
+      <h2>Concatenation</h2>
+      <p>Now that we've calculated some numerical totals, how do we format the output to add a non-numerical value like a dollar sign? We use <span class="highlight-text">concatenation</span>. </p>
+      <p><span class="highlight-text">concatenation</span> is the joining of strings, using the (+) symbol. Remember this example?</p>
+      <div data-markdown>
+        ```javascript
+        //Slide: Arithmetic Operators, Numbers and Strings
+        var firstNumber = "20";
+        var secondNumber = 10;
+        document.write(firstNumber + secondNumber);
+        ```
+      </div>
+      <a href="examples/010-concatenation.html"><img src="framework/img/workshop/rawbot-run.png" alt="run code" align="right" /></a>
+    </section>
+
+    <section class="slide">
+      <h2>Concatenation and Strings</h2>
+      <p>If you use the (+) operator with numerical values, it will add the values. Otherwise, it will combine the outputs as a string.</p>
+      <p>Only the addition (+) operator can be used to combine strings. </p>
+      <p class="highlight-color">File: examples/011-concatenation-and-strings.html</p>
+      <div data-markdown>
+        ```javascript
+        //Addition with the + operator
+        var tshirtPrice = 25;
+        var androidPrice = 10;
+        var shoppingTotal = tshirtPrice + androidPrice;
+        document.write(shoppingTotal);
+        document.write("<br />");
+
+        //Concatenation with the + operator
+        //document.write("Your total is: " + "$" + shoppingTotal);
+        //document.write("<br />");
+
+        //no nos
+        //document.write("Your total is:" * shoppingTotal);
+        //document.write("<br />");
+        //document.write("$" + 20 + 1);
+        ```
+      </div>
+      <a href="examples/011-concatenation-and-strings.html"><img src="framework/img/workshop/rawbot-run.png" alt="run code" align="right" /></a>
+
+    </section>
+
+    <section class="slide">
+      <h2>Concatenation in action (results)</h2>
+      <p>Let's re-visit mini-exercise #2 and add a total cost field</p>
+      <p class="highlight-color">File: examples/012-concatenation-in-action.html</p>
+      <div data-markdown>
+        ```javasript
+        var quantity = 0;
+
+        function addItem(){
+          quantity = quantity + 1;
+          refreshTotal();
+        }
+        function removeItem(){
+          quantity = quantity - 1;
+          refreshTotal();
+        }
+        function refreshTotal() {
+          //this will update the HTML textfield
+          document.getElementById('updateQuantity').value = quantity;
+
+          //EXAMPLE: Use concatenation to add a human readable $ sign to the price
+          var totalCost = quantity * 20; //quantity * fixed price OF $20
+          //var totalCostToShow =
+
+          //this will update the HTML textfield
+          document.getElementById('updateTotal').value = totalCost;
+        }
+        ```
+      </div>
+
+      <div data-markdown>
+        ```html
+        &lt;link rel="stylesheet" href="exercises/slides.css" type="text/css" media="screen" />
+        &lt;div class="item">
+          &lt;img src="exercises/assets/plush-android.jpg" width="195" height="195" /><br />
+          &lt;button onclick="addItem();">Add&lt;/button>
+          &lt;button onclick="removeItem();">Remove&lt;/button>&lt;br />
+          Quantity
+          &lt;input type="text" id="updateQuantity" value="0" readonly />&lt;br />
+          Total Cost:
+          &lt;input type="text" id="updateTotal" value="0" readonly />
+        &lt;/div>
+        ```
+      </div>
+      <a href="examples/012-concatenation-in-action.html"><img src="framework/img/workshop/rawbot-run.png" alt="run code" align="right" /></a>
+    </section>
+
+    <section class="slide title">
+      <h1>Conditionals</h1>
+    </section>
+
+    <section class="slide">
+      <h2>Conditional Statements</h2>
+      <p class="delayed">Let's pretend to be your wise but nagging grandmother right now:</p>
+      <ul>
+        <li class="delayed">I hear it's cold out: bring a sweater!</li>
+        <li class="delayed">The weather network says it's going to rain: take your umbrella!</li>
+        <li class="delayed">It's cold and snowing: wearing your warm boots!</li>
+        <li class="delayed">If (condition) then (perform instruction)</li>
+      </ul>
+      <p class="delayed">All these things make logical sense to us as grown up humans but computers are a blank slate. The last one is a little closer to the simple instructions that a computer needs.</p>
+      <p class="delayed">As a programmer, you tell the computer how to behave across certain states or events by using CONDITIONALS.</p>
+    </section>
+
+    <section class="slide centered">
+      <h2>If Conditional Syntax</h2>
+      <br /><br />
+      <img class="delayed" src="framework/img/workshop/syntax-conditional.gif" alt="variable assignment" />
+    </section>
+
+    <section class="slide">
+      <h2>If Conditionals</h2>
+      <div data-markdown>
+        ```javascript
+        if ( weather == rain ) {
+          bringUmbrella();
+        }
+        ```
+      </div>
+      <small><img src="framework/img/workshop/rawbot-reminder.png" alt="robot reminder" align="left" height="50"/>The round <b>brackets ()</b> group together a condition to test.<br />
+The curly <b>braces {}</b> group together a set of statements to execute.</small>
+    </section>
+
+    <section class="slide">
+      <h2>Important! Assignment is not the same as equality</h2>
+      <img src="framework/img/workshop/rawbot-important.png" alt="robot important" align="left"/>
+      <p>Drill this into your head. Tattoo it to your arm! So many errors happen because of this key difference:</p>
+      <h3> (=) is for assignment </h3>
+      <p>Store a value to a variable:</p>
+      <pre><code>var kitten = "Fluffy"; </code></pre>
+      <h3> (==) is for equality</h3>
+      <p>Compare a value to another value:</p>
+      <pre><code>if ( kitten == cat ) </code></pre>
+    </section>
+
+    <section class="slide">
+      <h2>Using Several If Conditionals</h2>
+      <p>Sometimes it can be rainy but warm, or rainy and cold. You react to each thing individually.</p>
+      <p>Use several if statements when you're testing mutually inclusive scenarios.</p>
+      <p>IF the weather is raining<br />&nbsp;&nbsp;&nbsp;THEN bring an umbrella</p>
+      <p>IF the temperature is below 10°C<br />&nbsp;&nbsp;&nbsp;THEN wear a sweater</p>
+      <div data-markdown>
+        ```javascript
+        if ( weather == rain ) {
+          bringUmbrella();
+        }
+
+        if ( temperature < 10 ) {
+          wearSweater();
+        }
+        ```
+      </div>
+    </section>
+
+    <section class="slide">
+      <h2>if/else Conditionals</h2>
+      <p>Sometimes there's a catch-all state that you want to happen if your previous tests don't happen.</p>
+      <p>IF the weather is raining<br />&nbsp;&nbsp;&nbsp;THEN bring an umbrella</p>
+      <p>OTHERWISE<br />&nbsp;&nbsp;&nbsp;dress normally</p>
+      <div data-markdown>
+        ```javascript
+        if ( weather == rain ) {
+            bringUmbrella();
+        } else {
+            dressNormally();
+        }
+        ```
+      </div>
+    </section>
+
+    <section class="slide">
+      <h2>if/else if/else Conditionals</h2>
+      <p>It shouldn't snow and rain at the same time so sometimes these conditions are mutually exclusive. </p>
+      <p>IF the weather is raining<br />&nbsp;&nbsp;&nbsp;THEN bring an umbrella</p>
+      <p>BUT IF the weather is snowing<br />&nbsp;&nbsp;&nbsp;THEN wear warm boots</p>
+      <p>OTHERWISE<br />&nbsp;&nbsp;&nbsp;dress normally</p>
+      <div data-markdown>
+        ```javascript
+        if ( weather == rain ) {
+            bringUmbrella();
+        }else if ( weather == snow ) {
+            wearWarmBoots();
+        }else{
+            dressNormally();
+        }
+        ```
+      </div>
+    </section>
+
+    <section class="slide">
+      <h2>Conditionals used for UI elements</h2>
+      <p>A basic conditional that your browser does internally is to react to mouse clicks on a HTML element. The browser does its own conditional check behind the scenes.</p>
+      <img src="framework/img/workshop/thenewdesignguidelines-pull.gif" alt="the new design guidelines pull" align="left" style="padding-right:10px;"/>
+      <pre><code><button onclick="animate()">Pull</button></code></pre>
+      <p>IF a user has clicked on a button<br />&nbsp;&nbsp;&nbsp;THEN call the animate() function.</p>
+    </section>
+
+    <section class="slide centered">
+      <h2>...And Interactivity</h2>
+      <p>Notice how the brush acts when you speed up / slow down, or get close to other lines. You can even change brushes.</p>
+      <a href="http://mrdoob.com/projects/harmony/"><img src="framework/img/workshop/LLC_sketch.gif" alt="ladies learning code sketch" /></a>
+      <p><a href="http://mrdoob.com/projects/harmony/">http://mrdoob.com/projects/harmony/</a></p>
+    </section>
+
+    <section class="slide centered">
+      <h2>...And Games!</h2>
+      <p>(Notice how the birds fly differently based on how far you pull them back in the slingshot, and in what direction.)</p>
+      <a href="http://chrome.angrybirds.com/"><img src="framework/img/workshop/AngryBirds.png" alt="ladies learning code sketch" /></a>
+      <p><a href="http://chrome.angrybirds.com/">http://chrome.angrybirds.com/</a></p>
+    </section>
+
+    <section class="slide">
+      <h2>Conditional Statements Summary</h2>
+      <table cellpadding="20" style="width:100%">
+        <tr>
+          <td><h3>If Statement</h3></td>
+          <td><h3>If...else statement</h3></td>
+          <td><h3>If...else if...else statement</h3></td>
+        </tr>
+        <tr>
+          <td valign="top">
+            <div data-markdown>
+              ```javascript
+              if (condition) {
+                // do something
+              }
+              ```
+            </div>
+          </td>
+          <td valign="top">
+            <div data-markdown>
+              ```javascript
+              if (condition) {
+                // do something
+              } else {
+                // otherwise do this
+              }
+              ```
+            </div>
+          </td>
+          <td valign="top">
+            <div data-markdown>
+              ```javascript
+              if (condition) {
+                // do something
+              } else if (condition2) {
+                // do something else
+              } else {
+                // otherwise do this
+              }
+              ```
+            </div>
+          </td>
+        </tr>
+      </table>
+    </section>
+
+    <section class="slide">
+      <h2>Testing Conditions</h2>
+      <p>What does a condition actually look like?</p>
+      <div data-markdown>
+        ```javascript
+        // Straight Booleans
+        if ( true ) {
+          document.write( "#1 this works. <br />" );
+        }
+        if ( false ) {
+          document.write( "#2 will not work. <br />" );
+        }
+
+        // Booleans via variables
+        var isSunday = true;
+        var isSaturday = false;
+        if ( isSunday == true ) {
+          document.write( "#3 Yeah, laundry day! <br />" );
+        }
+        if ( isSaturday == true ) {
+          document.write( "#4 Nope, you can't go back in time! <br />" );
+        }
+
+        // Numbers
+        if ( 1 < 2 ) {
+          document.write( "#5 works. <br />" );
+        }
+        if ( 2 < 1 ) {
+          document.write( "#6 won't work. <br />" );
+        }
+
+        // Strings
+        var emptyString = "";
+        var filledString = "Woot! Conditionals!";
+        if ( emptyString == "" ) {
+          document.write( "#7 Yep, the string was empty. <br />" );
+        }
+        if ( filledString == "" ) {
+          document.write( "#8 won't work. <br />" );
+        }
+        if ( filledString == "Woot! Conditionals!" ) {
+          document.write( "#9 Code strong. <br />" );
+        }
+        ```
+      </div>
+      <a href="examples/013-testing-conditions.html"><img src="framework/img/workshop/rawbot-run.png" alt="run code" align="right" /></a>
+    </section>
+
+    <section class="slide">
+      <h2>Cheat Sheet: Comparison and Logical Operators </h2>
+      <p><img src="framework/img/workshop/rawbot-reminder.png" alt="robot reminder" align="left" height="50"/>Here's a <span class="highlight-text">cheat sheet</span> of different operators that can be used in conditional statements. </p>
+
+      <p data-markdown>Using these two variables, `var two = 2` and `var ten = 10`, the examples below show how the statements would return true using the various operators. </p>
+      <table cellspacing="0" class="comparison-table" style="margin-right:20px;width:50%;">
+        <tr>
+          <th align="left" colspan="3">Comparison operators</th>
+        </tr>
+        <tr>
+          <td width="15%">==</td>
+          <td width="50%">is equal to</td>
+          <td width="35%">ten == two * 5</td>
+        </tr>
+         <tr>
+          <td width="15%">===</td>
+          <td width="50%">is exactly equal to (value and type) </td>
+          <td width="35%">ten === 10<br />ten === "10" (false) </td>
+        </tr>
+         <tr>
+          <td width="15%">!=</td>
+          <td width="50%">is not equal to</td>
+          <td width="35%">ten !== two</td>
+        </tr>
+         <tr>
+          <td width="15%">&gt;</td>
+          <td width="50%">greater than</td>
+          <td width="35%">ten &gt; two</td>
+        </tr>
+          <tr>
+          <td width="15%">&lt;</td>
+          <td width="50%">less than</td>
+          <td width="35%">two &lt; ten</td>
+        </tr>
+          <tr>
+          <td width="15%">&gt;=</td>
+          <td width="50%">greater than or equal to</td>
+          <td width="35%">ten &gt;= two * 5<br />ten &gt;= two * 5 + 1</td>
+        </tr>
+          <tr>
+          <td width="15%">&lt;=</td>
+          <td width="50%">less than for equal to</td>
+          <td width="35%">two &lt;= ten<br />two &lt;= 2 </td>
+        </tr>
+      </table>
+      <table cellspacing="0" class="comparison-table" style="width:45%;">
+        <tr>
+          <th align="left" colspan="3">Logical operators</th>
+        </tr>
+        <tr>
+          <td width="15%">&amp;&amp;</td>
+          <td width="50%">and</td>
+          <td width="35%">(ten < 11 &amp;&amp; ten > 9)</td>
+        </tr>
+         <tr>
+          <td width="15%">||</td>
+          <td width="50%">or</td>
+          <td width="35%">(ten == 10 || two == 2)</td>
+        </tr>
+         <tr>
+          <td width="15%">!</td>
+          <td width="50%">not</td>
+          <td width="35%"> !(ten == two)</td>
+        </tr>
+      </table>
+    </section>
+
+    <section class="slide">
+      <h2>The &amp;&amp;(and) operator</h2>
+      <p class="delayed">The && operator returns <code>true</code> only if all the conditions are true</p>
+      <pre class="delayed"><code>true && true // returns true
+true && false // returns false
+false && false // returns false</code></pre>
+    </section>
+
+    <section class="slide">
+      <h2>The ||(or) operator</h2>
+      <p class="delayed">The || operator returns <code>true</code> only if at least one of the conditions are true</p>
+      <pre class="delayed"><code>true || true // returns true
+true || false // returns true
+false || false // returns false</code></pre>
+    </section>
+
+    <section class="slide">
+      <h2>The !(not) operator</h2>
+      <p class="delayed">The ! operator returns <code>true</code> only if the condition returns <code>false</code></p>
+      <pre class="delayed"><code>!true // returns false
+!false // returns true</code></pre>
+    </section>
+
+    <section class="slide">
+      <h2>Mixing it all together</h2>
+      <p class="delayed">let's set the variables <code>two = 2</code> and <code>ten = 10</code></p>
+      <pre class="delayed"><code>(two &lt;= 5 && ten != 9 || 10 == ten)</code></pre>
+      <p class="delayed">returns <code>true</code></p>
+      <pre class="delayed"><code>(20 != (ten*two) && 3 &gt;= two)</code></pre>
+      <p class="delayed">returns <code>false</code></p>
+    </section>
+
+    <section class="slide">
+      <h2>More Conditional Examples</h2>
+      <p>Let's look at some examples. What do you think the output will be? Uncomment the code to be executed for each condition to see if the result is what you expected. Try changing the variable values too! </p>
+      <p class="highlight-color">File: examples/014-more-conditional-examples.html</p>
+      <div data-markdown>
+        ```javascript
+        var regularPrice = 200;
+        var salePrice = 19.99;
+
+        if ( salePrice < regularPrice ) {
+          //document.write("#1 You've got to buy that robot! <br />");
+        }
+
+
+        if ( salePrice > regularPrice ) {
+          //document.write("#2 Don't buy that robot <br />");
+        } else {
+          //document.write("#2 Buy two in different colours! <br />");
+        }
+
+        if ( salePrice > regularPrice ) {
+          //document.write("#3 Don't buy that robot");
+        } else if ( salePrice == regularPrice) {
+          //document.write("#3 Only buy it if you reeeaallly want it! <br />");
+        } else {
+          //document.write("# Buy two in different colours! <br />");
+        }
+        ```
+      </div>
+      <a href="examples/014-more-conditional-examples.html"><img src="framework/img/workshop/rawbot-run.png" alt="run code" align="right" /></a>
+    </section>
+
+    <section class="slide">
+      <h2>Variables, Operators, Concatenation and Conditionals</h2>
+      <p>Now that we know what <span class="highlight-text">variables</span>, <span class="highlight-text">operators</span> and <span class="highlight-text">conditionals</span> are, let's put them all into action using dynamic content. </p>
+      <p class="highlight-color">File: examples/015-variables-operations-concatenation-conditionals.html</p>
+      <div data-markdown>
+        ```javascript
+        var price = prompt("How much is that robot?");
+          if ( price <= 100 ) {
+          document.write("$" + price + " isn't bad. Buy it!");
+        } else {
+          document.write("$" + price + "? Jeez! That's a lot of money!");
+        }
+        ```
+      </div>
+      <a href="examples/015-variables-operations-concatenation-conditionals.html"><img src="framework/img/workshop/rawbot-run.png" alt="run code" align="right" /></a>
+    </section>
+
+    <section class="slide">
+      <h2>Mini-exercise #3 (10 minutes)</h2>
+      <p> Uh-oh! Someone can attempt to put a negative number of products in their shopping cart! Complete task #1 in the next slide to fix this. For task #2, warn the user that they are attempting to check out with an empty basket. Make a more robust shopping cart so that your customer's order doesn't go sideways. </p>
+      <p>This is based on Exercise #3 so it should look very familiar! </p>
+      <small><img src="framework/img/workshop/rawbot-reminder.png" alt="robot reminder" align="left" height="50"/>(Hint: How do you test if a number is greater than, less then, or equal to another number?)</small>
+    </section>
+
+    <section class="slide">
+      <h2>Mini-exercise #3 (10 minutes)</h2>
+      <p>TODO: Check within the code for your THREE tasks.</p>
+      <p class="highlight-color">File: exercises/3-mini-exercise-problem.html</p>
+      <div data-markdown>
+        ```javascript
+        var quantity = 0;
+
+        function addItem(){
+          quantity++;
+          refreshTotal();
+        }
+
+        function removeItem(){
+          /* *** YOUR CODE _BELOW_ HERE **** */
+          /* 1. Use a conditional if/else statement on the "quantity" variable
+                to avoid having negative products. */
+
+          quantity--;
+
+          /* *** YOUR CODE ^ABOVE^ HERE **** */
+          refreshTotal();
+        }
+
+        function checkout() {
+          /* *** YOUR CODE _BELOW_ HERE **** */
+          /* 2. Use a conditional if statement on the "quantity" variable
+                to determine if the shopping cart is (or is not) empty. */
+
+          // below are some alert messages you can use
+          alert( "Sorry, you don't have anything in your cart!" );
+          alert( "Thank you for your order!" );
+
+          /* *** YOUR CODE ^ABOVE^ HERE **** */
+        }
+
+        function refreshTotal() {
+          var totalCost = quantity * 20; //quantity * fixed price
+          document.getElementById('updateQuantity').value = quantity; //updates
+          // 3. A nice to have: Put a dollar sign in front of the totalCost
+          document.getElementById('updateTotal').value = (totalCost);
+        }
+        ```
+      </div>
+      <a href="exercises/3-mini-exercise-problem.html"><img src="framework/img/workshop/rawbot-run.png" alt="run code" align="right" /></a>
+
+    </section>
+
+    <section class="slide">
+      <h2>Mini-exercise #4 (5-10 minutes)</h2>
+      <p>Let's revisit the shipping form again -- it's a very simple shipping form, but you don't want someone to be able to submit their order if they haven't filled out their address! </p>
+      <p>You have been supplied with 1 variable ("address") which will automagically match what is typed into the form field (minus extra whitespace) after you press the "Check out now!" button.</p>
+      <small><img src="framework/img/workshop/rawbot-hint.png" alt="robot hint" align="left" height="50"/>(Hint: If you don't type anything into the address field, you get an "empty string". How do you test for an empty string?) </small>
+    </section>
+
+    <section class="slide">
+      <h2>Mini-exercise #4 (5-10 minutes)</h2>
+      <small><img src="framework/img/workshop/rawbot-hint.png" alt="robot reminder" align="left" height="50"/>TODO: Check within the code for your ONE task.</small>
+
+      <p class="highlight-color">File: exercises/4-mini-exercise-problem.html</p>
+      <div data-markdown>
+        ```javascript
+        function validateForm() {
+
+          // automagically get the typed values from the form
+          var address = document.getElementById("address").value;
+
+          /* *** YOUR CODE _BELOW_ HERE **** */
+
+          /* TODO: Use a conditional if/else statement on the "address" variable
+             to determine if the address field is (or is not) blank,
+             then show the proper error or confirmation alert message. */
+
+          // below are some alert messages you can use
+          alert( "Sorry there are errors. Form fields cannot be blank!" );
+          alert( "Thank you for your order!" );
+
+          /* *** YOUR CODE ^ABOVE^ HERE **** */
+        }
+        ```
+      </div>
+      <a href="exercises/4-mini-exercise-problem.html"><img src="framework/img/workshop/rawbot-run.png" alt="run code" align="right" /></a>
+    </section>
+
+    <section class="slide">
+      <h2>Mini-exercise #5 (15-20 minutes)</h2>
+      <p>Now here's a more complex shopping form that you require all fields to be filled in. You have been supplied with 3 additional variables which will automagically update: "name", "city", and "postal".</p>
+
+      <small><img src="framework/img/workshop/rawbot-hint.png" alt="robot reminder" align="left" height="50"/> (Hint for task #3: How do you test for something AND somethingElse OR anotherThing at one time?) </small>
+
+      <p>Bonus: There's always different ways to get to the same end goal. If you're finished early, try out different ways that you can reduce the number of variables and lines of code.</p>
+    </section>
+
+    <section class="slide">
+      <h2>Mini-exercise #5 (15-20 minutes)</h2>
+      <small><img src="framework/img/workshop/rawbot-reminder.png" alt="robot reminder" align="left" height="50"/>Statements are comma</small>
+
+      <p class="highlight-color">File: exercises/5-mini-exercise-problem.html</p>
+      <div data-markdown>
+        ```javascript
+        function validateForm() {
+
+          // automagically get the typed values from the form
+          var name = document.getElementById("name").value;
+          var address = document.getElementById("address").value;
+          var city = document.getElementById("city").value;
+          var postal = document.getElementById("postal").value;
+
+          /* *** YOUR CODE _BELOW_ HERE **** */
+
+          /* 1. Declare 4 variables named
+                "nameIsBlank", "addressIsBlank", "cityIsBlank", and "postalIsBlank"
+                that will each hold Boolean values. */
+
+
+          /* 2a. Use conditional if/else statements on the variables
+                 "name", "address", "city", and "postal" to determine
+                 if each individual field is not blank.
+
+             2b. Update their respective Boolean variables based on their
+                 individual if/else statements. */
+
+
+          /* 3. In a final conditional, test ALL FOUR fields
+                and alert the proper message  */
+
+          // below are some alert messages you can use
+          alert( "Sorry there are errors. Form fields cannot be blank!" );
+          alert( "Thank you for your order!" );
+
+          /* *** YOUR CODE ^ABOVE^ HERE **** */
+        }
+        ```
+      </div>
+      <a href="exercises/5-mini-exercise-problem.html"><img src="framework/img/workshop/rawbot-run.png" alt="run code" align="right" /></a>
+    </section>
+
+    <section class="slide centered">
+      <h1>Regroup Before Lunch</h1>
+      <h2>Learn from our mistakes!</h2>
+      <p>Name something that you did while writing code that caused an error. What were you attempting to do and what were your assumptions when doing it? How did you fix it?
+
+What are some questions or issues you are having with the material covered so far? Lunch with your mentors and pick their brains. :) </p>
+    </section>
+
+    <section class="slide centered">
+      <h2>What kind of neat stuff can you do with HTML5 and JavaScript? </h2>
+      <p><img src="framework/img/workshop/Chrome-Experiments-Arcade-Fire.gif" alt="Arcade Fire" /></p>
+      <p class="delayed"><img src="framework/img/workshop/rawbot-hint.png" alt="robot hint" height="50"/>Arcade Fire's interactive music video: <a href="http://www.chromeexperiments.com/arcadefire/">The Wilderness Downtown.</a></p>
+    </section>
+
+    <section class="slide title">
+      <h1>The Ladies Learning Code Mentors</h1>
+      <h2>(Aren't they awesome?)</h2>
+    </section>
+
+    <section class="slide title">
+      <h1>Now Back To Your Regularly Programmed Workshop...</h1>
+    </section>
+
+    <section class="slide title">
+      <h1>JavaScript Theory Hands-on </h1>
+      <h2>Part 2</h2>
+    </section>
+
+    <section class="slide title">
+      <h1>JavaScript Theory Applied</h1>
+      <h2>Putting it together on an actual HTML page</h2>
+    </section>
+
+    <section class="slide">
+      <h2>Inline JavaScript</h2>
+      <p>JavaScript can appear inline in a webpage in several spots. Either in the <code>&lt;head&gt;</code> section or anywhere in the <code>&lt;body&gt;</code> section. </p>
+      <pre><code>&lt;html>
+&lt;head>
+&lt;title>JavaScript example!&lt;/title>
+&lt;script type="text/javascript">
+  alert("I'm in the head tag!");
+&lt;/script>
+&lt;/head>
+&lt;body>
+&lt;div id="example">This is an example.&lt;/div>
+&lt;script type="text/javascript">
+  alert("I'm in the body tag!");
+&lt;/script>
+&lt;/body>
+&lt;/html></code></pre>
+
+      <p class="delayed"><img src="framework/img/workshop/rawbot-reminder.png" alt="robot reminder" align="left" height="50"/>Need to manipulate an html tag or have a quick loading page? Put the JavaScript just before the <span class="highlight-text">closing</span> <code>&lt;body&gt;</code> tag. </p>
+    </section>
+
+    <!--Using a code editor.or correcting syntax slide-->
+
+    <section class="slide centered">
+      <h2>Objects</h2>
+      <p>If variables are boxes, OBJECTS can be thought of as bento boxes -- "advanced variables" if you will.</p>
+      <img src="framework/img/workshop/bento_box_real.jpg" alt="bento box real"/>
+    </section>
+
+    <section class="slide">
+      <h2>How Bento Boxes are like Objects</h2>
+      <table cellpadding="30">
+        <tr>
+          <td><img src="framework/img/workshop/variable-rice.png" alt="rice variable" style="width: 400px" /></td>
+          <td>
+            <p>A basic variable only holds one value.</p>
+            <pre> <code>var takeout = "Fried Rice";</code> </pre>
+          </td>
+        </tr>
+         <tr>
+          <td><img src="framework/img/workshop/object-bento-box.png" alt="bento box object" /></td>
+          <td>
+            <p>An object holds a collection of values.</p>
+            <div data-markdown>
+              ```javascript
+              // create a new object
+              var bentobox = {};
+
+              // fill it with stuff
+              bentobox.main = "Teriyaki";
+              bentobox.side = "Tempura";
+              bentobox.salad = "Seaweed Salad";
+              bentobox.sushi = "Salmon Avocado Roll";
+              ```
+            </div>
+          </td>
+        </tr>
+      </table>
+    </section>
+
+    <section class="slide centered">
+      <h2>Creating an Object</h2>
+      <img src="framework/img/workshop/syntax-object.gif" alt="syntax object"/>
+    </section>
+
+    <section class="slide">
+      <h2>Creating an Object</h2>
+      <p class="delayed">Creating an object is easy. Just like any other variable, use the <code>var</code> keyword and give it a descriptive name. </p>
+      <p class="delayed">But instead of assigning a single value right away, use these curly braces to make an empty object.</p>
+      <pre class="delayed"><code>var bentobox = {};</code></pre>
+      <small class="delayed">Yes, it's weird but think about the <code>{}</code> as a sort of funky container.</small>
+
+    </section>
+
+      <section class="slide">
+          <h2>Object Properties</h2>
+          <p class="delayed">The "compartments" of objects are called <span class="highlight-text">PROPERTIES</span>.</p>
+          <p class="delayed">If you already have an existing object, there are a few ways to access and set a value to a property. Since these two are very commonly used, they will both be discussed.</p>
+
+          <table cellpadding="20" class="delayed">
+            <thead>
+              <td>Dot notation:</td>
+              <td>Key-Value Lookup:</td>
+            </thead>
+            <tr>
+              <td>
+                <pre><code>myObject.property = value; </code></pre>
+                <div data-markdown>
+                  ```javascript
+                  bentobox.main = "Teriyaki";
+                  bentobox.side = "Tempura";
+                  ```
+                </div>
+              </td>
+              <td>
+                <pre><code>myObject[key] = value; </code></pre>
+                <div data-markdown>
+                  ```javascript
+                  bentobox["main"] = "Teriyaki";
+                  bentobox["side"] = "Tempura";
+                  ```
+                </div>
+              </td>
+            </tr>
+          </table>
+          <small class="delayed"><b>Advanced sidenote:</b></small>
+          <br />
+          <small class="delayed">Alternatively, you can both declare an object and set it's values at the <b>same</b> time: </small>
+          <br />
+          <code class="delayed">var bentobox = { soup:"Miso", main:"Teriyaki" };</code>
+        </section>
+
+        <section class="slide">
+          <h2>Why use Objects?</h2>
+          <p class="delayed"><i>Advanced topic:</i> Objects are useful because you group all these properties together and you can <b>reuse</b> the object over again.</p>
+          <p class="delayed">There's an <b>expectation</b> of what you'll get in a bento box. </p>
+          <p class="delayed">Some items are <b>fixed</b> (seaweed salad and sushi) but some compartments can be <b>edited</b> (a miso soup side versus tempura). </p>
+          <img class="delayed" src="framework/img/workshop/object-bento-box.png" width="45%" alt=""/>
+          <img class="delayed" src="framework/img/workshop/object-bento-box-2.png" width="45%" alt=""/>
+        </section>
+
+        <section class="slide">
+          <h2>Think of Everything as an Object*</h2>
+          <p class="delayed">When I said that objects were "advanced variables", here's another way of looking at it:</p>
+          <p class="delayed"><b>All JavaScript variables can be treated like objects too.</b></p>
+          <p class="delayed">If curly braces are a container for a generic object, quotes are containers for characters. When we get to arrays next, you'll see that it uses square brackets. (The only "uncontainered" object we've introduced today was a number.)</p>
+          <img class="delayed" src="framework/img/workshop/rawbot-reminder.png" alt="robot reminder" align="left" height="50"/>
+          <div class="delayed" data-markdown>
+            ```javascript
+            var stringObject = “ ”;
+            var arrayObject = [ ];
+            ```
+          </div>
+          <p class="delayed">Some objects are simpler than others but almost everything in JavaScript has properties available to us.</p>
+        </section>
+
+        <section class="slide">
+          <h2>Built-in JavaScript Properties</h2>
+          <p class="delayed">In this workshop we won't be creating any of our own objects, but JavaScript already has many objects built into the language.</p>
+          <p class="delayed">Let's look at a string object and the <code>length</code> property which returns the number of characters in a string. Try putting your own name in here.</p>
+          <p class="highlight-color delayed">File: examples/023-built-in-javascript-properties.html</p>
+          <div data-markdown class="delayed">
+            ```javascript
+            var firstName = "Florida";
+
+            var numberOfLetters = firstName.length;
+            document.write( numberOfLetters );
+            ```
+          </div>
+
+          <a href="examples/023-built-in-javascript-properties.html"><img class="delayed" src="framework/img/workshop/rawbot-run.png" alt="run code" align="right" /></a>
+        </section>
+
+        <section class="slide">
+          <h2 class="delayed">Functions in Objects</h2>
+          <p class="delayed">Previously, we talked about functions as blocks of re-usable code. This might sound crazy but <b>you can store functions in variables</b> too!</p>
+          <table cellspacing="0" width="100%" class="delayed">
+            <thead>
+              <td colspan="2">This function...</td>
+              <td>is the same as:</td>
+            </thead>
+            <tr>
+              <td data-markdown>
+                ```javascript
+                function sayHello(){
+                  document.write("hello");
+                }
+
+                sayHello();
+                ```
+              </td>
+              <td>➞</td>
+               <td data-markdown>
+                ```javascript
+                var sayHello = function() {
+                  document.write("hello");
+                }
+
+                sayHello();
+                ```
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2"></td>
+              <td>
+                <p style="text-align: center">ↆ</p>
+                <p>But now look at this!</p>
+                <div data-markdown>
+                  ```javascript
+                  var welcomeTeam = {};
+                  welcomeTeam.sayHello = function() {
+                  document.write("hello");
+                  }
+                  welcomeTeam.sayHello();
+                  ```
+                </div>
+              </td>
+            </tr>
+          </table>
+        </section>
+
+        <section class="slide">
+          <h2>Object Methods</h2>
+          <p class="delayed">When a function is associated with an object we call it a <span class="highlight-text">METHOD</span>.</p>
+          <p class="delayed">Let's say you're having a robot sale! Everything is 50% off. But, after doing the math, you notice that the sale price is a bit off.. Let's declare a sale price and manipulate it using <code>toFixed()</code>. When you use a method, it gives you access to all the hard work that someone else did and it only takes you one line to use it!</p>
+          <p class="highlight-color delayed">File: examples/024-object-methods.html</p>
+          <div data-markdown class="delayed">
+            ```javascript
+            var salePrice1 = 20.00 * 0.50;
+            var salePrice2 = 35.00 * 0.50;
+            var salePrice3 = 25.99 * 0.50;
+
+            //uh-oh, can we make sure we always see 2 decimal spaces?
+            document.write( salePrice1 );
+            document.write( "<br />" );
+            document.write( salePrice2 );
+            document.write( "<br />" );
+            document.write( salePrice3 );
+            ```
+          </div>
+          <a href="examples/024-object-methods.html"><img class="delayed" src="framework/img/workshop/rawbot-run.png" alt="run code" align="right" /></a>
+        </section>
+
+        <section class="slide">
+          <h2>Looking up properties and references</h2>
+          <p><code>length</code> and <code>toFixed()</code> are only two of many (many!) more built-in properties and methods of objects in JavaScript.</p>
+          <p>Check out this list: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Methods_Index">https://developer.mozilla.org/en-US/docs/JavaScript_Methods_Index.</a> </p>
+          <p>An overwhelming look at objects: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Predefined_Core_Objects">https://developer.mozilla.org/en-US/docs/JavaScript/Guide/Predefined_Core_Objects</a></p>
+        </section>
+
+        <section class="slide title">
+          <h1>Arrays</h1>
+        </section>
+
+        <section class="slide">
+          <h2>Arrays</h2>
+          <p class="delayed"><span class="highlight-text">Arrays</span> are similar to objects; they both hold a collection of values. However, arrays hold its values in a numerical index rather than labels. </p>
+          <p class="delayed">Think of arrays as egg cartons. All the eggs are in one carton but each egg has its own slot. </p>
+          <img class="delayed" src="framework/img/workshop/egg-carton.jpeg" alt="egg carton" align="left" style="padding-right: 20px;"/>
+          <p class="delayed">Just like variables and objects, declare an array with the keyword var.</p>
+          <pre class="delayed"><code>var eggspressions = [];</code></pre>
+          <small class="delayed"><img class="delayed" src="framework/img/workshop/rawbot-reminder.png" alt="robot reminder" align="left"/>Unlike objects, arrays are declared with square brackets <code>[ ]</code>.</small>
+        </section>
+
+        <section class="slide">
+          <h2>Arrays How-to</h2>
+          <pre><code>//declaring an empty array
+var eggspressions = [];</code></pre>
+          <div data-markdown>
+            ```javascript
+            //assigning values
+            eggspressions[0] = "skeptical";
+            eggspressions[1] = "frazzled";
+            eggspressions[2] = "silly";
+            eggspressions[3] = "giggling";
+            ```
+          </div>
+        <p>The numbers inside the square brackets <code>[ ]</code> are referred to as the <span class="highlight-text">index</span> number. Array indexes <span class="highlight-text">always</span> start at <span class="highlight-text">zero</span>. </p>
+        <small><img src="framework/img/workshop/rawbot-reminder.png" alt="robot reminder" align="left"/>Arrays can be declared in different ways.<br />
+          The above example can also be declared like this:<br />
+          <code>var eggspressions = ["skeptical","frazzled","silly", "giggling"];</code>
+        </small>
+        </section>
+
+        <section class="slide">
+          <h2>Arrays and Indexes</h2>
+          <p class="delayed"><span class="highlight-text">Index</span> numbers are used to <span class="highlight-text">assign</span> values. </p>
+          <p class="delayed">Index numbers are also used to <span class="highlight-text">access</span> values. </p>
+          <p class="delayed">To access the value of the second egg in the <code>eggspressions</code> array, use index 1 since it's the second item in the list. </p>
+          <p class="highlight-color delayed">File: examples/025-arrays-and-indexes.html</p>
+          <div data-markdown class="delayed">
+            ```javascript
+            var eggspressions = [];
+
+            eggspressions[0] = "skeptical";
+            eggspressions[1] = "frazzled";
+            eggspressions[2] = "silly";
+            eggspressions[3] = "giggling";
+
+            document.write("The 2nd egg is " + eggspressions[1] + " even though it has an index of 1.");
+            ```
+          </div>
+          <a href="examples/025-arrays-and-indexes.html"><img class="delayed" src="framework/img/workshop/rawbot-run.png" alt="run code" align="right" /></a>
+        </section>
+
+        <section class="slide">
+          <h2 class="delayed">Arrays and Properties</h2>
+          <p class="delayed">Since <span class="highlight-text">Arrays</span> are also objects, there are many properties associated with the Array object. </p>
+          <p class="delayed">The <code>length</code> property is also associated with array objects.</p>
+          <p class="delayed">As mentioned previously, the <code>length</code> property returns the number of characters when associated with a <span class="highlight-text">string</span>. When used with an <span class="highlight-text">Array</span>, the <code>length</code> property returns the number of elements. </p>
+          <p class="highlight-color delayed">File: examples/026-arrays-and-properties.html</p>
+          <div data-markdown class="delayed">
+            ```javascript
+            // string variable
+            var name = "Christina";
+            document.write(name.length);
+            document.write("<br />");
+
+            // array
+            var eggspressions = [];
+            eggspressions[0] = "skeptical";
+            eggspressions[1] = "frazzled";
+            eggspressions[2] = "silly";
+            eggspressions[3] = "giggling";
+            //document.write(eggspressions.length);
+            ```
+          </div>
+          <a href="examples/026-arrays-and-properties.html"><img class="delayed" src="framework/img/workshop/rawbot-run.png" alt="run code" align="right" /></a>
+        </section>
+
+        <section class="slide">
+          <h2>Arrays &amp; Length: Why?</h2>
+          <p class="delayed">It is common to use JavaScript to run through a list of values and apply some code to it. In order to do this, we need to know how many elements there are in total. </p>
+          <p class="delayed">Let's look at this photo gallery from <a href="http://abcnews.go.com/US/photos/snow-blast-polar-cold-21609711/image-22767131">abcnews.go.com</a> and figure out how length can be used here. </p>
+          <p class="delayed"><img src="framework/img/workshop/exampleslideshow.png" alt="slideshow example" height="300"/></p>
+        </section>
+
+        <section class="slide">
+          <h2>Arrays &amp; Length and the 0 Index</h2>
+          <p class="delayed">How do we access a particular value?</p>
+          <p class="delayed">By using the index number.</p>
+          <p class="delayed">So how do we access the <span class="highlight-text">last</span> value?</p>
+          <div data-markdown class="delayed">
+            ```javascript
+            var eggspressions = [];
+            eggspressions[0] = "skeptical";
+            eggspressions[1] = "frazzled";
+            eggspressions[2] = "silly";
+            eggspressions[3] = "giggling";
+            ```
+          </div>
+          <p class="delayed">To access the last index value, you can use <code>eggspressions[3].</code> </p>
+          <p class="delayed">BUT...</p>
+          <p class="delayed">You can also use <code>eggspressions[eggspressions.length-1].</code></p>
+         </section>
+
+        <section class="slide title">
+          <h1>Huh?</h1>
+        </section>
+
+        <section class="slide">
+          <h2>REWIND: Arrays &amp; Length and the 0 Index </h2>
+          <div data-markdown class="delayed">
+            ```javascript
+            var eggspressions = [];
+            eggspressions[0] = "skeptical";
+            eggspressions[1] = "frazzled";
+            eggspressions[2] = "silly";
+            eggspressions[3] = "giggling";
+            ```
+          </div>
+          <p class="delayed">Let's break it down.</p>
+          <ul>
+            <li class="delayed"><code>eggspressions.length</code> returns 4</li>
+            <li class="delayed">index of last element is 3</li>
+            <li class="delayed"><code>eggspressions.length-1</code> is the same as 4 - 1 and will return 3</li>
+            <li class="delayed"><code>eggspressions[3]</code> returns the last value</li>
+            <li class="delayed"><code>eggspressions[eggspressions.length-1]</code> is the same as <code>eggspressions[3]</code></li>
+          </ul>
+        </section>
+
+        <section class="slide">
+          <h2>How is this useful?</h2>
+          <p class="delayed"> Since the index always begins at 0, the last index value is always <code>length-1</code>. This is useful if you want to always access the last index, despite new additions, and apply some code to it. </p>
+          <p class="highlight-color delayed">File: examples/027-how-is-this-useful.html</p>
+          <div data-markdown class="delayed">
+            ```javascript
+            var eggspressions = [];
+            eggspressions[0] = "skeptical";
+            eggspressions[1] = "frazzled";
+            eggspressions[2] = "silly";
+            eggspressions[3] = "giggling";
+
+            document.write(eggspressions[3] + " is the last element in the array. <br />");
+            document.write(eggspressions[eggspressions.length-1] + " is the last element in the array.");
+            ```
+          </div>
+          <a href="examples/027-how-is-this-useful.html"><img class="delayed" src="framework/img/workshop/rawbot-run.png" alt="run code" align="right" /></a>
+
+        </section>
+
+        <section class="slide title">
+          <h1>Loops</h1>
+        </section>
+
+        <section class="slide">
+          <h2>Loops</h2>
+          <p class="delayed">Why use loops? Because sometimes we need to <span class="highlight-text">execute repetitive code</span> for a specified number of times or through a list of values. </p>
+          <p class="delayed">Loops will execute the same code continuously, using conditional statements to determine when to begin and stop. </p>
+          <p class="delayed">It's like creating a playlist on your favorite music player.</p>
+          <p class="delayed">You create a list of songs, press play and then each song is played automatically in the set order of the playlist. When it reaches the end of the playlist, it stops</p>
+          <p class="delayed">We will be discussing <code>while loops</code> and for <code>loops</code>.</p>
+        </section>
+
+        <section class="slide centered">
+          <h2>While Loop Syntax</h2>
+          <br /><br />
+          <img class="delayed" src="framework/img/workshop/syntax-while.gif" alt="while loop" />
+        </section>
+
+       <section class="slide">
+          <h2>While Loop</h2>
+          <p class="delayed">The <span class="highlight-text">WHILE LOOP</span> executes the code contained in curly braces <code>{ }</code> <span class="highlight-text">while</span> the condition is true.</p>
+          <p class="delayed">An index variable is required to keep track of its place in the loop.</p>
+          <p class="delayed">The <span class="highlight-text">WHILE LOOP</span> stops executing the code once the condition becomes false.</p>
+          <p class="delayed">If you had 10 songs in your playlist, the player won't stop until it reaches the end of song 10.</p>
+          <div data-markdown class="delayed">
+          ```javascript
+          //declare index variable
+          var i = 0;
+
+          while ( i < playlist.length ) {
+            playCurrentSong();
+            i = i + 1; // adds 1 to the current index so it moves to the next song
+          }
+          ```
+          </div>
+
+          <small class="delayed"><img class="delayed" src="framework/img/workshop/rawbot-reminder.png" alt="robot reminder" align="left"/>If the condition is always true, the loop will run infinitely and will never exit the while loop. This can cause your browser to crash!</small>
+        </section>
+
+        <section class="slide">
+          <h2>While Loop in Action!</h2>
+          <p class="delayed">Let's use the <span class="highlight-text">WHILE LOOP</span> to output the mathematical formula for converting Celsius to Fahrenheit.</p>
+          <p class="delayed">(The formula is: <code>Temperature = Temperature * 9 / 5 + 32</code>)</p>
+          <p class="delayed">This next example uses a <span class="highlight-text">WHILE LOOP</span> to output the results of the temperature formula into HTML table rows that are also added dynamically.</p>
+          <p class="delayed">It will stop when we reach 30 degrees Celsius (or whatever number is declared in the condition).</p>
+          <p class="delayed">See next slide for the example.</p>
+        </section>
+
+         <section class="slide">
+          <h2>While Loop Temperature Conversion</h2>
+          <p class="delayed">Let's look at the temperature conversion table with and without JavaScript and compare the difference in the amount of repetitive code required to create a table like this manually.</p>
+          <p class="delayed">Conversion table using a <a href="exercises/temperature.html">while loop</a>.</p>
+          <p class="delayed">Conversion table <a href="exercises/temperature-nojs.html">without JavaScript</a>.</p>
+          <p class="delayed">View source and compare the difference between the amount of code.</p>
+          <img class="delayed" src="framework/img/workshop/while-loop.jpg" alt="while loop source code" />
+          <img class="delayed" src="framework/img/workshop/no-while-loop.jpg" alt="no while loop source code" />
+        </section>
+
+        <section class="slide centered">
+          <h2>For Loop Syntax</h2>
+          <br /><br />
+          <img class="delayed" src="framework/img/workshop/syntax-for.gif" alt="while loop" />
+        </section>
+
+       <section class="slide">
+          <h2>For Loops</h2>
+          <p class="delayed">A <span class="highlight-text">FOR LOOP</span> also loops through the code a specified number of times until the condition is false.</p>
+          <p class="delayed">The index, conditional test and incrementer are all declared in one line. Basically, it's the <span class="highlight-text">WHILE LOOP</span> condensed.</p>
+          <div class="delayed" data-markdown>
+            ```javascript
+            /* While Loop */
+            var i = 0; //index
+            while ( i < playlist.length ) { //condition
+              playCurrentSong();
+              i = i + 1; // incrementer
+            }
+            ```
+          </div>
+          <div data-markdown class="delayed">
+            ```javascript
+            /* For Loop */
+            // index, condition, incrementer
+            for ( var i = 0; i < playlist.length; i++ ) {
+              playCurrentSong();
+            }
+            ```
+          </div>
+          <small class="delayed"><img class="delayed" src="framework/img/workshop/rawbot-reminder.png" alt="robot reminder" align="left"/>
+            Incrementer (i++) and decrementer (i--) operators add or subtract one.<br />
+            i++ is the same as i = i + 1<br />
+            i-- is the same as i = i - 1<br />
+          </small>
+        </section>
+
+       <section class="slide">
+          <h2>For Loops and Arrays</h2>
+          <p class="delayed"><span class="highlight-text">FOR LOOPS</span> are useful when used in conjunction with <span class="highlight-text">ARRAYS</span> because they can be used to execute specific actions while going through the list of values.</p>
+          <p class="delayed">Back to our robot store. It wouldn't be much of a store if there was only one product! We can create a list of different products with various prices by creating an array.</p>
+          <div data-markdown class="delayed">
+          ```javascript
+          var productPrices = [];
+          productPrices[0] = 17.99;
+          productPrices[1] = 25;
+          productPrices[2] = 13.99;
+          productPrices[3] = 9.99;
+          productPrices[4] = 24.99;
+          productPrices[5] = 8.99;
+          ```
+          </div>
+        </section>
+
+       <section class="slide">
+          <h2>For Loops, Arrays, Robots and Sales</h2>
+          <p class="delayed">Suppose we wanted to put all the items over $15 on sale?  Let's use the <span class="highlight-text">FOR LOOP</span> to determine which items are eligible for the sale and output the product number.</p>
+          <p class="highlight-color delayed">File: examples/028-for-loops-arrays-robots-sales.html</p>
+          <div data-markdown class="delayed">
+            ```javascript
+            var productPrices = [];
+            productPrices[0] = 17.99;
+            productPrices[1] = 25;
+            productPrices[2] = 13.99;
+            productPrices[3] = 9.99;
+            productPrices[4] = 24.99;
+            productPrices[5] = 8.99;
+
+            for (i=0; i < productPrices.length; i++) {
+              var value = productPrices[i];
+              if (value > 15){
+                document.write("Product " + (i+1) + " is on sale.<br />");
+              } else {
+                document.write("Product " + (i+1) + " is not on sale.<br />");
+              }
+            }
+            ```
+          </div>
+          <a href="examples/028-for-loops-arrays-robots-sales.html"><img class="delayed" src="framework/img/workshop/rawbot-run.png" alt="run code" align="right" /></a>
+        </section>
+
+       <section class="slide">
+          <h2>Mini-exercise #6 (10-15 minutes)</h2>
+          <p>As owner of Planet Robot, you decide to have a special members-only sale: 50% off all items with a secret password! (p.s. the password is "llc"!)</p>
+          <p>Sounds like a great deal for the customer, but all you have is a static HTML page right now. Are you going to go through every single product, calculate the discounted price, and then update every entry manually? No, you're going to use loops and arrays!</p>
+          <p>Download the HTML exercise file: <a href="exercises/shopping_cart_products_start.html">exercises/shopping_cart_products_start.html</a></p>
+          <p class="highlight-color">TODO: Check within the code for your THREE tasks.</p>
+          <small>If you're stuck, here's the solution file: <a href="exercises/shopping_cart_products_final.html">exercises/shopping_cart_products_final.html</a></small>
+        </section>
+
+        <section class="slide title">
+          <h1>Regroup before break</h1>
+          <h2>Share your mistakes so we can learn from each other!</h2>
+        </section>
+
+        <section class="slide title">
+          <h1>Break time!</h1>
+          <h2>Come back in 15 minutes</h2>
+        </section>
+
+        <section class="slide title">
+          <h1>Document Object Model (DOM)</h1>
+          <h2>Manipulating objects on a real HTML page</h2>
+        </section>
+
+        <section class="slide">
+          <h2>Manipulating objects on a real HTML page</h2>
+          <p class="delayed">Think about your HTML web page (your "browser DOCUMENT") as being made up of many blocks.</p>
+          <p style="text-align:center" class="delayed"><img src="framework/img/workshop/browser-blocks.jpg" alt="browser blocks" />
+        </p>
+      </section>
+
+        <section class="slide">
+          <h2>Pre-defined Blocks</h2>
+          <p class="delayed">Some blocks are defined by the browser, such as the browser <span class="highlight-text">window</span>.</p>
+          <p class="delayed" style="text-align:center"><img src="framework/img/workshop/browser-window.jpg" alt="browser window" />
+        </section>
+
+        <section class="slide">
+          <h2>Document Objects</h2>
+          <p class="delayed">All of these blocks are <span class="highlight-text">OBJECTS</span> -- just like the ones we covered earlier! And all these objects have pre-written functions/methods you can use.</p>
+          <p class="delayed">Does the line of code below make more sense now? <code>document</code> is one of the main objects of a web page and it has a method named <code>write</code> that accepts a string as a parameter. document has lots of other properties and methods too: <a href="http://dochub.io/#dom/document">check out this list</a>.</p>
+          <div data-markdown class="delayed">
+            ```javascript
+            document.write("Hello!");
+            ```
+          </div>
+          <a href="examples/029-document-objects.html"><img class="delayed" src="framework/img/workshop/rawbot-run.png" alt="run code" align="right" /></a>
+        </section>
+
+        <section class="slide">
+          <h2>HTML Element Objects</h2>
+          <p class="delayed">The most repetitive thing you'll ever do with JavaScript is getting references to your HTML tags ("elements") using <code>document.getElementById()</code>.</p>
+          <small class="delayed">(It's important that your HTML tag has an id attribute in order to do this!)</small>
+          <p class="delayed">For example, let's dynamically find out what the text is in a paragraph tag by reading its innerHTML property. (You can find all the things you can do with elements <a href="http://dochub.io/#dom/element">here</a>.)</p>
+          <p class="highlight-color delayed">File: examples/030-html-element-objects.html</p>
+          <pre class="delayed"><code>&lt;p id="text" style="border: 1px solid red;">
+  Loading...
+&lt;/p>
+
+&lt;script>
+
+&lt;/script></code></pre>
+          <a href="examples/030-html-element-objects.html"><img class="delayed" src="framework/img/workshop/rawbot-run.png" alt="run code" align="right" /></a>
+        </section>
+
+        <section class="slide">
+          <h2>HTML Element Objects (cont'd)</h2>
+          <p>You can also use innerHTML to replace what's already in a element.</p>
+          <p class="highlight-color">File: examples/031-html-element-objects.html</p>
+          <pre><code>&lt;p id="text" style="border: 1px solid red;">
+  Loading...
+&lt;/p>
+
+&lt;script>
+  var existingElement = document.getElementById("text");
+
+&lt;/script></code></pre>
+          <a href="examples/031-html-element-objects.html"><img src="framework/img/workshop/rawbot-run.png" alt="run code" align="right" /></a>
+        </section>
+
+        <section class="slide">
+          <h2>HTML Element Objects (cont'd)</h2>
+          <p>Or let's dynamically swap out one image for another by updating the src attribute of an image tag.</p>
+          <p class="highlight-color">File: examples/032-html-element-objects.html</p>
+          <pre><code>&lt;img id="cupcake" src="assets/exercises/assets/cupcake.jpg" />
+
+&lt;script>
+
+&lt;/script></code></pre>
+          <a href="examples/032-html-element-objects.html"><img src="framework/img/workshop/rawbot-run.png" alt="run code" align="right" /></a>
+        </section>
+
+        <section class="slide">
+          <h2>Updating CSS Styles</h2>
+          <p class="delayed">You can even update an HTML element's CSS styles dynamically using its style property.</p>
+          <p class="delayed">Consider how you might program a button toggle effect to show the difference between "selected" or "deselected" states. (Note the differences between how properties are written in CSS to how they appear in JavaScript -- background-color versus backgroundColor.</p>
+          <p class="highlight-color delayed">File: examples/033-updating-css-styles.html</p>
+          <pre class="delayed"><code>&lt;style>
+  #clickme {
+    text-align: center;
+    width: 100px;
+    padding: 5px 10px;
+    border: 1px solid #999;
+    cursor: pointer;
+    background-color: white;
+    color: black;
+  }
+&lt;/style>
+
+&lt;div id="clickme" onclick="restyle();">
+Click me!
+&lt;/div>
+
+&lt;script>
+  var button = document.getElementById("clickme");
+  function restyle() {
+    if ( button ) {
+
+    } else {
+
+    }
+  }
+&lt;/script></code></pre>
+          <a href="examples/033-updating-css-styles.html"><img class="delayed" src="framework/img/workshop/rawbot-run.png" alt="run code" align="right" /></a>
+        </section>
+
+        <section class="slide">
+          <h2>Updating CSS Styles</h2>
+          <p>You could even update several style properties at once if you use CSS classes and update an element's class attribute.</p>
+          <p class="highlight-color">File: examples/034-updating-css-styles.html</p>
+          <pre><code>&lt;style>
+  .original {
+    text-align: center;
+    width: 100px;
+    padding: 5px 10px;
+    border: 1px solid #999;
+    cursor: pointer;
+    background-color: white;
+    color: black;
+  }
+&lt;/style>
+
+&lt;div id="clickme" class="original" onclick="restyle();">
+Click me!
+&lt;/div>
+
+&lt;script>
+  var button = document.getElementById("clickme");
+  function restyle() {
+    if ( button ) {
+
+    } else {
+
+    }
+  }
+&lt;/script></code></pre>
+          <a href="examples/034-updating-css-styles.html"><img src="framework/img/workshop/rawbot-run.png" alt="run code" align="right" /></a>
+        </section>
+
+        <section class="slide">
+          <h2>Make DOM Elements Magically Appear!</h2>
+          <p class="delayed">You can even create completely new elements out of thin air! Use <code>document.createElement()</code> and <code>appendChild()</code>;</p>
+
+          <p class="delayed highlight-color">File: examples/035-dom-elements.html</p>
+          <pre class="delayed"><code>&lt;div id="emptyDiv" style="border: 1px solid red; padding: 10px;">
+&lt;/div>
+
+&lt;script>
+  // create a new paragraph out of thin air
+
+  //insert it into the currently empty div
+
+&lt;/script></code></pre>
+          <a href="examples/035-dom-elements.html"><img class="delayed" src="framework/img/workshop/rawbot-run.png" alt="run code" align="right" /></a>
+        </section>
+
+        <section class="slide title">
+          <h1>Going Beyond JavaScript Basics</h1>
+          <h2>You're getting to be quite the pro!</h2>
+        </section>
+
+        <section class="slide title">
+          <h1>Debugging!</h1>
+          <h2>Squash those crawly things in your code.</h2>
+        </section>
+
+        <section class="slide">
+          <h2>What's a Bug?</h2>
+          <p>As the <a href="http://en.wikipedia.org/wiki/Grace_Hopper#Anecdotes">story goes</a>, the term "software bug" got its name because a real moth flew into a computer system causing strange, unexpected behaviours to happen in a computer program.</p>
+          <p>Nowadays, bugs are mostly due to human error in one of two areas:</p>
+          <ol>
+            <li>Syntax - missing semi-colons, typos, case-sensitivity</li>
+            <li>Logic - trying to access a variable that doesn't exist yet, writing an incorrect conditional test</li>
+          </ol>
+          <p>Luckily there's a few things to help us hunt them down quicker...</p>
+        </section>
+
+        <section class="slide">
+          <h2>Chrome Developer Console (and Firefox Developer Tools)</h2>
+          <p>Use the built in developer tools in Chrome to debug your code. (Firefox is similar but not exactly the same.)</p>
+          <img src="framework/img/workshop/ChromeConsole.png" alt="Chrome Console" />
+        </section>
+
+        <section class="slide">
+          <h2>Right click > Inspect Element</h2>
+          <p>Easiest way to remember is to right-click on any web page and select "Inspect Element". In the new panel, select the "Console" tab to see JavaScript errors or to play in the console sandbox.</p>
+          <img src="framework/img/workshop/ChromeInspector.gif" alt="Chrome Inspector" />
+        </section>
+
+        <section class="slide">
+          <h2>Inspecting the DOM</h2>
+          <p>You can inspect any webpage with the debugger.</p>
+          <p>Let's open up the Ladies Learning Code Events page: <a href="http://ladieslearningcode.com/events/">http://ladieslearningcode.com/events/</a>.</p>
+          <p>How can we use the console to find out how many events are listed on this page?</p>
+        </section>
+
+        <section class="slide">
+          <h2>&lt;script src=""></h2>
+          <p>As you write bigger pieces of JavaScript, you will want to start putting your code into their own files so they are easier to manage. Or you might want to enlist the help of others to write JavaScript for your website so you can work on different sections separately. A big site could have thousands of lines of code written by many different people!</p>
+          <p>To link to an external JavaScript file:</p>
+          <pre><code>&lt;html>
+  &lt;head>
+    &lt;title>JavaScript example!</title>
+  &lt;/head>
+  &lt;body>
+    &lt;div id="example">This is an example.</div>
+    &lt;script type="text/javascript" src="scripts.js">&lt;/script>
+  &lt;/body>
+&lt;/html></code></pre>
+        </section>
+
+        <section class="slide">
+          <h2>In the external file</h2>
+          <p>In the <a href="exercises/scripts.js">external JavaScript file (scripts.js)</a> you don't include script tags; just JavaScript code.</p>
+          <p>View this example: <a href="assets/exercises/external-javascript.html">assets/exercises/external-javascript.html</a></p>
+        </section>
+
+        <section class="slide">
+          <h2>script tag gotchas</h2>
+          <p>Even though you're not writing JavaScript between the script tags, you must use a closing <code>&lt;/script></code> tag. A self-closing tag such as <code>&lt;script src="scripts.js" /></code> will not work. The correct way is highlighted below:</p>
+          <pre><code>&lt;script type="text/javascript" src="scripts.js">&lt;/script></code> </pre>
+        </section>
+
+        <section class="slide title">
+          <h1>JQuery</h1>
+          <h2>The Write Less, Do More, JavaScript Library</h2>
+        </section>
+
+        <section class="slide">
+          <h2>jQuery: A brief introduction</h2>
+          <p>jQuery is a cross-browser JavaScript library designed to simplify client-side scripting, manipulating HTML pages and handling events. The library contains many built-in functions and methods that make writing JavaScript code easier.</p>
+          <h3>Getting started</h3>
+          <p>Download the library and include the file in your HTML page</p>
+          <p>Download instructions can be found here: <a href="http://docs.jquery.com/Downloading_jQuery">http://docs.jquery.com/Downloading_jQuery</a></p>
+          <h3>Gotchas!</h3>
+          <p>When adding your own custom-written jQuery/JavaScript files, make sure to include it <b>after</b> the jQuery file to ensure that the library loads first.</p>
+        </section>
+
+        <section class="slide">
+          <h2>jQuery: Demo</h2>
+          <p>There are many built in methods and functions included in the jQuery library, too many to remember them all. Never fear, jQuery has documented their API here: <a href="http://api.jquery.com">http://api.jquery.com</a></p>
+          <p>It's searchable and provides explanations and examples.</p>
+          <p>Let take a peek at some jQuery code.</p>
+          <p class="highlight-color">File: examples/036-jquery-demo.html</p>
+          <div data-markdown>
+            ```javascript
+            $(document).ready(function(){
+              $('a.hide').click(function(){
+                 $('#box').hide();
+              });
+              $('a.show').click(function(){
+                 $('#box').show();
+              });
+              $('a.fade').click(function(){
+                 $('#box').fadeOut();
+              });
+              $('a.slide-up').click(function(){
+                 $('#box').slideUp();
+              });
+              $('a.slide-toggle').click(function(){
+                 $('#box').slideToggle();
+              });
+            });
+            ```
+          </div>
+          <div data-markdown>
+          ```
+          &lt;style>
+          #container {
+            width: 320px;
+            padding-top: 10px;
+          }
+          #box {
+            height: 60px;
+            width: 200px;
+            background-color: blue;
+            padding: 40px;
+            margin-top: 10px;
+          }
+          a {
+            font: 14px Georgia, serif;
+            text-decoration: none
+          }
+          a.active {
+            color: pink;
+          }
+          &lt;/style>
+          &lt;div id="container">
+            &lt;a class="hide" href="#">Hide&lt;/a> |
+            &lt;a class="show" href="#">Show&lt;/a> |
+            &lt;a class="fade" href="#">Fade&lt;/a> |
+            &lt;a class="slide-toggle" href="#">Slide Toggle&lt;/a>
+            &lt;div id="box">&lt;/div>
+          &lt;/div>
+           ```
+          </div>
+          <a href="examples/036-jquery-demo.html"><img src="framework/img/workshop/rawbot-run.png" alt="run code" align="right" /></a>
+        </section>
+
+        <section class="slide">
+          <h2>BUT WAIT. Javascript isn't just for the browser anymore?</h2>
+          <p>Javascript has grown beyond the browser! You can use this language for front-end (browser) AND back-end (server) programming now.</p>
+          <p><a href="http://www.nodejs.org/">Node.js</a> is a Javascript 'platform' (a bunch of tools and code to help you make complex programs) for building javascript without the browser. It is commonly used to build web servers, but it has other uses too... like <a href="http://nodecopter.com/">ROBOTS</a>!!</p>
+          <p>Here is a tutorial for getting started with Node.js at home: <a href="http://net.tutsplus.com/tutorials/javascript-ajax/this-time-youll-learn-node-js/">http://net.tutsplus.com/tutorials/javascript-ajax/this-time-youll-learn-node-js/</a></p>
+        </section>
+
+        <section class="slide small-type" data-markdown>
+      <script type="text/template">
+        #Next Steps
+
+        [Affiliate info to be included in all presentations. Revise as required.]
+        
+        Explore more Ladies Learning Code workshops by following our [Roadmap](http://ladieslearningcode.com/roadmap/).
+        
+        ##Getting your site online
+        
+        You will need to register a domain name and purchase hosting. Here are some suggestions:
+        
+        * [dreamhost.com](http://www.dreamhost.com/r.cgi?2085384) - domains and hosting - use promo code **LLC40** to get $40 off your registration!
+        * [hover.com](http://hover.com/ladiescode) - domains - save 10% with the promo code "learningcode"
+
+        Why keep your domains and hosting separate?<!-- .element: class="note" --> [Learn more about Hover](http://ladieslearningcode.com/getting-hosted-domains-with-hover/).
+
+        You will also need to upload your files to your hosting server. You will need some info usually provided by your hosting service provider: FTP Address, Username, Password.
+
+        Here's a tutorial getting your files online using FileZilla: [FileZilla Client Tutorial](https://wiki.filezilla-project.org/FileZilla_Client_Tutorial_%28en%29)
+      </script>
+    </section>
+    
+    <!-- Last slide -->
+    <section class="slide last">
+      <h1>Thank you!</h1>
+      <h2 class="heading-bg">
+        <span>Title of Workshop<br>Second line</span>
+      </h2>  
+
+      <img class="instructor" src="http://cl.ly/image/0r3Q3H110G36/profile-generic.jpg" alt="instructor name">
+      <h2><span class="cursive">with</span> Instructor Name</h2>
+      <ul>
+        <li><a href="mailto:">hello@email.com</a></li>
+        <li><a href="#">mywebsite.com</a></li>
+        <li><a href="http://twitter.com/">@twitter</a></li>
+      </ul>
+
+      <p class="attribution">Slide presentation created by <a href="http://christinatruong.com">Christina Truong</a> based on <a href="https://github.com/LeaVerou/csss">Lea Verou's SlideShow</a> and <a href="http://lab.hakim.se/reveal-js/">reveal.js</a>.</p>
+    </section>
+
+  </main><!-- cls main section -->
   
-  <!-- **************************************** -->  
-  </div>
-  <!-- END div id=presentation -->
+  <script src="framework/scripts/jquery-1.11.0.min.js"></script>
+  <script src="framework/scripts/slideshow.js"></script>
 
-  <div class="centered" style="padding:5px;">(Use the left and right keyboard arrow keys to navigate within sections. Click the "next" arrow to move to the next section.)</div>
+  <!-- Uncomment the plugins you need -->
+  <script src="framework/scripts/plugins/css-edit.js"></script>
+  <script src="framework/scripts/plugins/css-snippets.js"></script>
+  <script src="framework/scripts/plugins/css-controls.js"></script>
+  <!-- <script src="plugins/code-highlight.js"></script>-->
 
-  <script src='src/jquery.min.js'></script>
-  <script src="src/modernizr.js"></script>
-
-  <!-- Update these paths to point to the correct files. -->
-  <script src="src/jquery.tmpl.min.js"></script>
-  <script src="src/deck.js/core/deck.core.js"></script>
-
-  <!-- Code Mirror -->
-  <script src="src/codemirror/lib/codemirror.js"></script>
-  <script src="src/codemirror/mode/xml/xml.js"></script>
-  <script src="src/codemirror/mode/css/css.js"></script>
-  <script src="src/codemirror/mode/javascript/javascript.js"></script>
-  <script src="src/codemirror/mode/htmlmixed/htmlmixed.js"></script>
-
-  <!-- Prettify -->
-  <script src="src/prettify.js"></script>
-
-  <!-- Deck Core and extensions -->
-  <script src="src/deck.js/extensions/status/deck.status.js"></script>
-  <script src="src/deck.js/extensions/navigation/deck.navigation.js"></script>
-  <script src='src/deck.coder.js'></script>
-  <script src="src/deck.js/extensions/hash/deck.hash.js"></script>
-  <script src="src/deck.js/extensions/menu/deck.menu.js"></script>
+  <script src="framework/scripts/plugins/markdown/marked.js"></script>
+  <script src="framework/scripts/plugins/markdown/markdown.js"></script>
+  <script src="framework/scripts/plugins/highlight/highlight-8.4.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <script src="framework/scripts/llc.js"></script>
   <script>
-  $(function() {
-    $.deck('.slide');
-  });
-</script>
+    var slideshow = new SlideShow();
+
+    // Grabs all the .snippet elements
+    var snippets = document.querySelectorAll('.snippet');
+    for(var i=0; i<snippets.length; i++) {
+      new CSSSnippet(snippets[i]);
+    }
+  </script>
 </body>
 </html>

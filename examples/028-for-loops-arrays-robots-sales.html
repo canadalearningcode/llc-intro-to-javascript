@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <title>JavaScript example!</title>
+    <script>
+      var productPrices = [];
+      productPrices[0] = 17.99;
+      productPrices[1] = 25;
+      productPrices[2] = 13.99;
+      productPrices[3] = 9.99;
+      productPrices[4] = 24.99;
+      productPrices[5] = 8.99;
+
+      for (i=0; i < productPrices.length; i++) {
+        var value = productPrices[i];
+        if (value > 15){
+          document.write("Product " + (i+1) + " is on sale.<br />");
+        } else {
+          document.write("Product " + (i+1) + " is not on sale.<br />");
+        }
+      }
+    </script>
+  </head>
+  <body>
+  </body>
+</html>

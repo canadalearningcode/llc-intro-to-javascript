@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <title>JavaScript example!</title>
+    <script>
+      /* With great power (globals) comes great responsibility.
+      You might think, 'why not make ALL the variables global?'.
+      Ask your mentor! */
+      var baseTopping = "cheese";
+
+      function orderPizza() {
+        var topping = "bacon";
+        var crust = "thin crust";
+        var size = "medium";
+        document.write("Pizza order:<br />" + baseTopping
+        + "<br />" + topping + ", " + crust + ", " + size + "<br /><br />");
+      }
+      function orderAnotherPizza() {
+        var topping = "pepperoni";
+        var crust = "stuffed crust";
+        var size = "small";
+        document.write("Pizza order:<br />" + baseTopping
+        + "<br />" + topping + ", " + crust + ", " + size);
+      }
+
+      orderPizza();
+      orderAnotherPizza();
+    </script>
+  </head>
+  <body>
+  </body>
+</html>

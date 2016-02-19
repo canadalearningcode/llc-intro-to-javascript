@@ -1,0 +1,36 @@
+<html>
+<head>
+  <title>While Loop in Action</title> 
+  <style type="text/css">
+ 	table {
+	  border: 1px solid #C12AAA;
+ 	}
+	table tr td {
+      border: 1px solid #C12AAA;
+      padding: 4px;			
+  	}
+  </style>   
+</head>
+
+<body> 
+  <table id="temperature" cellspacing="0">
+  	<tr>
+		<td>Celsius</td>
+		<td>Fahrenheit</td>
+  	</tr>
+
+  	<script type="text/javascript">
+		var celsius = 0;
+		while (celsius <= 30) {
+	  		toFarenheit();
+	  		celsius = celsius + 1;
+   		}
+   	
+ 		// Calculates the temperature conversion and adds table HTML
+   		function toFarenheit() {
+   			document.write("<tr><td>" + celsius + "</td><td>" + ((celsius * 9 / 5) + 32) + "</td></tr>");
+   		}
+  	</script>
+  </table>
+</body>
+</html>
