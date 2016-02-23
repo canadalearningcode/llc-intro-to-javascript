@@ -75,121 +75,101 @@
       </footer>
     </section> 
 
-
-    <section class="slide">
-      <h2>Course Outline</h2>
-      <h3 class="delayed">The morning</h3>
-      <ul>
-        <li class="delayed">Development Environment: tools you need to get started</li>
-        <li class="delayed">Technology Overview: Programming and JavaScript</li>
-        <li class="delayed">Technology Overview: Programming and JavaScript</li>
-        <li class="delayed">Part 2: Functions</li>
-      </ul>
-      <h3 class="delayed">Afternoon</h3>
-      <ul>
-        <li class="delayed">Part 3: Making decisions with conditionals</li>
-        <li class="delayed">Part 4: Objects</li>
-        <li class="delayed">Part 5: The DOM and manipulating objects on a HTML page</li>
-      </ul>
-      <h3 class="delayed">Homestretch</h3>
-      <ul>
-        <li class="delayed">jQuery Hands-on</li>
-        <li class="delayed">Where to go from here?</li>
-      </ul>
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Course Outline
+        
+        <div class="table-of-contents"></div> 
+      </script>
     </section>
-
-    <section class="slide title" data-markdown>
+    
+    <section class="slide title" data-markdown data-toc>
       <script type="text/template">
         # Development Environment
         ## Tools you need to get started
       </script>
     </section> 
-
+    
     <section class="slide" data-markdown>
       <script type="text/template">
         # Web Browser
 
-        Choose a modern web browser that has good, built-in development tools to help make building web pages easier. Today we'll all use [Google Chrome](https://www.google.com/chrome) for simplicity.
+        Choose a modern web browser that has good, built-in development tools to help make building web pages easier. Today we'll be using [Google Chrome](https://www.google.com/chrome).
 
         [![Chrome](framework/img/workshop/new-chrome-logo.png)](https://www.google.com/chrome/browser/)
 
         ---
         ###Resource
         Get more info about browsers here: http://browsehappy.com
-
       </script>
     </section>
-
+    
     <section class="slide" data-markdown>
       <script type="text/template">
         # Code Editor
 
         There are many, many free and paid options. Today we'll be using [Atom](https://atom.io/). If you cannot download Atom, try [Brackets](http://brackets.io/).
         
-        ![Atom Logo](framework/img/workshop/atom-logo.png)
-        ![Brackets Logo](framework/img/workshop/brackets-logo.png)
+        [![Atom Logo](framework/img/workshop/atom-logo.png)](https://atom.io/)
+        [![Brackets Logo](framework/img/workshop/brackets-logo.png)](http://brackets.io/)
       </script>
     </section>
 
-    <section class="slide">
-      <h2>Using the Code Editor</h2>
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Editing your project files
 
-      <ul>
-        <li class="delayed">Open the code editor</li>
-        <li class="delayed">Find the zip folder that we downloaded</li>
-        <li class="delayed">Unzip the zip folder</li>
-        <li class="delayed">Drag the folder to the code editor</li>
-      </ul>
+        Inside of the folder you downloaded today, there are many folders that contain different files.
+        
+        ```xml
+        llc-intro-to-javascript-master
+          |-- framework // Contains files for this slide presentation. Do not edit!
+          |-- exercises // Contains exercise files for this workshop.
+          |-- slides.html // This is the file you are viewing right now!
+        ```
 
-      <p class="delayed">Your sidebar should now have to following items</p>
-      <p class="delayed"><img src="framework/img/workshop/codeeditorsidebar.png" alt="sidebar preview" /></p>
-   </section>
+        Open the **exercises** folder in the text editor to access the files.  
+        Go to **File** > ** Add Project Folder**. A popup will appear.
+        
+        ![](framework/img/workshop/editor-add-project-1.jpg)
+        
+        * then, navigate to the **llc-intro-to-javascript-master** folder
+        * select the **exercises** folder & click **Open**
+        
+        The folder will now appear in the sidebar. Click the arrow icon to see files within.
+      </script>
+    </section>
+  
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Getting to know Atom
+        
+        Having a good text editor and learning how to use it to its full potential will help your work flow. Today, let's update the text wrapping option to make it easier to read long blocks of code and text.
+        
+        Go to **Preferences** to open the customization options.
 
-    <section class="slide">
-      <h2>THE CONSOLE</h2>
+        ![](framework/img/workshop/atom-preferences.jpg)<!-- .element: width="70%" -->
 
-      <p>The console is an interactive tool, built into the browser. We can use this tool to enter commands and interact directly with a web page, log diagnostic information and check for errors. We'll be using it today to practice writing some JavaScript code. The console in Chrome looks like this:</p>
+        The **Settings** tab will show by default. Scroll down to **Soft Wrap** option.
 
-      <p>
-        <img src="framework/img/workshop/the_console_x.jpg" alt="the console"/>
-      </p>
-
-      <p><strong>Note the <code>&gt;</code> symbol.</strong> It is used by the console to represent a space for you to enter your input but you don't have to actually type it.</p>
+        ![](framework/img/workshop/atom-settings.jpg)<!-- .element: width="70%" -->
+          
+        Make sure the **Soft Wrap** option is checked.
+        
+        ![](framework/img/workshop/atom-soft-wrap.jpg)<!-- .element: width="70%" -->
+        
+        ---
+        ###Resources
+        
+        *   [Atom documentation](https://atom.io/docs)
+        *   [Atom Shortcuts cheat sheet](https://bugsnag.com/blog/atom-editor-cheat-sheet)
+        *   [Customizing Atom](https://atom.io/docs/v0.61.0/customizing-atom)
+        *   [Themes](https://atom.io/themes) for Atom
+        *   [Snippets](https://github.com/atom/snippets) - create your own code snippet shortcuts
+      </script>
     </section>
 
-    <section class="slide">
-      <h2>ACCESSING THE CONSOLE</h2>
-
-      <p>In Chrome, there are a couple ways to open the Console tab.</p>
-      <p>Use the keyboard shortcut: <br>
-        <code>COMMAND + OPTION + J</code> (MAC) <br>
-        <code>CONTROL + SHIFT + J</code> (WINDOWS/LINUX).
-      </p>
-      <p>OR</p>
-
-      <p>Select: <code>View &gt; Developer &gt; JavaScript Console</code>.</p>
-
-      <p>You can open the console when viewing <em>any</em> HTML page but let’s use this blank HTML page, <a href="framework/console.html">console.html</a> so we can have a blank slate to practice with throughout the day. </p>
-
-      <p>Open <a href="framework/console.html">console.html</a> now and take a moment to practice opening and closing the console until you’re comfortable with it.</p>
-
-      <div class="presenter-notes">
-        <p>Re-iterate to the class to keep console.html open in a tab to refer back to for the console exercises.  A blank document was created rather than opening the console in the slide deck so any errors showing won't confuse the learners and take away from the lesson explaining things not needed for the task at hand.</p>
-      </div>
-    </section>
-
-    <section class="slide">
-      <h2>Mini-exercise</h2>
-      <p>Let's experiment with typing some input into the console. Return to <strong>console.html</strong> and open the console. After the <code>&gt;</code> symbol, type your favorite number and press the enter/return key. </p>
-      <p>You will see something like this:</p>
-      <p><img src="framework/img/workshop/console-number.gif" alt="console number"></p>
-      <p>The <code>&gt;</code> symbol is used by the console to represent a space for your input.<br>The <code>&lt;</code> symbol is used by the console to represent the <strong>returned value</strong> of your input.  </p>
-      <p>You can also input text BUT when using text, make sure you put it in quotes (more on this soon).</p>
-      <p><img src="framework/img/workshop/console-string.gif" alt="console string"></p>
-      <p>The command you input into the console gets <em>evaluated</em> and a value is returned back to you.</p>
-    </section>
-
-    <section class="slide title" data-markdown>
+    <section class="slide title" data-markdown data-toc>
       <script type="text/template">
         # Technology Overview
         ## Programming and JavaScript
@@ -209,53 +189,13 @@
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        # Programming is giving instructions to your computer
-
-        Think about a tourist that stops you to ask for directions. The clearer the instructions, the more likely they will get to their destination.
-
-        ![rawbot directions](framework/img/workshop/rawbot-directions.png) <!-- .element: style="height:50vh;" -->
-      </script>
-    </section>
-    
-    <section class="slide steps" data-markdown>
-      <script type="text/template">
-        # Break your goal down into steps
-        
-        Suppose I want a computer to say hello using my name. **Break down the steps** as much as possible:
-        
-        <ol>
-          <li class="delayed">
-            <img src="framework/img/workshop/name-text-rawbot.gif" alt="allow to type name"> Allow me to type in my name.
-          </li>
-          <li class="delayed">
-            <img src="framework/img/workshop/remember-name-rawbot.gif" alt="remember my name"> Remember my name.
-          </li>
-          <li class="delayed">
-            <img src="framework/img/workshop/say-my-name-rawbot.png" alt="say hello"> Say "Hello" and repeat back my name.
-          </li>
-        </ol>
-      </script>
-    </section>
-    
-    <section class="slide highlight" data-markdown>
-      <script type="text/template">
         # Speak the computer's language
 
-        Programming is like having a conversation with your computer. Computers only understand instructions when you speak to them in a language they can understand. 
+        Programming is like having a conversation with your computer. Much like English or any other human language, programming languages also have "grammar rules" called *syntax*.
         
-        Much like Japanese, English or any other natural language, programming is about sticking to "grammar rules" called *syntax*.
-
-        **Syntax** is the set of rules that defines the combinations of symbols that are a correctly structured document or fragment in that language.
-      </script>
-    </section>
-
-    <section class="slide" data-markdown>
-      <script type="text/template">
-        # Speak the computer's language
-
         Computers have come a long way since their binary days so meet them half-way.
 
-        ![computer binary](framework/img/workshop/rawbot-binary.png)
+        ![computer binary](framework/img/workshop/rawbot-binary.png) <!-- .element: style="height:30vh;" -->
       </script>
     </section>
     
@@ -326,7 +266,7 @@
       <script type="text/template">
         # Server-side vs Client-side
 
-        ![front end back end diagram](framework/img/workshop/backend-frond-end-gif.gif)
+        ![front end back end diagram](framework/img/workshop/backend-front-end.gif)
 
         **JavaScript** is often referred to as a _client-side_ or _"front-end"_ web technology because it is interpreted by the web browser.
       </script>
@@ -336,11 +276,9 @@
       <script type="text/template">
         # Server-side vs client-side
 
-        ![computer diagram](framework/img/workshop/backend-frond-end-server-gif.gif)<!-- .element: width="62%" -->
+        ![computer diagram](framework/img/workshop/backend-front-end-server.gif)<!-- .element: width="62%" -->
 
         Java, .NET, PHP or Ruby can be considered *server-side* or *"back-end"* web technology because the code is typically compiled and executed by the operating system of a computer serving up web pages. 
-        
-        
       </script>
     </section>
     
@@ -350,9 +288,9 @@
         
         ![computer diagram](framework/img/workshop/llcodedotcom_viewsource.gif)<!-- .element: class="left" -->
 
-        On any web page, you can **right-click** and **view source** OR **CTRL/CMD-U** to see all the client side language code. That includes JavaScript as well as HTML and CSS. (Try it!) 
+        On *any* web page, **right-click** and **view source** to see all the client side code. That includes JavaScript as well as HTML and CSS. (Try it!) 
 
-        For server-side code, it can't be seen in the browser so it's sometimes a mystery what technology is running on a server.
+        Server-side code can't be seen in the browser so sometimes it's a mystery what technology is running on a server.
         
         JavaScript can be used for server-side programs too, but today we'll be focusing on the browser.
       </script>
@@ -366,9 +304,9 @@
 
         ![web triad html diagram](framework/img/workshop/web-triad-html.png)
 
-        **HTML** (Hypertext Markup Language) is the markup language.
+        **HTML** (Hypertext Markup Language) is a markup language.
 
-        it should define the **content**.
+        It defines the **content**.
       </script>
     </section>
     
@@ -380,9 +318,9 @@
 
         ![web triad css diagram](framework/img/workshop/web-triad-css.png)
 
-        **CSS** (Cascading Style Sheets) is the style sheet language.
+        **CSS** (Cascading Style Sheets) is a style sheet language.
 
-        it should define the **presentation**
+        It defines the **presentation**.
       </script>
     </section>
     
@@ -392,190 +330,377 @@
         
         **JavaScript** was meant to manipulate webpages written in **HTML** and works in tandem with **CSS**.
 
-        ![web triad javscript diagram](framework/img/workshop/web-triad-javascript.gif)
+        ![web triad javascript diagram](framework/img/workshop/web-triad-javascript.gif)
 
-        **JavaScript** is the programming language
+        **JavaScript** is a programming language.
 
-        it should define the **behaviour**
+        It defines the **behaviour**.
       </script>
     </section>
     
-    <section class="slide">
-      <h2>JavaScript in Different Browsers</h2>
-      <p class="delayed"><img src="framework/img/workshop/rawbot-reminder.png" alt="robot reminder" align="left" height="80"/>Usually JavaScript will run the same way in various browsers.</p>
-      <p class="delayed">But, browsers are software programs written by many different people/companies (people programming things just like you!), so sometimes they say "hi" with different accents.</p>
-      <p class="delayed">Imagine a British accent versus a Texas accent.</p>
-      <p class="delayed">This is especially noticeable with newer "HTML5" features.</p>
-      <img class="delayed" src="framework/img/workshop/browser-war-illustration.jpg" alt="browser war" height="300"/>
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # JavaScript in Different Browsers
+
+        Usually JavaScript will run the same way in various browsers. 
+        
+        ![browser war](framework/img/workshop/browser-war-illustration.jpg)<!-- .element: class="left" width="50%" -->
+        
+        But, browsers are software programs written by many different people/companies, so sometimes there are slight differences.
+
+        This is especially noticeable with newer "HTML5" features.
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # A JavaScript Experiment
+
+        JavaScript is essential for making interactive web pages. Try this experiment: turn off JavaScript in your web browser. 
+        
+        To go to the JavaScript settings in Chrome, paste this snippet, **chrome://settings/content**, into the address bar.  Then select "Do not allow any site to run JavaScript".
+
+        Now try visiting some popular sites. ([Google](http://google.com), [Facebook](http://facebook.com) , [Twitter](http://twitter.com))
+        
+        > What interactions are now missing?
+
+        (Remember to turn JavaScript back on!!!)<!-- .element: class="note" -->
+        
+        ---
+        ###Resource
+        Here's how to find the JavaScript settings using the browser menu option:  
+        Preferences (in the browser menu) > Show advanced settings... (link) > Content settings (under Privacy)
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # How do you write a program?
+        
+        Programming is giving instructions to your computer.
+
+        Think about a tourist that stops you to ask for directions. The clearer the instructions, the more likely they will get to their destination.
+
+        ![rawbot directions](framework/img/workshop/rawbot-directions.png) <!-- .element: style="height:50vh;" -->
+      </script>
     </section>
 
-    <section class="slide">
-      <h2>A JavaScript Experiment</h2>
-      <p>JavaScript is essential for "AJAX", "Web 2.0", and "HTML5" websites. All these terms refer to various methods of making interactive web pages using Javascript. </p>
-      <p class="delayed">Try this experiment: Turn off JavaScript in your web browser. Go to the JavaScript settings for Chrome ( <a href="chrome://settings/content">chrome://settings/content</a> ) and select "Do not allow any site to run JavaScript" </p>
-      <p class="delayed">Then visit your daily sites.</p>
-      <p class="delayed">e.g. <a href="http://google.com">Google</a>, <a href="http://facebook.com">Facebook</a> , <a href="http://twitter.com">Twitter</a></p>
-      <p class="delayed">(Remember to turn JavaScript back on to see this presentation!)</p>
+    <section class="slide steps" data-markdown>
+      <script type="text/template">
+        # Mini-Exercise: Say my name, say my name
+        
+        Suppose I want a computer to say hello using my name. **Break down the steps** as much as possible:
+        
+        <ol>
+          <li class="delayed">
+            <img src="framework/img/workshop/name-text-rawbot.gif" alt="allow to type name"> Allow me to type in my name.
+          </li>
+          <li class="delayed">
+            <img src="framework/img/workshop/remember-name-rawbot.gif" alt="remember my name"> Remember my name.
+          </li>
+          <li class="delayed">
+            <img src="framework/img/workshop/say-my-name-rawbot.png" alt="say hello"> Say "Hello" and repeat back my name.
+          </li>
+        </ol>
+      </script>
+    </section>
+    
+    <section class="slide highlight" data-markdown>
+      <script type="text/template">
+        # Writing a program
+        
+        To write a program for the computer to say "hello" back to us, we'll need to use two JavaScript concepts, *variables* and *functions*.
+        
+        Note that the syntax for programming languages tend to be a bit more complex than HTML & CSS so sometimes it requires it a little more to see results in the browser.
+      </script>
+    </section>
+    
+    <section class="slide title" data-markdown>
+      <script type="text/template">
+        #Intro to Functions & Variables
+      </script>
     </section>
 
-    <section class="slide">
-      <h2>A JavaScript Experiment: Results</h2>
-      <p>Note the sometimes subtle and sometimes major differences:</p>
-      <ul>
-        <li class="delayed">No search auto-completion and instant page refreshes on google.com</li>
-        <li class="delayed">No inline video content or lightboxed photo viewers on facebook.com -- not to mention broken "Like" buttons and inability to comment on posts!</li>
-        <li class="delayed">On twitter.com - older tweets don't load at the bottom of the page. Warning message on top of page. Navigation doesn't work. Popups don't work.</li>
-        <li class="delayed">And you can't see it but most analytics tracking won't work either.</li>
-      </ul>
-      <p class="delayed bigger-text"><img src="framework/img/workshop/rawbot-reminder.png" alt="robot reminder" align="left" height="80"/>The modern web just sort of gives up without JavaScript!</p>
+    <section class="slide two-col-list" data-markdown>
+      <script type="text/template">
+        #Automating Repetitive Tasks
+
+        What is something that you do that's very repetitive or a hassle (like paying for parking)? Wouldn't it be great if it was automated?
+        
+        * **Repetitive**
+          1.  Find bank machine
+          2.  Pull out bank card
+          3.  Get money out from ATM
+          4.  Buy chips so you can make change
+          5.  Put change into machine
+          6.  Take receipt
+        * **Automated!**
+          1.  Pull the PayPass credit card from your wallet
+          2.  Tap
+          3.  Take receipt
+      </script>
     </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Automating Repetitive Tasks
 
-    <section class="slide centered">
-      <h2>JavaScript helps us make nice websites</h2>
-      <p>Especially "one-page apps" where the experience is very seamless. </p>
-      <a href="http://thenewdesignguidelines.derekevanharms.com/"><img class="delayed" src="framework/img/workshop/thenewdesignguidelines.gif" alt="web triad javscript diagram" /></a>
-      <p>Like <a href="http://thenewdesignguidelines.derekevanharms.com/">this one</a></p>
-    </section>
+        1.  Pull the PayPass credit card from your wallet
+        2.  **Tap**
+        3.  Take receipt
+        
+        Step 2 can be thought of as a function. We can't see all of the steps that happen but performing the action will execute some instructions that will allow automatic payments.
+        
+        If the credit card tap was a function in JavaScript, it could look something like this:
 
-    <section class="slide title">
-      <h1>Javascript Theory Hands-on</h1>
-      <h2>Part 1</h2>
-    </section>
-
-   <section class="slide centered">
-     <p>As the owner of the thriving store, <span class="highlight-text">Planet Robots</span>, you have to make sure you have a top notch website.</p>
-     <img class="delayed" src="framework/img/workshop/planet-robot-website.png" alt="planet robots website" />
-    </section>
-
-    <section class="slide">
-      <h2>JavaScript Exercise Overview</h2>
-      <p class="delayed">You'll want to do things like offer online shopping, print shipping labels and tempt loyal customers with members only sales!</p>
-      <p class="delayed">You'll also want to make sure that everything works properly as well.</p>
-      <p class="delayed">That means customers shouldn't be able to submit empty forms and product totals must be calculated properly in their shopping carts.</p>
-      <p class="delayed">In order to create a website that can handle these requirements, we will need to learn how to use <strong>functions</strong>, <strong>variables</strong> and <strong>conditionals</strong>.</p>
-    </section>
-
-
-    <section class="slide title">
-      <h1>Functions</h1>
-    </section>
-
-    <section class="slide">
-      <h2 class="delayed">Intro to Functions</h2>
-      <p class="delayed">What is something that you do that's very repetitive or a hassle? Wouldn't it be great if it was automated?</p>
-      <p class="delayed"><strong>Paying for parking:</strong></p>
-      <table class="delayed" cellspacing="0" width="100%" >
-        <thead>
-          <tr>
-            <td><strong>The Old Way</strong></td>
-            <td><strong>The Improved Way</strong></td>
-          </tr>
-        </thead>
-        <tr>
-          <td>
-            <ol>
-              <li>Find bank machine</li>
-              <li>Pull out bank card</li>
-              <li>Get money out from ATM</li>
-              <li>Buy chips so you can make change</li>
-              <li>Put change into machine</li>
-              <li>Take receipt</li>
-            </ol>
-          </td>
-          <td valign="top">
-            <ol>
-              <li>Pull the PayPass credit card from your wallet</li>
-              <li>Tap</li>
-              <li>Take receipt</li>
-            </ol>
-          </td>
-        </tr>
-      </table>
-    </section>
-
-    <section class="slide">
-      <h2>Intro to Functions</h2>
-      <p class="delayed">We can think of step 2 as a function. We can't see all the steps that happen but we know that performing the action of tapping the card will execute some instructions that will allow us to pay automatically.</p>
-      <h3 class="delayed">The improved way</h3>
-      <ol>
-        <li class="delayed">Pull the PayPass credit card from your wallet</li>
-        <li class="delayed"><span class="highlight-color">Tap</span></li>
-        <li class="delayed">Take receipt</li>
-      </ol>
-    </section>
-
-    <section class="slide">
-      <h2>Intro to Functions</h2>
-      <p><span class="highlight-text">Functions</span> are used to make the code "do things."</p>
-      <p>To get the function to execute, you have to <span class="highlight-text">call the function</span> by using the function <em>name</em> followed by <em>round brackets</em>.</p>
-      <p>If the credit card tap was a function in JavaScript, it could look something like this:</p>
-      <code>tapCard()</code>
-    </section>
-
-    <section class="slide">
-      <h2>Intro to Functions</h2>
-      <p>We can create our own functions but there are already some handy ones built into JavaScript. There are three functions that are useful for testing and writing code.</p>
-      <p>If the credit card tap was a function in JavaScript, it could look something like this:</p>
-      <code>tapCard()</code>
-    </section>
-
-    <section class="slide">
-      <h2>Functions in JavaScript</h2>
-      <p><span class="highlight-text">Functions</span> are pieces of code that are reusable. You declare a function like a variable, but instead of holding a single value, a function holds a series of instructions. When you 'call' or 'invoke' a function, the instructions are executed. Sometimes they are also called methods when found on an object - more on that in a bit!</p>
-      <p data-markdown>`prompt()` and `alert()` show popups in the browser.</p>
-      <p data-markdown>`document.write()` and outputs text onto the page, aka the document.</p>
-      <p><iframe height='268' width scrolling='no' src='http://codepen.io/floridaelago/embed/zGwBYK/?height=268&theme-id=0&default-tab=result' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/floridaelago/pen/zGwBYK/'>zGwBYK</a> by Florida Ivanne ELago (<a href='http://codepen.io/floridaelago'>@floridaelago</a>) on <a href='http://codepen.io'>CodePen</a></iframe></p>
-
-
-    <small class="delayed"><img src="framework/img/workshop/rawbot-reminder.png" alt="robot reminder" align="left" height="80"/><code>document.write();</code> is a quick and easy way to output text onto the page but is not best practice for use in "the real world." <code>console.log();</code> is better. Here's some more <a href="http://stackoverflow.com/questions/4743730/what-is-console-log-and-how-do-i-use-it" target="_blank">info</a>.</small>
-    </section>
-
-    <section class="slide">
-      <h2>Comments</h2>
-      <p class="delayed">Sometimes you want to write notes to yourself (and others!) to organize blocks of code or leave explanations, but you want the browser to ignore it. Use comments!</p>
-      <div data-markdown class="delayed">
-        ```javascript
-        // This is how you leave a single line comment.
-
-        // You can write many single line comments.
-        // Just make sure to add the double backslash
-        // for every new line.
         ```
-      </div>
-      <p class="delayed">Here's another way to comment larger blocks of text.</p>
-      <div data-markdown class="delayed">
-        ```javascript
-        /* This is how you leave
-        multi-line comments for when you
-        want to write a longer message */
+        tapCard()
         ```
-      </div>
-      <p class="delayed">Multi-line comments are great for "hiding" large blocks of code so you can try something new without erasing your old code. Don't forget to remove the old code later if you decide that you don't need it though!</p>
+      </script>
+    </section>
+  
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Intro to Functions: `prompt()`
+
+        **Functions** are used to make the code "do things." We can create our own functions (more on this later) but there are many already included in JavaScript. 
+
+        The `prompt()` function contains instructions to show a popup modal dialog box with a message and input box, when executed. 
+        
+        Click "run" below to see what happens when the `prompt()` function is executed.
+        
+        <img onclick="prompt()" src="framework/img/workshop/rawbot-run.png" alt="run code">
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Functions & Statements
+        
+        The modal box is empty! To pass a message into the `prompt()` modal box, add a message between the parentheses, in quotes.
+        
+        Also, end the *statement* with a semicolon (;) to indicate that the instruction is done.
+        
+        **Statements** are commands that tell the computer what to do. 
+        
+        ```
+        prompt("Hello, what is your name?");
+        ```
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Class Exercise: Say My Name, part 1
+        
+        <img src="framework/img/workshop/name-text-rawbot.gif" alt="allow to type name" style="height: 80px;" class='left'> Allow me to type in my name.
+        
+        <hr class="clear">
+        In your editor, open **1-hello.html**.  
+        
+        Reminder, JavaScript is a *client-side* language so it runs in the browser and is often written within an HTML page. When Javascript is included on an HTML page, it must be included within a pair of  <code>&lt;script&gt;&lt;/script&gt;</code> tags.
+        
+        Let's add the `prompt("What is your name?");` function and message to the HTML page and open it in the browser.
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Intro to variables
+        
+        Where did your name go?
+        
+        The `prompt()` function can be used to get input from the user but the computer doesn't remember anything unless you tell it to.  
+        
+        ![robot losing memory](framework/img/workshop/rawbot-losing-memory.png) <!-- .element: class="right" -->
+        
+        It needs *exact* instructions.
+        
+        **Variables** are kind of like the computer's short-term memory. 
+        
+        Variables are like containers or a box. They are used to *store values* to be used, when you need them.
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Variables Syntax
+        
+        ![variable assignment](framework/img/workshop/syntax-variable-assign.gif)
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Variables How-to
+
+        Declare (create) variables with the keyword `var` and give it a name.
+        
+        ```
+        var firstname;
+        ```
+
+        Assign a value to the variable using the equals `=` symbol. Remember, to end the statement with a semicolon. Now the computer will remember your name!
+
+        ```
+        firstname = "Yourname";
+        ```
+        You can also assign a value and declare a variable at the same time.
+        
+        ```
+        var firstname = "Yourname";
+        ```
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Another Function, `write()`
+        
+        We still need a way for the computer to say hello back to you.  Let's use another function, `write()`, to output the response.
+        
+        This time, the function will be attached to the HTML page, aka the **document**.  The text to be outputted should be included within the parentheses.
+        
+        ```
+        document.write("hello"); // will output "hello" onto the page.
+        ```
+        It can also output the value of the variable. Note that the variable doesn't require quotes.
+        
+        ```
+        var firstname = "Yourname";
+        document.write(firstname); // will output "Yourname" onto the page.
+        ```
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Variables and user input
+        
+        The previous example showed how to assign a specific value to the `firstname` variable. 
+        
+        ```
+        var firstname = "Yourname";
+        ```
+        
+        But what if we don't know what that value is going to be?
+
+        Remember `prompt()`? This function triggers a popup box that allows user input. 
+        
+        We can assign the prompt to a variable, thus saving the value of the user input.
+
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Class Exercise: Say My Name, part 2
+        
+        1. Allow me to type in my name. <!-- .element: class="delayed" -->
+        
+          <!-- .element: class="delayed" -->`prompt("What is your name?");`
+          
+        1. Remember my name. <!-- .element: class="delayed" -->
+          
+          <!-- .element: class="delayed" -->`var firstname = ?`
+          
+          <!-- .element: class="delayed" -->`var firstname = prompt("What is your name?");`
+          
+        <!-- .element: class="delayed" -->Back in **1-hello.html**, let's update our program.
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Class Exercise: Say My Name, part 3
+        
+        The last part is getting the computer to repeat your name back to you.  Let's use `document.write()` to say hello and repeat the name variable.
+        
+        Back in **1-hello.html**, update your program.  It should look something like this:
+        
+        ```
+        var name = prompt("What is your name?");
+        document.write("Hello ");
+        document.write(name);
+        ```
+        Note the space *after* "Hello". This will make sure that there is a space between the outputted values.
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Writing programs
+        
+        There are a lot of different ways to write programs since they really are just a series of commands based on what it is you want the computer to do.
+        
+        Also, note that `document.write()` and `prompt()` are quick ways to test and experiment but is not best practice for use in "the real world." 
+        
+        We'll go over more examples as the course progresses.
+      </script>
+    </section>
+    
+    <!-- <section class="slide title" data-markdown>
+      <script type="text/template">
+        # Javascript Theory
+        ## Part 1
+      </script>
+    </section> -->
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Today's Project
+        
+        ![planet robots website](framework/img/workshop/planet-robot-website.png)<!-- .element: class="left" width="50%" -->
+        
+        As the owner of a thriving online store, **Planet Robots**, you have to make sure you have a top notch website.
+      </script>
     </section>
 
-    <section class="slide title">
-      <h1>Variables</h1>
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Today's Project
+        
+        Some things you'll want to think about for your site:
+        
+        * offer online shopping
+        * print shipping labels
+        * tempt loyal customers with members only sales!
+
+        You'll also want to make sure that everything works properly.
+        
+        * customers shouldn't be able to submit empty forms
+        * shopping cart items must be calculated properly
+
+        To create a website that can handle these requirements, let's go over how to use **variables**, **functions**  and **conditionals**.
+      </script>
     </section>
 
-    <section class="slide">
-      <h2>Variables</h2>
-      <p class="delayed"><span class="highlight-text">Variables</span> are like containers or a box. They are used to <strong>store values</strong> so you can use them later on, when you need them.</p>
-      <img class="delayed" src="framework/img/workshop/boxes.jpg" alt="boxes" />
+    <section class="slide title" data-markdown>
+      <script type="text/template">
+        #Variables
+        ##Storing Information
+      </script>
     </section>
+    
+    <!-- <section class="slide" data-markdown>
+      <script type="text/template">
+        # Variables
 
-   <section class="slide">
-      <h2>Variables (cont'd)</h2>
-      <p class="delayed bigger-text">
-        <img src="framework/img/workshop/rawbot-losing-memory.png" alt="robot losing memory" align="right" height="170"/>
-        Variables are also like the computer's short-term memory. It doesn't remember anything unless you tell it to. In this example, the computer can't remember anyone's name!
-      </p>
-      <div class="delayed">
-        <pre><code>prompt("What's your name?");
-document.write("Hello....?");</code></pre>
+        **Variables** are like containers or a box. They are used to *store values* to be used, when you need them.
 
-        <a href="examples/001-what-is-your-name.html"><img src="framework/img/workshop/rawbot-run.png" alt="run code" align="right" /></a>
-      </div>
-    </section>
+
+
+      </script>
+    </section> -->
+    
+    <!-- <section class="slide" data-markdown>
+      <script type="text/template">
+        # Variables
+
+        ![robot losing memory](framework/img/workshop/rawbot-losing-memory.png) 
+        Variables are also like the computer's short-term memory. It doesn't remember anything unless you tell it to.
+      </script>
+    </section>    -->
 
     <section class="slide centered">
       <h2>Variables Syntax</h2>
@@ -651,6 +776,22 @@ var numberString = "10";</code></pre>
       <h3>3. Boolean variable (true/false)</h3>
        <pre><code>var isSaturday = false;
 var isSunday = true;</code></pre>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Comments
+
+Sometimes you want to write notes to yourself (and others!) to organize blocks of code or leave explanations, but you want the browser to ignore it. Use comments!
+
+<div data-markdown="" class="delayed">```javascript // This is how you leave a single line comment. // You can write many single line comments. // Just make sure to add the double backslash // for every new line. ```</div>
+
+Here's another way to comment larger blocks of text.
+
+<div data-markdown="" class="delayed">```javascript /* This is how you leave multi-line comments for when you want to write a longer message */ ```</div>
+
+Multi-line comments are great for "hiding" large blocks of code so you can try something new without erasing your old code. Don't forget to remove the old code later if you decide that you don't need it though!
+      </script>
     </section>
 
     <section class="slide">
