@@ -743,25 +743,25 @@
 
         Variables can hold different *types* of values.
 
-        ### 1\. Numeric variable (integers & decimals)
-
-            var someIntegerNumber = 10;
-            var someDecimalNumber = 10.5;
-
-        ### 2\. String variable (letters, words & sentences)
-
-            var singleWordString = "hello";
-            var sentenceString = "Hello, good day to you!";
-            var numberString = "10";
-
-        ### 3\. Boolean variable (true/false)
-
-            var isSaturday = false;
-            var isSunday = true;
+        1. Numeric variable (integers & decimals)
+          ```
+          var someIntegerNumber = 10;
+          var someDecimalNumber = 10.5;
+          ```
+        1. String variable (letters and words) - must be contained in quotes
+          ```
+          var singleWordString = "hello";
+          var sentenceString = "Hello, good day to you!";
+          var numberString = "10";
+          ```
+        1. Boolean variable (true/false)
+          ```
+          var isSaturday = false;
+          var isSunday = true;
+          ```
       </script>
     </section>
     
-
     <section class="slide" data-markdown>
       <script type="text/template">
         # Comments
@@ -847,135 +847,121 @@
         1. Use variables to store the name and postal code values. 
         1. Use `document.write()` to output the name and postal values to verify the information is being stored.
 
-        The solution can be found in <!-- .element: class="note" --> **2-shipping-info-solution.html**
+        The solution can be found in <!-- .element: class="note" --> **2-shipping-info-solution.html**.
       </script>
     </section>
 
-    <section class="slide">
-      <h2>JavaScript Arithmetic Operators</h2>
-      <p>We can use JavaScript to do math using arithmetic operators.</p>
-      <p>The arithmetic operators in JavaScript are (+) for addition, (-) for subtraction, (*) for multiplication and (/) for division.</p>
-      <div data-markdown>
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # JavaScript Arithmetic Operators
+        
+        JavaScript can also do math.  
+        `+` addition, `-` subtraction, `*` multiplication, `/` division
+        
         ```javascript
-        document.write(20 + 20);
+        var addition = 5 + 2; // will return a value of 7
         ```
-      </div>
-      <a href="examples/004-arithmetic-operators.html"><img src="framework/img/workshop/rawbot-run.png" alt="run code" align="right" /></a>
-    </section>
 
-    <section class="slide">
-      <h2>Arithmetic Operators and Variables</h2>
-      <p>Getting JavaScript to do math can be very useful. For example, we can use it to calculate totals in a shopping cart form.</p>
-      <p>Instead of using just numbers, JavaScript can do math using variables with numerical values.</p>
-      <div data-markdown>
+        These operations work whether the values are numbers, or the values are stored in a variable.
+        
         ```javascript
-        var tshirtPrice = 25;
-        var androidPrice = 10;
-        document.write(tshirtPrice + androidPrice);
+        var exampleOne = 5;
+        var exampleTwo = 2;
+        var endValue = exampleOne * exampleOne; // will return a value of 10
         ```
-      </div>
-      <a href="examples/005-arithmetic-operators-and-variables.html"><img src="framework/img/workshop/rawbot-run.png" alt="run code" align="right" /></a>
+        
+      </script>
     </section>
-
-    <section class="slide">
-      <h2>Arithmetic Operators, Numbers &amp; Strings</h2>
-      <p>Remember there were different variable types? Arithmetic operators can only be performed on numerical values.</p>
-      <p>But numbers can be declared as strings too, so be careful!</p>
-      <p>If you put double quotes (" ") or single quotes (' ') around the value, the computer will thinks it's a string.</p>
-      <div data-markdown>
-        ```javascript
-        var firstNumber = "20";
-        var secondNumber = 10;
-        document.write(firstNumber + secondNumber);
-        ```
-      </div>
-      <a href="examples/006-arithmetic-operators-and-strings.html"><img src="framework/img/workshop/rawbot-run.png" alt="run code" align="right" /></a>
-    </section>
-
-    <section class="slide">
-      <h2>Shopping Cart: Totals and Discounts</h2>
-      <p>Let's try applying some arithmetic operations to our shopping cart.</p>
-      <small><img src="framework/img/workshop/rawbot-reminder.png" alt="robot reminder" align="left" height="50"/>addition (+), subtraction (-), multiplication (*), division (/)</small>
-      <p class="highlight-color">File: examples/007-shopping-cart.html</p>
-      <div data-markdown>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Calculate Totals
+        
+        Getting JavaScript to do math can be very useful. For example, we can use it to calculate totals in a shopping cart form.
+        
+        Instead of using just numbers, JavaScript can do math using variables with numerical values.
+        
         ```javascript
         var tshirtPrice = 25;
         var androidPrice = 10;
-        var discountPercentage = 15;
-
-        // What is the cost of one t-shirt and one android?
-        var total;
-        //total = **********
-        document.write(total);
-        document.write("<br />");
-
-        // Guess what?  Ladies Learning Code gets 15% off!
-        // Figure out how much the discount will be.
-        var discountAmount;
-        //discountAmount = **********
-        //document.write(discountAmount);
-        document.write("<br />");
-
-        // Apply the discount to get the final price.
-        var finalTotal
-        //finalTotal = **********
-        //document.write(finalTotal);
+        var total = tshirtPrice + androidPrice;
         ```
-      </div>
-      <a href="examples/007-shopping-cart.html"><img src="framework/img/workshop/rawbot-run.png" alt="run code" align="right" /></a>
+      </script>
     </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Exercise: Shopping cart totals
+        
+        Open **3-shopping-cart.html** in your editor.
+        
+        There are 3 variables defined in the exercise file:
+        
+        ```
+        var tshirtPrice = 25;
+        var androidPrice = 10;
+        var discount = 0.15; // 15%
+        ```
+        
+        Follow the instructions in the comments to figure out the subtotal of 1 t-shirt and 1 Android plushie, with a 15% discount.
+        
+        The solution can be found in <!-- .element: class="note" --> **3-shopping-cart-solution.html**.
+      </script>
+    </section>
+    
 
-    <section class="slide">
-      <h2>Re-assigning Variables</h2>
-      <p>Even after a variable has been declared with a value, we can still <span class="highlight-text">re-assign</span> the value. For example, we may want to increase or decrease values by </p>
-      <p>1. This will come in handy when we discuss <span class="highlight-text">Loops</span> later on. </p>
-      <p class="highlight-color">File: examples/008-reassigning-variables.html</p>
-      <div data-markdown>
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Re-assigning Variables
+
+        Even after a variable has been declared with a value, it can be *re-assigned. For example, we may want to increase or decrease values by
+
+        This will come in handy when we discuss *Loops* later on.
+
         ```javascript
         //declaring variable
         var numberOfCookies = 0;
-
-        //re-assigning the value by adding 1
-        numberOfCookies = numberOfCookies + 1;
-        alert("I will only have " + numberOfCookies + ".");
-
-        //declaring another variable
-        var remainingCookies = 4;
-
-        //re-assigning the value by subtracting 1
-        remainingCookies = remainingCookies - 1;
-        alert("I just ate a cookie. Now I have " + remainingCookies + " left.");
         ```
-      </div>
-      <a href="examples/008-reassigning-variables.html"><img src="framework/img/workshop/rawbot-run.png" alt="run code" align="right" /></a>
-    </section>
-
-    <section class="slide">
-      <h2>Who loves LadiesLearningCode?</h2>
-      <p>Don't worry about the function or unfamiliar parts right now. You will be familiar with them soon enough.</p>
-      <p>Run it and see what happens!</p>
-      <div data-markdown>
+        
+        If you bake 2 cookies, how many will you have?
+        
         ```javascript
+        // re-assigning the value by adding 2
+        numberOfCookies = numberOfCookies + 2;
+        ```
+        
+        When you *reassign* a variable, you do not need to use they keyword `var` again.
+      </script>
+    </section>
+    
+    <section class="slide llc-loves">
+      <h1>Who loves Ladies Learning Code?</h1>
+      
+      When would reassigning values come in handy? Click this button:
+      
+      <script>
         var loves = 0;
         function moreLove(){
-          //re-assigning the value of the love variable
           loves = loves + 1;
           document.getElementById('update').innerHTML = loves;
         }
-        ```
+      </script>
+      
+      <div id="loveLLC">
+        <button onclick="moreLove();">
+          <img src="framework/img/workshop/llc-logo.png"> Love!
+          <span id="update">0</span>
+        </button>
       </div>
-      <div data-markdown>
-        ```html
-        &lt;link rel="stylesheet" type="text/css" href="exercises/slides.css">
-        &lt;div id="loveLLC">
-          &lt;button onclick="moreLove();">
-            &lt;img src="exercises/assets/llc-logo.png" /> Love!
-          &lt;/button>
-          &lt;p id="update">0</p>
-        &lt;/div>
-        ```
-      </div>
-      <a href="examples/009-love-llc.html"><img src="framework/img/workshop/rawbot-run.png" alt="run code" align="right" /></a>
+      
+      <p class="delayed">Let's look at how this could work.</p>
+<pre class="delayed"><code>var loves = 0; // start value at 0
+  
+// function containing instructions to update the count on button click
+function moreLove(){ 
+  loves = loves + 1; // take the current value of "love" and add 1
+  document.getElementById('update').innerHTML = loves; // update the number
+}</code></pre>
     </section>
 
     <section class="slide">
