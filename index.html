@@ -415,7 +415,7 @@
       </script>
     </section>
     
-    <section class="slide title" data-markdown>
+    <section class="slide title" data-markdown data-toc>
       <script type="text/template">
         #Intro to Functions & Variables
       </script>
@@ -635,22 +635,21 @@
         
         Also, note that `document.write()` and `prompt()` are quick ways to test and experiment but is not best practice for use in "the real world." 
         
-        We'll go over more examples as the course progresses.
+        We'll go over more examples and dive deeper into **variables** and **functions** as the course progresses.
       </script>
     </section>
     
-    <!-- <section class="slide title" data-markdown>
+    <section class="slide title" data-markdown>
       <script type="text/template">
-        # Javascript Theory
-        ## Part 1
+        #Today's Project!
       </script>
-    </section> -->
-
-    <section class="slide" data-markdown>
+    </section>
+    
+    <section class="slide" data-markdown data-toc>
       <script type="text/template">
-        # Today's Project
+        #Today's Project
         
-        ![planet robots website](framework/img/workshop/planet-robot-website.png)<!-- .element: class="left" width="50%" -->
+        ![planet robots website](framework/img/workshop/planet-robot-website.png)<!-- .element: class="left" -->
         
         As the owner of a thriving online store, **Planet Robots**, you have to make sure you have a top notch website.
       </script>
@@ -664,14 +663,11 @@
         
         * offer online shopping
         * print shipping labels
-        * tempt loyal customers with members only sales!
-
-        You'll also want to make sure that everything works properly.
-        
+        * offer members only sales       
         * customers shouldn't be able to submit empty forms
         * shopping cart items must be calculated properly
 
-        To create a website that can handle these requirements, let's go over how to use **variables**, **functions**  and **conditionals**.
+        To create a website that can handle these requirements, let's take a deeper dive into  **variables**, **functions**  and **conditionals**.
       </script>
     </section>
 
@@ -682,163 +678,177 @@
       </script>
     </section>
     
-    <!-- <section class="slide" data-markdown>
+    <section class="slide" data-markdown>
       <script type="text/template">
-        # Variables
-
-        **Variables** are like containers or a box. They are used to *store values* to be used, when you need them.
-
-
-
+        #Variables: review 
+        
+        Variables are used to store values.  
+        
+        Declare a variable with the keyword `var` and use the equals symbol to assign a value.
+        
+        End the *statement* with a semi-colon.
+        
+        ```javascript
+        var email = "hello@isanybodyoutthere.com";
+        ```
       </script>
-    </section> -->
+    </section>
     
-    <!-- <section class="slide" data-markdown>
+    <section class="slide" data-markdown>
       <script type="text/template">
-        # Variables
+        # VARIABLES: NAMING CONVENTIONS
 
-        ![robot losing memory](framework/img/workshop/rawbot-losing-memory.png) 
-        Variables are also like the computer's short-term memory. It doesn't remember anything unless you tell it to.
+        Variable names cannot contain spaces. Instead, use `camelCase` (more common) or underscores `like_so` for names with multiple words.
+        
+        Pick one style and be consistent. JavaScript is also case sensitive.
+        
+        Use a descriptive names:  
+        
+        `var firstName;` ← Clear that first name will go here.  
+        `var fn;` ← Not as obvious as firstName.  
+        `var x;` ← Not clear at all.  
       </script>
-    </section>    -->
-
-    <section class="slide centered">
-      <h2>Variables Syntax</h2>
-      <br /><br />
-      <img class="delayed" src="framework/img/workshop/syntax-variable-assign.gif" alt="variable assignment" />
     </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Variable example
 
-    <section class="slide">
-      <h2>Variables How-to</h2>
-      <p class="delayed">Declare variables with the keyword var.</p>
-      <pre class="delayed"><code>var email;</code></pre>
-      <p class="delayed">Assign a value to the variable using the <span class="highlight-text">equals (=) sign</span>. End the <span class="highlight-text">statement</span> with a semicolon (;). </p>
-      <pre class="delayed"><code>var email = "hello@isanybodyoutthere.com";</code></pre>
-      <p class="delayed">Now the computer will remember my email address!</p>
+        When would variables come in handy?
+        
+        In a web checkout form that asks for your name and address, variables can be used to store this information. The stored information can then be used to create things like shipping labels.
 
-      <small class="delayed"><img class="delayed" src="framework/img/workshop/rawbot-reminder.png" alt="robot reminder" align="left" height="80"/>Statements are commands that tell the computer what to do.
-Ending the statement with a semicolon is like ending a sentence
-with a period. It tells the computer that the statement is done. </small>
-    </section>
-
-    <section class="slide">
-      <h2>Variables (cont'd)</h2>
-      <p>In a web checkout form that asks for your name and address, variables can be used to store this information. The stored information can then be used to create things like shipping labels.</p>
-      <p><img src="framework/img/workshop/var-shipping-example.jpg" alt="shipping example" /></p>
-    </section>
-
-    <section class="slide">
-      <h2>Aside: Statements</h2>
-      <p><span class="highlight-text">Statements</span> are commands that tell the computer what to do. End a statement with a semicolon (<code>;</code>) to tell the computer that the statement is done.</p>
-      <p>Ending a statement with a semicolon is like ending a sentence with a period.</p>
-      <p>You can also declare a variable with one or two statements.</p>
-      <div data-markdown>
-        ```javascript
-        var email;
-        email = "hi@youremail.com";
-        ```
-      </div>
-      <p>is the same as</p>
-      <div data-markdown>
-        ```javascript
-        var email = "hi@youremail.com";
-        ```
-      </div>
-    </section>
-
-    <section class="slide">
-      <h2>Say My Name, Say My Name</h2>
-      <p class="delayed">Let's try creating some variables.</p>
-      <p class="delayed">Below is an example of a variable for your name. Try creating another variable for your email address. Output the values using <code>document.write()</code>.</p>
-      <p><iframe height='268' scrolling='no' src='http://codepen.io/floridaelago/embed/LVyZNO/?height=268&theme-id=0&default-tab=result' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'></iframe></p>
-    </section>
-
-    <section class="slide">
-      <h2>Assigning Variables</h2>
-      <p style="color: #D63A3A">Important</p>
-      <p>Using the equals (<code>=</code>) symbol in Javascript is NOT the same as in math.</p>
-      <p><code>var total = 1 + 1</code> is not the same as <code>1 + 1 = 2</code></p>
-      <p><code>var total = 1 + 1</code> means:</p>
-      <p><em>evaluate</em> everything to the <em>right</em> of the equals sign (e.g. <code>1 + 1</code>), then <em>assign</em> this value (e.g. the number <code>2</code>) to the variable on the <em>left</em> side.</p>
-      <p>You will see later that we can re-assign new values to an existing variable.</p>
-    </section>
-
-    <section class="slide">
-      <h2>Various Variables</h2>
-      <p>Variables can hold different kinds of values.</p>
-      <h3>1. Numeric variable (integers &amp; decimals)</h3>
-      <pre><code>var someIntegerNumber = 10;
-var someDecimalNumber = 10.5;</code></pre>
-      <h3>2. String variable (letters, words &amp; sentences)</h3>
-       <pre><code>var singleWordString = "hello";
-var sentenceString = "Hello, good day to you!";
-var numberString = "10";</code></pre>
-      <h3>3. Boolean variable (true/false)</h3>
-       <pre><code>var isSaturday = false;
-var isSunday = true;</code></pre>
+        ![shipping example](framework/img/workshop/var-shipping-example.jpg)
+      </script>
     </section>
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Comments
+        # Assigning Variables
 
-Sometimes you want to write notes to yourself (and others!) to organize blocks of code or leave explanations, but you want the browser to ignore it. Use comments!
+        Using the equals (`=`) symbol in Javascript is NOT the same as in math.
 
-<div data-markdown="" class="delayed">```javascript // This is how you leave a single line comment. // You can write many single line comments. // Just make sure to add the double backslash // for every new line. ```</div>
+        `var total = 1 + 1` is not the same as `1 + 1 = 2`
 
-Here's another way to comment larger blocks of text.
+        `var total = 1 + 1` means:
 
-<div data-markdown="" class="delayed">```javascript /* This is how you leave multi-line comments for when you want to write a longer message */ ```</div>
+        * _evaluate_ everything to the _right_ of the equals sign (`1 + 1`)
+        * then _assign_ this value (`2`) to the variable on the _left_ side.
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Variable Types
 
-Multi-line comments are great for "hiding" large blocks of code so you can try something new without erasing your old code. Don't forget to remove the old code later if you decide that you don't need it though!
+        Variables can hold different *types* of values.
+
+        ### 1\. Numeric variable (integers & decimals)
+
+            var someIntegerNumber = 10;
+            var someDecimalNumber = 10.5;
+
+        ### 2\. String variable (letters, words & sentences)
+
+            var singleWordString = "hello";
+            var sentenceString = "Hello, good day to you!";
+            var numberString = "10";
+
+        ### 3\. Boolean variable (true/false)
+
+            var isSaturday = false;
+            var isSunday = true;
+      </script>
+    </section>
+    
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Comments
+
+        Sometimes you want to write notes, organize blocks of code or "hide" code that you don't want to delete but isn't ready to be used yet.  The browser will ignore comments.
+        
+        ```javascript 
+        // This is how you leave a single line comment. 
+        
+        // You can write many single line comments. 
+        // Just make sure to add the double backslash 
+        // for every new line. ```
+
+        Here's another way to comment larger blocks of text.
+
+        ```javascript 
+        /* This is how you leave one block of
+        comments that span over multiple lines. */ 
+        ```
       </script>
     </section>
 
-    <section class="slide">
-      <h2>Whitespace in JavaScript</h2>
-      <p class="delayed">Whitespace refers to blank characters and includes space characters, tabs and line breaks.</p>
-      <p class="delayed">JavaScript ignores whitespace except when used in a string.</p>
-      <div data-markdown class="delayed">
-        ```javascript
-        var name="Ladies Learning Code";
-        //same as
-        var name = "Ladies Learning Code";
-        //but not the same as
-        var name = "Ladies     Learning       Code";
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Whitespace in JavaScript
+
+        Whitespace refers to blank characters, space characters, tabs and line breaks. JavaScript ignores whitespace in some instances.  
+
+        ```javascript 
+        var name="Ladies Learning Code"; // both will be read the same by JavaScript
+        var name = "Ladies Learning Code"; 
         ```
-      </div>
-      <div data-markdown class="delayed">
-        ```javascript
-        alert("Whitespace     in    a    string.");
-        document.write("Whitespace     in    a    string.");
+        
+        However, whitespace matters when used in a string and when using keywords. 
+        ```javascript    
+        var name = "LadiesLearningCode";
+        var name = "Ladies Learning Code"; 
+        varname = "Ladies Learning Code"; // won't work
         ```
-      </div>
-      <a href="examples/003-whitespace-in-javascript.html"><img class="delayed" src="framework/img/workshop/rawbot-run.png" alt="run code" align="right" /></a>
+      </script>
     </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # JavaScript & HTML
 
-    <section class="slide">
-      <h2>Mini-exercise #1 (5-10 minutes)</h2>
-      <p>Here's a test shipping form. Right now, after you press Run, the shipping label is blank. How do we fix this? </p>
-      <small><img src="framework/img/workshop/rawbot-hint.png" alt="robot hint" align="left" height="80"/>(1) Use variables to store your name and address!<br />
-      (2) To verify that your variables are working, uncomment out the document.write() lines and replace ********** with the actual name of your variables.</small>
-      <p class="highlight-color"><b>File:</b> exercises/1-mini-exercise-problem.html</p>
-      <div data-markdown>
-        ```javascript
-        //The web browser will ask you for your shipping details.
-        //Declare a "name" and an "address" variable to remember the values.
-        prompt("What's your name?");
-        prompt("Your mailing address?");
+        JavaScript can appear inline, in a webpage in several spots. Either in the `<head>` section or anywhere in the `<body>` section.
+          
+        It must always be contained within the <code>&lt;script&gt;&lt;/script&gt;</code> tags.
+          
+<pre><code>&lt;html>
+  &lt;head>
+    &lt;title>JavaScript example!&lt;/title>
+    &lt;script>
+      // Javascript in the head tag!
+    &lt;/script>
+  &lt;/head>
+  
+  &lt;body>
+    &lt;script>
+      // Javascript in the body tag!
+    &lt;/script>
+  &lt;/body>
+&lt;/html></code></pre>
 
-        //Confirm that your package will be shipped to the right place!
-        document.write("<b>Confirm Shipping Label:</b><br />");
-        /*
-        document.write(**********); //output the name
-        document.write("<br />"); //just a line break
-        document.write(**********); //output the address
-        */
-        ```
-      </div>
-      <a href="exercises/1-mini-exercise-problem.html"><img src="framework/img/workshop/rawbot-run.png" alt="run code" align="right" /></a>
+        ---
+        ###Pro tip!
+        
+        Putting the JavaScript just *before* the closing `</body>` tag will allow the page to load first before the JavaScript executes. This is important when manipulating HTML elements.
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Exercise: Shipping information (10 minutes)
+
+        Let's gather some basic shipping information. 
+        
+        Open **2-shipping-info.html** in the editor and the browser.
+        
+        Right now, if you run the program in the browser the shipping information is not stored and will show blank. How do we fix this?
+
+        1. Use variables to store the name and postal code values. 
+        1. Use `document.write()` to output the name and postal values to verify the information is being stored.
+
+        The solution can be found in <!-- .element: class="note" --> **2-shipping-info-solution.html**
+      </script>
     </section>
 
     <section class="slide">
@@ -1646,7 +1656,7 @@ What are some questions or issues you are having with the material covered so fa
       <h2>Putting it together on an actual HTML page</h2>
     </section>
 
-    <section class="slide">
+    <!-- <section class="slide">
       <h2>Inline JavaScript</h2>
       <p>JavaScript can appear inline in a webpage in several spots. Either in the <code>&lt;head&gt;</code> section or anywhere in the <code>&lt;body&gt;</code> section. </p>
       <pre><code>&lt;html>
@@ -1665,7 +1675,7 @@ What are some questions or issues you are having with the material covered so fa
 &lt;/html></code></pre>
 
       <p class="delayed"><img src="framework/img/workshop/rawbot-reminder.png" alt="robot reminder" align="left" height="50"/>Need to manipulate an html tag or have a quick loading page? Put the JavaScript just before the <span class="highlight-text">closing</span> <code>&lt;body&gt;</code> tag. </p>
-    </section>
+    </section> -->
 
     <!--Using a code editor.or correcting syntax slide-->
 
