@@ -83,6 +83,12 @@
       </script>
     </section>
     
+    <section class="slide title" data-markdown>
+      <script type="text/template">
+        # Part One
+      </script>
+    </section>
+    
     <section class="slide title" data-markdown data-toc>
       <script type="text/template">
         # Development Environment
@@ -921,7 +927,7 @@
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        #Exercise: Shopping cart totals
+        #Exercise: Shopping cart totals (10mins)
         
         Open **3-shopping-cart.html** in your editor.
         
@@ -1037,12 +1043,10 @@
       
       When would reassigning values come in handy? Click this button:
       
-      <div id="loveLLC">
-        <button id="moreLove">
-          <img src="framework/img/workshop/llc-logo.png"> Love!
-          <span id="update">0</span>
-        </button>
-      </div>
+      <button id="moreLove">
+        <img src="framework/img/workshop/llc-logo.png"> Love!
+        <span id="update">0</span>
+      </button>
       
       <script>
         var loves = 0;
@@ -1053,7 +1057,6 @@
           loves = loves + 1;
           update.innerHTML = loves;
         }
-        
         button.onclick = moreLove;
         //https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onclick
       </script>
@@ -1161,30 +1164,6 @@ function moreLove(){
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        #Objects & Methods
-
-        In this workshop we won't be creating any of our own objects like in the previous example, but guess what? Almost* everything in JavaScript is an object! 
-        
-        That means even variables can be treated like objects too. Methods can be applied to variables, just like objects, using dot notation.
-        
-        For example, the `toFixed()` method is used to set the number of digits after the decimal point.
-                
-        ```
-        var price = 25;
-        var priceInDollars = price.toFixed(2);
-        document.write("$" + priceInDollars);
-        ```
-        This will output `$25.00`.
-        
-        ---
-        ### Resource
-        * [Is everything in JavaScript an Object?*](https://blog.simpleblend.net/is-everything-in-javascript-an-object/)
-        * [toFixed() reference & other JavaScript methods](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toFixed)
-      </script>
-    </section>
-    
-    <section class="slide" data-markdown>
-      <script type="text/template">
         #Methods vs Functions
         
         Methods are just like functions, except they are applied to objects. Functions run on their own.
@@ -1200,6 +1179,66 @@ function moreLove(){
         ```javascript
         document.write("Hello");
         ```
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Objects & Methods
+
+        In this workshop we won't be creating any of our own objects like in the previous example, but guess what? Almost* everything in JavaScript is an object! 
+        
+        That means even variables can be treated like objects too. Methods can be applied to variables, just like objects, using dot notation.
+        
+        For example, the `toFixed()` method is used to set the number of digits after the decimal point.
+                
+        ```
+        var price = 25;
+        var priceInDollars = price.toFixed(2);
+        document.write("$" + priceInDollars);
+        ```
+        This will output `$25.00`.
+        
+        The below example will work too. What's the difference?
+        
+        ```
+        var price = 25;
+        document.write("$" + price.toFixed(2));
+        ```
+        
+        ---
+        ### Resource
+        * [Is everything in JavaScript an Object?*](https://blog.simpleblend.net/is-everything-in-javascript-an-object/)
+        * [toFixed() reference & other JavaScript methods](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toFixed)
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Exercise: Objects and Methods (10mins)
+        
+        Let's say you want to have a 50% off sale.  All the prices can be divided by 50% but you also want to ensure that the value always rounds to two decimal points.  
+        
+        ```
+        var sale = 0.5; // 50% off
+        var tshirt = 20 * sale;
+        var android = 35 * sale;
+        var robot = 25.99 * sale;
+
+        document.write(tshirt);
+        document.write(android);
+        document.write(robot);
+        ```
+        
+        There current output is 10, 17.5, and 12.995. In the editor and browser, open **4-methods.html**. Use the `toFixed()` method to update that.
+        
+        <!-- .element: class="note" -->The solution can be found in **4-methods-solution.html**.
+      </script>
+    </section>
+    
+    <section class="slide title" data-markdown>
+      <script type="text/template">
+        # Part Two!
       </script>
     </section>
     
@@ -1224,7 +1263,7 @@ function moreLove(){
       <script type="text/template">
         # Pre-defined Blocks
         
-        Some blocks are defined by the browser, such as the browser *window*.
+        Some blocks are defined by the browser, such as the browser *window* or *document*.
         
         ![browser window](framework/img/workshop/browser-window.jpg)
       </script>
@@ -1244,70 +1283,81 @@ function moreLove(){
       <script type="text/template">
         # Document Objects
         
-        All of these blocks are **objects**. Functions can be applied to these **objects** using dot notation. Does this look familiar?  
+        All of these blocks are also **objects**. 
+        
+        Methods can be applied to these **objects** using dot notation. Does this look familiar?  
         
         ```
         document.write();
         ``` 
         
-        We have been applying the `.write()` function to the document object. 
+        We have been applying the `.write()` method to the document object. 
         
-        <!-- .element: class="note" -->Note! When a function is applied to an object, it is called a **method**.
+        <!-- .element: class="note" -->Reminder! When a function is applied to an object, it is called a **method**.
       </script>
     </section>
-
-    <section class="slide">
-      <h2>HTML Element Objects</h2>
-      <p class="delayed">The most repetitive thing you'll ever do with JavaScript is getting references to your HTML tags ("elements") using <code>document.getElementById()</code>.</p>
-      <small class="delayed">(It's important that your HTML tag has an id attribute in order to do this!)</small>
-      <p class="delayed">For example, let's dynamically find out what the text is in a paragraph tag by reading its innerHTML property. (You can find all the things you can do with elements <a href="http://dochub.io/#dom/element">here</a>.)</p>
-      <p class="highlight-color delayed">File: examples/030-html-element-objects.html</p>
-      <pre class="delayed"><code>&lt;p id="text" style="border: 1px solid red;">
-Loading...
-&lt;/p>
-
-&lt;script>
-
-&lt;/script></code></pre>
-      <a href="examples/030-html-element-objects.html"><img class="delayed" src="framework/img/workshop/rawbot-run.png" alt="run code" align="right" /></a>
-    </section>
-
-    <section class="slide">
-      <h2>HTML Element Objects (cont'd)</h2>
-      <p>You can also use innerHTML to replace what's already in a element.</p>
-      <p class="highlight-color">File: examples/031-html-element-objects.html</p>
-      <pre><code>&lt;p id="text" style="border: 1px solid red;">
-Loading...
-&lt;/p>
-
-&lt;script>
-var existingElement = document.getElementById("text");
-
-&lt;/script></code></pre>
-      <a href="examples/031-html-element-objects.html"><img src="framework/img/workshop/rawbot-run.png" alt="run code" align="right" /></a>
-    </section>
-
-    <section class="slide">
-      <h2>HTML Element Objects (cont'd)</h2>
-      <p>Or let's dynamically swap out one image for another by updating the src attribute of an image tag.</p>
-      <p class="highlight-color">File: examples/032-html-element-objects.html</p>
-      <pre><code>&lt;img id="cupcake" src="assets/exercises/assets/cupcake.jpg" />
-
-&lt;script>
-
-&lt;/script></code></pre>
-      <a href="examples/032-html-element-objects.html"><img src="framework/img/workshop/rawbot-run.png" alt="run code" align="right" /></a>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #HTML Element Objects
+        
+        Instead of using `document.write()` to output content onto the page, let's try the `getElementById()` method instead, to interact with the HTML elements in the web *document*.
+        
+        You will need to add an `id` attribute to the HTML to do this!
+        
+        ```
+        <div id="update">0</div>
+        ```
+        ```
+        document.getElementById("update");
+        ```
+        This means it will look for any HTML element, in the document, with the id of "update".  You can now use this to make changes to the HTML directly!
+      </script>
     </section>
     
-  
-
-    
-    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Review
+        
+        Let's look at the "loves" button again, this time with the HTML as well.
+        
+        ```
+        <button id="moreButton">
+          <img src="framework/img/workshop/llc-logo.png"> Love!
+          <span id="update">0</span>
+        </button>
+        ```
+        ```
+        // starts the count at 0
+        var loves = 0;
+        // targets the "update" element
+        var update = document.getElementById("update"); 
+        // targets the "button" element
+        var button = document.getElementById("moreButton"); 
+        
+        // custom function
+        function moreLove(){
+          // Add 1 to current count
+          loves = loves + 1;   
+          // applies an .innerHTML method to the update element's count
+          update.innerHTML = loves; 
+        }
+        
+        // on button click, execute the custom moreLove() function
+        button.onclick = moreLove; 
+        ```
+        
+        Let's go over how to create your own custom functions.
+      </script>
+    </section>
+      
     <section class="slide" data-markdown>
       <script type="text/template">
         #Creating your own functions
         
         Sometimes you need to group a set of instructions that aren't covered by one of the pre-written functions in JavaScript.
+        
+        When using a function, it executes all the commands contained within, making it easier to repeat repetitive steps.
 
         Like in the previous example, you can create your own. 
         
@@ -1319,23 +1369,274 @@ var existingElement = document.getElementById("text");
       <script type="text/template">
         # Defining a Function
 
-        There are different ways to define a function, but the most common way is using the `function` keyword followed by a function name, of your choosing, and a set of parentheses `()`. 
+        There are different ways to define a function, but a common way is using the `function` keyword followed by a function name, of your choosing, and a set of parentheses `()`. 
         
-        And the statements or instructions to be executed are enclosed within curly brackets `{ }`.
+        The statements or instructions to be executed are enclosed within curly brackets `{ }`.
         
         ```
-        function nameOfFunction() {
-         //code to execute
+        function nameOfFunction(){
+          // instructions to execute
         }
-        ```
+        ```        
+        When naming a function, adhere to the same rules as naming a variable (no spaces, use camelCase or underscores).
+      </script>
+    </section>  
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Calling a function
+
+        To use the function, whether it's a custom or built-in function, you have to *call* it, using the function name plus parentheses `()`.
         
-        <!-- document.getElementById("RootNode").onclick = function(){//do something} -->
+        A function can even contain another function.
+        
+        ```javascript
+        // declare the function
+        function sayAnything(){
+          prompt("How are you today?");
+        }
+        
+        // call the function
+        sayAnything();
+        ```
+      </script>
+    </section>
+    
+    <section class="slide exercise">
+        <h1>Update quantities</h1>
+        <div class="quantities">
+          <img src="exercises/assets/plush-android.jpg" width="195" height="195">
+          <br>
+          
+          <button id="add">add</button>
+          <button id="remove">remove</button>
+          <br>
+          
+          Quantity <input type="text" id="updateQuantity" value="0">
+        </div>
+        
+        <p>Applying everything that has been covered so far, let's create a program to allow the customer to update the quantity by selecting an add or remove button, like in the sample on the left.</p>
+        
+        <p><strong>Note!</strong> Right now, removing items can result in a negative number.  We'll update that in the next exercise.</p>
+        
+        <script>
+          // from 5-update-quantities.html exercise
+          var quantity = 0;
+          var updateQuantity = document.getElementById('updateQuantity');
+          var add = document.getElementById("add");
+          var remove = document.getElementById("remove");
+          
+          function addItem(){
+            quantity = quantity + 1;
+            refreshTotal();
+          }
+          function removeItem(){        
+            quantity = quantity - 1;
+            refreshTotal();
+          }
+          function refreshTotal() {
+            updateQuantity.value = quantity;
+          }
+          add.onclick = addItem;
+          remove.onclick = removeItem;
+        </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Exercise Prep: Update quantities
+        
+        Let's break it down into smaller steps and make a plan of action. Remember, computers need very specific instructions.
+        
+        1. create a `quantity` variable and set the initial value to 0
+        2. create an `addItem` function
+            * adds 1 to current value of quantity
+            * refresh the HTML quantity total to reflect new quantity (step 4)*
+        3. create a `removeItem` function
+            * removes 1 from current value of quantity
+            * refresh the HTML quantity total to reflect new quantity (step 4)*
+        4. create `refreshTotal` function to take the current quantity and update the number in the HTML
+            * to be added to both the `addItem` and `removeItem` function
+        5. execute the addItem function
+            * target/select the add button 
+            * execute the addItem function only on click
+        6. repeat step 5 for the `removeItem` function
+        
       </script>
     </section>
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        # Exercise: Update quantities (10mins)
+        # Class Exercise: Quantities, Step 1 
+        
+        Let's go through each step outlined in the previous slide together. Open **5-update-quantities.html** in your editor.
+        
+        1\. create a `quantity` variable and set the initial value to 0
+        
+        * How do you declare a variable named "quantity"? <!-- .element: class="delayed" -->
+        * <!-- .element: class="delayed" -->`var quantity;`
+        * How do you assign it a value of 0?<!-- .element: class="delayed" -->
+        * <!-- .element: class="delayed" -->`var quantity = 0;`
+        
+        This should be added within the <!-- .element: class="delayed" --><code>&lt;script&gt;&lt;/script&gt;</code> tags.
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Class Exercise: Quantities, Step 2
+        
+        2\. create an `addItem` function to update the value of quantity
+        
+        How do you declare a function named "addItem"?      
+        <pre><code>function addItem(){  
+        }</code></pre>
+        Add 1 to current value of quantity. (Reassign the variable)
+        
+        <pre><code>function addItem(){
+          quantity = quantity + 1; 
+        }</code></pre>
+        
+        Refresh the HTML quantity total to reflect new quantity -- this will have to wait until step 4 since this function can be reused for both the `addItem` and `removeItem` function but we can leave a comment as a reminder!
+        
+        Your code should now look similar to this:
+        
+        <pre><code>var quantity = 0;
+          
+        function addItem(){
+          quantity = quantity + 1; 
+          // to add function to refresh quantity value in the HTML
+        }</code></pre>
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Class Exercise: Quantities, Step 3
+        
+        3\. create a `removeItem` function to update the value of quantity
+        
+        This will be similar to the `addItem` function except this time, we'll *subtract* 1 from the quantity value.
+        
+        How do you declare a function named "removeItem"?      
+        <pre><code>function removeItem(){  
+        }</code></pre>
+        Subtract 1 to current value of quantity. (Reassign the variable)
+        
+        <pre><code>function removeItem(){
+          quantity = quantity - 1; 
+        }</code></pre>
+        
+        Refresh the HTML quantity total to reflect new quantity -- this will completed in the next step since this function can be reused for both the `addItem` and `removeItem`.
+        
+        Your code should now look similar to this:
+        
+        <pre><code>var quantity = 0;
+        
+        function addItem(){
+          quantity = quantity + 1; 
+          // to add function to refresh quantity value in the HTML
+        }
+        function removeItem(){
+          quantity = quantity - 1; 
+          // to add function to refresh quantity value in the HTML
+        }</code></pre>
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Class Exercise: Quantities, Step 4 (Part 1)
+        
+        4\. create a `refreshTotal` function to update the quantity displayed in the HTML
+        
+        This step also has several mini-steps.
+        
+        * Select the HTML element to be updated. 
+        
+        In the HTML, the `<input>` tag is being used to display the value. Let's add an `id` value to it so it can be selected with the `getElementById()` method.  
+        
+        Also, note that an `id` value can only be used once per page so this will ensure that it is unique.
+        
+        In the HTML find this line:
+        
+        ```
+        Quantity <input type="text" value="0">
+        ```
+        
+        Then add an id value.
+        
+        ```
+        Quantity <input id="updateQuantity" type="text" value="0">
+        ```
+        
+        Then in the JavaScript, select the HTML element.
+        
+        ```
+        document.getElementById("updateQuantity");
+        ```
+        
+        We can further organize it by assigning that HTML object to a variable.
+        ```
+        var updateQuantity = document.getElementById('updateQuantity');
+        ```
+         
+        Your JavaScript should now look like this:
+        
+        <pre><code>var quantity = 0;
+        
+        function addItem(){
+          quantity = quantity + 1;
+          // to add function to refresh quantity value in the HTML
+        }
+        function removeItem(){
+          quantity = quantity - 1; 
+          // to add function to refresh quantity value in the HTML
+        }
+        
+        var updateQuantity = document.getElementById('updateQuantity');</code></pre>
+        
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Rewind: Quick objects review!
+        
+        Before we move on, let's do a quick review on objects and assigning values.
+        
+        Remember the bento boxes?
+        
+        var bentobox = {};
+        bentobox.main = "chicken"; // assigning the value
+        
+        
+        Here's the object we just created:
+        
+        var updateQuantity = document.getElementById('updateQuantity');
+        
+        We can use the same dot notation syntax to set the value, using the built-in `value` property.
+        
+        var quantity = 0; // sets initial quantity, value gets updated when you add or remove and item
+        var updateQuantity = document.getElementById('updateQuantity'); // HTML object, used to display quantity on the web page
+        
+        updateQuantity.value = quantity; // apply the value property to the HTML object (updateQuantity) and set the value to the current quantity value.
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Class Exercise: Quantities, Step 4 (Part 2)
+        
+        4\. create a `refreshTotal` function to update the quantity displayed in the HTML
+        
+        Create a new function for `refreshTotal`.
+        <pre><code>function refreshTotal() {
+        }</code></pre>
+        
+        Here
+        
+      updateQuantity.value = quantity;
       </script>
     </section>
     
@@ -1384,95 +1685,6 @@ var existingElement = document.getElementById("text");
       <a href="exercises/2-mini-exercise-problem.html"><img src="framework/img/workshop/rawbot-run.png" alt="run code" align="right" /></a>
     </section>
 
-    <!-- <section class="slide">
-      <h2>Concatenation</h2>
-      <p>Now that we've calculated some numerical totals, how do we format the output to add a non-numerical value like a dollar sign? We use <span class="highlight-text">concatenation</span>. </p>
-      <p><span class="highlight-text">concatenation</span> is the joining of strings, using the (+) symbol. Remember this example?</p>
-      <div data-markdown>
-        ```javascript
-        //Slide: Arithmetic Operators, Numbers and Strings
-        var firstNumber = "20";
-        var secondNumber = 10;
-        document.write(firstNumber + secondNumber);
-        ```
-      </div>
-      <a href="examples/010-concatenation.html"><img src="framework/img/workshop/rawbot-run.png" alt="run code" align="right" /></a>
-    </section>
-
-    <section class="slide">
-      <h2>Concatenation and Strings</h2>
-      <p>If you use the (+) operator with numerical values, it will add the values. Otherwise, it will combine the outputs as a string.</p>
-      <p>Only the addition (+) operator can be used to combine strings. </p>
-      <p class="highlight-color">File: examples/011-concatenation-and-strings.html</p>
-      <div data-markdown>
-        ```javascript
-        //Addition with the + operator
-        var tshirtPrice = 25;
-        var androidPrice = 10;
-        var shoppingTotal = tshirtPrice + androidPrice;
-        document.write(shoppingTotal);
-        document.write("<br />");
-
-        //Concatenation with the + operator
-        //document.write("Your total is: " + "$" + shoppingTotal);
-        //document.write("<br />");
-
-        //no nos
-        //document.write("Your total is:" * shoppingTotal);
-        //document.write("<br />");
-        //document.write("$" + 20 + 1);
-        ```
-      </div>
-      <a href="examples/011-concatenation-and-strings.html"><img src="framework/img/workshop/rawbot-run.png" alt="run code" align="right" /></a>
-
-    </section> -->
-
-    <!-- <section class="slide">
-      <h2>Concatenation in action (results)</h2>
-      <p>Let's re-visit mini-exercise #2 and add a total cost field</p>
-      <p class="highlight-color">File: examples/012-concatenation-in-action.html</p>
-      <div data-markdown>
-        ```javasript
-        var quantity = 0;
-
-        function addItem(){
-          quantity = quantity + 1;
-          refreshTotal();
-        }
-        function removeItem(){
-          quantity = quantity - 1;
-          refreshTotal();
-        }
-        function refreshTotal() {
-          //this will update the HTML textfield
-          document.getElementById('updateQuantity').value = quantity;
-
-          //EXAMPLE: Use concatenation to add a human readable $ sign to the price
-          var totalCost = quantity * 20; //quantity * fixed price OF $20
-          //var totalCostToShow =
-
-          //this will update the HTML textfield
-          document.getElementById('updateTotal').value = totalCost;
-        }
-        ```
-      </div>
-
-      <div data-markdown>
-        ```html
-        &lt;link rel="stylesheet" href="exercises/slides.css" type="text/css" media="screen" />
-        &lt;div class="item">
-          &lt;img src="exercises/assets/plush-android.jpg" width="195" height="195" /><br />
-          &lt;button onclick="addItem();">Add&lt;/button>
-          &lt;button onclick="removeItem();">Remove&lt;/button>&lt;br />
-          Quantity
-          &lt;input type="text" id="updateQuantity" value="0" readonly />&lt;br />
-          Total Cost:
-          &lt;input type="text" id="updateTotal" value="0" readonly />
-        &lt;/div>
-        ```
-      </div>
-      <a href="examples/012-concatenation-in-action.html"><img src="framework/img/workshop/rawbot-run.png" alt="run code" align="right" /></a>
-    </section> -->
 
     <section class="slide title">
       <h1>Conditionals</h1>
@@ -1992,20 +2204,7 @@ false || false // returns false</code></pre>
 What are some questions or issues you are having with the material covered so far? Lunch with your mentors and pick their brains. :) </p>
     </section>
 
-    <section class="slide centered">
-      <h2>What kind of neat stuff can you do with HTML5 and JavaScript? </h2>
-      <p><img src="framework/img/workshop/Chrome-Experiments-Arcade-Fire.gif" alt="Arcade Fire" /></p>
-      <p class="delayed"><img src="framework/img/workshop/rawbot-hint.png" alt="robot hint" height="50"/>Arcade Fire's interactive music video: <a href="http://www.chromeexperiments.com/arcadefire/">The Wilderness Downtown.</a></p>
-    </section>
-
-    <section class="slide title">
-      <h1>The Ladies Learning Code Mentors</h1>
-      <h2>(Aren't they awesome?)</h2>
-    </section>
-
-    <section class="slide title">
-      <h1>Now Back To Your Regularly Programmed Workshop...</h1>
-    </section>
+    
 
     <section class="slide title">
       <h1>JavaScript Theory Hands-on </h1>
@@ -2017,28 +2216,6 @@ What are some questions or issues you are having with the material covered so fa
       <h2>Putting it together on an actual HTML page</h2>
     </section>
 
-    <!-- <section class="slide">
-      <h2>Inline JavaScript</h2>
-      <p>JavaScript can appear inline in a webpage in several spots. Either in the <code>&lt;head&gt;</code> section or anywhere in the <code>&lt;body&gt;</code> section. </p>
-      <pre><code>&lt;html>
-&lt;head>
-&lt;title>JavaScript example!&lt;/title>
-&lt;script type="text/javascript">
-  alert("I'm in the head tag!");
-&lt;/script>
-&lt;/head>
-&lt;body>
-&lt;div id="example">This is an example.&lt;/div>
-&lt;script type="text/javascript">
-  alert("I'm in the body tag!");
-&lt;/script>
-&lt;/body>
-&lt;/html></code></pre>
-
-      <p class="delayed"><img src="framework/img/workshop/rawbot-reminder.png" alt="robot reminder" align="left" height="50"/>Need to manipulate an html tag or have a quick loading page? Put the JavaScript just before the <span class="highlight-text">closing</span> <code>&lt;body&gt;</code> tag. </p>
-    </section> -->
-
-    <!--Using a code editor.or correcting syntax slide-->
 
     
         <section class="slide title">
@@ -2345,56 +2522,11 @@ var eggspressions = [];</code></pre>
           <h2>Share your mistakes so we can learn from each other!</h2>
         </section>
 
-        <section class="slide title">
-          <h1>Break time!</h1>
-          <h2>Come back in 15 minutes</h2>
-        </section>
+        
 
-        <section class="slide title">
-          <h1>Document Object Model (DOM)</h1>
-          <h2>Manipulating objects on a real HTML page</h2>
-        </section>
+        
 
-        <section class="slide">
-          <h2>Manipulating objects on a real HTML page</h2>
-          <p class="delayed">Think about your HTML web page (your "browser DOCUMENT") as being made up of many blocks.</p>
-          <p style="text-align:center" class="delayed"><img src="framework/img/workshop/browser-blocks.jpg" alt="browser blocks" />
-        </p>
-      </section>
 
-        <section class="slide">
-          <h2>Pre-defined Blocks</h2>
-          <p class="delayed">Some blocks are defined by the browser, such as the browser <span class="highlight-text">window</span>.</p>
-          <p class="delayed" style="text-align:center"><img src="framework/img/workshop/browser-window.jpg" alt="browser window" />
-        </section>
-
-        <section class="slide">
-          <h2>Document Objects</h2>
-          <p class="delayed">All of these blocks are <span class="highlight-text">OBJECTS</span> -- just like the ones we covered earlier! And all these objects have pre-written functions/methods you can use.</p>
-          <p class="delayed">Does the line of code below make more sense now? <code>document</code> is one of the main objects of a web page and it has a method named <code>write</code> that accepts a string as a parameter. document has lots of other properties and methods too: <a href="http://dochub.io/#dom/document">check out this list</a>.</p>
-          <div data-markdown class="delayed">
-            ```javascript
-            document.write("Hello!");
-            ```
-          </div>
-          <a href="examples/029-document-objects.html"><img class="delayed" src="framework/img/workshop/rawbot-run.png" alt="run code" align="right" /></a>
-        </section>
-
-        <section class="slide">
-          <h2>HTML Element Objects</h2>
-          <p class="delayed">The most repetitive thing you'll ever do with JavaScript is getting references to your HTML tags ("elements") using <code>document.getElementById()</code>.</p>
-          <small class="delayed">(It's important that your HTML tag has an id attribute in order to do this!)</small>
-          <p class="delayed">For example, let's dynamically find out what the text is in a paragraph tag by reading its innerHTML property. (You can find all the things you can do with elements <a href="http://dochub.io/#dom/element">here</a>.)</p>
-          <p class="highlight-color delayed">File: examples/030-html-element-objects.html</p>
-          <pre class="delayed"><code>&lt;p id="text" style="border: 1px solid red;">
-  Loading...
-&lt;/p>
-
-&lt;script>
-
-&lt;/script></code></pre>
-          <a href="examples/030-html-element-objects.html"><img class="delayed" src="framework/img/workshop/rawbot-run.png" alt="run code" align="right" /></a>
-        </section>
 
         <section class="slide">
           <h2>HTML Element Objects (cont'd)</h2>
@@ -2423,90 +2555,8 @@ var eggspressions = [];</code></pre>
           <a href="examples/032-html-element-objects.html"><img src="framework/img/workshop/rawbot-run.png" alt="run code" align="right" /></a>
         </section>
 
-        <section class="slide">
-          <h2>Updating CSS Styles</h2>
-          <p class="delayed">You can even update an HTML element's CSS styles dynamically using its style property.</p>
-          <p class="delayed">Consider how you might program a button toggle effect to show the difference between "selected" or "deselected" states. (Note the differences between how properties are written in CSS to how they appear in JavaScript -- background-color versus backgroundColor.</p>
-          <p class="highlight-color delayed">File: examples/033-updating-css-styles.html</p>
-          <pre class="delayed"><code>&lt;style>
-  #clickme {
-    text-align: center;
-    width: 100px;
-    padding: 5px 10px;
-    border: 1px solid #999;
-    cursor: pointer;
-    background-color: white;
-    color: black;
-  }
-&lt;/style>
-
-&lt;div id="clickme" onclick="restyle();">
-Click me!
-&lt;/div>
-
-&lt;script>
-  var button = document.getElementById("clickme");
-  function restyle() {
-    if ( button ) {
-
-    } else {
-
-    }
-  }
-&lt;/script></code></pre>
-          <a href="examples/033-updating-css-styles.html"><img class="delayed" src="framework/img/workshop/rawbot-run.png" alt="run code" align="right" /></a>
-        </section>
-
-        <section class="slide">
-          <h2>Updating CSS Styles</h2>
-          <p>You could even update several style properties at once if you use CSS classes and update an element's class attribute.</p>
-          <p class="highlight-color">File: examples/034-updating-css-styles.html</p>
-          <pre><code>&lt;style>
-  .original {
-    text-align: center;
-    width: 100px;
-    padding: 5px 10px;
-    border: 1px solid #999;
-    cursor: pointer;
-    background-color: white;
-    color: black;
-  }
-&lt;/style>
-
-&lt;div id="clickme" class="original" onclick="restyle();">
-Click me!
-&lt;/div>
-
-&lt;script>
-  var button = document.getElementById("clickme");
-  function restyle() {
-    if ( button ) {
-
-    } else {
-
-    }
-  }
-&lt;/script></code></pre>
-          <a href="examples/034-updating-css-styles.html"><img src="framework/img/workshop/rawbot-run.png" alt="run code" align="right" /></a>
-        </section>
-
-        <section class="slide">
-          <h2>Make DOM Elements Magically Appear!</h2>
-          <p class="delayed">You can even create completely new elements out of thin air! Use <code>document.createElement()</code> and <code>appendChild()</code>;</p>
-
-          <p class="delayed highlight-color">File: examples/035-dom-elements.html</p>
-          <pre class="delayed"><code>&lt;div id="emptyDiv" style="border: 1px solid red; padding: 10px;">
-&lt;/div>
-
-&lt;script>
-  // create a new paragraph out of thin air
-
-  //insert it into the currently empty div
-
-&lt;/script></code></pre>
-          <a href="examples/035-dom-elements.html"><img class="delayed" src="framework/img/workshop/rawbot-run.png" alt="run code" align="right" /></a>
-        </section>
-
+        
+        
         <section class="slide title">
           <h1>Going Beyond JavaScript Basics</h1>
           <h2>You're getting to be quite the pro!</h2>

@@ -1,0 +1,54 @@
+<html>
+  <head>
+    <title>Update Quantities</title>
+    <link rel="stylesheet" href="exercises.css">
+  </head>
+  <body>
+    
+    <div class="quantities">
+      <img src="assets/plush-android.jpg" width="195" height="195">
+      <br>
+      
+      <button id="add">add</button>
+      <button id="remove">remove</button>
+      <br>
+      
+      Quantity <input type="text" id="updateQuantity" value="0">
+    </div>
+    
+    <script>
+      /* 1. Sets var 'quantity' to start at 0. This will be
+      used to hold the value for the quantity of robots. */
+      var quantity = 0;
+      
+      // Declares a function for adding items
+      function addItem(){
+        // 2. set the variable 'quantity' to increase by 1
+        quantity = quantity + 1;
+        refreshTotal();
+      }
+      
+      // Declares a function for removing items
+      function removeItem(){        
+        //3. set the variable 'quantity' to decrease
+        quantity = quantity - 1;
+        refreshTotal();
+      }
+      
+      // This function executes after the quantity item is updated.
+      // It then finds the "updateQuantity" HTML element and updates the value
+      var updateQuantity = document.getElementById('updateQuantity');
+      function refreshTotal() {
+        updateQuantity.value = quantity;
+      }
+      
+      // Adds the click action to the elements with the id of "add" or "remove"
+      // https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onclick
+      var add = document.getElementById("add");
+      var remove = document.getElementById("remove");
+      add.onclick = addItem; // executes the addItem() function on click
+      remove.onclick = removeItem; // executes the removeItem() function on click
+      
+    </script>
+  </body>
+</html>
