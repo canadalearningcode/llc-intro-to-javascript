@@ -34,3 +34,25 @@
     margin-left: 5px;
   }
 }
+
+.exercise {
+  .quantities {
+    background: white;
+  	width: 200px;
+  	text-align: center;
+  	border: 2px solid #ccc;
+  	padding: 20px 5px;
+  	margin-right: 40px;
+  	font-size: 20px;
+    float: left;
+  }
+  .quantities button {
+  	margin: 5px 2px;
+  	font-size: 16px;
+  }	
+  .quantities input {
+  	width: 40px;
+  	margin: 10px 0 0 5px;
+  	font-size: 14px;
+  }
+}

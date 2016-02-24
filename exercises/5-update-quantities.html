@@ -13,44 +13,12 @@
       <button>Remove</button>
       <br>
       
-      Quantity <input id="updateQuantity" type="text" value="0">
+      Quantity <input type="text" value="0">
     </div>
     
     <script>
-      // 1. create a `quantity` variable and set the initial value to 0
-      var quantity = 0;
+      // ADD JAVASCRIPT HERE
 
-      
-      // 2. create an `addItem` function
-      function addItem(){
-        
-        // adds 1 to current value of quantity
-        quantity = quantity + 1; 
-        // refresh the HTML quantity total to reflect new quantity
-      }
-      
-      // 3. create a `removeItem` function
-      function removeItem(){
-        
-        // subtract 1 to current value of quantity
-        quantity = quantity - 1; 
-        // refresh the HTML quantity total to reflect new quantity
-      }
-      
-      // 4. Selecting the HTML element to display updated quantity
-      var updateQuantity = document.getElementById('updateQuantity');
-      function refreshTotal() {
-        updateQuantity.value = quantity;
-      }
-      
-    /* 
-      4. create `refreshTotal` function to take the current quantity and update the number in the HTML
-          * to be added to both the `addItem` and `removeItem` function
-      5. execute the addItem function
-          * target/select the add button 
-          * execute the addItem function only on click
-      6. repeat step 5 for the `removeItem` function
-    */
     </script>
   </body>
 </html>

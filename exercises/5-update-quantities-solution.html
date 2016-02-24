@@ -9,46 +9,31 @@
       <img src="assets/plush-android.jpg" width="195" height="195">
       <br>
       
-      <button id="add">add</button>
-      <button id="remove">remove</button>
+      <button id="add">Add</button>
+      <button id="remove">Remove</button>
       <br>
       
-      Quantity <input type="text" id="updateQuantity" value="0">
+      Quantity <input id="updateQuantity" type="text" value="0">
     </div>
     
     <script>
-      /* 1. Sets var 'quantity' to start at 0. This will be
-      used to hold the value for the quantity of robots. */
-      var quantity = 0;
-      
-      // Declares a function for adding items
+      var quantity = 0; // declare and set quantity to start at 0
+      var updateQuantity = document.getElementById("updateQuantity"); // selects HTML element to display quantity
+      var addBtn = document.getElementById("add"); // selects HTML add button
+      var removeBtn = document.getElementById("add"); // selects HTML remove button
+
       function addItem(){
-        // 2. set the variable 'quantity' to increase by 1
-        quantity = quantity + 1;
-        refreshTotal();
+        quantity = quantity + 1; // adds 1 to current value of quantity
+        updateQuantity.value = quantity; // refresh the HTML quantity total to reflect new quantity
       }
-      
-      // Declares a function for removing items
-      function removeItem(){        
-        //3. set the variable 'quantity' to decrease
-        quantity = quantity - 1;
-        refreshTotal();
+      function removeItem(){
+        quantity = quantity - 1; // subtract 1 to current value of quantity
+        updateQuantity.value = quantity;// refresh the HTML quantity total to reflect new quantity
       }
-      
-      // This function executes after the quantity item is updated.
-      // It then finds the "updateQuantity" HTML element and updates the value
-      var updateQuantity = document.getElementById('updateQuantity');
-      function refreshTotal() {
-        updateQuantity.value = quantity;
-      }
-      
-      // Adds the click action to the elements with the id of "add" or "remove"
-      // https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onclick
-      var add = document.getElementById("add");
-      var remove = document.getElementById("remove");
-      add.onclick = addItem; // executes the addItem() function on click
-      remove.onclick = removeItem; // executes the removeItem() function on click
-      
+
+      // executes the addItem() & removeItem() functions on button click
+      addBtn.onclick = addItem;
+      removeBtn.onclick = addItem;
     </script>
   </body>
 </html>

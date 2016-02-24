@@ -706,10 +706,10 @@
         * offer online shopping
         * print shipping labels
         * offer members only sales       
-        * customers shouldn't be able to submit empty forms
+        <!-- * customers shouldn't be able to submit empty forms -->
         * shopping cart items must be calculated properly
 
-        To create a website that can handle these requirements, let's take a deeper dive into  **variables**, **functions**  and **conditionals**.
+        To create a website that can handle these requirements, let's take a deeper dive into  **variables**, **functions**  and later, we'all also talk about **objects** and **conditionals**.
       </script>
     </section>
 
@@ -1217,7 +1217,7 @@ function moreLove(){
       <script type="text/template">
         #Exercise: Objects and Methods (10mins)
         
-        Let's say you want to have a 50% off sale.  All the prices can be divided by 50% but you also want to ensure that the value always rounds to two decimal points.  
+        Let's say you want to have a 50% off sale.  All the prices can be multiplied by 50% (or divided by 2) but you also want to ensure that the value always rounds to two decimal points.  
         
         ```
         var sale = 0.5; // 50% off
@@ -1230,7 +1230,9 @@ function moreLove(){
         document.write(robot);
         ```
         
-        There current output is 10, 17.5, and 12.995. In the editor and browser, open **4-methods.html**. Use the `toFixed()` method to update that.
+        There current output is 10, 17.5, and 12.995. 
+        
+        In the editor and browser, open **4-methods.html**. Use the `toFixed()` method to update the outputted values.
         
         <!-- .element: class="note" -->The solution can be found in **4-methods-solution.html**.
       </script>
@@ -1332,7 +1334,7 @@ function moreLove(){
         var loves = 0;
         // targets the "update" element
         var update = document.getElementById("update"); 
-        // targets the "button" element
+        // targets the "moreButton" element
         var button = document.getElementById("moreButton"); 
         
         // custom function
@@ -1371,7 +1373,7 @@ function moreLove(){
 
         There are different ways to define a function, but a common way is using the `function` keyword followed by a function name, of your choosing, and a set of parentheses `()`. 
         
-        The statements or instructions to be executed are enclosed within curly brackets `{ }`.
+        The statements or instructions to be executed are enclosed within curly brackets `{}`.
         
         ```
         function nameOfFunction(){
@@ -1417,7 +1419,7 @@ function moreLove(){
         
         <p>Applying everything that has been covered so far, let's create a program to allow the customer to update the quantity by selecting an add or remove button, like in the sample on the left.</p>
         
-        <p><strong>Note!</strong> Right now, removing items can result in a negative number.  We'll update that in the next exercise.</p>
+        <p><strong>Note!</strong> Right now, removing items can result in a negative number.  We'll update that in the last exercise.</p>
         
         <script>
           // from 5-update-quantities.html exercise
@@ -1448,64 +1450,58 @@ function moreLove(){
         
         Let's break it down into smaller steps and make a plan of action. Remember, computers need very specific instructions.
         
-        1. create a `quantity` variable and set the initial value to 0
-        2. create an `addItem` function
-            * adds 1 to current value of quantity
-            * refresh the HTML quantity total to reflect new quantity (step 4)*
-        3. create a `removeItem` function
-            * removes 1 from current value of quantity
-            * refresh the HTML quantity total to reflect new quantity (step 4)*
-        4. create `refreshTotal` function to take the current quantity and update the number in the HTML
-            * to be added to both the `addItem` and `removeItem` function
-        5. execute the addItem function
-            * target/select the add button 
-            * execute the addItem function only on click
-        6. repeat step 5 for the `removeItem` function
+        1. Create a variable, to hold and keep track of the quantities selected.
+        1. Create a set of instructions for the Add button.
+          * with every click, the value of the quantity goes up by 1
+        1. Create a set of instructions for the Remove button.
+          * with every click, the value of the quantity goes down by 1
+        1. Select the HTML element used to display the quantity.
+        1. Update the HTML element with the current quantity count.
+        1. Execute the Add button instructions only when the Add button is clicked.
+        1. Execute the Remove button instructions only when the Remove button is clicked.
+
         
+        Open **5-update-quantities.html** in your editor. Let's go through each step together.
       </script>
     </section>
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        # Class Exercise: Quantities, Step 1 
+        # Class Exercise: Quantities, Step 1   
+        ## Create a variable, to hold and keep track of the quantities selected
+        ---
         
-        Let's go through each step outlined in the previous slide together. Open **5-update-quantities.html** in your editor.
+        How do you declare a variable named "quantity"?
         
-        1\. create a `quantity` variable and set the initial value to 0
+        <pre><code>var quantity;</code></pre>
         
-        * How do you declare a variable named "quantity"? <!-- .element: class="delayed" -->
-        * <!-- .element: class="delayed" -->`var quantity;`
-        * How do you assign it a value of 0?<!-- .element: class="delayed" -->
-        * <!-- .element: class="delayed" -->`var quantity = 0;`
+        How do you assign it a value of 0?
         
-        This should be added within the <!-- .element: class="delayed" --><code>&lt;script&gt;&lt;/script&gt;</code> tags.
+        <pre><code>var quantity = 0;</code></pre>
+        
+        Add this snippet within the<code>&lt;script&gt;&lt;/script&gt;</code> tags.
+        
+        ---
+        Note that you can name your variables and functions anything as long as it follows the proper naming conventions. <!-- .element: class="note" -->
       </script>
     </section>
     
     <section class="slide" data-markdown>
       <script type="text/template">
         # Class Exercise: Quantities, Step 2
-        
-        2\. create an `addItem` function to update the value of quantity
-        
-        How do you declare a function named "addItem"?      
-        <pre><code>function addItem(){  
-        }</code></pre>
-        Add 1 to current value of quantity. (Reassign the variable)
-        
-        <pre><code>function addItem(){
-          quantity = quantity + 1; 
+        ## Create a set of instructions for the Add button.
+        ---
+        Declare a function to execute a set of instructions. Let's name it "addItem".
+        How do you declare a function?  
+        <pre><code>function addItem(){ 
         }</code></pre>
         
-        Refresh the HTML quantity total to reflect new quantity -- this will have to wait until step 4 since this function can be reused for both the `addItem` and `removeItem` function but we can leave a comment as a reminder!
-        
-        Your code should now look similar to this:
+        The variable `quantity` keeps track of the quantities selected. *Reassign* the variable, to add 1 to quantity, when an item is added.
         
         <pre><code>var quantity = 0;
           
         function addItem(){
           quantity = quantity + 1; 
-          // to add function to refresh quantity value in the HTML
         }</code></pre>
       </script>
     </section>
@@ -1513,61 +1509,51 @@ function moreLove(){
     <section class="slide" data-markdown>
       <script type="text/template">
         # Class Exercise: Quantities, Step 3
+        ## Create a set of instructions for the Remove button
+        ---
         
-        3\. create a `removeItem` function to update the value of quantity
-        
-        This will be similar to the `addItem` function except this time, we'll *subtract* 1 from the quantity value.
+        This will be similar to the `addItem` function except this time, *subtract* 1 from the quantity value.
         
         How do you declare a function named "removeItem"?      
         <pre><code>function removeItem(){  
         }</code></pre>
-        Subtract 1 to current value of quantity. (Reassign the variable)
+
+        *Reassign* the variable, to subtract 1 from `quantity`, when an item is removed.
         
         <pre><code>function removeItem(){
           quantity = quantity - 1; 
         }</code></pre>
         
-        Refresh the HTML quantity total to reflect new quantity -- this will completed in the next step since this function can be reused for both the `addItem` and `removeItem`.
-        
-        Your code should now look similar to this:
+        Your code should now look like this:
         
         <pre><code>var quantity = 0;
         
         function addItem(){
           quantity = quantity + 1; 
-          // to add function to refresh quantity value in the HTML
         }
         function removeItem(){
           quantity = quantity - 1; 
-          // to add function to refresh quantity value in the HTML
         }</code></pre>
       </script>
     </section>
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        # Class Exercise: Quantities, Step 4 (Part 1)
+        # Class Exercise: Quantities, Step 4
+        ## Select the HTML element used to display the quantity
+        ---
         
-        4\. create a `refreshTotal` function to update the quantity displayed in the HTML
+        ![](framework/img/workshop/update-quantities.png) <!-- .element: class="left" height="300" -->
         
-        This step also has several mini-steps.
-        
-        * Select the HTML element to be updated. 
-        
-        In the HTML, the `<input>` tag is being used to display the value. Let's add an `id` value to it so it can be selected with the `getElementById()` method.  
-        
-        Also, note that an `id` value can only be used once per page so this will ensure that it is unique.
-        
-        In the HTML find this line:
-        
+        In the HTML, the `<input>` tag is used to display the quantity value.
         ```
-        Quantity <input type="text" value="0">
+        <input type="text" value="0">
         ```
         
-        Then add an id value.
+        Add an `id` so it can be selected with the `getElementById()` method.
         
         ```
-        Quantity <input id="updateQuantity" type="text" value="0">
+        <input id="updateQuantity" type="text" value="0">
         ```
         
         Then in the JavaScript, select the HTML element.
@@ -1576,14 +1562,15 @@ function moreLove(){
         document.getElementById("updateQuantity");
         ```
         
-        We can further organize it by assigning that HTML object to a variable.
+        Create a variable with the selected HTML element.
         ```
         var updateQuantity = document.getElementById('updateQuantity');
         ```
          
-        Your JavaScript should now look like this:
+        Your JavaScript should now look similar to this:
         
         <pre><code>var quantity = 0;
+        var updateQuantity = document.getElementById('updateQuantity');
         
         function addItem(){
           quantity = quantity + 1;
@@ -1593,98 +1580,131 @@ function moreLove(){
           quantity = quantity - 1; 
           // to add function to refresh quantity value in the HTML
         }
+        </code></pre>
         
-        var updateQuantity = document.getElementById('updateQuantity');</code></pre>
-        
+        Note that an <!-- .element: class="note" -->`id` value can only be used once per page so this will ensure that it is unique.
       </script>
     </section>
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        #Rewind: Quick objects review!
+        # Class Exercise: Quantities, Step 5
+        ## Update the HTML element with the current quantity count.
+        ---
+        In the previous step, we selected the HTML element used to display the quantity value.
         
-        Before we move on, let's do a quick review on objects and assigning values.
+        ```
+        var updateQuantity = document.getElementById('updateQuantity');
+
+        ```
         
-        Remember the bento boxes?
+        However, the `quantity` variable is holding the quantity value.
+        ```
+        var quantity = 0;
+        ```
         
-        var bentobox = {};
-        bentobox.main = "chicken"; // assigning the value
+        We need to get `updateQuantity` to equal `quantity` so the HTML element can display the number on the web page.
         
+        Remember objects, properties and how to set object values using the bentobox example?
         
-        Here's the object we just created:
+        ```javascript
+        object.property = value;
+        bentobox.main = "chicken";
+        ```
         
+        We can do the same here and use the `.value` property to set the value of `updateQuantity`.
+        
+        ```
+        var quantity = 0;
         var updateQuantity = document.getElementById('updateQuantity');
         
-        We can use the same dot notation syntax to set the value, using the built-in `value` property.
-        
-        var quantity = 0; // sets initial quantity, value gets updated when you add or remove and item
-        var updateQuantity = document.getElementById('updateQuantity'); // HTML object, used to display quantity on the web page
-        
-        updateQuantity.value = quantity; // apply the value property to the HTML object (updateQuantity) and set the value to the current quantity value.
-      </script>
-    </section>
-    
-    <section class="slide" data-markdown>
-      <script type="text/template">
-        # Class Exercise: Quantities, Step 4 (Part 2)
-        
-        4\. create a `refreshTotal` function to update the quantity displayed in the HTML
-        
-        Create a new function for `refreshTotal`.
-        <pre><code>function refreshTotal() {
-        }</code></pre>
-        
-        Here
-        
-      updateQuantity.value = quantity;
-      </script>
-    </section>
-    
-    <section class="slide">
-      <h2>Mini-exercise #2: Go! (5-10 minutes)</h2>
-      <small><img src="framework/img/workshop/rawbot-hint.png" alt="robot reminder" align="left" height="50"/>How do we increase or decrease the value of the variable?</small>
-      <p class="highlight-color">File: exercises/2-mini-exercise-problem.html</p>
-      <div data-markdown>
-        ```javscript
-        /* 1. set var 'quantity' to start at 0. This will be
-        used to hold the value for the quantity of robots */
-        var quantity =
+        updateQuantity.value = quantity;
 
+        ```
+
+        The quantity needs to be updated every time the user adds or removes and item. Update both the `addItem()` and `removeItem()` functions to include the `updateQuantity` statement.
+
+        ```
+        var quantity = 0;
+        var updateQuantity = document.getElementById('updateQuantity');
+        
         function addItem(){
-          // CODE HERE EXECUTES WHEN YOU PRESS THE 'ADD' BUTTON
-          //2. set the variable 'quantity' to increase by 1 HERE
-
-          refreshTotal();
+          quantity = quantity + 1;
+          updateQuantity.value = quantity;
         }
         function removeItem(){
-          // CODE HERE EXECUTES WHEN YOU PRESS THE 'REMOVE' BUTTON
-          //3. set the variable 'quantity' to decrease HERE
-
-          refreshTotal();
+          quantity = quantity - 1;
+          updateQuantity.value = quantity;
         }
-        function refreshTotal() {
-          var totalCost = quantity * 20; //quantity * fixed price
-          document.getElementById('updateQuantity').value = quantity; //updates
-        }            ```
-      </div>
-      <div data-markdown>
-        ```html
-        &lt;link rel="stylesheet" href="exercises/slides.css" type="text/css" />
-        &lt;div class="item">
-          &lt;img src="exercises/assets/plush-android.jpg" width="195" height="195" />
-          &lt;br />
-          &lt;button onclick="addItem();">Add</button>
-          &lt;button onclick="removeItem();">Remove</button>
-          &lt;br />
-          Quantity
-          &lt;input type="text" id="updateQuantity" value="0" readonly />
-          &lt;br />
-        &lt;/div>
         ```
-      </div>
-      <a href="exercises/2-mini-exercise-problem.html"><img src="framework/img/workshop/rawbot-run.png" alt="run code" align="right" /></a>
+      </script>
+    </section>
+  
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Class Exercise: Quantities, Step 6
+        ##Execute the Add button function when the Add button is clicked.
+        ---
+
+        Remember, creating a function only groups a series of instructions under a function name. But to execute it, it has to be *called*. 
+
+        But in this example, we can't just use `addItem()` to `call` it because it can only execute *on button click*.
+
+        Similar to the HTML quantity box, we can select the "Add" button by adding and `id` and using `getElementById`.
+
+        ```
+        <button id="add">Add</button>
+        ```
+        ```
+        var addBtn = document.getElementById("add");
+        ```
+
+        JavaScript an `onclick` property that can be used to trigger a click event on the button.
+        
+        What do we want to happen onclick?  To run the `addItem()` function!  They syntax to run a function with this property is a little different than the previous examples.
+
+        According to the [documentation](https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onclick), the syntax is as follows:
+        
+        ```javascript
+        element.onclick = functionName;
+        ```
+        
+        So to run the `addItem()` function on when the Add button is clicked, do this:
+        
+        ```
+        addBtn.onclick = addItem;
+        ```
+
+        Go ahead, test your add button in the browser!  
+        It should increase by 1 on every button click.
+      </script>
     </section>
 
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Exercise: Quantities, Step 7 (5mins)
+        ##Execute the Remove button function when the Remove button is clicked.
+        ---
+        
+        Try this last step on your own (or with a partner or mentor).  
+
+        The steps are the same as Step 6 except you're adding the click functionality to the Remove button.
+
+        **Important!** When testing the remove button, once you hit zero, the counter will continue into negative numbers.  We'll be fixing that in the next section.
+
+        The solution for this entire program can be found in <!-- .element: class="note" -->**5-update-quantities-solution.html**.
+      </script>
+    </section>
+
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ##Mini-exercise (5-10 minutes): [maybe?]
+        Quantities and Total Cost
+
+        Let's re-visit the Quantities exercise and add a text field to show the total cost. If the Android plushie cost $20 each, how do we calculate the total cost? 
+      </script>
+    </section>  
 
     <section class="slide title">
       <h1>Conditionals</h1>
