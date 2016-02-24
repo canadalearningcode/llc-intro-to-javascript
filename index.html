@@ -530,7 +530,13 @@
         
         Reminder, when Javascript is included on an HTML page, it must be included within a pair of  <code>&lt;script&gt;&lt;/script&gt;</code> tags.
         
-        Let's add the `prompt("What is your name?");` function and message to the HTML page and open it in the browser.
+        Let's add the following snippet to **1-hello.html**:
+        
+        ```
+        prompt("What is your name?");
+        ``` 
+        
+        Then open **1-hello.html** in the browser and test the prompt.
       </script>
     </section>
     
@@ -617,7 +623,7 @@
 
         Remember `prompt()`? This function triggers a popup box that allows user input. 
         
-        We can assign the prompt to a variable, thus saving the value of the user input.
+        The prompt function can be assigned to a variable, thus saving the value of the user input.
 
       </script>
     </section>
@@ -844,12 +850,12 @@
         
         Open **2-shipping-info.html** in the editor and the browser.
         
-        Right now, if you run the program in the browser the shipping information is not stored and will show blank. How do we fix this?
+        Right now, if you run the program in the browser, the shipping information is not stored and the output will be blank. 
+        
+        How can this be fixed?
 
         1. Use variables to store the name and postal code values. 
-        1. Use `document.write()` to output the name and postal values to verify the information is being stored.
-
-        
+        1. Use `document.write()` to output the name and postal values to verify the information is being stored.  
       </script>
     </section>
     
@@ -901,7 +907,7 @@
       <script type="text/template">
         # Calculate Totals
         
-        Getting JavaScript to do math can be very useful. For example, we can use it to calculate totals in a shopping cart form.
+        Getting JavaScript to do math can be very useful. For example, we can use it to calculate totals in a shopping cart.
         
         Instead of using just numbers, JavaScript can do math using variables with numerical values.
         
@@ -942,20 +948,20 @@
         var discount = 0.15; // 15%
 
         // What is the cost of one t-shirt and one android?
-        var total = tshirtPrice + androidPrice;
+        var subtotal = tshirtPrice + androidPrice;
         document.write("Subtotal: $");
-        document.write(total);
+        document.write(subtotal);
         document.write("<br>");
 
         // Guess what?  Ladies Learning Code members gets 15% off!
         // Figure out how much the discount will be.
-        var discountAmount = total * discount;
+        var discountAmount = subtotal * discount;
         document.write("Discount: $");
         document.write(discountAmount);
         document.write("<br>");
 
         // Apply the discount to get the final price.
-        var finalTotal = total - discountAmount;
+        var finalTotal = subtotal - discountAmount;
         document.write("Final Total: $");
         document.write(finalTotal);
         ```
@@ -974,12 +980,11 @@
       <script type="text/template">
         # Concatenation
 
-        If you use the (+) operator with numerical values, it will add the values. Otherwise, it will *combine* the outputs as a string referred to as **concatenation**.
+        If you use the `+` operator with numerical values, it will add the values. Otherwise, it will *combine* the outputs as a string referred to as **concatenation**.
 
-        We can use this to combine the string with the variable value.
+        Use this to combine the string with the variable value.
         
         ```javascript
-        // Apply the discount to get the final price.
         var finalTotal = total - discountAmount;
         document.write("Final Total: $" + finalTotal);
         ```
@@ -1070,7 +1075,7 @@ function moreLove(){
         
         The last example introduced two new concepts.  Custom functions:
         
-        ```
+        ```javascript
         function moreLove(){ 
           // instructions here
         }
@@ -1078,11 +1083,123 @@ function moreLove(){
         
         And manipulating HTML objects:
         
-        ```
+        ```javascript
+        var update = document.getElementById('update');
         update.innerHTML = loves;
         ```
         
         Let's talk about objects first.
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Variables vs Objects
+                
+        <img src="framework/img/workshop/variable-rice.png" alt="rice variable" class="left" height="130"> A **variable** only holds one value.
+        ```
+        var takeout = "Fried Rice";
+        ```
+        <br>
+        An **object** holds a collection of values. And the syntax is different.
+        
+        <img class="left" width="500" src="framework/img/workshop/object-bento-box.png" alt="bento box object">
+        
+        ```javascript
+        // create a new object
+        var bentobox = {};
+        // assign values
+        bentobox.main = "Teriyaki";
+        bentobox.side = "Tempura";
+        bentobox.salad = "Seaweed Salad";
+        bentobox.sushi = "Salmon Avocado Roll";
+        ```
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Object Properties
+
+        The "compartments" of objects are called **properties**. There are a few ways to access and set the value of the property but today we'll be sticking with *dot notation*.
+        
+        ```javascript
+        var myObject = {}; // create a new object
+        myObject.property = value; // assign values
+        ```
+        
+        ```javascript
+        var bentobox = {};
+        bentobox.main = "Teriyaki";
+        ```
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Object Properties
+        
+        You can *access* the value of a property with dot notation as well.
+        
+        ```javascript
+        // declaring a variable
+        var dinner = "chicken";
+        document.write(dinner);
+        ```
+        Will return "chicken".
+        
+        ```javascript
+        // declaring an object
+        var bentobox = {};
+        bentobox.main = "teriyaki";
+        bentobox.side = "rice";
+        document.write(bentobox.side)
+        ```
+        Will return "rice".
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Objects & Methods
+
+        In this workshop we won't be creating any of our own objects like in the previous example, but guess what? Almost* everything in JavaScript is an object! 
+        
+        That means even variables can be treated like objects too. Methods can be applied to variables, just like objects, using dot notation.
+        
+        For example, the `toFixed()` method is used to set the number of digits after the decimal point.
+                
+        ```
+        var price = 25;
+        var priceInDollars = price.toFixed(2);
+        document.write("$" + priceInDollars);
+        ```
+        This will output `$25.00`.
+        
+        ---
+        ### Resource
+        * [Is everything in JavaScript an Object?*](https://blog.simpleblend.net/is-everything-in-javascript-an-object/)
+        * [toFixed() reference & other JavaScript methods](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toFixed)
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Methods vs Functions
+        
+        Methods are just like functions, except they are applied to objects. Functions run on their own.
+        
+        ##Function
+        
+        ```javascript
+        prompt("Hello");
+        ```
+        
+        ##Method 
+        
+        ```javascript
+        document.write("Hello");
+        ```
       </script>
     </section>
     
@@ -1127,215 +1244,17 @@ function moreLove(){
       <script type="text/template">
         # Document Objects
         
-        All of these blocks are **objects**. Functions can be applied to these **objects** using dot notation.
+        All of these blocks are **objects**. Functions can be applied to these **objects** using dot notation. Does this look familiar?  
         
         ```
         document.write();
         ``` 
         
-        Does this look familiar?  
-        
-        We have been applying the `.write()` function to the document object. Let's take a closer look at how objects work.
+        We have been applying the `.write()` function to the document object. 
         
         <!-- .element: class="note" -->Note! When a function is applied to an object, it is called a **method**.
       </script>
     </section>
-    
-    <section class="slide" data-markdown>
-      <script type="text/template">
-        #Variables vs Objects
-                
-        <img src="framework/img/workshop/variable-rice.png" alt="rice variable" class="left" height="130"> A **variable** only holds one value.
-        ```
-        var takeout = "Fried Rice";
-        ```
-        <br>
-        An **object** holds a collection of values.
-        
-        <img class="left" width="500" src="framework/img/workshop/object-bento-box.png" alt="bento box object">
-        
-        ```javascript
-        // create a new object
-        var bentobox = {};
-        // assign values
-        bentobox.main = "Teriyaki";
-        bentobox.side = "Tempura";
-        bentobox.salad = "Seaweed Salad";
-        bentobox.sushi = "Salmon Avocado Roll";
-        ```
-      </script>
-    </section>
-    
-    <section class="slide centered">
-      <h2>Creating an Object</h2>
-      <img src="framework/img/workshop/syntax-object.gif" alt="syntax object"/>
-    </section>
-
-    <section class="slide">
-      <h2>Creating an Object</h2>
-      <p class="delayed">Creating an object is easy. Just like any other variable, use the <code>var</code> keyword and give it a descriptive name. </p>
-      <p class="delayed">But instead of assigning a single value right away, use these curly braces to make an empty object.</p>
-      <pre class="delayed"><code>var bentobox = {};</code></pre>
-      <small class="delayed">Yes, it's weird but think about the <code>{}</code> as a sort of funky container.</small>
-
-    </section>
-
-      <section class="slide">
-          <h2>Object Properties</h2>
-          <p class="delayed">The "compartments" of objects are called <span class="highlight-text">PROPERTIES</span>.</p>
-          <p class="delayed">If you already have an existing object, there are a few ways to access and set a value to a property. Since these two are very commonly used, they will both be discussed.</p>
-
-          <table cellpadding="20" class="delayed">
-            <thead>
-              <td>Dot notation:</td>
-              <td>Key-Value Lookup:</td>
-            </thead>
-            <tr>
-              <td>
-                <pre><code>myObject.property = value; </code></pre>
-                <div data-markdown>
-                  ```javascript
-                  bentobox.main = "Teriyaki";
-                  bentobox.side = "Tempura";
-                  ```
-                </div>
-              </td>
-              <td>
-                <pre><code>myObject[key] = value; </code></pre>
-                <div data-markdown>
-                  ```javascript
-                  bentobox["main"] = "Teriyaki";
-                  bentobox["side"] = "Tempura";
-                  ```
-                </div>
-              </td>
-            </tr>
-          </table>
-          <small class="delayed"><b>Advanced sidenote:</b></small>
-          <br />
-          <small class="delayed">Alternatively, you can both declare an object and set it's values at the <b>same</b> time: </small>
-          <br />
-          <code class="delayed">var bentobox = { soup:"Miso", main:"Teriyaki" };</code>
-        </section>
-
-        <!-- <section class="slide">
-          <h2>Why use Objects?</h2>
-          <p class="delayed"><i>Advanced topic:</i> Objects are useful because you group all these properties together and you can <b>reuse</b> the object over again.</p>
-          <p class="delayed">There's an <b>expectation</b> of what you'll get in a bento box. </p>
-          <p class="delayed">Some items are <b>fixed</b> (seaweed salad and sushi) but some compartments can be <b>edited</b> (a miso soup side versus tempura). </p>
-          <img class="delayed" src="framework/img/workshop/object-bento-box.png" width="45%" alt=""/>
-          <img class="delayed" src="framework/img/workshop/object-bento-box-2.png" width="45%" alt=""/>
-        </section> -->
-
-        <section class="slide">
-          <h2>Think of Everything as an Object*</h2>
-          <p class="delayed">When I said that objects were "advanced variables", here's another way of looking at it:</p>
-          <p class="delayed"><b>All JavaScript variables can be treated like objects too.</b></p>
-          <p class="delayed">If curly braces are a container for a generic object, quotes are containers for characters. When we get to arrays next, you'll see that it uses square brackets. (The only "uncontainered" object we've introduced today was a number.)</p>
-          <img class="delayed" src="framework/img/workshop/rawbot-reminder.png" alt="robot reminder" align="left" height="50"/>
-          <div class="delayed" data-markdown>
-            ```javascript
-            var stringObject = “ ”;
-            var arrayObject = [ ];
-            ```
-          </div>
-          <p class="delayed">Some objects are simpler than others but almost everything in JavaScript has properties available to us.</p>
-        </section>
-
-        <section class="slide">
-          <h2>Built-in JavaScript Properties</h2>
-          <p class="delayed">In this workshop we won't be creating any of our own objects, but JavaScript already has many objects built into the language.</p>
-          <p class="delayed">Let's look at a string object and the <code>length</code> property which returns the number of characters in a string. Try putting your own name in here.</p>
-          <p class="highlight-color delayed">File: examples/023-built-in-javascript-properties.html</p>
-          <div data-markdown class="delayed">
-            ```javascript
-            var firstName = "Florida";
-
-            var numberOfLetters = firstName.length;
-            document.write( numberOfLetters );
-            ```
-          </div>
-
-          <a href="examples/023-built-in-javascript-properties.html"><img class="delayed" src="framework/img/workshop/rawbot-run.png" alt="run code" align="right" /></a>
-        </section>
-
-        <section class="slide">
-          <h2 class="delayed">Functions in Objects</h2>
-          <p class="delayed">Previously, we talked about functions as blocks of re-usable code. This might sound crazy but <b>you can store functions in variables</b> too!</p>
-          <table cellspacing="0" width="100%" class="delayed">
-            <thead>
-              <td colspan="2">This function...</td>
-              <td>is the same as:</td>
-            </thead>
-            <tr>
-              <td data-markdown>
-                ```javascript
-                function sayHello(){
-                  document.write("hello");
-                }
-
-                sayHello();
-                ```
-              </td>
-              <td>➞</td>
-               <td data-markdown>
-                ```javascript
-                var sayHello = function() {
-                  document.write("hello");
-                }
-
-                sayHello();
-                ```
-              </td>
-            </tr>
-            <tr>
-              <td colspan="2"></td>
-              <td>
-                <p style="text-align: center">ↆ</p>
-                <p>But now look at this!</p>
-                <div data-markdown>
-                  ```javascript
-                  var welcomeTeam = {};
-                  welcomeTeam.sayHello = function() {
-                  document.write("hello");
-                  }
-                  welcomeTeam.sayHello();
-                  ```
-                </div>
-              </td>
-            </tr>
-          </table>
-        </section>
-
-        <section class="slide">
-          <h2>Object Methods</h2>
-          <p class="delayed">When a function is associated with an object we call it a <span class="highlight-text">METHOD</span>.</p>
-          <p class="delayed">Let's say you're having a robot sale! Everything is 50% off. But, after doing the math, you notice that the sale price is a bit off.. Let's declare a sale price and manipulate it using <code>toFixed()</code>. When you use a method, it gives you access to all the hard work that someone else did and it only takes you one line to use it!</p>
-          <p class="highlight-color delayed">File: examples/024-object-methods.html</p>
-          <div data-markdown class="delayed">
-            ```javascript
-            var salePrice1 = 20.00 * 0.50;
-            var salePrice2 = 35.00 * 0.50;
-            var salePrice3 = 25.99 * 0.50;
-
-            //uh-oh, can we make sure we always see 2 decimal spaces?
-            document.write( salePrice1 );
-            document.write( "<br />" );
-            document.write( salePrice2 );
-            document.write( "<br />" );
-            document.write( salePrice3 );
-            ```
-          </div>
-          <a href="examples/024-object-methods.html"><img class="delayed" src="framework/img/workshop/rawbot-run.png" alt="run code" align="right" /></a>
-        </section>
-
-        <section class="slide">
-          <h2>Looking up properties and references</h2>
-          <p><code>length</code> and <code>toFixed()</code> are only two of many (many!) more built-in properties and methods of objects in JavaScript.</p>
-          <p>Check out this list: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Methods_Index">https://developer.mozilla.org/en-US/docs/JavaScript_Methods_Index.</a> </p>
-          <p>An overwhelming look at objects: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Predefined_Core_Objects">https://developer.mozilla.org/en-US/docs/JavaScript/Guide/Predefined_Core_Objects</a></p>
-        </section>
-
 
     <section class="slide">
       <h2>HTML Element Objects</h2>
@@ -1410,7 +1329,7 @@ var existingElement = document.getElementById("text");
         }
         ```
         
-        document.getElementById("RootNode").onclick = function(){//do something}
+        <!-- document.getElementById("RootNode").onclick = function(){//do something} -->
       </script>
     </section>
     
