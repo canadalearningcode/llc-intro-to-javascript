@@ -491,6 +491,36 @@
     
     <section class="slide" data-markdown>
       <script type="text/template">
+        # JavaScript & HTML
+
+        JavaScript can appear inline, in a webpage in several spots. Either in the `<head>` section or anywhere in the `<body>` section.
+          
+        It must always be contained within the <code>&lt;script&gt;&lt;/script&gt;</code> tags.
+          
+<pre><code>&lt;html>
+  &lt;head>
+    &lt;title>JavaScript example!&lt;/title>
+    &lt;script>
+      // Javascript in the head tag!
+    &lt;/script>
+  &lt;/head>
+  
+  &lt;body>
+    &lt;script>
+      // Javascript in the body tag!
+    &lt;/script>
+  &lt;/body>
+&lt;/html></code></pre>
+
+        ---
+        ###Pro tip!
+        
+        Putting the JavaScript just *before* the closing `</body>` tag will allow the page to load first before the JavaScript executes. This is important when manipulating HTML elements.
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
         #Class Exercise: Say My Name, part 1
         
         <img src="framework/img/workshop/name-text-rawbot.gif" alt="allow to type name" style="height: 80px;" class='left'> Allow me to type in my name.
@@ -498,7 +528,7 @@
         <hr class="clear">
         In your editor, open **1-hello.html**.  
         
-        Reminder, JavaScript is a *client-side* language so it runs in the browser and is often written within an HTML page. When Javascript is included on an HTML page, it must be included within a pair of  <code>&lt;script&gt;&lt;/script&gt;</code> tags.
+        Reminder, when Javascript is included on an HTML page, it must be included within a pair of  <code>&lt;script&gt;&lt;/script&gt;</code> tags.
         
         Let's add the `prompt("What is your name?");` function and message to the HTML page and open it in the browser.
       </script>
@@ -743,22 +773,24 @@
 
         Variables can hold different *types* of values.
 
-        1. Numeric variable (integers & decimals)
-          ```
-          var someIntegerNumber = 10;
-          var someDecimalNumber = 10.5;
-          ```
-        1. String variable (letters and words) - must be contained in quotes
-          ```
-          var singleWordString = "hello";
-          var sentenceString = "Hello, good day to you!";
-          var numberString = "10";
-          ```
-        1. Boolean variable (true/false)
-          ```
-          var isSaturday = false;
-          var isSunday = true;
-          ```
+        Numeric variables (integers & decimals)
+        ```
+        var someIntegerNumber = 10;
+        var someDecimalNumber = 10.5;
+        ```
+        
+        String variables (letters and words) - must be contained in quotes
+        ```
+        var singleWordString = "hello";
+        var sentenceString = "Hello, good day to you!";
+        var numberString = "10";
+        ```
+        
+        Boolean variables (true/false)
+        ```
+        var isSaturday = true;
+        var isSunday = false;
+        ```
       </script>
     </section>
     
@@ -806,36 +838,6 @@
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        # JavaScript & HTML
-
-        JavaScript can appear inline, in a webpage in several spots. Either in the `<head>` section or anywhere in the `<body>` section.
-          
-        It must always be contained within the <code>&lt;script&gt;&lt;/script&gt;</code> tags.
-          
-<pre><code>&lt;html>
-  &lt;head>
-    &lt;title>JavaScript example!&lt;/title>
-    &lt;script>
-      // Javascript in the head tag!
-    &lt;/script>
-  &lt;/head>
-  
-  &lt;body>
-    &lt;script>
-      // Javascript in the body tag!
-    &lt;/script>
-  &lt;/body>
-&lt;/html></code></pre>
-
-        ---
-        ###Pro tip!
-        
-        Putting the JavaScript just *before* the closing `</body>` tag will allow the page to load first before the JavaScript executes. This is important when manipulating HTML elements.
-      </script>
-    </section>
-    
-    <section class="slide" data-markdown>
-      <script type="text/template">
         # Exercise: Shipping information (10 minutes)
 
         Let's gather some basic shipping information. 
@@ -847,10 +849,32 @@
         1. Use variables to store the name and postal code values. 
         1. Use `document.write()` to output the name and postal values to verify the information is being stored.
 
-        The solution can be found in <!-- .element: class="note" --> **2-shipping-info-solution.html**.
+        
       </script>
     </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Exercise solution review
 
+        ```
+        // 1. Declare a variable to store the name value.
+        // 2. Declare a variable to store the postal code value.
+        var name = prompt("What is your name?");
+        var postalCode = prompt("What is your postal code?");
+
+        // This is just a heading
+        document.write("<h1>Shipping Information:</h1>");
+        
+        document.write(name); // output the name
+        document.write("<br>"); // just a line break
+        document.write(postalCode); // output the postal code
+        ```
+        
+        The solution can be also be found in <!-- .element: class="note" --> **2-shipping-info-solution.html**.
+      </script>
+    </section>
+    
     <section class="slide" data-markdown>
       <script type="text/template">
         # JavaScript Arithmetic Operators
@@ -904,24 +928,95 @@
         ```
         
         Follow the instructions in the comments to figure out the subtotal of 1 t-shirt and 1 Android plushie, with a 15% discount.
-        
-        The solution can be found in <!-- .element: class="note" --> **3-shopping-cart-solution.html**.
       </script>
     </section>
     
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Review Exercise solution:
+        
+        ```javascript
+        var tshirtPrice = 25;
+        var androidPrice = 10;
+        var discount = 0.15; // 15%
 
+        // What is the cost of one t-shirt and one android?
+        var total = tshirtPrice + androidPrice;
+        document.write("Subtotal: $");
+        document.write(total);
+        document.write("<br>");
+
+        // Guess what?  Ladies Learning Code members gets 15% off!
+        // Figure out how much the discount will be.
+        var discountAmount = total * discount;
+        document.write("Discount: $");
+        document.write(discountAmount);
+        document.write("<br>");
+
+        // Apply the discount to get the final price.
+        var finalTotal = total - discountAmount;
+        document.write("Final Total: $");
+        document.write(finalTotal);
+        ```
+        
+        Outputs:
+        
+        ```javascript
+        Subtotal: $35
+        Discount: $5.25
+        Final Total: $29.75
+        ```
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Concatenation
+
+        If you use the (+) operator with numerical values, it will add the values. Otherwise, it will *combine* the outputs as a string referred to as **concatenation**.
+
+        We can use this to combine the string with the variable value.
+        
+        ```javascript
+        // Apply the discount to get the final price.
+        var finalTotal = total - discountAmount;
+        document.write("Final Total: $" + finalTotal);
+        ```
+        
+        Outputs:
+        
+        ```javascript
+        Final Total: $29.75
+        ```
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Class Exercise: Concatenation
+        
+        Let's go back to **3-shopping-cart.html** and update the `document.write()` values.
+        
+        
+        ---
+        The solution can also be found in <!-- .element: class="note" --> **3-shopping-cart-solution.html**.
+        
+      </script>
+    </section>
+    
     <section class="slide" data-markdown>
       <script type="text/template">
         # Re-assigning Variables
 
-        Even after a variable has been declared with a value, it can be *re-assigned. For example, we may want to increase or decrease values by
-
-        This will come in handy when we discuss *Loops* later on.
+        Even after a variable has been declared with a value, it can be *re-assigned*. For example, we may want to increase or decrease values.
 
         ```javascript
         //declaring variable
         var numberOfCookies = 0;
         ```
+        
+        When you *reassign* a variable, you do not need to use they keyword `var` again. 
         
         If you bake 2 cookies, how many will you have?
         
@@ -929,8 +1024,6 @@
         // re-assigning the value by adding 2
         numberOfCookies = numberOfCookies + 2;
         ```
-        
-        When you *reassign* a variable, you do not need to use they keyword `var` again.
       </script>
     </section>
     
@@ -939,31 +1032,394 @@
       
       When would reassigning values come in handy? Click this button:
       
-      <script>
-        var loves = 0;
-        function moreLove(){
-          loves = loves + 1;
-          document.getElementById('update').innerHTML = loves;
-        }
-      </script>
-      
       <div id="loveLLC">
-        <button onclick="moreLove();">
+        <button id="moreLove">
           <img src="framework/img/workshop/llc-logo.png"> Love!
           <span id="update">0</span>
         </button>
       </div>
       
+      <script>
+        var loves = 0;
+        var update = document.getElementById('update');
+        var button = document.getElementById("moreLove");
+        
+        function moreLove(){
+          loves = loves + 1;
+          update.innerHTML = loves;
+        }
+        
+        button.onclick = moreLove;
+        //https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onclick
+      </script>
+      
       <p class="delayed">Let's look at how this could work.</p>
 <pre class="delayed"><code>var loves = 0; // start value at 0
-  
-// function containing instructions to update the count on button click
+var update = document.getElementById('update'); // HTML element to be updated
+
+// custom function - contains instructions to update the count
 function moreLove(){ 
   loves = loves + 1; // take the current value of "love" and add 1
-  document.getElementById('update').innerHTML = loves; // update the number
+  update.innerHTML = loves; // updates the HTML element with the current value of "loves"
 }</code></pre>
     </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Custom Functions and Objects
+        
+        The last example introduced two new concepts.  Custom functions:
+        
+        ```
+        function moreLove(){ 
+          // instructions here
+        }
+        ```
+        
+        And manipulating HTML objects:
+        
+        ```
+        update.innerHTML = loves;
+        ```
+        
+        Let's talk about objects first.
+      </script>
+    </section>
+    
+    <section class="slide title" data-markdown>
+      <script type="text/template">
+        #Document Object Model
+        ##Manipulating objects on an HTML page
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Document Object Model (DOM)
+        
+        Think about your HTML web page (the browser **document**) as being made up of many blocks.
+        
+        ![browser blocks](framework/img/workshop/browser-blocks.jpg)
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Pre-defined Blocks
+        
+        Some blocks are defined by the browser, such as the browser *window*.
+        
+        ![browser window](framework/img/workshop/browser-window.jpg)
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # User-defined Blocks
+        
+        And some blocks we make ourselves with HTML tags (e.g. `<div>`, `<img>`, etc).
+        
+        ![browser blocks](framework/img/workshop/browser-fieldset-div.jpg)
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Document Objects
+        
+        All of these blocks are **objects**. Functions can be applied to these **objects** using dot notation.
+        
+        ```
+        document.write();
+        ``` 
+        
+        Does this look familiar?  
+        
+        We have been applying the `.write()` function to the document object. Let's take a closer look at how objects work.
+        
+        <!-- .element: class="note" -->Note! When a function is applied to an object, it is called a **method**.
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Variables vs Objects
+                
+        <img src="framework/img/workshop/variable-rice.png" alt="rice variable" class="left" height="130"> A **variable** only holds one value.
+        ```
+        var takeout = "Fried Rice";
+        ```
+        <br>
+        An **object** holds a collection of values.
+        
+        <img class="left" width="500" src="framework/img/workshop/object-bento-box.png" alt="bento box object">
+        
+        ```javascript
+        // create a new object
+        var bentobox = {};
+        // assign values
+        bentobox.main = "Teriyaki";
+        bentobox.side = "Tempura";
+        bentobox.salad = "Seaweed Salad";
+        bentobox.sushi = "Salmon Avocado Roll";
+        ```
+      </script>
+    </section>
+    
+    <section class="slide centered">
+      <h2>Creating an Object</h2>
+      <img src="framework/img/workshop/syntax-object.gif" alt="syntax object"/>
+    </section>
 
+    <section class="slide">
+      <h2>Creating an Object</h2>
+      <p class="delayed">Creating an object is easy. Just like any other variable, use the <code>var</code> keyword and give it a descriptive name. </p>
+      <p class="delayed">But instead of assigning a single value right away, use these curly braces to make an empty object.</p>
+      <pre class="delayed"><code>var bentobox = {};</code></pre>
+      <small class="delayed">Yes, it's weird but think about the <code>{}</code> as a sort of funky container.</small>
+
+    </section>
+
+      <section class="slide">
+          <h2>Object Properties</h2>
+          <p class="delayed">The "compartments" of objects are called <span class="highlight-text">PROPERTIES</span>.</p>
+          <p class="delayed">If you already have an existing object, there are a few ways to access and set a value to a property. Since these two are very commonly used, they will both be discussed.</p>
+
+          <table cellpadding="20" class="delayed">
+            <thead>
+              <td>Dot notation:</td>
+              <td>Key-Value Lookup:</td>
+            </thead>
+            <tr>
+              <td>
+                <pre><code>myObject.property = value; </code></pre>
+                <div data-markdown>
+                  ```javascript
+                  bentobox.main = "Teriyaki";
+                  bentobox.side = "Tempura";
+                  ```
+                </div>
+              </td>
+              <td>
+                <pre><code>myObject[key] = value; </code></pre>
+                <div data-markdown>
+                  ```javascript
+                  bentobox["main"] = "Teriyaki";
+                  bentobox["side"] = "Tempura";
+                  ```
+                </div>
+              </td>
+            </tr>
+          </table>
+          <small class="delayed"><b>Advanced sidenote:</b></small>
+          <br />
+          <small class="delayed">Alternatively, you can both declare an object and set it's values at the <b>same</b> time: </small>
+          <br />
+          <code class="delayed">var bentobox = { soup:"Miso", main:"Teriyaki" };</code>
+        </section>
+
+        <!-- <section class="slide">
+          <h2>Why use Objects?</h2>
+          <p class="delayed"><i>Advanced topic:</i> Objects are useful because you group all these properties together and you can <b>reuse</b> the object over again.</p>
+          <p class="delayed">There's an <b>expectation</b> of what you'll get in a bento box. </p>
+          <p class="delayed">Some items are <b>fixed</b> (seaweed salad and sushi) but some compartments can be <b>edited</b> (a miso soup side versus tempura). </p>
+          <img class="delayed" src="framework/img/workshop/object-bento-box.png" width="45%" alt=""/>
+          <img class="delayed" src="framework/img/workshop/object-bento-box-2.png" width="45%" alt=""/>
+        </section> -->
+
+        <section class="slide">
+          <h2>Think of Everything as an Object*</h2>
+          <p class="delayed">When I said that objects were "advanced variables", here's another way of looking at it:</p>
+          <p class="delayed"><b>All JavaScript variables can be treated like objects too.</b></p>
+          <p class="delayed">If curly braces are a container for a generic object, quotes are containers for characters. When we get to arrays next, you'll see that it uses square brackets. (The only "uncontainered" object we've introduced today was a number.)</p>
+          <img class="delayed" src="framework/img/workshop/rawbot-reminder.png" alt="robot reminder" align="left" height="50"/>
+          <div class="delayed" data-markdown>
+            ```javascript
+            var stringObject = “ ”;
+            var arrayObject = [ ];
+            ```
+          </div>
+          <p class="delayed">Some objects are simpler than others but almost everything in JavaScript has properties available to us.</p>
+        </section>
+
+        <section class="slide">
+          <h2>Built-in JavaScript Properties</h2>
+          <p class="delayed">In this workshop we won't be creating any of our own objects, but JavaScript already has many objects built into the language.</p>
+          <p class="delayed">Let's look at a string object and the <code>length</code> property which returns the number of characters in a string. Try putting your own name in here.</p>
+          <p class="highlight-color delayed">File: examples/023-built-in-javascript-properties.html</p>
+          <div data-markdown class="delayed">
+            ```javascript
+            var firstName = "Florida";
+
+            var numberOfLetters = firstName.length;
+            document.write( numberOfLetters );
+            ```
+          </div>
+
+          <a href="examples/023-built-in-javascript-properties.html"><img class="delayed" src="framework/img/workshop/rawbot-run.png" alt="run code" align="right" /></a>
+        </section>
+
+        <section class="slide">
+          <h2 class="delayed">Functions in Objects</h2>
+          <p class="delayed">Previously, we talked about functions as blocks of re-usable code. This might sound crazy but <b>you can store functions in variables</b> too!</p>
+          <table cellspacing="0" width="100%" class="delayed">
+            <thead>
+              <td colspan="2">This function...</td>
+              <td>is the same as:</td>
+            </thead>
+            <tr>
+              <td data-markdown>
+                ```javascript
+                function sayHello(){
+                  document.write("hello");
+                }
+
+                sayHello();
+                ```
+              </td>
+              <td>➞</td>
+               <td data-markdown>
+                ```javascript
+                var sayHello = function() {
+                  document.write("hello");
+                }
+
+                sayHello();
+                ```
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2"></td>
+              <td>
+                <p style="text-align: center">ↆ</p>
+                <p>But now look at this!</p>
+                <div data-markdown>
+                  ```javascript
+                  var welcomeTeam = {};
+                  welcomeTeam.sayHello = function() {
+                  document.write("hello");
+                  }
+                  welcomeTeam.sayHello();
+                  ```
+                </div>
+              </td>
+            </tr>
+          </table>
+        </section>
+
+        <section class="slide">
+          <h2>Object Methods</h2>
+          <p class="delayed">When a function is associated with an object we call it a <span class="highlight-text">METHOD</span>.</p>
+          <p class="delayed">Let's say you're having a robot sale! Everything is 50% off. But, after doing the math, you notice that the sale price is a bit off.. Let's declare a sale price and manipulate it using <code>toFixed()</code>. When you use a method, it gives you access to all the hard work that someone else did and it only takes you one line to use it!</p>
+          <p class="highlight-color delayed">File: examples/024-object-methods.html</p>
+          <div data-markdown class="delayed">
+            ```javascript
+            var salePrice1 = 20.00 * 0.50;
+            var salePrice2 = 35.00 * 0.50;
+            var salePrice3 = 25.99 * 0.50;
+
+            //uh-oh, can we make sure we always see 2 decimal spaces?
+            document.write( salePrice1 );
+            document.write( "<br />" );
+            document.write( salePrice2 );
+            document.write( "<br />" );
+            document.write( salePrice3 );
+            ```
+          </div>
+          <a href="examples/024-object-methods.html"><img class="delayed" src="framework/img/workshop/rawbot-run.png" alt="run code" align="right" /></a>
+        </section>
+
+        <section class="slide">
+          <h2>Looking up properties and references</h2>
+          <p><code>length</code> and <code>toFixed()</code> are only two of many (many!) more built-in properties and methods of objects in JavaScript.</p>
+          <p>Check out this list: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Methods_Index">https://developer.mozilla.org/en-US/docs/JavaScript_Methods_Index.</a> </p>
+          <p>An overwhelming look at objects: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Predefined_Core_Objects">https://developer.mozilla.org/en-US/docs/JavaScript/Guide/Predefined_Core_Objects</a></p>
+        </section>
+
+
+    <section class="slide">
+      <h2>HTML Element Objects</h2>
+      <p class="delayed">The most repetitive thing you'll ever do with JavaScript is getting references to your HTML tags ("elements") using <code>document.getElementById()</code>.</p>
+      <small class="delayed">(It's important that your HTML tag has an id attribute in order to do this!)</small>
+      <p class="delayed">For example, let's dynamically find out what the text is in a paragraph tag by reading its innerHTML property. (You can find all the things you can do with elements <a href="http://dochub.io/#dom/element">here</a>.)</p>
+      <p class="highlight-color delayed">File: examples/030-html-element-objects.html</p>
+      <pre class="delayed"><code>&lt;p id="text" style="border: 1px solid red;">
+Loading...
+&lt;/p>
+
+&lt;script>
+
+&lt;/script></code></pre>
+      <a href="examples/030-html-element-objects.html"><img class="delayed" src="framework/img/workshop/rawbot-run.png" alt="run code" align="right" /></a>
+    </section>
+
+    <section class="slide">
+      <h2>HTML Element Objects (cont'd)</h2>
+      <p>You can also use innerHTML to replace what's already in a element.</p>
+      <p class="highlight-color">File: examples/031-html-element-objects.html</p>
+      <pre><code>&lt;p id="text" style="border: 1px solid red;">
+Loading...
+&lt;/p>
+
+&lt;script>
+var existingElement = document.getElementById("text");
+
+&lt;/script></code></pre>
+      <a href="examples/031-html-element-objects.html"><img src="framework/img/workshop/rawbot-run.png" alt="run code" align="right" /></a>
+    </section>
+
+    <section class="slide">
+      <h2>HTML Element Objects (cont'd)</h2>
+      <p>Or let's dynamically swap out one image for another by updating the src attribute of an image tag.</p>
+      <p class="highlight-color">File: examples/032-html-element-objects.html</p>
+      <pre><code>&lt;img id="cupcake" src="assets/exercises/assets/cupcake.jpg" />
+
+&lt;script>
+
+&lt;/script></code></pre>
+      <a href="examples/032-html-element-objects.html"><img src="framework/img/workshop/rawbot-run.png" alt="run code" align="right" /></a>
+    </section>
+    
+  
+
+    
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Creating your own functions
+        
+        Sometimes you need to group a set of instructions that aren't covered by one of the pre-written functions in JavaScript.
+
+        Like in the previous example, you can create your own. 
+        
+        To create a function, it needs to be **defined** first.
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Defining a Function
+
+        There are different ways to define a function, but the most common way is using the `function` keyword followed by a function name, of your choosing, and a set of parentheses `()`. 
+        
+        And the statements or instructions to be executed are enclosed within curly brackets `{ }`.
+        
+        ```
+        function nameOfFunction() {
+         //code to execute
+        }
+        ```
+        
+        document.getElementById("RootNode").onclick = function(){//do something}
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Exercise: Update quantities (10mins)
+      </script>
+    </section>
+    
     <section class="slide">
       <h2>Mini-exercise #2: Go! (5-10 minutes)</h2>
       <small><img src="framework/img/workshop/rawbot-hint.png" alt="robot reminder" align="left" height="50"/>How do we increase or decrease the value of the variable?</small>
@@ -1009,7 +1465,7 @@ function moreLove(){
       <a href="exercises/2-mini-exercise-problem.html"><img src="framework/img/workshop/rawbot-run.png" alt="run code" align="right" /></a>
     </section>
 
-    <section class="slide">
+    <!-- <section class="slide">
       <h2>Concatenation</h2>
       <p>Now that we've calculated some numerical totals, how do we format the output to add a non-numerical value like a dollar sign? We use <span class="highlight-text">concatenation</span>. </p>
       <p><span class="highlight-text">concatenation</span> is the joining of strings, using the (+) symbol. Remember this example?</p>
@@ -1050,9 +1506,9 @@ function moreLove(){
       </div>
       <a href="examples/011-concatenation-and-strings.html"><img src="framework/img/workshop/rawbot-run.png" alt="run code" align="right" /></a>
 
-    </section>
+    </section> -->
 
-    <section class="slide">
+    <!-- <section class="slide">
       <h2>Concatenation in action (results)</h2>
       <p>Let's re-visit mini-exercise #2 and add a total cost field</p>
       <p class="highlight-color">File: examples/012-concatenation-in-action.html</p>
@@ -1097,7 +1553,7 @@ function moreLove(){
         ```
       </div>
       <a href="examples/012-concatenation-in-action.html"><img src="framework/img/workshop/rawbot-run.png" alt="run code" align="right" /></a>
-    </section>
+    </section> -->
 
     <section class="slide title">
       <h1>Conditionals</h1>
@@ -1665,213 +2121,7 @@ What are some questions or issues you are having with the material covered so fa
 
     <!--Using a code editor.or correcting syntax slide-->
 
-    <section class="slide centered">
-      <h2>Objects</h2>
-      <p>If variables are boxes, OBJECTS can be thought of as bento boxes -- "advanced variables" if you will.</p>
-      <img src="framework/img/workshop/bento_box_real.jpg" alt="bento box real"/>
-    </section>
-
-    <section class="slide">
-      <h2>How Bento Boxes are like Objects</h2>
-      <table cellpadding="30">
-        <tr>
-          <td><img src="framework/img/workshop/variable-rice.png" alt="rice variable" style="width: 400px" /></td>
-          <td>
-            <p>A basic variable only holds one value.</p>
-            <pre> <code>var takeout = "Fried Rice";</code> </pre>
-          </td>
-        </tr>
-         <tr>
-          <td><img src="framework/img/workshop/object-bento-box.png" alt="bento box object" /></td>
-          <td>
-            <p>An object holds a collection of values.</p>
-            <div data-markdown>
-              ```javascript
-              // create a new object
-              var bentobox = {};
-
-              // fill it with stuff
-              bentobox.main = "Teriyaki";
-              bentobox.side = "Tempura";
-              bentobox.salad = "Seaweed Salad";
-              bentobox.sushi = "Salmon Avocado Roll";
-              ```
-            </div>
-          </td>
-        </tr>
-      </table>
-    </section>
-
-    <section class="slide centered">
-      <h2>Creating an Object</h2>
-      <img src="framework/img/workshop/syntax-object.gif" alt="syntax object"/>
-    </section>
-
-    <section class="slide">
-      <h2>Creating an Object</h2>
-      <p class="delayed">Creating an object is easy. Just like any other variable, use the <code>var</code> keyword and give it a descriptive name. </p>
-      <p class="delayed">But instead of assigning a single value right away, use these curly braces to make an empty object.</p>
-      <pre class="delayed"><code>var bentobox = {};</code></pre>
-      <small class="delayed">Yes, it's weird but think about the <code>{}</code> as a sort of funky container.</small>
-
-    </section>
-
-      <section class="slide">
-          <h2>Object Properties</h2>
-          <p class="delayed">The "compartments" of objects are called <span class="highlight-text">PROPERTIES</span>.</p>
-          <p class="delayed">If you already have an existing object, there are a few ways to access and set a value to a property. Since these two are very commonly used, they will both be discussed.</p>
-
-          <table cellpadding="20" class="delayed">
-            <thead>
-              <td>Dot notation:</td>
-              <td>Key-Value Lookup:</td>
-            </thead>
-            <tr>
-              <td>
-                <pre><code>myObject.property = value; </code></pre>
-                <div data-markdown>
-                  ```javascript
-                  bentobox.main = "Teriyaki";
-                  bentobox.side = "Tempura";
-                  ```
-                </div>
-              </td>
-              <td>
-                <pre><code>myObject[key] = value; </code></pre>
-                <div data-markdown>
-                  ```javascript
-                  bentobox["main"] = "Teriyaki";
-                  bentobox["side"] = "Tempura";
-                  ```
-                </div>
-              </td>
-            </tr>
-          </table>
-          <small class="delayed"><b>Advanced sidenote:</b></small>
-          <br />
-          <small class="delayed">Alternatively, you can both declare an object and set it's values at the <b>same</b> time: </small>
-          <br />
-          <code class="delayed">var bentobox = { soup:"Miso", main:"Teriyaki" };</code>
-        </section>
-
-        <section class="slide">
-          <h2>Why use Objects?</h2>
-          <p class="delayed"><i>Advanced topic:</i> Objects are useful because you group all these properties together and you can <b>reuse</b> the object over again.</p>
-          <p class="delayed">There's an <b>expectation</b> of what you'll get in a bento box. </p>
-          <p class="delayed">Some items are <b>fixed</b> (seaweed salad and sushi) but some compartments can be <b>edited</b> (a miso soup side versus tempura). </p>
-          <img class="delayed" src="framework/img/workshop/object-bento-box.png" width="45%" alt=""/>
-          <img class="delayed" src="framework/img/workshop/object-bento-box-2.png" width="45%" alt=""/>
-        </section>
-
-        <section class="slide">
-          <h2>Think of Everything as an Object*</h2>
-          <p class="delayed">When I said that objects were "advanced variables", here's another way of looking at it:</p>
-          <p class="delayed"><b>All JavaScript variables can be treated like objects too.</b></p>
-          <p class="delayed">If curly braces are a container for a generic object, quotes are containers for characters. When we get to arrays next, you'll see that it uses square brackets. (The only "uncontainered" object we've introduced today was a number.)</p>
-          <img class="delayed" src="framework/img/workshop/rawbot-reminder.png" alt="robot reminder" align="left" height="50"/>
-          <div class="delayed" data-markdown>
-            ```javascript
-            var stringObject = “ ”;
-            var arrayObject = [ ];
-            ```
-          </div>
-          <p class="delayed">Some objects are simpler than others but almost everything in JavaScript has properties available to us.</p>
-        </section>
-
-        <section class="slide">
-          <h2>Built-in JavaScript Properties</h2>
-          <p class="delayed">In this workshop we won't be creating any of our own objects, but JavaScript already has many objects built into the language.</p>
-          <p class="delayed">Let's look at a string object and the <code>length</code> property which returns the number of characters in a string. Try putting your own name in here.</p>
-          <p class="highlight-color delayed">File: examples/023-built-in-javascript-properties.html</p>
-          <div data-markdown class="delayed">
-            ```javascript
-            var firstName = "Florida";
-
-            var numberOfLetters = firstName.length;
-            document.write( numberOfLetters );
-            ```
-          </div>
-
-          <a href="examples/023-built-in-javascript-properties.html"><img class="delayed" src="framework/img/workshop/rawbot-run.png" alt="run code" align="right" /></a>
-        </section>
-
-        <section class="slide">
-          <h2 class="delayed">Functions in Objects</h2>
-          <p class="delayed">Previously, we talked about functions as blocks of re-usable code. This might sound crazy but <b>you can store functions in variables</b> too!</p>
-          <table cellspacing="0" width="100%" class="delayed">
-            <thead>
-              <td colspan="2">This function...</td>
-              <td>is the same as:</td>
-            </thead>
-            <tr>
-              <td data-markdown>
-                ```javascript
-                function sayHello(){
-                  document.write("hello");
-                }
-
-                sayHello();
-                ```
-              </td>
-              <td>➞</td>
-               <td data-markdown>
-                ```javascript
-                var sayHello = function() {
-                  document.write("hello");
-                }
-
-                sayHello();
-                ```
-              </td>
-            </tr>
-            <tr>
-              <td colspan="2"></td>
-              <td>
-                <p style="text-align: center">ↆ</p>
-                <p>But now look at this!</p>
-                <div data-markdown>
-                  ```javascript
-                  var welcomeTeam = {};
-                  welcomeTeam.sayHello = function() {
-                  document.write("hello");
-                  }
-                  welcomeTeam.sayHello();
-                  ```
-                </div>
-              </td>
-            </tr>
-          </table>
-        </section>
-
-        <section class="slide">
-          <h2>Object Methods</h2>
-          <p class="delayed">When a function is associated with an object we call it a <span class="highlight-text">METHOD</span>.</p>
-          <p class="delayed">Let's say you're having a robot sale! Everything is 50% off. But, after doing the math, you notice that the sale price is a bit off.. Let's declare a sale price and manipulate it using <code>toFixed()</code>. When you use a method, it gives you access to all the hard work that someone else did and it only takes you one line to use it!</p>
-          <p class="highlight-color delayed">File: examples/024-object-methods.html</p>
-          <div data-markdown class="delayed">
-            ```javascript
-            var salePrice1 = 20.00 * 0.50;
-            var salePrice2 = 35.00 * 0.50;
-            var salePrice3 = 25.99 * 0.50;
-
-            //uh-oh, can we make sure we always see 2 decimal spaces?
-            document.write( salePrice1 );
-            document.write( "<br />" );
-            document.write( salePrice2 );
-            document.write( "<br />" );
-            document.write( salePrice3 );
-            ```
-          </div>
-          <a href="examples/024-object-methods.html"><img class="delayed" src="framework/img/workshop/rawbot-run.png" alt="run code" align="right" /></a>
-        </section>
-
-        <section class="slide">
-          <h2>Looking up properties and references</h2>
-          <p><code>length</code> and <code>toFixed()</code> are only two of many (many!) more built-in properties and methods of objects in JavaScript.</p>
-          <p>Check out this list: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Methods_Index">https://developer.mozilla.org/en-US/docs/JavaScript_Methods_Index.</a> </p>
-          <p>An overwhelming look at objects: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Predefined_Core_Objects">https://developer.mozilla.org/en-US/docs/JavaScript/Guide/Predefined_Core_Objects</a></p>
-        </section>
-
+    
         <section class="slide title">
           <h1>Arrays</h1>
         </section>
