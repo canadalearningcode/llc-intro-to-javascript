@@ -44,7 +44,7 @@
       </div>
       <footer>
         <a class="left" rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" src="framework/img/cc-by-nc.png" /></a>
-        <p class="left">Created by <a href="medium.com/@pearlchen">Pearl Chen</a> and <a href="http://christinatruong.com">Christina Truong</a> for <a prefix="cc: http://creativecommons.org/ns#" href="http://ladieslearningcode.com" property="cc:attributionName" rel="cc:attributionURL">Ladies Learning Code</a></p>
+        <p class="left">Content by <a href="medium.com/@pearlchen">Pearl Chen</a> and <a href="http://christinatruong.com">Christina Truong</a> for <a prefix="cc: http://creativecommons.org/ns#" href="http://ladieslearningcode.com" property="cc:attributionName" rel="cc:attributionURL">Ladies Learning Code</a></p>
         <p class="right">Use the left <span class="arrow">&#8592;</span> and right <span class="arrow">&#8594;</span> arrow keys to navigate</p>
       </footer>
     </section> 
@@ -57,20 +57,20 @@
       </h1>
       
       <!-- FILL IN INSTRUCTOR DETAILS -->
-      <img class="instructor" src="http://placehold.it/225x225" alt="Instructor Name">
+      <!-- <img class="instructor" src="http://placehold.it/225x225" alt="Instructor Name">
       <h2><span class="cursive">with</span> Instructor name</h2>  
       <ul>
         <li><a href="mailto:">hello@email.com</a></li>
         <li><a href="http://website.com">website.com</a></li>
         <li><a href="http://twitter.com/">@twitter</a></li>
-      </ul>
+      </ul> -->
       
       <div class="sponsor">
         <p>In partnership with<br> <img src="framework/img/telus-logo-white.svg" alt="Telus"></p>
       </div>
       <footer>
         <a class="left" rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" src="framework/img/cc-by-nc.png" /></a>
-        <p class="left">Created by <a href="medium.com/@pearlchen">Pearl Chen</a> and <a href="http://christinatruong.com">Christina Truong</a> for <a prefix="cc: http://creativecommons.org/ns#" href="http://ladieslearningcode.com" property="cc:attributionName" rel="cc:attributionURL">Ladies Learning Code</a></p>
+        <p class="left">Content by <a href="medium.com/@pearlchen">Pearl Chen</a> and <a href="http://christinatruong.com">Christina Truong</a> for <a prefix="cc: http://creativecommons.org/ns#" href="http://ladieslearningcode.com" property="cc:attributionName" rel="cc:attributionURL">Ladies Learning Code</a></p>
         <p class="right">Use the left <span class="arrow">&#8592;</span> and right <span class="arrow">&#8594;</span> arrow keys to navigate</p>
       </footer>
     </section> 
@@ -86,6 +86,7 @@
     <section class="slide title" data-markdown>
       <script type="text/template">
         # Part One
+        ## Technology Overview,<br> Functions, Variables, Objects
       </script>
     </section>
     
@@ -499,9 +500,9 @@
       <script type="text/template">
         # JavaScript & HTML
 
-        JavaScript can appear inline, in a webpage in several spots. Either in the `<head>` section or anywhere in the `<body>` section.
+        JavaScript can be added pretty much anywhere on a web page but it is commonly added either in the `<head>` section or just before the closing `</body>` tag.
           
-        It must always be contained within the <code>&lt;script&gt;&lt;/script&gt;</code> tags.
+        However, the JavaScript code itself must always be contained within the <code>&lt;script&gt;&lt;/script&gt;</code> tags.
           
 <pre><code>&lt;html>
   &lt;head>
@@ -532,11 +533,7 @@
         <img src="framework/img/workshop/name-text-rawbot.gif" alt="allow to type name" style="height: 80px;" class='left'> Allow me to type in my name.
         
         <hr class="clear">
-        In your editor, open **1-hello.html**.  
-        
-        Reminder, when Javascript is included on an HTML page, it must be included within a pair of  <code>&lt;script&gt;&lt;/script&gt;</code> tags.
-        
-        Let's add the following snippet to **1-hello.html**:
+        In your editor, open **1-hello.html** and add the following snippet:
         
         ```
         prompt("What is your name?");
@@ -560,7 +557,7 @@
         
         **Variables** are kind of like the computer's short-term memory. 
         
-        Variables are like containers or a box. They are used to *store values* to be used, when you need them.
+        Variables are like containers or a box. They are used to *store values* and can be used whenever you need them.
       </script>
     </section>
     
@@ -597,7 +594,7 @@
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        #Another Function, `write()`
+        #Another Function: `write()`
         
         We still need a way for the computer to say hello back to you.  Let's use another function, `write()`, to output the response.
         
@@ -629,7 +626,7 @@
 
         Remember `prompt()`? This function triggers a popup box that allows user input. 
         
-        The prompt function can be assigned to a variable, thus saving the value of the user input.
+        The prompt function can also be assigned to a variable, thus saving the value of the user input.
 
       </script>
     </section>
@@ -705,7 +702,7 @@
         
         * offer online shopping
         * print shipping labels
-        * offer members only sales       
+        * offer member only sales       
         <!-- * customers shouldn't be able to submit empty forms -->
         * shopping cart items must be calculated properly
 
@@ -713,7 +710,7 @@
       </script>
     </section>
 
-    <section class="slide title" data-markdown>
+    <section class="slide title" data-markdown data-toc>
       <script type="text/template">
         #Variables
         ##Storing Information
@@ -843,14 +840,14 @@
         ```javascript    
         var name = "LadiesLearningCode";
         var name = "Ladies Learning Code"; 
-        varname = "Ladies Learning Code"; // won't work
+        varname = "Ladies Learning Code"; // will not work
         ```
       </script>
     </section>
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        # Exercise: Shipping information (10 minutes)
+        # Exercise: Shipping information (~10mins)
 
         Let's gather some basic shipping information. 
         
@@ -887,7 +884,7 @@
       </script>
     </section>
     
-    <section class="slide" data-markdown>
+    <section class="slide" data-markdown data-toc>
       <script type="text/template">
         # JavaScript Arithmetic Operators
         
@@ -927,7 +924,7 @@
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        #Exercise: Shopping cart totals (10mins)
+        #Exercise: Shopping cart totals (~10mins)
         
         Open **3-shopping-cart.html** in your editor.
         
@@ -1076,12 +1073,12 @@ var update = document.getElementById('update'); // HTML element to be updated
 
 // custom function - contains instructions to update the count
 function moreLove(){ 
-  loves = loves + 1; // take the current value of "love" and add 1
+  loves = loves + 1; // take the current value of "love" and adds 1
   update.innerHTML = loves; // updates the HTML element with the current value of "loves"
 }</code></pre>
     </section>
     
-    <section class="slide" data-markdown>
+    <section class="slide" data-markdown data-toc>
       <script type="text/template">
         #Custom Functions and Objects
         
@@ -1224,7 +1221,7 @@ function moreLove(){
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        #Exercise: Objects and Methods (10mins)
+        #Exercise: Objects and Methods (~10mins)
         
         Let's say you want to have a 50% off sale.  All the prices can be multiplied by 50% (or divided by 2) but you also want to ensure that the value always rounds to two decimal points.  
         
@@ -1249,11 +1246,12 @@ function moreLove(){
     
     <section class="slide title" data-markdown>
       <script type="text/template">
-        # Part Two!
+        # Part Two
+        ## The DOM, Functions, Methods, Conditionals
       </script>
     </section>
     
-    <section class="slide title" data-markdown>
+    <section class="slide title" data-markdown data-toc>
       <script type="text/template">
         #Document Object Model
         ##Manipulating objects on an HTML page
@@ -1362,7 +1360,7 @@ function moreLove(){
       </script>
     </section>
       
-    <section class="slide" data-markdown>
+    <section class="slide" data-markdown data-toc>
       <script type="text/template">
         #Creating your own functions
         
@@ -1479,19 +1477,18 @@ function moreLove(){
         # Class Exercise: Quantities, Step 1   
         ## Create a variable, to hold and keep track of the quantities selected
         ---
+        (Note that you can choose your own variables and functions names as long as it follows the proper naming conventions.)<!-- .element: class="note" -->
+
+        How do you declare a variable named "quantity"?<!-- .element: class="delayed" -->
         
-        How do you declare a variable named "quantity"?
+        <pre class="delayed"><code>var quantity;</code></pre>
         
-        <pre><code>var quantity;</code></pre>
+        How do you assign it a value of 0?<!-- .element: class="delayed" -->
         
-        How do you assign it a value of 0?
+        <pre class="delayed"><code>var quantity = 0;</code></pre>
         
-        <pre><code>var quantity = 0;</code></pre>
+        Add this snippet within the<!-- .element: class="delayed" --><code>&lt;script&gt;&lt;/script&gt;</code> tags.
         
-        Add this snippet within the<code>&lt;script&gt;&lt;/script&gt;</code> tags.
-        
-        ---
-        Note that you can name your variables and functions anything as long as it follows the proper naming conventions. <!-- .element: class="note" -->
       </script>
     </section>
     
@@ -1501,13 +1498,14 @@ function moreLove(){
         ## Create a set of instructions for the Add button.
         ---
         Declare a function to execute a set of instructions. Let's name it "addItem".
-        How do you declare a function?  
-        <pre><code>function addItem(){ 
+        How do you declare a function? 
+
+        <pre class="delayed"><code>function addItem(){ 
         }</code></pre>
         
-        The variable `quantity` keeps track of the quantities selected. *Reassign* the variable, to add 1 to quantity, when an item is added.
+        The variable<!-- .element: class="delayed" --> `quantity` keeps track of the quantities selected. *Reassign* the variable, to add 1 to quantity, when an item is added.
         
-        <pre><code>var quantity = 0;
+        <pre class="delayed"><code>var quantity = 0;
           
         function addItem(){
           quantity = quantity + 1; 
@@ -1523,19 +1521,19 @@ function moreLove(){
         
         This will be similar to the `addItem` function except this time, *subtract* 1 from the quantity value.
         
-        How do you declare a function named "removeItem"?      
-        <pre><code>function removeItem(){  
+        How do you declare a function named "removeItem"? <!-- .element: class="delayed" -->     
+        <pre class="delayed"><code>function removeItem(){  
         }</code></pre>
 
-        *Reassign* the variable, to subtract 1 from `quantity`, when an item is removed.
+        Reassign the variable, to subtract 1 from <!-- .element: class="delayed" -->`quantity`, when an item is removed.
         
-        <pre><code>function removeItem(){
+        <pre class="delayed"><code>function removeItem(){
           quantity = quantity - 1; 
         }</code></pre>
         
-        Your code should now look like this:
+        Your code should now look like this:<!-- .element: class="delayed" -->
         
-        <pre><code>var quantity = 0;
+        <pre class="delayed"><code>var quantity = 0;
         
         function addItem(){
           quantity = quantity + 1; 
@@ -1559,26 +1557,23 @@ function moreLove(){
         <input type="text" value="0">
         ```
         
-        Add an `id` so it can be selected with the `getElementById()` method.
+        Add an <!-- .element: class="delayed" -->`id` so it can be selected with the `getElementById()` method.
         
-        ```
-        <input id="updateQuantity" type="text" value="0">
-        ```
+        <pre class="delayed"><code>&lt;input id=&quot;updateQuantity&quot; type=&quot;text&quot; value=&quot;0&quot;&gt;
+        </code></pre>
         
-        Then in the JavaScript, select the HTML element.
+        Then in the JavaScript, select the HTML element.<!-- .element: class="delayed" -->
         
-        ```
-        document.getElementById("updateQuantity");
-        ```
+        <pre class="delayed"><code>document.getElementById("updateQuantity");
+        </code></pre>
         
-        Create a variable with the selected HTML element.
-        ```
-        var updateQuantity = document.getElementById('updateQuantity');
-        ```
+        Create a variable with the selected HTML element.<!-- .element: class="delayed" -->
+        <pre class="delayed"><code>var updateQuantity = document.getElementById('updateQuantity');
+        </code></pre>
          
-        Your JavaScript should now look similar to this:
+        Your JavaScript should now look similar to this:<!-- .element: class="delayed" -->
         
-        <pre><code>var quantity = 0;
+        <pre class="delayed"><code>var quantity = 0;
         var updateQuantity = document.getElementById('updateQuantity');
         
         function addItem(){
@@ -1588,10 +1583,9 @@ function moreLove(){
         function removeItem(){
           quantity = quantity - 1; 
           // to add function to refresh quantity value in the HTML
-        }
-        </code></pre>
+        }</code></pre>
         
-        Note that an <!-- .element: class="note" -->`id` value can only be used once per page so this will ensure that it is unique.
+        Note that an <!-- .element: class="note delayed" -->`id` value can only be used once per page so this will ensure that it is unique.
       </script>
     </section>
     
@@ -1613,6 +1607,15 @@ function moreLove(){
         ```
         
         We need to get `updateQuantity` to equal `quantity` so the HTML element can display the number on the web page.
+
+        </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Class Exercise: Quantities, Step 5
+        ## Update the HTML element with the current quantity count.
+        ---
         
         Remember objects, properties and how to set object values using the bentobox example?
         
@@ -1668,7 +1671,15 @@ function moreLove(){
         var addBtn = document.getElementById("add");
         ```
 
-        JavaScript an `onclick` property that can be used to trigger a click event on the button.
+        JavaScript has an `onclick` property that can be used to trigger a click event on the button.
+        </script>
+    </section>
+  
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Class Exercise: Quantities, Step 6
+        ##Execute the Add button function when the Add button is clicked.
+        ---
         
         What do we want to happen onclick?  To run the `addItem()` function!  They syntax to run a function with this property is a little different than the previous examples.
 
@@ -1691,7 +1702,7 @@ function moreLove(){
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        # Exercise: Quantities, Step 7 (5mins)
+        # Exercise: Quantities, Step 7 (~10mins)
         ##Execute the Remove button function when the Remove button is clicked.
         ---
         
@@ -1704,16 +1715,6 @@ function moreLove(){
         The solution for this entire program can be found in <!-- .element: class="note" -->**5-update-quantities-solution.html**.
       </script>
     </section>
-
-
-    <!-- <section class="slide" data-markdown>
-      <script type="text/template">
-        ##Mini-exercise (5-10 minutes): [maybe?]
-        Quantities and Total Cost
-
-        Let's re-visit the Quantities exercise and add a text field to show the total cost. If the Android plushie cost $20 each, how do we calculate the total cost? 
-      </script>
-    </section>   -->
 
     <section class="slide title" data-markdown data-toc>
       <script type="text/template">
@@ -1983,7 +1984,7 @@ if ( price <= 100 ) {
       </script>
     </section>
         
-    <section class="slide" data-markdown>
+    <section class="slide" data-markdown data-toc>
       <script type="text/template">
         #Bonus Exercise!
         
@@ -2018,10 +2019,9 @@ if ( price <= 100 ) {
 
     </section>
 
-    <section class="slide small-type" data-markdown>
+    <section class="slide small-type" data-markdown data-toc>
       <script type="text/template">
         # Next Steps
-
         
         * Explore more Ladies Learning Code workshops by following our [Roadmap](http://ladieslearningcode.com/roadmap/).
         * list of free online [JSbooks](http://jsbooks.revolunet.com/)
@@ -2044,7 +2044,7 @@ if ( price <= 100 ) {
         <li><a href="http://twitter.com/">@twitter</a></li>
       </ul> -->
 
-      <p class="attribution">Slide presentation created by <a href="http://christinatruong.com">Christina Truong</a> based on <a href="https://github.com/LeaVerou/csss">Lea Verou's SlideShow</a> and <a href="http://lab.hakim.se/reveal-js/">reveal.js</a>.</p>
+      <p class="attribution">Illustrations by <a href="http://floridaelago.com/" target="_blank">Florida Elago</a><br>Slide presentation created by <a href="http://christinatruong.com">Christina Truong</a> based on <a href="https://github.com/LeaVerou/csss">Lea Verou's SlideShow</a> and <a href="http://lab.hakim.se/reveal-js/">reveal.js</a>.</p>
     </section>
 
   </main><!-- cls main section -->
