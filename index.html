@@ -988,8 +988,17 @@
 
         If you use the `+` operator with numerical values, it will add the values. Otherwise, it will *combine* the outputs as a string referred to as **concatenation**.
 
-        Use this to combine the string with the variable value.
         
+        Instead of this:
+        
+        ```javascript
+        var finalTotal = total - discountAmount;
+        document.write("Final Total: $");
+        document.write(finalTotal);
+        ```
+        
+        Use concatenation to combine the string with the variable value.
+
         ```javascript
         var finalTotal = total - discountAmount;
         document.write("Final Total: $" + finalTotal);
@@ -1005,9 +1014,9 @@
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        #Class Exercise: Concatenation
+        #Exercise: Concatenation (10mins)
         
-        Let's go back to **3-shopping-cart.html** and update the `document.write()` values.
+        Go back to **3-shopping-cart.html** and update the `document.write()` values to combine the string and variable values.
         
         
         ---
@@ -1697,141 +1706,110 @@ function moreLove(){
     </section>
 
 
-    <section class="slide" data-markdown>
+    <!-- <section class="slide" data-markdown>
       <script type="text/template">
         ##Mini-exercise (5-10 minutes): [maybe?]
         Quantities and Total Cost
 
         Let's re-visit the Quantities exercise and add a text field to show the total cost. If the Android plushie cost $20 each, how do we calculate the total cost? 
       </script>
-    </section>  
+    </section>   -->
 
-    <section class="slide title">
-      <h1>Conditionals</h1>
+    <section class="slide title" data-markdown data-toc>
+      <script type="text/template">
+        #Conditionals
+        ##Making decisions with conditions
+      </script>
     </section>
+      
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Conditional Statements
 
-    <section class="slide">
-      <h2>Conditional Statements</h2>
-      <p class="delayed">Let's pretend to be your wise but nagging grandmother right now:</p>
-      <ul>
-        <li class="delayed">I hear it's cold out: bring a sweater!</li>
-        <li class="delayed">The weather network says it's going to rain: take your umbrella!</li>
-        <li class="delayed">It's cold and snowing: wearing your warm boots!</li>
-        <li class="delayed">If (condition) then (perform instruction)</li>
-      </ul>
-      <p class="delayed">All these things make logical sense to us as grown up humans but computers are a blank slate. The last one is a little closer to the simple instructions that a computer needs.</p>
-      <p class="delayed">As a programmer, you tell the computer how to behave across certain states or events by using CONDITIONALS.</p>
-    </section>
+        Using conditional statements allows you to add different instructions to your program based on different true/false conditions.
 
-    <section class="slide centered">
-      <h2>If Conditional Syntax</h2>
-      <br /><br />
-      <img class="delayed" src="framework/img/workshop/syntax-conditional.gif" alt="variable assignment" />
-    </section>
-
-    <section class="slide">
-      <h2>If Conditionals</h2>
-      <div data-markdown>
+        A basic conditional test looks like this:
+        
         ```javascript
-        if ( weather == rain ) {
-          bringUmbrella();
-        }
+        IF it is raining
+          THEN bring an umbrella
+        ```    
+
+        In JavaScript, it might look like this:
+        
         ```
-      </div>
-      <small><img src="framework/img/workshop/rawbot-reminder.png" alt="robot reminder" align="left" height="50"/>The round <b>brackets ()</b> group together a condition to test.<br />
-The curly <b>braces {}</b> group together a set of statements to execute.</small>
-    </section>
-
-    <section class="slide">
-      <h2>Important! Assignment is not the same as equality</h2>
-      <img src="framework/img/workshop/rawbot-important.png" alt="robot important" align="left"/>
-      <p>Drill this into your head. Tattoo it to your arm! So many errors happen because of this key difference:</p>
-      <h3> (=) is for assignment </h3>
-      <p>Store a value to a variable:</p>
-      <pre><code>var kitten = "Fluffy"; </code></pre>
-      <h3> (==) is for equality</h3>
-      <p>Compare a value to another value:</p>
-      <pre><code>if ( kitten == cat ) </code></pre>
-    </section>
-
-    <section class="slide">
-      <h2>Using Several If Conditionals</h2>
-      <p>Sometimes it can be rainy but warm, or rainy and cold. You react to each thing individually.</p>
-      <p>Use several if statements when you're testing mutually inclusive scenarios.</p>
-      <p>IF the weather is raining<br />&nbsp;&nbsp;&nbsp;THEN bring an umbrella</p>
-      <p>IF the temperature is below 10°C<br />&nbsp;&nbsp;&nbsp;THEN wear a sweater</p>
-      <div data-markdown>
-        ```javascript
-        if ( weather == rain ) {
+        if ( weather === rain ) {
           bringUmbrella();
         }
 
         if ( temperature < 10 ) {
           wearSweater();
         }
+        ```  
+      </script>
+    </section>
+      
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Assignment is not the same as equality
+
+        **IMPORTANT!**
+
+        `=` assignment
+        ```javascript
+        var kitten = "Fluffy";
         ```
-      </div>
+
+        `==` is for equality
+        ```javascript
+        10 == "10" // true
+        1  == 10 // false
+        ```
+
+        `===` is for strict equality
+        ```javascript
+        10 === 10 // true
+        10 === "10" // false
+        ```
+      </script>
     </section>
 
-    <section class="slide">
-      <h2>if/else Conditionals</h2>
-      <p>Sometimes there's a catch-all state that you want to happen if your previous tests don't happen.</p>
-      <p>IF the weather is raining<br />&nbsp;&nbsp;&nbsp;THEN bring an umbrella</p>
-      <p>OTHERWISE<br />&nbsp;&nbsp;&nbsp;dress normally</p>
-      <div data-markdown>
-        ```javascript
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #if/else Conditionals
+
+        `else` will give you a catch-all state if your condition fails.
+        
+        ```
         if ( weather == rain ) {
             bringUmbrella();
         } else {
             dressNormally();
         }
         ```
-      </div>
+      </script>
     </section>
+        
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #if/else if/else Conditionals
 
-    <section class="slide">
-      <h2>if/else if/else Conditionals</h2>
-      <p>It shouldn't snow and rain at the same time so sometimes these conditions are mutually exclusive. </p>
-      <p>IF the weather is raining<br />&nbsp;&nbsp;&nbsp;THEN bring an umbrella</p>
-      <p>BUT IF the weather is snowing<br />&nbsp;&nbsp;&nbsp;THEN wear warm boots</p>
-      <p>OTHERWISE<br />&nbsp;&nbsp;&nbsp;dress normally</p>
-      <div data-markdown>
-        ```javascript
+        Take it a step further by adding `else if` to add more conditions. You can use as many as you need.
+
+        ```
         if ( weather == rain ) {
-            bringUmbrella();
-        }else if ( weather == snow ) {
-            wearWarmBoots();
-        }else{
-            dressNormally();
+          bringUmbrella();
+        } else if ( weather == snow ) {
+          wearWarmBoots();
+        } else {
+          dressNormally();
         }
         ```
-      </div>
+      </script>
     </section>
 
     <section class="slide">
-      <h2>Conditionals used for UI elements</h2>
-      <p>A basic conditional that your browser does internally is to react to mouse clicks on a HTML element. The browser does its own conditional check behind the scenes.</p>
-      <img src="framework/img/workshop/thenewdesignguidelines-pull.gif" alt="the new design guidelines pull" align="left" style="padding-right:10px;"/>
-      <pre><code><button onclick="animate()">Pull</button></code></pre>
-      <p>IF a user has clicked on a button<br />&nbsp;&nbsp;&nbsp;THEN call the animate() function.</p>
-    </section>
-
-    <section class="slide centered">
-      <h2>...And Interactivity</h2>
-      <p>Notice how the brush acts when you speed up / slow down, or get close to other lines. You can even change brushes.</p>
-      <a href="http://mrdoob.com/projects/harmony/"><img src="framework/img/workshop/LLC_sketch.gif" alt="ladies learning code sketch" /></a>
-      <p><a href="http://mrdoob.com/projects/harmony/">http://mrdoob.com/projects/harmony/</a></p>
-    </section>
-
-    <section class="slide centered">
-      <h2>...And Games!</h2>
-      <p>(Notice how the birds fly differently based on how far you pull them back in the slingshot, and in what direction.)</p>
-      <a href="http://chrome.angrybirds.com/"><img src="framework/img/workshop/AngryBirds.png" alt="ladies learning code sketch" /></a>
-      <p><a href="http://chrome.angrybirds.com/">http://chrome.angrybirds.com/</a></p>
-    </section>
-
-    <section class="slide">
-      <h2>Conditional Statements Summary</h2>
+      <h1>Conditional Statements Summary</h1>
       <table cellpadding="20" style="width:100%">
         <tr>
           <td><h3>If Statement</h3></td>
@@ -1876,752 +1854,157 @@ The curly <b>braces {}</b> group together a set of statements to execute.</small
       </table>
     </section>
 
-    <section class="slide">
-      <h2>Testing Conditions</h2>
-      <p>What does a condition actually look like?</p>
-      <div data-markdown>
-        ```javascript
-        // Straight Booleans
-        if ( true ) {
-          document.write( "#1 this works. <br />" );
-        }
-        if ( false ) {
-          document.write( "#2 will not work. <br />" );
-        }
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Comparison and Logical Operators 
 
-        // Booleans via variables
-        var isSunday = true;
-        var isSaturday = false;
-        if ( isSunday == true ) {
-          document.write( "#3 Yeah, laundry day! <br />" );
-        }
-        if ( isSaturday == true ) {
-          document.write( "#4 Nope, you can't go back in time! <br />" );
-        }
-
-        // Numbers
-        if ( 1 < 2 ) {
-          document.write( "#5 works. <br />" );
-        }
-        if ( 2 < 1 ) {
-          document.write( "#6 won't work. <br />" );
-        }
-
-        // Strings
-        var emptyString = "";
-        var filledString = "Woot! Conditionals!";
-        if ( emptyString == "" ) {
-          document.write( "#7 Yep, the string was empty. <br />" );
-        }
-        if ( filledString == "" ) {
-          document.write( "#8 won't work. <br />" );
-        }
-        if ( filledString == "Woot! Conditionals!" ) {
-          document.write( "#9 Code strong. <br />" );
-        }
-        ```
-      </div>
-      <a href="examples/013-testing-conditions.html"><img src="framework/img/workshop/rawbot-run.png" alt="run code" align="right" /></a>
-    </section>
-
-    <section class="slide">
-      <h2>Cheat Sheet: Comparison and Logical Operators </h2>
-      <p><img src="framework/img/workshop/rawbot-reminder.png" alt="robot reminder" align="left" height="50"/>Here's a <span class="highlight-text">cheat sheet</span> of different operators that can be used in conditional statements. </p>
-
-      <p data-markdown>Using these two variables, `var two = 2` and `var ten = 10`, the examples below show how the statements would return true using the various operators. </p>
-      <table cellspacing="0" class="comparison-table" style="margin-right:20px;width:50%;">
-        <tr>
-          <th align="left" colspan="3">Comparison operators</th>
-        </tr>
-        <tr>
-          <td width="15%">==</td>
-          <td width="50%">is equal to</td>
-          <td width="35%">ten == two * 5</td>
-        </tr>
-         <tr>
-          <td width="15%">===</td>
-          <td width="50%">is exactly equal to (value and type) </td>
-          <td width="35%">ten === 10<br />ten === "10" (false) </td>
-        </tr>
-         <tr>
-          <td width="15%">!=</td>
-          <td width="50%">is not equal to</td>
-          <td width="35%">ten !== two</td>
-        </tr>
-         <tr>
-          <td width="15%">&gt;</td>
-          <td width="50%">greater than</td>
-          <td width="35%">ten &gt; two</td>
-        </tr>
+        <table cellspacing="0" class="comparison-table" style="margin-right:2%;width:52%;">
           <tr>
-          <td width="15%">&lt;</td>
-          <td width="50%">less than</td>
-          <td width="35%">two &lt; ten</td>
-        </tr>
+            <th align="left" colspan="3">Comparison operators</th>
+          </tr>
           <tr>
-          <td width="15%">&gt;=</td>
-          <td width="50%">greater than or equal to</td>
-          <td width="35%">ten &gt;= two * 5<br />ten &gt;= two * 5 + 1</td>
-        </tr>
+            <td width="15%">==</td>
+            <td width="41%">is equal to</td>
+            <td width="44%">ten == two * 5</td>
+          </tr>
+           <tr>
+            <td width="15%">===</td>
+            <td width="41%">is exactly equal to (value and type) </td>
+            <td width="44%">ten === 10<br />ten === "10" (false) </td>
+          </tr>
+           <tr>
+            <td width="15%">!=</td>
+            <td width="41%">is not equal to</td>
+            <td width="44%">ten !== two</td>
+          </tr>
+           <tr>
+            <td width="15%">&gt;</td>
+            <td width="41%">greater than</td>
+            <td width="44%">ten &gt; two</td>
+          </tr>
+            <tr>
+            <td width="15%">&lt;</td>
+            <td width="41%">less than</td>
+            <td width="44%">two &lt; ten</td>
+          </tr>
+            <tr>
+            <td width="15%">&gt;=</td>
+            <td width="41%">greater than or equal to</td>
+            <td width="44%">ten &gt;= two * 5<br />ten &gt;= two * 5 + 1</td>
+          </tr>
+            <tr>
+            <td width="15%">&lt;=</td>
+            <td width="41%">less than for equal to</td>
+            <td width="44%">two &lt;= ten<br />two &lt;= 2 </td>
+          </tr>
+        </table>
+
+        <table cellspacing="0" class="comparison-table" style="width:46%;">
           <tr>
-          <td width="15%">&lt;=</td>
-          <td width="50%">less than for equal to</td>
-          <td width="35%">two &lt;= ten<br />two &lt;= 2 </td>
-        </tr>
-      </table>
-      <table cellspacing="0" class="comparison-table" style="width:45%;">
-        <tr>
-          <th align="left" colspan="3">Logical operators</th>
-        </tr>
-        <tr>
-          <td width="15%">&amp;&amp;</td>
-          <td width="50%">and</td>
-          <td width="35%">(ten < 11 &amp;&amp; ten > 9)</td>
-        </tr>
-         <tr>
-          <td width="15%">||</td>
-          <td width="50%">or</td>
-          <td width="35%">(ten == 10 || two == 2)</td>
-        </tr>
-         <tr>
-          <td width="15%">!</td>
-          <td width="50%">not</td>
-          <td width="35%"> !(ten == two)</td>
-        </tr>
-      </table>
+            <th align="left" colspan="3">Logical operators</th>
+          </tr>
+          <tr>
+            <td width="15%">&amp;&amp;</td>
+            <td width="25%">and</td>
+            <td width="60%">(ten < 11 &amp;&amp; ten > 9)</td>
+          </tr>
+           <tr>
+            <td width="15%">||</td>
+            <td width="25%">or</td>
+            <td width="60%">(ten == 10 || two == 2)</td>
+          </tr>
+          <tr>
+            <td width="15%">!</td>
+            <td width="25%">not</td>
+            <td width="60%"> !(ten == two)</td>
+          </tr>
+        </table>
+
+        `var two = 2` and `var ten = 10`
+
+        The examples in the tables show how the statements would return *true* based on the above variables.
+      </script>
     </section>
 
     <section class="slide">
-      <h2>The &amp;&amp;(and) operator</h2>
-      <p class="delayed">The && operator returns <code>true</code> only if all the conditions are true</p>
-      <pre class="delayed"><code>true && true // returns true
-true && false // returns false
-false && false // returns false</code></pre>
-    </section>
+      <h1>Conditionals example</h1>
+      <p>Looking at the example below, what value will you need to enter to get either message to appear? What if the value is 100? Click run and test your theory.</p>
 
-    <section class="slide">
-      <h2>The ||(or) operator</h2>
-      <p class="delayed">The || operator returns <code>true</code> only if at least one of the conditions are true</p>
-      <pre class="delayed"><code>true || true // returns true
-true || false // returns true
-false || false // returns false</code></pre>
-    </section>
+<pre><code>var price = prompt("How much is that robot?");
+      
+if ( price <= 100 ) {
+  alert("$" + price + " isn't bad. Buy it!");
+} else {
+  alert("$" + price + "? No way! That's a lot of money!");
+}</code></pre>
+      
 
-    <section class="slide">
-      <h2>The !(not) operator</h2>
-      <p class="delayed">The ! operator returns <code>true</code> only if the condition returns <code>false</code></p>
-      <pre class="delayed"><code>!true // returns false
-!false // returns true</code></pre>
-    </section>
+      <img onclick="ifTest();" src="framework/img/workshop/rawbot-run.png" alt="">
 
-    <section class="slide">
-      <h2>Mixing it all together</h2>
-      <p class="delayed">let's set the variables <code>two = 2</code> and <code>ten = 10</code></p>
-      <pre class="delayed"><code>(two &lt;= 5 && ten != 9 || 10 == ten)</code></pre>
-      <p class="delayed">returns <code>true</code></p>
-      <pre class="delayed"><code>(20 != (ten*two) && 3 &gt;= two)</code></pre>
-      <p class="delayed">returns <code>false</code></p>
-    </section>
-
-    <section class="slide">
-      <h2>More Conditional Examples</h2>
-      <p>Let's look at some examples. What do you think the output will be? Uncomment the code to be executed for each condition to see if the result is what you expected. Try changing the variable values too! </p>
-      <p class="highlight-color">File: examples/014-more-conditional-examples.html</p>
-      <div data-markdown>
-        ```javascript
-        var regularPrice = 200;
-        var salePrice = 19.99;
-
-        if ( salePrice < regularPrice ) {
-          //document.write("#1 You've got to buy that robot! <br />");
-        }
-
-
-        if ( salePrice > regularPrice ) {
-          //document.write("#2 Don't buy that robot <br />");
-        } else {
-          //document.write("#2 Buy two in different colours! <br />");
-        }
-
-        if ( salePrice > regularPrice ) {
-          //document.write("#3 Don't buy that robot");
-        } else if ( salePrice == regularPrice) {
-          //document.write("#3 Only buy it if you reeeaallly want it! <br />");
-        } else {
-          //document.write("# Buy two in different colours! <br />");
-        }
-        ```
-      </div>
-      <a href="examples/014-more-conditional-examples.html"><img src="framework/img/workshop/rawbot-run.png" alt="run code" align="right" /></a>
-    </section>
-
-    <section class="slide">
-      <h2>Variables, Operators, Concatenation and Conditionals</h2>
-      <p>Now that we know what <span class="highlight-text">variables</span>, <span class="highlight-text">operators</span> and <span class="highlight-text">conditionals</span> are, let's put them all into action using dynamic content. </p>
-      <p class="highlight-color">File: examples/015-variables-operations-concatenation-conditionals.html</p>
-      <div data-markdown>
-        ```javascript
-        var price = prompt("How much is that robot?");
+      <script>
+        function ifTest(){
+          var price = prompt("How much is that robot?");
+        
           if ( price <= 100 ) {
-          document.write("$" + price + " isn't bad. Buy it!");
-        } else {
-          document.write("$" + price + "? Jeez! That's a lot of money!");
-        }
-        ```
-      </div>
-      <a href="examples/015-variables-operations-concatenation-conditionals.html"><img src="framework/img/workshop/rawbot-run.png" alt="run code" align="right" /></a>
-    </section>
-
-    <section class="slide">
-      <h2>Mini-exercise #3 (10 minutes)</h2>
-      <p> Uh-oh! Someone can attempt to put a negative number of products in their shopping cart! Complete task #1 in the next slide to fix this. For task #2, warn the user that they are attempting to check out with an empty basket. Make a more robust shopping cart so that your customer's order doesn't go sideways. </p>
-      <p>This is based on Exercise #3 so it should look very familiar! </p>
-      <small><img src="framework/img/workshop/rawbot-reminder.png" alt="robot reminder" align="left" height="50"/>(Hint: How do you test if a number is greater than, less then, or equal to another number?)</small>
-    </section>
-
-    <section class="slide">
-      <h2>Mini-exercise #3 (10 minutes)</h2>
-      <p>TODO: Check within the code for your THREE tasks.</p>
-      <p class="highlight-color">File: exercises/3-mini-exercise-problem.html</p>
-      <div data-markdown>
-        ```javascript
-        var quantity = 0;
-
-        function addItem(){
-          quantity++;
-          refreshTotal();
-        }
-
-        function removeItem(){
-          /* *** YOUR CODE _BELOW_ HERE **** */
-          /* 1. Use a conditional if/else statement on the "quantity" variable
-                to avoid having negative products. */
-
-          quantity--;
-
-          /* *** YOUR CODE ^ABOVE^ HERE **** */
-          refreshTotal();
-        }
-
-        function checkout() {
-          /* *** YOUR CODE _BELOW_ HERE **** */
-          /* 2. Use a conditional if statement on the "quantity" variable
-                to determine if the shopping cart is (or is not) empty. */
-
-          // below are some alert messages you can use
-          alert( "Sorry, you don't have anything in your cart!" );
-          alert( "Thank you for your order!" );
-
-          /* *** YOUR CODE ^ABOVE^ HERE **** */
-        }
-
-        function refreshTotal() {
-          var totalCost = quantity * 20; //quantity * fixed price
-          document.getElementById('updateQuantity').value = quantity; //updates
-          // 3. A nice to have: Put a dollar sign in front of the totalCost
-          document.getElementById('updateTotal').value = (totalCost);
-        }
-        ```
-      </div>
-      <a href="exercises/3-mini-exercise-problem.html"><img src="framework/img/workshop/rawbot-run.png" alt="run code" align="right" /></a>
-
-    </section>
-
-    <section class="slide">
-      <h2>Mini-exercise #4 (5-10 minutes)</h2>
-      <p>Let's revisit the shipping form again -- it's a very simple shipping form, but you don't want someone to be able to submit their order if they haven't filled out their address! </p>
-      <p>You have been supplied with 1 variable ("address") which will automagically match what is typed into the form field (minus extra whitespace) after you press the "Check out now!" button.</p>
-      <small><img src="framework/img/workshop/rawbot-hint.png" alt="robot hint" align="left" height="50"/>(Hint: If you don't type anything into the address field, you get an "empty string". How do you test for an empty string?) </small>
-    </section>
-
-    <section class="slide">
-      <h2>Mini-exercise #4 (5-10 minutes)</h2>
-      <small><img src="framework/img/workshop/rawbot-hint.png" alt="robot reminder" align="left" height="50"/>TODO: Check within the code for your ONE task.</small>
-
-      <p class="highlight-color">File: exercises/4-mini-exercise-problem.html</p>
-      <div data-markdown>
-        ```javascript
-        function validateForm() {
-
-          // automagically get the typed values from the form
-          var address = document.getElementById("address").value;
-
-          /* *** YOUR CODE _BELOW_ HERE **** */
-
-          /* TODO: Use a conditional if/else statement on the "address" variable
-             to determine if the address field is (or is not) blank,
-             then show the proper error or confirmation alert message. */
-
-          // below are some alert messages you can use
-          alert( "Sorry there are errors. Form fields cannot be blank!" );
-          alert( "Thank you for your order!" );
-
-          /* *** YOUR CODE ^ABOVE^ HERE **** */
-        }
-        ```
-      </div>
-      <a href="exercises/4-mini-exercise-problem.html"><img src="framework/img/workshop/rawbot-run.png" alt="run code" align="right" /></a>
-    </section>
-
-    <section class="slide">
-      <h2>Mini-exercise #5 (15-20 minutes)</h2>
-      <p>Now here's a more complex shopping form that you require all fields to be filled in. You have been supplied with 3 additional variables which will automagically update: "name", "city", and "postal".</p>
-
-      <small><img src="framework/img/workshop/rawbot-hint.png" alt="robot reminder" align="left" height="50"/> (Hint for task #3: How do you test for something AND somethingElse OR anotherThing at one time?) </small>
-
-      <p>Bonus: There's always different ways to get to the same end goal. If you're finished early, try out different ways that you can reduce the number of variables and lines of code.</p>
-    </section>
-
-    <section class="slide">
-      <h2>Mini-exercise #5 (15-20 minutes)</h2>
-      <small><img src="framework/img/workshop/rawbot-reminder.png" alt="robot reminder" align="left" height="50"/>Statements are comma</small>
-
-      <p class="highlight-color">File: exercises/5-mini-exercise-problem.html</p>
-      <div data-markdown>
-        ```javascript
-        function validateForm() {
-
-          // automagically get the typed values from the form
-          var name = document.getElementById("name").value;
-          var address = document.getElementById("address").value;
-          var city = document.getElementById("city").value;
-          var postal = document.getElementById("postal").value;
-
-          /* *** YOUR CODE _BELOW_ HERE **** */
-
-          /* 1. Declare 4 variables named
-                "nameIsBlank", "addressIsBlank", "cityIsBlank", and "postalIsBlank"
-                that will each hold Boolean values. */
-
-
-          /* 2a. Use conditional if/else statements on the variables
-                 "name", "address", "city", and "postal" to determine
-                 if each individual field is not blank.
-
-             2b. Update their respective Boolean variables based on their
-                 individual if/else statements. */
-
-
-          /* 3. In a final conditional, test ALL FOUR fields
-                and alert the proper message  */
-
-          // below are some alert messages you can use
-          alert( "Sorry there are errors. Form fields cannot be blank!" );
-          alert( "Thank you for your order!" );
-
-          /* *** YOUR CODE ^ABOVE^ HERE **** */
-        }
-        ```
-      </div>
-      <a href="exercises/5-mini-exercise-problem.html"><img src="framework/img/workshop/rawbot-run.png" alt="run code" align="right" /></a>
-    </section>
-
-    <section class="slide centered">
-      <h1>Regroup Before Lunch</h1>
-      <h2>Learn from our mistakes!</h2>
-      <p>Name something that you did while writing code that caused an error. What were you attempting to do and what were your assumptions when doing it? How did you fix it?
-
-What are some questions or issues you are having with the material covered so far? Lunch with your mentors and pick their brains. :) </p>
-    </section>
-
-    
-
-    <section class="slide title">
-      <h1>JavaScript Theory Hands-on </h1>
-      <h2>Part 2</h2>
-    </section>
-
-    <section class="slide title">
-      <h1>JavaScript Theory Applied</h1>
-      <h2>Putting it together on an actual HTML page</h2>
-    </section>
-
-
-    
-        <section class="slide title">
-          <h1>Arrays</h1>
-        </section>
-
-        <section class="slide">
-          <h2>Arrays</h2>
-          <p class="delayed"><span class="highlight-text">Arrays</span> are similar to objects; they both hold a collection of values. However, arrays hold its values in a numerical index rather than labels. </p>
-          <p class="delayed">Think of arrays as egg cartons. All the eggs are in one carton but each egg has its own slot. </p>
-          <img class="delayed" src="framework/img/workshop/egg-carton.jpeg" alt="egg carton" align="left" style="padding-right: 20px;"/>
-          <p class="delayed">Just like variables and objects, declare an array with the keyword var.</p>
-          <pre class="delayed"><code>var eggspressions = [];</code></pre>
-          <small class="delayed"><img class="delayed" src="framework/img/workshop/rawbot-reminder.png" alt="robot reminder" align="left"/>Unlike objects, arrays are declared with square brackets <code>[ ]</code>.</small>
-        </section>
-
-        <section class="slide">
-          <h2>Arrays How-to</h2>
-          <pre><code>//declaring an empty array
-var eggspressions = [];</code></pre>
-          <div data-markdown>
-            ```javascript
-            //assigning values
-            eggspressions[0] = "skeptical";
-            eggspressions[1] = "frazzled";
-            eggspressions[2] = "silly";
-            eggspressions[3] = "giggling";
-            ```
-          </div>
-        <p>The numbers inside the square brackets <code>[ ]</code> are referred to as the <span class="highlight-text">index</span> number. Array indexes <span class="highlight-text">always</span> start at <span class="highlight-text">zero</span>. </p>
-        <small><img src="framework/img/workshop/rawbot-reminder.png" alt="robot reminder" align="left"/>Arrays can be declared in different ways.<br />
-          The above example can also be declared like this:<br />
-          <code>var eggspressions = ["skeptical","frazzled","silly", "giggling"];</code>
-        </small>
-        </section>
-
-        <section class="slide">
-          <h2>Arrays and Indexes</h2>
-          <p class="delayed"><span class="highlight-text">Index</span> numbers are used to <span class="highlight-text">assign</span> values. </p>
-          <p class="delayed">Index numbers are also used to <span class="highlight-text">access</span> values. </p>
-          <p class="delayed">To access the value of the second egg in the <code>eggspressions</code> array, use index 1 since it's the second item in the list. </p>
-          <p class="highlight-color delayed">File: examples/025-arrays-and-indexes.html</p>
-          <div data-markdown class="delayed">
-            ```javascript
-            var eggspressions = [];
-
-            eggspressions[0] = "skeptical";
-            eggspressions[1] = "frazzled";
-            eggspressions[2] = "silly";
-            eggspressions[3] = "giggling";
-
-            document.write("The 2nd egg is " + eggspressions[1] + " even though it has an index of 1.");
-            ```
-          </div>
-          <a href="examples/025-arrays-and-indexes.html"><img class="delayed" src="framework/img/workshop/rawbot-run.png" alt="run code" align="right" /></a>
-        </section>
-
-        <section class="slide">
-          <h2 class="delayed">Arrays and Properties</h2>
-          <p class="delayed">Since <span class="highlight-text">Arrays</span> are also objects, there are many properties associated with the Array object. </p>
-          <p class="delayed">The <code>length</code> property is also associated with array objects.</p>
-          <p class="delayed">As mentioned previously, the <code>length</code> property returns the number of characters when associated with a <span class="highlight-text">string</span>. When used with an <span class="highlight-text">Array</span>, the <code>length</code> property returns the number of elements. </p>
-          <p class="highlight-color delayed">File: examples/026-arrays-and-properties.html</p>
-          <div data-markdown class="delayed">
-            ```javascript
-            // string variable
-            var name = "Christina";
-            document.write(name.length);
-            document.write("<br />");
-
-            // array
-            var eggspressions = [];
-            eggspressions[0] = "skeptical";
-            eggspressions[1] = "frazzled";
-            eggspressions[2] = "silly";
-            eggspressions[3] = "giggling";
-            //document.write(eggspressions.length);
-            ```
-          </div>
-          <a href="examples/026-arrays-and-properties.html"><img class="delayed" src="framework/img/workshop/rawbot-run.png" alt="run code" align="right" /></a>
-        </section>
-
-        <section class="slide">
-          <h2>Arrays &amp; Length: Why?</h2>
-          <p class="delayed">It is common to use JavaScript to run through a list of values and apply some code to it. In order to do this, we need to know how many elements there are in total. </p>
-          <p class="delayed">Let's look at this photo gallery from <a href="http://abcnews.go.com/US/photos/snow-blast-polar-cold-21609711/image-22767131">abcnews.go.com</a> and figure out how length can be used here. </p>
-          <p class="delayed"><img src="framework/img/workshop/exampleslideshow.png" alt="slideshow example" height="300"/></p>
-        </section>
-
-        <section class="slide">
-          <h2>Arrays &amp; Length and the 0 Index</h2>
-          <p class="delayed">How do we access a particular value?</p>
-          <p class="delayed">By using the index number.</p>
-          <p class="delayed">So how do we access the <span class="highlight-text">last</span> value?</p>
-          <div data-markdown class="delayed">
-            ```javascript
-            var eggspressions = [];
-            eggspressions[0] = "skeptical";
-            eggspressions[1] = "frazzled";
-            eggspressions[2] = "silly";
-            eggspressions[3] = "giggling";
-            ```
-          </div>
-          <p class="delayed">To access the last index value, you can use <code>eggspressions[3].</code> </p>
-          <p class="delayed">BUT...</p>
-          <p class="delayed">You can also use <code>eggspressions[eggspressions.length-1].</code></p>
-         </section>
-
-        <section class="slide title">
-          <h1>Huh?</h1>
-        </section>
-
-        <section class="slide">
-          <h2>REWIND: Arrays &amp; Length and the 0 Index </h2>
-          <div data-markdown class="delayed">
-            ```javascript
-            var eggspressions = [];
-            eggspressions[0] = "skeptical";
-            eggspressions[1] = "frazzled";
-            eggspressions[2] = "silly";
-            eggspressions[3] = "giggling";
-            ```
-          </div>
-          <p class="delayed">Let's break it down.</p>
-          <ul>
-            <li class="delayed"><code>eggspressions.length</code> returns 4</li>
-            <li class="delayed">index of last element is 3</li>
-            <li class="delayed"><code>eggspressions.length-1</code> is the same as 4 - 1 and will return 3</li>
-            <li class="delayed"><code>eggspressions[3]</code> returns the last value</li>
-            <li class="delayed"><code>eggspressions[eggspressions.length-1]</code> is the same as <code>eggspressions[3]</code></li>
-          </ul>
-        </section>
-
-        <section class="slide">
-          <h2>How is this useful?</h2>
-          <p class="delayed"> Since the index always begins at 0, the last index value is always <code>length-1</code>. This is useful if you want to always access the last index, despite new additions, and apply some code to it. </p>
-          <p class="highlight-color delayed">File: examples/027-how-is-this-useful.html</p>
-          <div data-markdown class="delayed">
-            ```javascript
-            var eggspressions = [];
-            eggspressions[0] = "skeptical";
-            eggspressions[1] = "frazzled";
-            eggspressions[2] = "silly";
-            eggspressions[3] = "giggling";
-
-            document.write(eggspressions[3] + " is the last element in the array. <br />");
-            document.write(eggspressions[eggspressions.length-1] + " is the last element in the array.");
-            ```
-          </div>
-          <a href="examples/027-how-is-this-useful.html"><img class="delayed" src="framework/img/workshop/rawbot-run.png" alt="run code" align="right" /></a>
-
-        </section>
-
-        <section class="slide title">
-          <h1>Loops</h1>
-        </section>
-
-        <section class="slide">
-          <h2>Loops</h2>
-          <p class="delayed">Why use loops? Because sometimes we need to <span class="highlight-text">execute repetitive code</span> for a specified number of times or through a list of values. </p>
-          <p class="delayed">Loops will execute the same code continuously, using conditional statements to determine when to begin and stop. </p>
-          <p class="delayed">It's like creating a playlist on your favorite music player.</p>
-          <p class="delayed">You create a list of songs, press play and then each song is played automatically in the set order of the playlist. When it reaches the end of the playlist, it stops</p>
-          <p class="delayed">We will be discussing <code>while loops</code> and for <code>loops</code>.</p>
-        </section>
-
-        <section class="slide centered">
-          <h2>While Loop Syntax</h2>
-          <br /><br />
-          <img class="delayed" src="framework/img/workshop/syntax-while.gif" alt="while loop" />
-        </section>
-
-       <section class="slide">
-          <h2>While Loop</h2>
-          <p class="delayed">The <span class="highlight-text">WHILE LOOP</span> executes the code contained in curly braces <code>{ }</code> <span class="highlight-text">while</span> the condition is true.</p>
-          <p class="delayed">An index variable is required to keep track of its place in the loop.</p>
-          <p class="delayed">The <span class="highlight-text">WHILE LOOP</span> stops executing the code once the condition becomes false.</p>
-          <p class="delayed">If you had 10 songs in your playlist, the player won't stop until it reaches the end of song 10.</p>
-          <div data-markdown class="delayed">
-          ```javascript
-          //declare index variable
-          var i = 0;
-
-          while ( i < playlist.length ) {
-            playCurrentSong();
-            i = i + 1; // adds 1 to the current index so it moves to the next song
+            alert("$" + price + " isn't bad. Buy it!");
+          } else {
+            alert("$" + price + "? No way! That's a lot of money!");
           }
-          ```
-          </div>
+        }
+      </script>
+    </section>  
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Exercise: Conditionals (~10mins)
+        ##Check for negative quantities
 
-          <small class="delayed"><img class="delayed" src="framework/img/workshop/rawbot-reminder.png" alt="robot reminder" align="left"/>If the condition is always true, the loop will run infinitely and will never exit the while loop. This can cause your browser to crash!</small>
-        </section>
+        Going back to the shopping cart example, use conditionals to make sure the remove button doesn't result in a negative value of items.  
 
-        <section class="slide">
-          <h2>While Loop in Action!</h2>
-          <p class="delayed">Let's use the <span class="highlight-text">WHILE LOOP</span> to output the mathematical formula for converting Celsius to Fahrenheit.</p>
-          <p class="delayed">(The formula is: <code>Temperature = Temperature * 9 / 5 + 32</code>)</p>
-          <p class="delayed">This next example uses a <span class="highlight-text">WHILE LOOP</span> to output the results of the temperature formula into HTML table rows that are also added dynamically.</p>
-          <p class="delayed">It will stop when we reach 30 degrees Celsius (or whatever number is declared in the condition).</p>
-          <p class="delayed">See next slide for the example.</p>
-        </section>
+        It should stop at 0.
 
-         <section class="slide">
-          <h2>While Loop Temperature Conversion</h2>
-          <p class="delayed">Let's look at the temperature conversion table with and without JavaScript and compare the difference in the amount of repetitive code required to create a table like this manually.</p>
-          <p class="delayed">Conversion table using a <a href="exercises/temperature.html">while loop</a>.</p>
-          <p class="delayed">Conversion table <a href="exercises/temperature-nojs.html">without JavaScript</a>.</p>
-          <p class="delayed">View source and compare the difference between the amount of code.</p>
-          <img class="delayed" src="framework/img/workshop/while-loop.jpg" alt="while loop source code" />
-          <img class="delayed" src="framework/img/workshop/no-while-loop.jpg" alt="no while loop source code" />
-        </section>
+        Open the **6-conditional-quantities.html** exercise file and revise the `removeItem()` function to include an `if` statement to check for negative values.
+      </script>
+    </section>  
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Exercise Solution Review
 
-        <section class="slide centered">
-          <h2>For Loop Syntax</h2>
-          <br /><br />
-          <img class="delayed" src="framework/img/workshop/syntax-for.gif" alt="while loop" />
-        </section>
-
-       <section class="slide">
-          <h2>For Loops</h2>
-          <p class="delayed">A <span class="highlight-text">FOR LOOP</span> also loops through the code a specified number of times until the condition is false.</p>
-          <p class="delayed">The index, conditional test and incrementer are all declared in one line. Basically, it's the <span class="highlight-text">WHILE LOOP</span> condensed.</p>
-          <div class="delayed" data-markdown>
-            ```javascript
-            /* While Loop */
-            var i = 0; //index
-            while ( i < playlist.length ) { //condition
-              playCurrentSong();
-              i = i + 1; // incrementer
-            }
-            ```
-          </div>
-          <div data-markdown class="delayed">
-            ```javascript
-            /* For Loop */
-            // index, condition, incrementer
-            for ( var i = 0; i < playlist.length; i++ ) {
-              playCurrentSong();
-            }
-            ```
-          </div>
-          <small class="delayed"><img class="delayed" src="framework/img/workshop/rawbot-reminder.png" alt="robot reminder" align="left"/>
-            Incrementer (i++) and decrementer (i--) operators add or subtract one.<br />
-            i++ is the same as i = i + 1<br />
-            i-- is the same as i = i - 1<br />
-          </small>
-        </section>
-
-       <section class="slide">
-          <h2>For Loops and Arrays</h2>
-          <p class="delayed"><span class="highlight-text">FOR LOOPS</span> are useful when used in conjunction with <span class="highlight-text">ARRAYS</span> because they can be used to execute specific actions while going through the list of values.</p>
-          <p class="delayed">Back to our robot store. It wouldn't be much of a store if there was only one product! We can create a list of different products with various prices by creating an array.</p>
-          <div data-markdown class="delayed">
-          ```javascript
-          var productPrices = [];
-          productPrices[0] = 17.99;
-          productPrices[1] = 25;
-          productPrices[2] = 13.99;
-          productPrices[3] = 9.99;
-          productPrices[4] = 24.99;
-          productPrices[5] = 8.99;
-          ```
-          </div>
-        </section>
-
-       <section class="slide">
-          <h2>For Loops, Arrays, Robots and Sales</h2>
-          <p class="delayed">Suppose we wanted to put all the items over $15 on sale?  Let's use the <span class="highlight-text">FOR LOOP</span> to determine which items are eligible for the sale and output the product number.</p>
-          <p class="highlight-color delayed">File: examples/028-for-loops-arrays-robots-sales.html</p>
-          <div data-markdown class="delayed">
-            ```javascript
-            var productPrices = [];
-            productPrices[0] = 17.99;
-            productPrices[1] = 25;
-            productPrices[2] = 13.99;
-            productPrices[3] = 9.99;
-            productPrices[4] = 24.99;
-            productPrices[5] = 8.99;
-
-            for (i=0; i < productPrices.length; i++) {
-              var value = productPrices[i];
-              if (value > 15){
-                document.write("Product " + (i+1) + " is on sale.<br />");
-              } else {
-                document.write("Product " + (i+1) + " is not on sale.<br />");
-              }
-            }
-            ```
-          </div>
-          <a href="examples/028-for-loops-arrays-robots-sales.html"><img class="delayed" src="framework/img/workshop/rawbot-run.png" alt="run code" align="right" /></a>
-        </section>
-
-       <section class="slide">
-          <h2>Mini-exercise #6 (10-15 minutes)</h2>
-          <p>As owner of Planet Robot, you decide to have a special members-only sale: 50% off all items with a secret password! (p.s. the password is "llc"!)</p>
-          <p>Sounds like a great deal for the customer, but all you have is a static HTML page right now. Are you going to go through every single product, calculate the discounted price, and then update every entry manually? No, you're going to use loops and arrays!</p>
-          <p>Download the HTML exercise file: <a href="exercises/shopping_cart_products_start.html">exercises/shopping_cart_products_start.html</a></p>
-          <p class="highlight-color">TODO: Check within the code for your THREE tasks.</p>
-          <small>If you're stuck, here's the solution file: <a href="exercises/shopping_cart_products_final.html">exercises/shopping_cart_products_final.html</a></small>
-        </section>
-
-        <section class="slide title">
-          <h1>Regroup before break</h1>
-          <h2>Share your mistakes so we can learn from each other!</h2>
-        </section>
-
+        ```javascript
+        function removeItem(){
+          
+          if(quantity > 0) {
+            quantity = quantity - 1; 
+          }
+          updateQuantity.value = quantity;
+        }
+        ```
+      </script>
+    </section>
         
-
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Bonus Exercise!
         
+        Using the same exercise file, **6-conditional-quantities.html**, run a check on the "Checkout" button!
+
+        1. When the user clicks the Checkout button, check if the Quantity is 0 or more.  
+        1. If the Quantity is zero, use document.write() or alert() to output a "Your shopping cart is empty" message.
+        1. If the Quantity is one or more, use document.write() or alert() to output a "Thanks for your order" message.
+
+        ---
+        Solution can be found in **6-conditional-quantities-solution.html** <!-- .element: class="note" -->
+      </script>
+    </section>
 
 
-
-        <section class="slide">
-          <h2>HTML Element Objects (cont'd)</h2>
-          <p>You can also use innerHTML to replace what's already in a element.</p>
-          <p class="highlight-color">File: examples/031-html-element-objects.html</p>
-          <pre><code>&lt;p id="text" style="border: 1px solid red;">
-  Loading...
-&lt;/p>
-
-&lt;script>
-  var existingElement = document.getElementById("text");
-
-&lt;/script></code></pre>
-          <a href="examples/031-html-element-objects.html"><img src="framework/img/workshop/rawbot-run.png" alt="run code" align="right" /></a>
-        </section>
-
-        <section class="slide">
-          <h2>HTML Element Objects (cont'd)</h2>
-          <p>Or let's dynamically swap out one image for another by updating the src attribute of an image tag.</p>
-          <p class="highlight-color">File: examples/032-html-element-objects.html</p>
-          <pre><code>&lt;img id="cupcake" src="assets/exercises/assets/cupcake.jpg" />
-
-&lt;script>
-
-&lt;/script></code></pre>
-          <a href="examples/032-html-element-objects.html"><img src="framework/img/workshop/rawbot-run.png" alt="run code" align="right" /></a>
-        </section>
-
-        
-        
-        <section class="slide title">
-          <h1>Going Beyond JavaScript Basics</h1>
-          <h2>You're getting to be quite the pro!</h2>
-        </section>
-
-        <section class="slide title">
-          <h1>Debugging!</h1>
-          <h2>Squash those crawly things in your code.</h2>
-        </section>
-
-        <section class="slide">
-          <h2>What's a Bug?</h2>
-          <p>As the <a href="http://en.wikipedia.org/wiki/Grace_Hopper#Anecdotes">story goes</a>, the term "software bug" got its name because a real moth flew into a computer system causing strange, unexpected behaviours to happen in a computer program.</p>
-          <p>Nowadays, bugs are mostly due to human error in one of two areas:</p>
-          <ol>
-            <li>Syntax - missing semi-colons, typos, case-sensitivity</li>
-            <li>Logic - trying to access a variable that doesn't exist yet, writing an incorrect conditional test</li>
-          </ol>
-          <p>Luckily there's a few things to help us hunt them down quicker...</p>
-        </section>
-
-        <section class="slide">
-          <h2>Chrome Developer Console (and Firefox Developer Tools)</h2>
-          <p>Use the built in developer tools in Chrome to debug your code. (Firefox is similar but not exactly the same.)</p>
-          <img src="framework/img/workshop/ChromeConsole.png" alt="Chrome Console" />
-        </section>
-
-        <section class="slide">
-          <h2>Right click > Inspect Element</h2>
-          <p>Easiest way to remember is to right-click on any web page and select "Inspect Element". In the new panel, select the "Console" tab to see JavaScript errors or to play in the console sandbox.</p>
-          <img src="framework/img/workshop/ChromeInspector.gif" alt="Chrome Inspector" />
-        </section>
-
-        <section class="slide">
-          <h2>Inspecting the DOM</h2>
-          <p>You can inspect any webpage with the debugger.</p>
-          <p>Let's open up the Ladies Learning Code Events page: <a href="http://ladieslearningcode.com/events/">http://ladieslearningcode.com/events/</a>.</p>
-          <p>How can we use the console to find out how many events are listed on this page?</p>
-        </section>
-
-        <section class="slide">
-          <h2>&lt;script src=""></h2>
-          <p>As you write bigger pieces of JavaScript, you will want to start putting your code into their own files so they are easier to manage. Or you might want to enlist the help of others to write JavaScript for your website so you can work on different sections separately. A big site could have thousands of lines of code written by many different people!</p>
-          <p>To link to an external JavaScript file:</p>
-          <pre><code>&lt;html>
+    <section class="slide">
+      <h1>&lt;script src=""></h1>
+      <p>As you write bigger pieces of JavaScript, or working with a team, you will want to put the JavaScript into their own files to make it easier to manage. A big site could have thousands of lines of code written by many different people!</p>
+      
+      <p>To link to an external JavaScript file:</p>
+      <pre><code>&lt;html>
   &lt;head>
     &lt;title>JavaScript example!</title>
   &lt;/head>
@@ -2630,123 +2013,19 @@ var eggspressions = [];</code></pre>
     &lt;script type="text/javascript" src="scripts.js">&lt;/script>
   &lt;/body>
 &lt;/html></code></pre>
-        </section>
+      
+      The external file must be saved with a ".js" extension and within the file, the <code>&lt;script></code> tags are not required.
 
-        <section class="slide">
-          <h2>In the external file</h2>
-          <p>In the <a href="exercises/scripts.js">external JavaScript file (scripts.js)</a> you don't include script tags; just JavaScript code.</p>
-          <p>View this example: <a href="assets/exercises/external-javascript.html">assets/exercises/external-javascript.html</a></p>
-        </section>
+    </section>
 
-        <section class="slide">
-          <h2>script tag gotchas</h2>
-          <p>Even though you're not writing JavaScript between the script tags, you must use a closing <code>&lt;/script></code> tag. A self-closing tag such as <code>&lt;script src="scripts.js" /></code> will not work. The correct way is highlighted below:</p>
-          <pre><code>&lt;script type="text/javascript" src="scripts.js">&lt;/script></code> </pre>
-        </section>
-
-        <section class="slide title">
-          <h1>JQuery</h1>
-          <h2>The Write Less, Do More, JavaScript Library</h2>
-        </section>
-
-        <section class="slide">
-          <h2>jQuery: A brief introduction</h2>
-          <p>jQuery is a cross-browser JavaScript library designed to simplify client-side scripting, manipulating HTML pages and handling events. The library contains many built-in functions and methods that make writing JavaScript code easier.</p>
-          <h3>Getting started</h3>
-          <p>Download the library and include the file in your HTML page</p>
-          <p>Download instructions can be found here: <a href="http://docs.jquery.com/Downloading_jQuery">http://docs.jquery.com/Downloading_jQuery</a></p>
-          <h3>Gotchas!</h3>
-          <p>When adding your own custom-written jQuery/JavaScript files, make sure to include it <b>after</b> the jQuery file to ensure that the library loads first.</p>
-        </section>
-
-        <section class="slide">
-          <h2>jQuery: Demo</h2>
-          <p>There are many built in methods and functions included in the jQuery library, too many to remember them all. Never fear, jQuery has documented their API here: <a href="http://api.jquery.com">http://api.jquery.com</a></p>
-          <p>It's searchable and provides explanations and examples.</p>
-          <p>Let take a peek at some jQuery code.</p>
-          <p class="highlight-color">File: examples/036-jquery-demo.html</p>
-          <div data-markdown>
-            ```javascript
-            $(document).ready(function(){
-              $('a.hide').click(function(){
-                 $('#box').hide();
-              });
-              $('a.show').click(function(){
-                 $('#box').show();
-              });
-              $('a.fade').click(function(){
-                 $('#box').fadeOut();
-              });
-              $('a.slide-up').click(function(){
-                 $('#box').slideUp();
-              });
-              $('a.slide-toggle').click(function(){
-                 $('#box').slideToggle();
-              });
-            });
-            ```
-          </div>
-          <div data-markdown>
-          ```
-          &lt;style>
-          #container {
-            width: 320px;
-            padding-top: 10px;
-          }
-          #box {
-            height: 60px;
-            width: 200px;
-            background-color: blue;
-            padding: 40px;
-            margin-top: 10px;
-          }
-          a {
-            font: 14px Georgia, serif;
-            text-decoration: none
-          }
-          a.active {
-            color: pink;
-          }
-          &lt;/style>
-          &lt;div id="container">
-            &lt;a class="hide" href="#">Hide&lt;/a> |
-            &lt;a class="show" href="#">Show&lt;/a> |
-            &lt;a class="fade" href="#">Fade&lt;/a> |
-            &lt;a class="slide-toggle" href="#">Slide Toggle&lt;/a>
-            &lt;div id="box">&lt;/div>
-          &lt;/div>
-           ```
-          </div>
-          <a href="examples/036-jquery-demo.html"><img src="framework/img/workshop/rawbot-run.png" alt="run code" align="right" /></a>
-        </section>
-
-        <section class="slide">
-          <h2>BUT WAIT. Javascript isn't just for the browser anymore?</h2>
-          <p>Javascript has grown beyond the browser! You can use this language for front-end (browser) AND back-end (server) programming now.</p>
-          <p><a href="http://www.nodejs.org/">Node.js</a> is a Javascript 'platform' (a bunch of tools and code to help you make complex programs) for building javascript without the browser. It is commonly used to build web servers, but it has other uses too... like <a href="http://nodecopter.com/">ROBOTS</a>!!</p>
-          <p>Here is a tutorial for getting started with Node.js at home: <a href="http://net.tutsplus.com/tutorials/javascript-ajax/this-time-youll-learn-node-js/">http://net.tutsplus.com/tutorials/javascript-ajax/this-time-youll-learn-node-js/</a></p>
-        </section>
-
-        <section class="slide small-type" data-markdown>
+    <section class="slide small-type" data-markdown>
       <script type="text/template">
-        #Next Steps
+        # Next Steps
 
-        [Affiliate info to be included in all presentations. Revise as required.]
         
-        Explore more Ladies Learning Code workshops by following our [Roadmap](http://ladieslearningcode.com/roadmap/).
-        
-        ##Getting your site online
-        
-        You will need to register a domain name and purchase hosting. Here are some suggestions:
-        
-        * [dreamhost.com](http://www.dreamhost.com/r.cgi?2085384) - domains and hosting - use promo code **LLC40** to get $40 off your registration!
-        * [hover.com](http://hover.com/ladiescode) - domains - save 10% with the promo code "learningcode"
-
-        Why keep your domains and hosting separate?<!-- .element: class="note" --> [Learn more about Hover](http://ladieslearningcode.com/getting-hosted-domains-with-hover/).
-
-        You will also need to upload your files to your hosting server. You will need some info usually provided by your hosting service provider: FTP Address, Username, Password.
-
-        Here's a tutorial getting your files online using FileZilla: [FileZilla Client Tutorial](https://wiki.filezilla-project.org/FileZilla_Client_Tutorial_%28en%29)
+        * Explore more Ladies Learning Code workshops by following our [Roadmap](http://ladieslearningcode.com/roadmap/).
+        * list of free online [JSbooks](http://jsbooks.revolunet.com/)
+        * Tutorials & references from the [Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
       </script>
     </section>
     
@@ -2754,16 +2033,16 @@ var eggspressions = [];</code></pre>
     <section class="slide last">
       <h1>Thank you!</h1>
       <h2 class="heading-bg">
-        <span>Title of Workshop<br>Second line</span>
+        <span>Intro to Programming<br> with JavaScript</span>
       </h2>  
 
-      <img class="instructor" src="http://cl.ly/image/0r3Q3H110G36/profile-generic.jpg" alt="instructor name">
+      <!-- <img class="instructor" src="http://cl.ly/image/0r3Q3H110G36/profile-generic.jpg" alt="instructor name">
       <h2><span class="cursive">with</span> Instructor Name</h2>
       <ul>
         <li><a href="mailto:">hello@email.com</a></li>
         <li><a href="#">mywebsite.com</a></li>
         <li><a href="http://twitter.com/">@twitter</a></li>
-      </ul>
+      </ul> -->
 
       <p class="attribution">Slide presentation created by <a href="http://christinatruong.com">Christina Truong</a> based on <a href="https://github.com/LeaVerou/csss">Lea Verou's SlideShow</a> and <a href="http://lab.hakim.se/reveal-js/">reveal.js</a>.</p>
     </section>

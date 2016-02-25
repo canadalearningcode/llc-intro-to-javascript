@@ -14,6 +14,8 @@
       <br>
       
       Quantity <input id="updateQuantity" type="text" value="0">
+
+      <button id="checkout">Checkout</button>
     </div>
     
     <script>
@@ -21,19 +23,30 @@
       var updateQuantity = document.getElementById("updateQuantity"); // selects HTML element to display quantity
       var addBtn = document.getElementById("add"); // selects HTML add button
       var removeBtn = document.getElementById("remove"); // selects HTML remove button
+      var checkoutBtn = document.getElementById("checkout"); // selects HTML checkout button
 
       function addItem(){
         quantity = quantity + 1; // adds 1 to current value of quantity
         updateQuantity.value = quantity; // refresh the HTML quantity total to reflect new quantity
       }
       function removeItem(){
-        quantity = quantity - 1; // subtract 1 to current value of quantity
-        updateQuantity.value = quantity;// refresh the HTML quantity total to reflect new quantity
+        if(quantity > 0) {
+          quantity = quantity - 1; // subtract 1 to current value of quantity
+        }
+        updateQuantity.value = quantity;// refresh the HTML quantity total to reflect new updateQuantity
+      }
+      function checkout(){
+        if(quantity > 0) {
+          document.write("Thank you for your order.");
+        } else {
+          document.write("You cannot checkout. Your cart is empty.")
+        }
       }
 
-      // executes the addItem() & removeItem() functions on button click
+      // executes the functions on button click
       addBtn.onclick = addItem;
       removeBtn.onclick = removeItem;
+      checkoutBtn.onclick = checkout;
     </script>
   </body>
 </html>

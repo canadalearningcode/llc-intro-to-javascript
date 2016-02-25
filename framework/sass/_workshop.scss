@@ -56,3 +56,26 @@
   	font-size: 14px;
   }
 }
+
+.comparison-table {
+  border: none;
+  background-color: #2b303b;
+  color: #dfe1e8;
+  padding: 10px;
+  font-size: 2.4rem;
+  float: left;
+  margin-bottom: 20px;
+  
+  th, td {
+    border: none;
+  }
+  td {
+    padding: 6px 10px;
+  }
+  tr:nth-child(2n) {
+    background-color: #343d46;
+  }
+}
+
+
+
