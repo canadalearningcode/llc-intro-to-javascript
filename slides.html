@@ -24,14 +24,14 @@
       
       <div class="instructions">
         <!-- ADD WIFI INFO HERE -->
-        <h2>Get Connected</h2>
+        <!-- <h2>Get Connected</h2>
         <p><strong>Wifi:</strong> wifi network</p>
         <p><strong>Password:</strong> wifi password</p>
-        <hr>
+        <hr> -->
         
         <h2>Download<br> & Install</h2>
         <ol class="downloads">
-          <li>Learner files (zip file): <a href="https://github.com/ladieslearningcode/workshop-repo-name/archive/master.zip">http://bit.ly/create-custom-url</a>
+          <li>Learner files (zip file): <a href="https://github.com/christinatruong/llc-intro-to-javascript/archive/master.zip">http://bit.ly/1TGWOXt</a>
             <ul>
               <li>unzip the learner file (<em>extract all</em> if you’re on a PC)</li>
               <li>open <em>slides.html</em> in the browser to view the slides</li>
@@ -1011,7 +1011,7 @@
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        #Exercise: Concatenation (10mins)
+        #Exercise: Concatenation (~10mins)
         
         Go back to **3-shopping-cart.html** and update the `document.write()` values to combine the string and variable values.
         
@@ -1155,7 +1155,7 @@ function moreLove(){
         var dinner = "chicken";
         document.write(dinner);
         ```
-        Will return "chicken".
+        > What value will this return? <span class="delayed">chicken</span>
         
         ```javascript
         // declaring an object
@@ -1164,7 +1164,7 @@ function moreLove(){
         bentobox.side = "rice";
         document.write(bentobox.side)
         ```
-        Will return "rice".
+        > What value will this return? <span class="delayed">rice</span>
       </script>
     </section>
     
@@ -1550,14 +1550,25 @@ function moreLove(){
         ## Select the HTML element used to display the quantity
         ---
         
-        ![](framework/img/workshop/update-quantities.png) <!-- .element: class="left" height="300" -->
+        ![](framework/img/workshop/update-quantities.png) <!-- .element: class="left" height="340" -->
         
         In the HTML, the `<input>` tag is used to display the quantity value.
         ```
         <input type="text" value="0">
         ```
+
+        </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Class Exercise: Quantities, Step 4
+        ## Select the HTML element used to display the quantity
+        ---
         
-        Add an <!-- .element: class="delayed" -->`id` so it can be selected with the `getElementById()` method.
+        ![](framework/img/workshop/update-quantities.png) <!-- .element: class="left" height="340" -->
+        
+        Add an `id` so it can be selected with the `getElementById()` method.
         
         <pre class="delayed"><code>&lt;input id=&quot;updateQuantity&quot; type=&quot;text&quot; value=&quot;0&quot;&gt;
         </code></pre>
@@ -1570,8 +1581,17 @@ function moreLove(){
         Create a variable with the selected HTML element.<!-- .element: class="delayed" -->
         <pre class="delayed"><code>var updateQuantity = document.getElementById('updateQuantity');
         </code></pre>
-         
-        Your JavaScript should now look similar to this:<!-- .element: class="delayed" -->
+
+        </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Class Exercise: Quantities, Step 4
+        ## Select the HTML element used to display the quantity
+        ---
+        
+        Your JavaScript should now look similar to this:
         
         <pre class="delayed"><code>var quantity = 0;
         var updateQuantity = document.getElementById('updateQuantity');
@@ -1585,7 +1605,7 @@ function moreLove(){
           // to add function to refresh quantity value in the HTML
         }</code></pre>
         
-        Note that an <!-- .element: class="note delayed" -->`id` value can only be used once per page so this will ensure that it is unique.
+        Note that an `id` value can only be used once per page so this will ensure that it is unique.
       </script>
     </section>
     
@@ -1988,11 +2008,11 @@ if ( price <= 100 ) {
       <script type="text/template">
         #Bonus Exercise!
         
-        Using the same exercise file, **6-conditional-quantities.html**, run a check on the "Checkout" button!
+        Using the same exercise file, **6-conditional-quantities.html**, run a check on the **Checkout** button!
 
-        1. When the user clicks the Checkout button, check if the Quantity is 0 or more.  
-        1. If the Quantity is zero, use document.write() or alert() to output a "Your shopping cart is empty" message.
-        1. If the Quantity is one or more, use document.write() or alert() to output a "Thanks for your order" message.
+        1. When the user clicks the **Checkout** button, check if the `quantity` is 0 or more.  
+        1. If the `quantity` is zero, use `alert()` to output a "You cannot checkout with an empty shopping cart." message.
+        1. If the `quantity` is 1 or more, use `alert()` to output a "Thanks for your order." message.
 
         ---
         Solution can be found in **6-conditional-quantities-solution.html** <!-- .element: class="note" -->

@@ -15,7 +15,7 @@
       
       Quantity <input id="updateQuantity" type="text" value="0">
 
-      <button id="checkout">Checkout</button>
+      <button id="checkout" class="btn-checkout">checkout</button>
     </div>
     
     <script>
@@ -37,9 +37,9 @@
       }
       function checkout(){
         if(quantity > 0) {
-          document.write("Thank you for your order.");
+          alert("Thank you for your order.");
         } else {
-          document.write("You cannot checkout. Your cart is empty.")
+          alert("You cannot checkout. Your cart is empty.")
         }
       }
 
