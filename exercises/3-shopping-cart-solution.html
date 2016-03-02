@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <title>JavaScript example!</title>
+    <script>
+      var tshirtPrice = 25;
+      var androidPrice = 10;
+      var discount = 0.15; // 15%
+
+      // What is the cost of one t-shirt and one android?
+      var subtotal = tshirtPrice + androidPrice;
+      document.write("Subtotal: $" + subtotal + "<br>");
+
+      // Guess what?  Ladies Learning Code members gets 15% off!
+      // Figure out how much the discount will be.
+      var discountAmount = subtotal * discount;
+      document.write("Discount: $" + discountAmount + "<br>");
+
+      // Apply the discount to get the final price.
+      var finalTotal = subtotal - discountAmount;
+      document.write("Final Total: $" + finalTotal);
+    </script>
+  </head>
+  <body>
+  </body>
+</html>

@@ -1,0 +1,2096 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>Ladies Learning Code</title>
+  <link rel="stylesheet" href="framework/css/slideshow.css" data-noprefix>
+  <link rel="stylesheet" href="framework/css/fonts.css" data-noprefix>
+  <link rel="stylesheet" href="framework/css/highlightjs/github.css" data-noprefix>
+  <link rel="stylesheet" href="framework/css/styles.css" data-noprefix>
+  <link rel="shortcut icon" href="framework/img/workshop/favicon.ico">
+
+  <!-- Takes care of CSS3 prefixes -->
+  <script src="framework/scripts/prefixfree.min.js"></script>  
+  <!-- opens all links in a new window -->
+  <base target="_blank">
+</head>
+
+<!-- Timer/progress bar: Define the presentation duration using "data-duration" in minutes. -->
+<body class="en" data-duration="360">
+  <main>
+    <section class="slide welcome highlight">
+      <h1><img class="logo-stacked" src="framework/img/llc-logo-stacked-white.png" alt="Ladies Learning Code logo">Welcome!</h1>
+      
+      <div class="instructions">
+        <!-- ADD WIFI INFO HERE -->
+        <!-- <h2>Get Connected</h2>
+        <p><strong>Wifi:</strong> wifi network</p>
+        <p><strong>Password:</strong> wifi password</p>
+        <hr> -->
+        
+        <h2>Download<br> & Install</h2>
+        <ol class="downloads">
+          <li>Learner files (zip file): <a href="https://github.com/christinatruong/llc-intro-to-javascript/archive/master.zip">http://bit.ly/1TGWOXt</a>
+            <ul>
+              <li>unzip the learner file (<em>extract all</em> if you’re on a PC)</li>
+              <li>open <em>slides.html</em> in the browser to view the slides</li>
+            </ul>
+          </li>
+          <li>Atom Editor: <a href="http://atom.io">http://atom.io</a></li>
+          <li>Chrome Browser: <a href="https://www.google.ca/chrome/browser/desktop/">https://www.google.ca/chrome</a></li>
+          </li>
+        </ol>
+      </div>
+      <footer>
+        <a class="left" rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" src="framework/img/cc-by-nc.png" /></a>
+        <p class="left">Content by <a href="http://medium.com/@pearlchen">Pearl Chen</a> and <a href="http://christinatruong.com">Christina Truong</a> for <a prefix="cc: http://creativecommons.org/ns#" href="http://ladieslearningcode.com" property="cc:attributionName" rel="cc:attributionURL">Ladies Learning Code</a></p>
+        <p class="right">Use the left <span class="arrow">&#8592;</span> and right <span class="arrow">&#8594;</span> arrow keys to navigate</p>
+      </footer>
+    </section> 
+
+    <section class="slide intro">
+      <img class="logo" src="framework/img/llc-logo-white.png" alt="Ladies Learning Code logo">
+      <h1 class="heading-bg">
+        <span>Introduction to<br>
+        JavaScript</span>
+      </h1>
+      
+      <!-- FILL IN INSTRUCTOR DETAILS -->
+      <!-- <img class="instructor" src="http://placehold.it/225x225" alt="Instructor Name">
+      <h2><span class="cursive">with</span> Instructor name</h2>  
+      <ul>
+        <li><a href="mailto:">hello@email.com</a></li>
+        <li><a href="http://website.com">website.com</a></li>
+        <li><a href="http://twitter.com/">@twitter</a></li>
+      </ul> -->
+      
+      <div class="sponsor">
+        <p>In partnership with<br> <img src="framework/img/telus-logo-white.svg" alt="Telus"></p>
+      </div>
+      <footer>
+        <a class="left" rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" src="framework/img/cc-by-nc.png" /></a>
+        <p class="left">Content by <a href="http://medium.com/@pearlchen">Pearl Chen</a> and <a href="http://christinatruong.com">Christina Truong</a> for <a prefix="cc: http://creativecommons.org/ns#" href="http://ladieslearningcode.com" property="cc:attributionName" rel="cc:attributionURL">Ladies Learning Code</a></p>
+        <p class="right">Use the left <span class="arrow">&#8592;</span> and right <span class="arrow">&#8594;</span> arrow keys to navigate</p>
+      </footer>
+    </section> 
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Course Outline
+        
+        <div class="table-of-contents"></div> 
+      </script>
+    </section>
+    
+    <section class="slide title" data-markdown>
+      <script type="text/template">
+        # Part One
+        ## Technology Overview,<br> Functions, Variables, Objects
+      </script>
+    </section>
+    
+    <section class="slide title" data-markdown data-toc>
+      <script type="text/template">
+        # Development Environment
+        ## Tools you need to get started
+      </script>
+    </section> 
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Web Browser
+
+        Choose a modern web browser that has good, built-in development tools to help make building web pages easier. Today we'll be using [Google Chrome](https://www.google.com/chrome).
+
+        [![Chrome](framework/img/workshop/new-chrome-logo.png)](https://www.google.com/chrome/browser/)
+
+        ---
+        ###Resource
+        Get more info about browsers here: http://browsehappy.com
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Code Editor
+
+        There are many, many free and paid options. Today we'll be using [Atom](https://atom.io/). If you cannot download Atom, try [Brackets](http://brackets.io/).
+        
+        [![Atom Logo](framework/img/workshop/atom-logo.png)](https://atom.io/)
+        [![Brackets Logo](framework/img/workshop/brackets-logo.png)](http://brackets.io/)
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Editing your project files
+
+        Inside of the folder you downloaded today, there are many folders that contain different files.
+        
+        ```xml
+        llc-intro-to-javascript-master
+          |-- framework // Contains files for this slide presentation. Do not edit!
+          |-- exercises // Contains exercise files for this workshop.
+          |-- slides.html // This is the file you are viewing right now!
+        ```
+
+        Open the **exercises** folder in the text editor to access the files.  
+        Go to **File** > ** Add Project Folder**. A popup will appear.
+        
+        ![](framework/img/workshop/editor-add-project-1.jpg)
+        
+        * then, navigate to the **llc-intro-to-javascript-master** folder
+        * select the **exercises** folder & click **Open**
+        
+        The folder will now appear in the sidebar. Click the arrow icon to see files within.
+      </script>
+    </section>
+  
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Getting to know Atom
+        
+        Having a good text editor and learning how to use it to its full potential will help your work flow. Today, let's update the text wrapping option to make it easier to read long blocks of code and text.
+        
+        Go to **Preferences** to open the customization options.
+
+        ![](framework/img/workshop/atom-preferences.jpg)<!-- .element: width="70%" -->
+
+        The **Settings** tab will show by default. Scroll down to **Soft Wrap** option.
+
+        ![](framework/img/workshop/atom-settings.jpg)<!-- .element: width="70%" -->
+          
+        Make sure the **Soft Wrap** option is checked.
+        
+        ![](framework/img/workshop/atom-soft-wrap.jpg)<!-- .element: width="70%" -->
+        
+        ---
+        ###Resources
+        
+        *   [Atom documentation](https://atom.io/docs)
+        *   [Atom Shortcuts cheat sheet](https://bugsnag.com/blog/atom-editor-cheat-sheet)
+        *   [Customizing Atom](https://atom.io/docs/v0.61.0/customizing-atom)
+        *   [Themes](https://atom.io/themes) for Atom
+        *   [Snippets](https://github.com/atom/snippets) - create your own code snippet shortcuts
+      </script>
+    </section>
+
+    <section class="slide title" data-markdown data-toc>
+      <script type="text/template">
+        # Technology Overview
+        ## Programming and JavaScript
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #What is JavaScript?
+        
+        It's a programming language.<!-- .element: class="delayed" -->
+        
+        A program is a set of instructions meant for a computer to execute.  Computers are fast but blind.<br><br><!-- .element: class="delayed" -->
+        ![rawbot computers](framework/img/workshop/rawbot-computers.png)<!-- .element: style="height:45vh;" -->
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Speak the computer's language
+
+        Programming is like having a conversation with your computer. Much like English or any other human language, programming languages also have "grammar rules" called *syntax*.
+        
+        Computers have come a long way since their binary days so meet them half-way.
+
+        ![computer binary](framework/img/workshop/rawbot-binary.png) <!-- .element: style="height:30vh;" -->
+      </script>
+    </section>
+    
+    <section class="slide title">
+      <h1>Sample Code Incoming!!<br /><br />
+      <img src="framework/img/workshop/rawbot-face.png" alt="robot face" /></h1>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Example Programming Syntaxes
+        
+        ![](framework/img/workshop/hi-rawbot.png)<!-- .element: style="width:250px;float:right;"-->
+        Different programming languages have different syntax. Here are two ways a computer could say hi:
+
+        ## Java
+        
+        ```
+        Scanner userInput = new Scanner(System.in);
+        String name;
+        System.out.print("What's your name? ");
+        name = userInput.next();
+        System.out.println("Hello, " + name);
+        ```
+        
+        ## Javascript
+        ```
+        var name;
+        name = window.prompt("What's your name?",'');
+        document.write("Hello, " + name);
+        ```
+      </script>
+    </section>
+  
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # JavaScript versus Java
+
+        They might vaguely look the same (as a lot of programming languages do) but they are not related at all.
+
+        ![java javascript](framework/img/workshop/java-javascript-rawbot.png)
+
+        (Java was really popular at the time so Netscape just hijacked the name.)<!-- .element: class="note" -->
+      </script>    
+    </section>
+    
+    <section class="slide centered" data-markdown>
+      <script type="text/template">
+        # JavaScript in the Browser
+
+        C++, Java, and .NET are also programming languages but they can be run directly by the operating system (e.g. Windows, Mac, Linux).
+
+        ![computer diagram](framework/img/workshop/computer-diagram-os-languages.gif)<!-- .element: style="height:55vh;width:auto;" -->
+      </script>
+    </section>
+    
+    <section class="slide centered" data-markdown>
+      <script type="text/template">
+        # JavaScript in the Browser
+
+        JavaScript is typically meant to be run in a web browser<br> (e.g. Safari, Firefox, Chrome, Internet Explorer).
+
+        ![javascript gears diagram](framework/img/workshop/javascript-gears.gif)<!-- .element: style="height:55vh;width:auto;" -->
+      </script>
+    </section>
+
+    <section class="slide centered" data-markdown>
+      <script type="text/template">
+        # Server-side vs Client-side
+
+        ![front end back end diagram](framework/img/workshop/backend-front-end.gif)
+
+        **JavaScript** is often referred to as a _client-side_ or _"front-end"_ web technology because it is interpreted by the web browser.
+      </script>
+    </section>
+    
+    <section class="slide centered" data-markdown>
+      <script type="text/template">
+        # Server-side vs client-side
+
+        ![computer diagram](framework/img/workshop/backend-front-end-server.gif)<!-- .element: width="62%" -->
+
+        Java, .NET, PHP or Ruby can be considered *server-side* or *"back-end"* web technology because the code is typically compiled and executed by the operating system of a computer serving up web pages. 
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Simple Client-Side Code Check
+        
+        ![computer diagram](framework/img/workshop/llcodedotcom_viewsource.gif)<!-- .element: class="left" -->
+
+        On *any* web page, **right-click** and **view source** to see all the client side code. That includes JavaScript as well as HTML and CSS. (Try it!) 
+
+        Server-side code can't be seen in the browser so sometimes it's a mystery what technology is running on a server.
+        
+        JavaScript can be used for server-side programs too, but today we'll be focusing on the browser.
+      </script>
+    </section>
+
+    <section class="slide triad" data-markdown>
+      <script type="text/template">
+        # The Web Triad: HTML, CSS, JavaScript
+
+        **JavaScript** was meant to manipulate webpages written in **HTML** and works in tandem with **CSS**.
+
+        ![web triad html diagram](framework/img/workshop/web-triad-html.png)
+
+        **HTML** (Hypertext Markup Language) is a markup language.
+
+        It defines the **content**.
+      </script>
+    </section>
+    
+    <section class="slide triad" data-markdown>
+      <script type="text/template">
+        # The Web Triad: HTML, CSS, JavaScript
+        
+        **JavaScript** was meant to manipulate webpages written in **HTML** and works in tandem with **CSS**.
+
+        ![web triad css diagram](framework/img/workshop/web-triad-css.png)
+
+        **CSS** (Cascading Style Sheets) is a style sheet language.
+
+        It defines the **presentation**.
+      </script>
+    </section>
+    
+    <section class="slide triad" data-markdown>
+      <script type="text/template">
+        # The Web Triad: HTML, CSS, JavaScript
+        
+        **JavaScript** was meant to manipulate webpages written in **HTML** and works in tandem with **CSS**.
+
+        ![web triad javascript diagram](framework/img/workshop/web-triad-javascript.gif)
+
+        **JavaScript** is a programming language.
+
+        It defines the **behaviour**.
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # JavaScript in Different Browsers
+
+        Usually JavaScript will run the same way in various browsers. 
+        
+        ![browser war](framework/img/workshop/browser-war-illustration.jpg)<!-- .element: class="left" width="50%" -->
+        
+        But, browsers are software programs written by many different people/companies, so sometimes there are slight differences.
+
+        This is especially noticeable with newer "HTML5" features.
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # A JavaScript Experiment
+
+        JavaScript is essential for making interactive web pages. Try this experiment: turn off JavaScript in your web browser. 
+        
+        To go to the JavaScript settings in Chrome, paste this snippet, **chrome://settings/content**, into the address bar.  Then select "Do not allow any site to run JavaScript".
+
+        Now try visiting some popular sites. ([Google](http://google.com), [Facebook](http://facebook.com) , [Twitter](http://twitter.com))
+        
+        > What interactions are now missing?
+
+        (Remember to turn JavaScript back on!!!)<!-- .element: class="note" -->
+        
+        ---
+        ###Resource
+        Here's how to find the JavaScript settings using the browser menu option:  
+        Preferences (in the browser menu) > Show advanced settings... (link) > Content settings (under Privacy)
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # How do you write a program?
+        
+        Programming is giving instructions to your computer.
+
+        Think about a tourist that stops you to ask for directions. The clearer the instructions, the more likely they will get to their destination.
+
+        ![rawbot directions](framework/img/workshop/rawbot-directions.png) <!-- .element: style="height:50vh;" -->
+      </script>
+    </section>
+
+    <section class="slide steps" data-markdown>
+      <script type="text/template">
+        # Mini-Exercise: Say my name, say my name
+        
+        Suppose I want a computer to say hello using my name. **Break down the steps** as much as possible:
+        
+        <ol>
+          <li class="delayed">
+            <img src="framework/img/workshop/name-text-rawbot.gif" alt="allow to type name"> Allow me to type in my name.
+          </li>
+          <li class="delayed">
+            <img src="framework/img/workshop/remember-name-rawbot.gif" alt="remember my name"> Remember my name.
+          </li>
+          <li class="delayed">
+            <img src="framework/img/workshop/say-my-name-rawbot.png" alt="say hello"> Say "Hello" and repeat back my name.
+          </li>
+        </ol>
+      </script>
+    </section>
+    
+    <section class="slide highlight" data-markdown>
+      <script type="text/template">
+        # Writing a program
+        
+        To write a program for the computer to say "hello" back to us, we'll need to use two JavaScript concepts, *variables* and *functions*.
+        
+        Note that the syntax for programming languages tend to be a bit more complex than HTML & CSS so sometimes it requires it a little more to see results in the browser.
+      </script>
+    </section>
+    
+    <section class="slide title" data-markdown data-toc>
+      <script type="text/template">
+        #Intro to Functions & Variables
+      </script>
+    </section>
+
+    <section class="slide two-col-list" data-markdown>
+      <script type="text/template">
+        #Automating Repetitive Tasks
+
+        What is something that you do that's very repetitive or a hassle (like paying for parking)? Wouldn't it be great if it was automated?
+        
+        * **Repetitive**
+          1.  Find bank machine
+          2.  Pull out bank card
+          3.  Get money out from ATM
+          4.  Buy chips so you can make change
+          5.  Put change into machine
+          6.  Take receipt
+        * **Automated!**
+          1.  Pull the PayPass credit card from your wallet
+          2.  Tap
+          3.  Take receipt
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Automating Repetitive Tasks
+
+        1.  Pull the PayPass credit card from your wallet
+        2.  **Tap**
+        3.  Take receipt
+        
+        Step 2 can be thought of as a function. We can't see all of the steps that happen but performing the action will execute some instructions that will allow automatic payments.
+        
+        If the credit card tap was a function in JavaScript, it could look something like this:
+
+        ```
+        tapCard()
+        ```
+      </script>
+    </section>
+  
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Intro to Functions: `prompt()`
+
+        **Functions** are used to make the code "do things." We can create our own functions (more on this later) but there are many already included in JavaScript. 
+
+        The `prompt()` function contains instructions to show a popup modal dialog box with a message and input box, when executed. 
+        
+        Click "run" below to see what happens when the `prompt()` function is executed.
+        
+        <img onclick="prompt()" src="framework/img/workshop/rawbot-run.png" alt="run code">
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Functions & Statements
+        
+        The modal box is empty! To pass a message into the `prompt()` modal box, add a message between the parentheses, in quotes.
+        
+        Also, end the *statement* with a semicolon (;) to indicate that the instruction is done.
+        
+        **Statements** are commands that tell the computer what to do. 
+        
+        ```
+        prompt("Hello, what is your name?");
+        ```
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # JavaScript & HTML
+
+        JavaScript can be added pretty much anywhere on a web page but it is commonly added either in the `<head>` section or just before the closing `</body>` tag.
+          
+        However, the JavaScript code itself must always be contained within the <code>&lt;script&gt;&lt;/script&gt;</code> tags.
+          
+<pre><code>&lt;html>
+  &lt;head>
+    &lt;title>JavaScript example!&lt;/title>
+    &lt;script>
+      // Javascript in the head tag!
+    &lt;/script>
+  &lt;/head>
+  
+  &lt;body>
+    &lt;script>
+      // Javascript in the body tag!
+    &lt;/script>
+  &lt;/body>
+&lt;/html></code></pre>
+
+        ---
+        ###Pro tip!
+        
+        Putting the JavaScript just *before* the closing `</body>` tag will allow the page to load first before the JavaScript executes. This is important when manipulating HTML elements.
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Class Exercise: Say My Name, part 1
+        
+        <img src="framework/img/workshop/name-text-rawbot.gif" alt="allow to type name" style="height: 80px;" class='left'> Allow me to type in my name.
+        
+        <hr class="clear">
+        In your editor, open **1-hello.html** and add the following snippet:
+        
+        ```
+        prompt("What is your name?");
+        ``` 
+        
+        Then open **1-hello.html** in the browser and test the prompt.
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Intro to variables
+        
+        Where did your name go?
+        
+        The `prompt()` function can be used to get input from the user but the computer doesn't remember anything unless you tell it to.  
+        
+        ![robot losing memory](framework/img/workshop/rawbot-losing-memory.png) <!-- .element: class="right" -->
+        
+        It needs *exact* instructions.
+        
+        **Variables** are kind of like the computer's short-term memory. 
+        
+        Variables are like containers or a box. They are used to *store values* and can be used whenever you need them.
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Variables Syntax
+        
+        ![variable assignment](framework/img/workshop/syntax-variable-assign.gif)
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Variables How-to
+
+        Declare (create) variables with the keyword `var` and give it a name.
+        
+        ```
+        var firstname;
+        ```
+
+        Assign a value to the variable using the equals `=` symbol. Remember, to end the statement with a semicolon. Now the computer will remember your name!
+
+        ```
+        firstname = "Yourname";
+        ```
+        You can also assign a value and declare a variable at the same time.
+        
+        ```
+        var firstname = "Yourname";
+        ```
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Another Function: `write()`
+        
+        We still need a way for the computer to say hello back to you.  Let's use another function, `write()`, to output the response.
+        
+        This time, the function will be attached to the HTML page, aka the **document**.  The text to be outputted should be included within the parentheses.
+        
+        ```
+        document.write("hello"); // will output "hello" onto the page.
+        ```
+        It can also output the value of the variable. Note that the variable doesn't require quotes.
+        
+        ```
+        var firstname = "Yourname";
+        document.write(firstname); // will output "Yourname" onto the page.
+        ```
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Variables and user input
+        
+        The previous example showed how to assign a specific value to the `firstname` variable. 
+        
+        ```
+        var firstname = "Yourname";
+        ```
+        
+        But what if we don't know what that value is going to be?
+
+        Remember `prompt()`? This function triggers a popup box that allows user input. 
+        
+        The prompt function can also be assigned to a variable, thus saving the value of the user input.
+
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Class Exercise: Say My Name, part 2
+        
+        1. Allow me to type in my name. <!-- .element: class="delayed" -->
+        
+          <!-- .element: class="delayed" -->`prompt("What is your name?");`
+          
+        1. Remember my name. <!-- .element: class="delayed" -->
+          
+          <!-- .element: class="delayed" -->`var firstname = ?`
+          
+          <!-- .element: class="delayed" -->`var firstname = prompt("What is your name?");`
+          
+        <!-- .element: class="delayed" -->Back in **1-hello.html**, let's update our program.
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Class Exercise: Say My Name, part 3
+        
+        The last part is getting the computer to repeat your name back to you.  Let's use `document.write()` to say hello and repeat the name variable.
+        
+        Back in **1-hello.html**, update your program.  It should look something like this:
+        
+        ```
+        var name = prompt("What is your name?");
+        document.write("Hello ");
+        document.write(name);
+        ```
+        Note the space *after* "Hello". This will make sure that there is a space between the outputted values.
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Writing programs
+        
+        There are a lot of different ways to write programs since they really are just a series of commands based on what it is you want the computer to do.
+        
+        Also, note that `document.write()` and `prompt()` are quick ways to test and experiment but is not best practice for use in "the real world." 
+        
+        We'll go over more examples and dive deeper into **variables** and **functions** as the course progresses.
+      </script>
+    </section>
+    
+    <section class="slide title" data-markdown>
+      <script type="text/template">
+        #Today's Project!
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown data-toc>
+      <script type="text/template">
+        #Today's Project
+        
+        ![planet robots website](framework/img/workshop/planet-robot-website.png)<!-- .element: class="left" -->
+        
+        As the owner of a thriving online store, **Planet Robots**, you have to make sure you have a top notch website.
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Today's Project
+        
+        Some things you'll want to think about for your site:
+        
+        * offer online shopping
+        * print shipping labels
+        * offer member only sales       
+        <!-- * customers shouldn't be able to submit empty forms -->
+        * shopping cart items must be calculated properly
+
+        To create a website that can handle these requirements, let's take a deeper dive into  **variables**, **functions**  and later, we'all also talk about **objects** and **conditionals**.
+      </script>
+    </section>
+
+    <section class="slide title" data-markdown data-toc>
+      <script type="text/template">
+        #Variables
+        ##Storing Information
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Variables: review 
+        
+        Variables are used to store values.  
+        
+        Declare a variable with the keyword `var` and use the equals symbol to assign a value.
+        
+        End the *statement* with a semi-colon.
+        
+        ```javascript
+        var email = "hello@isanybodyoutthere.com";
+        ```
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # VARIABLES: NAMING CONVENTIONS
+
+        Variable names cannot contain spaces. Instead, use `camelCase` (more common) or underscores `like_so` for names with multiple words.
+        
+        Pick one style and be consistent. JavaScript is also case sensitive.
+        
+        Use a descriptive names:  
+        
+        `var firstName;` ← Clear that first name will go here.  
+        `var fn;` ← Not as obvious as firstName.  
+        `var x;` ← Not clear at all.  
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Variable example
+
+        When would variables come in handy?
+        
+        In a web checkout form that asks for your name and address, variables can be used to store this information. The stored information can then be used to create things like shipping labels.
+
+        ![shipping example](framework/img/workshop/var-shipping-example.jpg)
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Assigning Variables
+
+        Using the equals (`=`) symbol in Javascript is NOT the same as in math.
+
+        `var total = 1 + 1` is not the same as `1 + 1 = 2`
+
+        `var total = 1 + 1` means:
+
+        * _evaluate_ everything to the _right_ of the equals sign (`1 + 1`)
+        * then _assign_ this value (`2`) to the variable on the _left_ side.
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Variable Types
+
+        Variables can hold different *types* of values.
+
+        Numeric variables (integers & decimals)
+        ```
+        var someIntegerNumber = 10;
+        var someDecimalNumber = 10.5;
+        ```
+        
+        String variables (letters and words) - must be contained in quotes
+        ```
+        var singleWordString = "hello";
+        var sentenceString = "Hello, good day to you!";
+        var numberString = "10";
+        ```
+        
+        Boolean variables (true/false)
+        ```
+        var isSaturday = true;
+        var isSunday = false;
+        ```
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Comments
+
+        Sometimes you want to write notes, organize blocks of code or "hide" code that you don't want to delete but isn't ready to be used yet.  The browser will ignore comments.
+        
+        ```javascript 
+        // This is how you leave a single line comment. 
+        
+        // You can write many single line comments. 
+        // Just make sure to add the double backslash 
+        // for every new line. ```
+
+        Here's another way to comment larger blocks of text.
+
+        ```javascript 
+        /* This is how you leave one block of
+        comments that span over multiple lines. */ 
+        ```
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Whitespace in JavaScript
+
+        Whitespace refers to blank characters, space characters, tabs and line breaks. JavaScript ignores whitespace in some instances.  
+
+        ```javascript 
+        var name="Ladies Learning Code"; // both will be read the same by JavaScript
+        var name = "Ladies Learning Code"; 
+        ```
+        
+        However, whitespace matters when used in a string and when using keywords. 
+        ```javascript    
+        var name = "LadiesLearningCode";
+        var name = "Ladies Learning Code"; 
+        varname = "Ladies Learning Code"; // will not work
+        ```
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Exercise: Shipping information (~10mins)
+
+        Let's gather some basic shipping information. 
+        
+        Open **2-shipping-info.html** in the editor and the browser.
+        
+        Right now, if you run the program in the browser, the shipping information is not stored and the output will be blank. 
+        
+        How can this be fixed?
+
+        1. Use variables to store the name and postal code values. 
+        1. Use `document.write()` to output the name and postal values to verify the information is being stored.  
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Exercise solution review
+
+        ```
+        // 1. Declare a variable to store the name value.
+        // 2. Declare a variable to store the postal code value.
+        var name = prompt("What is your name?");
+        var postalCode = prompt("What is your postal code?");
+
+        // This is just a heading
+        document.write("<h1>Shipping Information:</h1>");
+        
+        document.write(name); // output the name
+        document.write("<br>"); // just a line break
+        document.write(postalCode); // output the postal code
+        ```
+        
+        The solution can be also be found in <!-- .element: class="note" --> **2-shipping-info-solution.html**.
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown data-toc>
+      <script type="text/template">
+        # JavaScript Arithmetic Operators
+        
+        JavaScript can also do math.  
+        `+` addition, `-` subtraction, `*` multiplication, `/` division
+        
+        ```javascript
+        var addition = 5 + 2; // will return a value of 7
+        ```
+
+        These operations work whether the values are numbers, or the values are stored in a variable.
+        
+        ```javascript
+        var exampleOne = 5;
+        var exampleTwo = 2;
+        var endValue = exampleOne * exampleOne; // will return a value of 10
+        ```
+        
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Calculate Totals
+        
+        Getting JavaScript to do math can be very useful. For example, we can use it to calculate totals in a shopping cart.
+        
+        Instead of using just numbers, JavaScript can do math using variables with numerical values.
+        
+        ```javascript
+        var tshirtPrice = 25;
+        var androidPrice = 10;
+        var total = tshirtPrice + androidPrice;
+        ```
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Exercise: Shopping cart totals (~10mins)
+        
+        Open **3-shopping-cart.html** in your editor.
+        
+        There are 3 variables defined in the exercise file:
+        
+        ```
+        var tshirtPrice = 25;
+        var androidPrice = 10;
+        var discount = 0.15; // 15%
+        ```
+        
+        Follow the instructions in the comments to figure out the subtotal of 1 t-shirt and 1 Android plushie, with a 15% discount.
+      </script>
+    </section>
+    
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Review Exercise solution:
+        
+        ```javascript
+        var tshirtPrice = 25;
+        var androidPrice = 10;
+        var discount = 0.15; // 15%
+
+        // What is the cost of one t-shirt and one android?
+        var subtotal = tshirtPrice + androidPrice;
+        document.write("Subtotal: $");
+        document.write(subtotal);
+        document.write("<br>");
+
+        // Guess what?  Ladies Learning Code members gets 15% off!
+        // Figure out how much the discount will be.
+        var discountAmount = subtotal * discount;
+        document.write("Discount: $");
+        document.write(discountAmount);
+        document.write("<br>");
+
+        // Apply the discount to get the final price.
+        var finalTotal = subtotal - discountAmount;
+        document.write("Final Total: $");
+        document.write(finalTotal);
+        ```
+        
+        Outputs:
+        
+        ```javascript
+        Subtotal: $35
+        Discount: $5.25
+        Final Total: $29.75
+        ```
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Concatenation
+
+        If you use the `+` operator with numerical values, it will add the values. Otherwise, it will *combine* the outputs as a string referred to as **concatenation**.
+
+        
+        Instead of this:
+        
+        ```javascript
+        var finalTotal = total - discountAmount;
+        document.write("Final Total: $");
+        document.write(finalTotal);
+        ```
+        
+        Use concatenation to combine the string with the variable value.
+
+        ```javascript
+        var finalTotal = total - discountAmount;
+        document.write("Final Total: $" + finalTotal);
+        ```
+        
+        Outputs:
+        
+        ```javascript
+        Final Total: $29.75
+        ```
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Exercise: Concatenation (~10mins)
+        
+        Go back to **3-shopping-cart.html** and update the `document.write()` values to combine the string and variable values.
+        
+        
+        ---
+        The solution can also be found in <!-- .element: class="note" --> **3-shopping-cart-solution.html**.
+        
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Re-assigning Variables
+
+        Even after a variable has been declared with a value, it can be *re-assigned*. For example, we may want to increase or decrease values.
+
+        ```javascript
+        //declaring variable
+        var numberOfCookies = 0;
+        ```
+        
+        When you *reassign* a variable, you do not need to use they keyword `var` again. 
+        
+        If you bake 2 cookies, how many will you have?
+        
+        ```javascript
+        // re-assigning the value by adding 2
+        numberOfCookies = numberOfCookies + 2;
+        ```
+      </script>
+    </section>
+    
+    <section class="slide llc-loves">
+      <h1>Who loves Ladies Learning Code?</h1>
+      
+      When would reassigning values come in handy? Click this button:
+      
+      <button id="moreLove">
+        <img src="framework/img/workshop/llc-logo.png"> Love!
+        <span id="update">0</span>
+      </button>
+      
+      <script>
+        var loves = 0;
+        var update = document.getElementById('update');
+        var button = document.getElementById("moreLove");
+        
+        function moreLove(){
+          loves = loves + 1;
+          update.innerHTML = loves;
+        }
+        button.onclick = moreLove;
+        //https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onclick
+      </script>
+      
+      <p class="delayed">Let's look at how this could work.</p>
+<pre class="delayed"><code>var loves = 0; // start value at 0
+var update = document.getElementById('update'); // HTML element to be updated
+
+// custom function - contains instructions to update the count
+function moreLove(){ 
+  loves = loves + 1; // take the current value of "love" and adds 1
+  update.innerHTML = loves; // updates the HTML element with the current value of "loves"
+}</code></pre>
+    </section>
+    
+    <section class="slide" data-markdown data-toc>
+      <script type="text/template">
+        #Custom Functions and Objects
+        
+        The last example introduced two new concepts.  Custom functions:
+        
+        ```javascript
+        function moreLove(){ 
+          // instructions here
+        }
+        ```
+        
+        And manipulating HTML objects:
+        
+        ```javascript
+        var update = document.getElementById('update');
+        update.innerHTML = loves;
+        ```
+        
+        Let's talk about objects first.
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Variables vs Objects
+                
+        <img src="framework/img/workshop/variable-rice.png" alt="rice variable" class="left" height="130"> A **variable** only holds one value.
+        ```
+        var takeout = "Fried Rice";
+        ```
+        <br>
+        An **object** holds a collection of values. And the syntax is different.
+        
+        <img class="left" width="500" src="framework/img/workshop/object-bento-box.png" alt="bento box object">
+        
+        ```javascript
+        // create a new object
+        var bentobox = {};
+        // assign values
+        bentobox.main = "Teriyaki";
+        bentobox.side = "Tempura";
+        bentobox.salad = "Seaweed Salad";
+        bentobox.sushi = "Salmon Avocado Roll";
+        ```
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Object Properties
+
+        The "compartments" of objects are called **properties**. There are a few ways to access and set the value of the property but today we'll be sticking with *dot notation*.
+        
+        ```javascript
+        var myObject = {}; // create a new object
+        myObject.property = value; // assign values
+        ```
+        
+        ```javascript
+        var bentobox = {};
+        bentobox.main = "Teriyaki";
+        ```
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Object Properties
+        
+        You can *access* the value of a property with dot notation as well.
+        
+        ```javascript
+        // declaring a variable
+        var dinner = "chicken";
+        document.write(dinner);
+        ```
+        > What value will this return? <span class="delayed">chicken</span>
+        
+        ```javascript
+        // declaring an object
+        var bentobox = {};
+        bentobox.main = "teriyaki";
+        bentobox.side = "rice";
+        document.write(bentobox.side)
+        ```
+        > What value will this return? <span class="delayed">rice</span>
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Methods vs Functions
+        
+        Methods are just like functions, except they are applied to objects. Functions run on their own.
+        
+        ##Function
+        
+        ```javascript
+        prompt("Hello");
+        ```
+        
+        ##Method 
+        
+        ```javascript
+        document.write("Hello");
+        ```
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Objects & Methods
+
+        In this workshop we won't be creating any of our own objects like in the previous example, but guess what? Almost* everything in JavaScript is an object! 
+        
+        That means even variables can be treated like objects too. Methods can be applied to variables, just like objects, using dot notation.
+        
+        For example, the `toFixed()` method is used to set the number of digits after the decimal point.
+                
+        ```
+        var price = 25;
+        var priceInDollars = price.toFixed(2);
+        document.write("$" + priceInDollars);
+        ```
+        This will output `$25.00`.
+        
+        The below example will work too. What's the difference?
+        
+        ```
+        var price = 25;
+        document.write("$" + price.toFixed(2));
+        ```
+        
+        ---
+        ### Resource
+        * [Is everything in JavaScript an Object?*](https://blog.simpleblend.net/is-everything-in-javascript-an-object/)
+        * [toFixed() reference & other JavaScript methods](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toFixed)
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Exercise: Objects and Methods (~10mins)
+        
+        Let's say you want to have a 50% off sale.  All the prices can be multiplied by 50% (or divided by 2) but you also want to ensure that the value always rounds to two decimal points.  
+        
+        ```
+        var sale = 0.5; // 50% off
+        var tshirt = 20 * sale;
+        var android = 35 * sale;
+        var robot = 25.99 * sale;
+
+        document.write(tshirt);
+        document.write(android);
+        document.write(robot);
+        ```
+        
+        There current output is 10, 17.5, and 12.995. 
+        
+        In the editor and browser, open **4-methods.html**. Use the `toFixed()` method to update the outputted values.
+        
+        <!-- .element: class="note" -->The solution can be found in **4-methods-solution.html**.
+      </script>
+    </section>
+    
+    <section class="slide title" data-markdown>
+      <script type="text/template">
+        # Part Two
+        ## The DOM, Functions, Methods, Conditionals
+      </script>
+    </section>
+    
+    <section class="slide title" data-markdown data-toc>
+      <script type="text/template">
+        #Document Object Model
+        ##Manipulating objects on an HTML page
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Document Object Model (DOM)
+        
+        Think about your HTML web page (the browser **document**) as being made up of many blocks.
+        
+        ![browser blocks](framework/img/workshop/browser-blocks.jpg)
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Pre-defined Blocks
+        
+        Some blocks are defined by the browser, such as the browser *window* or *document*.
+        
+        ![browser window](framework/img/workshop/browser-window.jpg)
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # User-defined Blocks
+        
+        And some blocks we make ourselves with HTML tags (e.g. `<div>`, `<img>`, etc).
+        
+        ![browser blocks](framework/img/workshop/browser-fieldset-div.jpg)
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Document Objects
+        
+        All of these blocks are also **objects**. 
+        
+        Methods can be applied to these **objects** using dot notation. Does this look familiar?  
+        
+        ```
+        document.write();
+        ``` 
+        
+        We have been applying the `.write()` method to the document object. 
+        
+        <!-- .element: class="note" -->Reminder! When a function is applied to an object, it is called a **method**.
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #HTML Element Objects
+        
+        Instead of using `document.write()` to output content onto the page, let's try the `getElementById()` method instead, to interact with the HTML elements in the web *document*.
+        
+        You will need to add an `id` attribute to the HTML to do this!
+        
+        ```
+        <div id="update">0</div>
+        ```
+        ```
+        document.getElementById("update");
+        ```
+        This means it will look for any HTML element, in the document, with the id of "update".  You can now use this to make changes to the HTML directly!
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Review
+        
+        Let's look at the "loves" button again, this time with the HTML as well.
+        
+        ```
+        <button id="moreButton">
+          <img src="framework/img/workshop/llc-logo.png"> Love!
+          <span id="update">0</span>
+        </button>
+        ```
+        ```
+        // starts the count at 0
+        var loves = 0;
+        // targets the "update" element
+        var update = document.getElementById("update"); 
+        // targets the "moreButton" element
+        var button = document.getElementById("moreButton"); 
+        
+        // custom function
+        function moreLove(){
+          // Add 1 to current count
+          loves = loves + 1;   
+          // applies an .innerHTML method to the update element's count
+          update.innerHTML = loves; 
+        }
+        
+        // on button click, execute the custom moreLove() function
+        button.onclick = moreLove; 
+        ```
+        
+        Let's go over how to create your own custom functions.
+      </script>
+    </section>
+      
+    <section class="slide" data-markdown data-toc>
+      <script type="text/template">
+        #Creating your own functions
+        
+        Sometimes you need to group a set of instructions that aren't covered by one of the pre-written functions in JavaScript.
+        
+        When using a function, it executes all the commands contained within, making it easier to repeat repetitive steps.
+
+        Like in the previous example, you can create your own. 
+        
+        To create a function, it needs to be **defined** first.
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Defining a Function
+
+        There are different ways to define a function, but a common way is using the `function` keyword followed by a function name, of your choosing, and a set of parentheses `()`. 
+        
+        The statements or instructions to be executed are enclosed within curly brackets `{}`.
+        
+        ```
+        function nameOfFunction(){
+          // instructions to execute
+        }
+        ```        
+        When naming a function, adhere to the same rules as naming a variable (no spaces, use camelCase or underscores).
+      </script>
+    </section>  
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Calling a function
+
+        To use the function, whether it's a custom or built-in function, you have to *call* it, using the function name plus parentheses `()`.
+        
+        A function can even contain another function.
+        
+        ```javascript
+        // declare the function
+        function sayAnything(){
+          prompt("How are you today?");
+        }
+        
+        // call the function
+        sayAnything();
+        ```
+      </script>
+    </section>
+    
+    <section class="slide exercise">
+        <h1>Update quantities</h1>
+        <div class="quantities">
+          <img src="exercises/assets/plush-android.jpg" width="195" height="195">
+          <br>
+          
+          <button id="add">add</button>
+          <button id="remove">remove</button>
+          <br>
+          
+          Quantity <input type="text" id="updateQuantity" value="0">
+        </div>
+        
+        <p>Applying everything that has been covered so far, let's create a program to allow the customer to update the quantity by selecting an add or remove button, like in the sample on the left.</p>
+        
+        <p><strong>Note!</strong> Right now, removing items can result in a negative number.  We'll update that in the last exercise.</p>
+        
+        <script>
+          // from 5-update-quantities.html exercise
+          var quantity = 0;
+          var updateQuantity = document.getElementById('updateQuantity');
+          var add = document.getElementById("add");
+          var remove = document.getElementById("remove");
+          
+          function addItem(){
+            quantity = quantity + 1;
+            refreshTotal();
+          }
+          function removeItem(){        
+            quantity = quantity - 1;
+            refreshTotal();
+          }
+          function refreshTotal() {
+            updateQuantity.value = quantity;
+          }
+          add.onclick = addItem;
+          remove.onclick = removeItem;
+        </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Exercise Prep: Update quantities
+        
+        Let's break it down into smaller steps and make a plan of action. Remember, computers need very specific instructions.
+        
+        1. Create a variable, to hold and keep track of the quantities selected.
+        1. Create a set of instructions for the Add button.
+          * with every click, the value of the quantity goes up by 1
+        1. Create a set of instructions for the Remove button.
+          * with every click, the value of the quantity goes down by 1
+        1. Select the HTML element used to display the quantity.
+        1. Update the HTML element with the current quantity count.
+        1. Execute the Add button instructions only when the Add button is clicked.
+        1. Execute the Remove button instructions only when the Remove button is clicked.
+
+        
+        Open **5-update-quantities.html** in your editor. Let's go through each step together.
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Class Exercise: Quantities, Step 1   
+        ## Create a variable, to hold and keep track of the quantities selected
+        ---
+        (Note that you can choose your own variables and functions names as long as it follows the proper naming conventions.)<!-- .element: class="note" -->
+
+        How do you declare a variable named "quantity"?<!-- .element: class="delayed" -->
+        
+        <pre class="delayed"><code>var quantity;</code></pre>
+        
+        How do you assign it a value of 0?<!-- .element: class="delayed" -->
+        
+        <pre class="delayed"><code>var quantity = 0;</code></pre>
+        
+        Add this snippet within the<!-- .element: class="delayed" --><code>&lt;script&gt;&lt;/script&gt;</code> tags.
+        
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Class Exercise: Quantities, Step 2
+        ## Create a set of instructions for the Add button.
+        ---
+        Declare a function to execute a set of instructions. Let's name it "addItem".
+        How do you declare a function? 
+
+        <pre class="delayed"><code>function addItem(){ 
+        }</code></pre>
+        
+        The variable<!-- .element: class="delayed" --> `quantity` keeps track of the quantities selected. *Reassign* the variable, to add 1 to quantity, when an item is added.
+        
+        <pre class="delayed"><code>var quantity = 0;
+          
+        function addItem(){
+          quantity = quantity + 1; 
+        }</code></pre>
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Class Exercise: Quantities, Step 3
+        ## Create a set of instructions for the Remove button
+        ---
+        
+        This will be similar to the `addItem` function except this time, *subtract* 1 from the quantity value.
+        
+        How do you declare a function named "removeItem"? <!-- .element: class="delayed" -->     
+        <pre class="delayed"><code>function removeItem(){  
+        }</code></pre>
+
+        Reassign the variable, to subtract 1 from <!-- .element: class="delayed" -->`quantity`, when an item is removed.
+        
+        <pre class="delayed"><code>function removeItem(){
+          quantity = quantity - 1; 
+        }</code></pre>
+        
+        Your code should now look like this:<!-- .element: class="delayed" -->
+        
+        <pre class="delayed"><code>var quantity = 0;
+        
+        function addItem(){
+          quantity = quantity + 1; 
+        }
+        function removeItem(){
+          quantity = quantity - 1; 
+        }</code></pre>
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Class Exercise: Quantities, Step 4
+        ## Select the HTML element used to display the quantity
+        ---
+        
+        ![](framework/img/workshop/update-quantities.png) <!-- .element: class="left" height="340" -->
+        
+        In the HTML, the `<input>` tag is used to display the quantity value.
+        ```
+        <input type="text" value="0">
+        ```
+
+        </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Class Exercise: Quantities, Step 4
+        ## Select the HTML element used to display the quantity
+        ---
+        
+        ![](framework/img/workshop/update-quantities.png) <!-- .element: class="left" height="340" -->
+        
+        Add an `id` so it can be selected with the `getElementById()` method.
+        
+        <pre class="delayed"><code>&lt;input id=&quot;updateQuantity&quot; type=&quot;text&quot; value=&quot;0&quot;&gt;
+        </code></pre>
+        
+        Then in the JavaScript, select the HTML element.<!-- .element: class="delayed" -->
+        
+        <pre class="delayed"><code>document.getElementById("updateQuantity");
+        </code></pre>
+        
+        Create a variable with the selected HTML element.<!-- .element: class="delayed" -->
+        <pre class="delayed"><code>var updateQuantity = document.getElementById('updateQuantity');
+        </code></pre>
+
+        </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Class Exercise: Quantities, Step 4
+        ## Select the HTML element used to display the quantity
+        ---
+        
+        Your JavaScript should now look similar to this:
+        
+        <pre class="delayed"><code>var quantity = 0;
+        var updateQuantity = document.getElementById('updateQuantity');
+        
+        function addItem(){
+          quantity = quantity + 1;
+          // to add function to refresh quantity value in the HTML
+        }
+        function removeItem(){
+          quantity = quantity - 1; 
+          // to add function to refresh quantity value in the HTML
+        }</code></pre>
+        
+        Note that an `id` value can only be used once per page so this will ensure that it is unique.
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Class Exercise: Quantities, Step 5
+        ## Update the HTML element with the current quantity count.
+        ---
+        In the previous step, we selected the HTML element used to display the quantity value.
+        
+        ```
+        var updateQuantity = document.getElementById('updateQuantity');
+
+        ```
+        
+        However, the `quantity` variable is holding the quantity value.
+        ```
+        var quantity = 0;
+        ```
+        
+        We need to get `updateQuantity` to equal `quantity` so the HTML element can display the number on the web page.
+
+        </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Class Exercise: Quantities, Step 5
+        ## Update the HTML element with the current quantity count.
+        ---
+        
+        Remember objects, properties and how to set object values using the bentobox example?
+        
+        ```javascript
+        object.property = value;
+        bentobox.main = "chicken";
+        ```
+        
+        We can do the same here and use the `.value` property to set the value of `updateQuantity`.
+        
+        ```
+        var quantity = 0;
+        var updateQuantity = document.getElementById('updateQuantity');
+        
+        updateQuantity.value = quantity;
+
+        ```
+
+        The quantity needs to be updated every time the user adds or removes and item. Update both the `addItem()` and `removeItem()` functions to include the `updateQuantity` statement.
+
+        ```
+        var quantity = 0;
+        var updateQuantity = document.getElementById('updateQuantity');
+        
+        function addItem(){
+          quantity = quantity + 1;
+          updateQuantity.value = quantity;
+        }
+        function removeItem(){
+          quantity = quantity - 1;
+          updateQuantity.value = quantity;
+        }
+        ```
+      </script>
+    </section>
+  
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Class Exercise: Quantities, Step 6
+        ##Execute the Add button function when the Add button is clicked.
+        ---
+
+        Remember, creating a function only groups a series of instructions under a function name. But to execute it, it has to be *called*. 
+
+        But in this example, we can't just use `addItem()` to `call` it because it can only execute *on button click*.
+
+        Similar to the HTML quantity box, we can select the "Add" button by adding and `id` and using `getElementById`.
+
+        ```
+        <button id="add">Add</button>
+        ```
+        ```
+        var addBtn = document.getElementById("add");
+        ```
+
+        JavaScript has an `onclick` property that can be used to trigger a click event on the button.
+        </script>
+    </section>
+  
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Class Exercise: Quantities, Step 6
+        ##Execute the Add button function when the Add button is clicked.
+        ---
+        
+        What do we want to happen onclick?  To run the `addItem()` function!  They syntax to run a function with this property is a little different than the previous examples.
+
+        According to the [documentation](https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onclick), the syntax is as follows:
+        
+        ```javascript
+        element.onclick = functionName;
+        ```
+        
+        So to run the `addItem()` function on when the Add button is clicked, do this:
+        
+        ```
+        addBtn.onclick = addItem;
+        ```
+
+        Go ahead, test your add button in the browser!  
+        It should increase by 1 on every button click.
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Exercise: Quantities, Step 7 (~10mins)
+        ##Execute the Remove button function when the Remove button is clicked.
+        ---
+        
+        Try this last step on your own (or with a partner or mentor).  
+
+        The steps are the same as Step 6 except you're adding the click functionality to the Remove button.
+
+        **Important!** When testing the remove button, once you hit zero, the counter will continue into negative numbers.  We'll be fixing that in the next section.
+
+        The solution for this entire program can be found in <!-- .element: class="note" -->**5-update-quantities-solution.html**.
+      </script>
+    </section>
+
+    <section class="slide title" data-markdown data-toc>
+      <script type="text/template">
+        #Conditionals
+        ##Making decisions with conditions
+      </script>
+    </section>
+      
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Conditional Statements
+
+        Using conditional statements allows you to add different instructions to your program based on different true/false conditions.
+
+        A basic conditional test looks like this:
+        
+        ```javascript
+        IF it is raining
+          THEN bring an umbrella
+        ```    
+
+        In JavaScript, it might look like this:
+        
+        ```
+        if ( weather === rain ) {
+          bringUmbrella();
+        }
+
+        if ( temperature < 10 ) {
+          wearSweater();
+        }
+        ```  
+      </script>
+    </section>
+      
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Assignment is not the same as equality
+
+        **IMPORTANT!**
+
+        `=` assignment
+        ```javascript
+        var kitten = "Fluffy";
+        ```
+
+        `==` is for equality
+        ```javascript
+        10 == "10" // true
+        1  == 10 // false
+        ```
+
+        `===` is for strict equality
+        ```javascript
+        10 === 10 // true
+        10 === "10" // false
+        ```
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #if/else Conditionals
+
+        `else` will give you a catch-all state if your condition fails.
+        
+        ```
+        if ( weather == rain ) {
+            bringUmbrella();
+        } else {
+            dressNormally();
+        }
+        ```
+      </script>
+    </section>
+        
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #if/else if/else Conditionals
+
+        Take it a step further by adding `else if` to add more conditions. You can use as many as you need.
+
+        ```
+        if ( weather == rain ) {
+          bringUmbrella();
+        } else if ( weather == snow ) {
+          wearWarmBoots();
+        } else {
+          dressNormally();
+        }
+        ```
+      </script>
+    </section>
+
+    <section class="slide">
+      <h1>Conditional Statements Summary</h1>
+      <table cellpadding="20" style="width:100%">
+        <tr>
+          <td><h3>If Statement</h3></td>
+          <td><h3>If...else statement</h3></td>
+          <td><h3>If...else if...else statement</h3></td>
+        </tr>
+        <tr>
+          <td valign="top">
+            <div data-markdown>
+              ```javascript
+              if (condition) {
+                // do something
+              }
+              ```
+            </div>
+          </td>
+          <td valign="top">
+            <div data-markdown>
+              ```javascript
+              if (condition) {
+                // do something
+              } else {
+                // otherwise do this
+              }
+              ```
+            </div>
+          </td>
+          <td valign="top">
+            <div data-markdown>
+              ```javascript
+              if (condition) {
+                // do something
+              } else if (condition2) {
+                // do something else
+              } else {
+                // otherwise do this
+              }
+              ```
+            </div>
+          </td>
+        </tr>
+      </table>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Comparison and Logical Operators 
+
+        <table cellspacing="0" class="comparison-table" style="margin-right:2%;width:52%;">
+          <tr>
+            <th align="left" colspan="3">Comparison operators</th>
+          </tr>
+          <tr>
+            <td width="15%">==</td>
+            <td width="41%">is equal to</td>
+            <td width="44%">ten == two * 5</td>
+          </tr>
+           <tr>
+            <td width="15%">===</td>
+            <td width="41%">is exactly equal to (value and type) </td>
+            <td width="44%">ten === 10<br />ten === "10" (false) </td>
+          </tr>
+           <tr>
+            <td width="15%">!=</td>
+            <td width="41%">is not equal to</td>
+            <td width="44%">ten !== two</td>
+          </tr>
+           <tr>
+            <td width="15%">&gt;</td>
+            <td width="41%">greater than</td>
+            <td width="44%">ten &gt; two</td>
+          </tr>
+            <tr>
+            <td width="15%">&lt;</td>
+            <td width="41%">less than</td>
+            <td width="44%">two &lt; ten</td>
+          </tr>
+            <tr>
+            <td width="15%">&gt;=</td>
+            <td width="41%">greater than or equal to</td>
+            <td width="44%">ten &gt;= two * 5<br />ten &gt;= two * 5 + 1</td>
+          </tr>
+            <tr>
+            <td width="15%">&lt;=</td>
+            <td width="41%">less than for equal to</td>
+            <td width="44%">two &lt;= ten<br />two &lt;= 2 </td>
+          </tr>
+        </table>
+
+        <table cellspacing="0" class="comparison-table" style="width:46%;">
+          <tr>
+            <th align="left" colspan="3">Logical operators</th>
+          </tr>
+          <tr>
+            <td width="15%">&amp;&amp;</td>
+            <td width="25%">and</td>
+            <td width="60%">(ten < 11 &amp;&amp; ten > 9)</td>
+          </tr>
+           <tr>
+            <td width="15%">||</td>
+            <td width="25%">or</td>
+            <td width="60%">(ten == 10 || two == 2)</td>
+          </tr>
+          <tr>
+            <td width="15%">!</td>
+            <td width="25%">not</td>
+            <td width="60%"> !(ten == two)</td>
+          </tr>
+        </table>
+
+        `var two = 2` and `var ten = 10`
+
+        The examples in the tables show how the statements would return *true* based on the above variables.
+      </script>
+    </section>
+
+    <section class="slide">
+      <h1>Conditionals example</h1>
+      <p>Looking at the example below, what value will you need to enter to get either message to appear? What if the value is 100? Click run and test your theory.</p>
+
+<pre><code>var price = prompt("How much is that robot?");
+      
+if ( price <= 100 ) {
+  alert("$" + price + " isn't bad. Buy it!");
+} else {
+  alert("$" + price + "? No way! That's a lot of money!");
+}</code></pre>
+      
+
+      <img onclick="ifTest();" src="framework/img/workshop/rawbot-run.png" alt="">
+
+      <script>
+        function ifTest(){
+          var price = prompt("How much is that robot?");
+        
+          if ( price <= 100 ) {
+            alert("$" + price + " isn't bad. Buy it!");
+          } else {
+            alert("$" + price + "? No way! That's a lot of money!");
+          }
+        }
+      </script>
+    </section>  
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Exercise: Conditionals (~10mins)
+        ##Check for negative quantities
+
+        Going back to the shopping cart example, use conditionals to make sure the remove button doesn't result in a negative value of items.  
+
+        It should stop at 0.
+
+        Open the **6-conditional-quantities.html** exercise file and revise the `removeItem()` function to include an `if` statement to check for negative values.
+      </script>
+    </section>  
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Exercise Solution Review
+
+        ```javascript
+        function removeItem(){
+          
+          if(quantity > 0) {
+            quantity = quantity - 1; 
+          }
+          updateQuantity.value = quantity;
+        }
+        ```
+      </script>
+    </section>
+        
+    <section class="slide" data-markdown data-toc>
+      <script type="text/template">
+        #Bonus Exercise!
+        
+        Using the same exercise file, **6-conditional-quantities.html**, run a check on the **Checkout** button!
+
+        1. When the user clicks the **Checkout** button, check if the `quantity` is 0 or more.  
+        1. If the `quantity` is zero, use `alert()` to output a "You cannot checkout with an empty shopping cart." message.
+        1. If the `quantity` is 1 or more, use `alert()` to output a "Thanks for your order." message.
+
+        ---
+        Solution can be found in **6-conditional-quantities-solution.html** <!-- .element: class="note" -->
+      </script>
+    </section>
+
+
+    <section class="slide">
+      <h1>&lt;script src=""></h1>
+      <p>As you write bigger pieces of JavaScript, or working with a team, you will want to put the JavaScript into their own files to make it easier to manage. A big site could have thousands of lines of code written by many different people!</p>
+      
+      <p>To link to an external JavaScript file:</p>
+      <pre><code>&lt;html>
+  &lt;head>
+    &lt;title>JavaScript example!</title>
+  &lt;/head>
+  &lt;body>
+    &lt;div id="example">This is an example.</div>
+    &lt;script type="text/javascript" src="scripts.js">&lt;/script>
+  &lt;/body>
+&lt;/html></code></pre>
+      
+      The external file must be saved with a ".js" extension and within the file, the <code>&lt;script></code> tags are not required.
+
+    </section>
+
+    <section class="slide small-type" data-markdown data-toc>
+      <script type="text/template">
+        # Next Steps
+        
+        * Explore more Ladies Learning Code workshops by following our [Roadmap](http://ladieslearningcode.com/roadmap/).
+        * list of free online [JSbooks](http://jsbooks.revolunet.com/)
+        * Tutorials & references from the [Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+      </script>
+    </section>
+    
+    <!-- Last slide -->
+    <section class="slide last">
+      <h1>Thank you!</h1>
+      <h2 class="heading-bg">
+        <span>Intro to Programming<br> with JavaScript</span>
+      </h2>  
+
+      <!-- <img class="instructor" src="http://cl.ly/image/0r3Q3H110G36/profile-generic.jpg" alt="instructor name">
+      <h2><span class="cursive">with</span> Instructor Name</h2>
+      <ul>
+        <li><a href="mailto:">hello@email.com</a></li>
+        <li><a href="#">mywebsite.com</a></li>
+        <li><a href="http://twitter.com/">@twitter</a></li>
+      </ul> -->
+
+      <p class="attribution">Illustrations by <a href="http://floridaelago.com/" target="_blank">Florida Elago</a><br>Slide presentation created by <a href="http://christinatruong.com">Christina Truong</a> based on <a href="https://github.com/LeaVerou/csss">Lea Verou's SlideShow</a> and <a href="http://lab.hakim.se/reveal-js/">reveal.js</a>.</p>
+    </section>
+
+  </main><!-- cls main section -->
+  
+  <script src="framework/scripts/jquery-1.11.0.min.js"></script>
+  <script src="framework/scripts/slideshow.js"></script>
+
+  <!-- Uncomment the plugins you need -->
+  <script src="framework/scripts/plugins/css-edit.js"></script>
+  <script src="framework/scripts/plugins/css-snippets.js"></script>
+  <script src="framework/scripts/plugins/css-controls.js"></script>
+  <!-- <script src="plugins/code-highlight.js"></script>-->
+
+  <script src="framework/scripts/plugins/markdown/marked.js"></script>
+  <script src="framework/scripts/plugins/markdown/markdown.js"></script>
+  <script src="framework/scripts/plugins/highlight/highlight-8.4.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <script src="framework/scripts/llc.js"></script>
+  <script>
+    var slideshow = new SlideShow();
+
+    // Grabs all the .snippet elements
+    var snippets = document.querySelectorAll('.snippet');
+    for(var i=0; i<snippets.length; i++) {
+      new CSSSnippet(snippets[i]);
+    }
+  </script>
+</body>
+</html>

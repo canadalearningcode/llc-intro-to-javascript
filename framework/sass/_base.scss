@@ -1,0 +1,52 @@
+//---------------
+// VARIABLES
+//---------------
+
+// Colours
+//---------------
+$llc-pink:              #b109aa;
+$black:                 #000;
+$gray-dark:             #222;
+$gray:                  #444;
+$gray-light:            #bdc3c7;
+$white:                 #fff;
+
+
+// Typography
+//---------------
+// Font families
+$quicksand:             'Quicksand', sans-serif;
+$pacifico:              'Pacifico', cursive;
+$open-sans:             'Open Sans', sans-serif;
+$monserrat:             'Montserrat', sans-serif;
+$heading-font:          $quicksand;
+$base-font:             $monserrat;
+$cursive:               $pacifico;
+
+$font-size-base:        3.2rem;
+$font-size-sm:          $font-size-base * 0.9; // 90%
+$font-size-xsm:         $font-size-base * 0.75;
+$font-size-footnote:    $font-size-base * 0.5;
+$font-size-heading:     4.0rem;
+$font-size-heading-lg:  7.5rem;
+$font-size-heading-sm:  $font-size-base;
+$line-height:           1.4;
+
+
+//---------------
+// MIXINS
+//---------------
+@mixin list-reset {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+/* http://css-tricks.com/snippets/css/clear-fix/ */
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }  
+}

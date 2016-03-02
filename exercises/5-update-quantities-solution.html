@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <title>Update Quantities</title>
+    <link rel="stylesheet" href="exercises.css">
+  </head>
+  <body>
+    
+    <div class="quantities">
+      <img src="assets/plush-android.jpg" width="195" height="195">
+      <br>
+      
+      <button id="add">Add</button>
+      <button id="remove">Remove</button>
+      <br>
+      
+      Quantity <input id="updateQuantity" type="text" value="0">
+    </div>
+    
+    <script>
+      var quantity = 0; // declare and set quantity to start at 0
+      var updateQuantity = document.getElementById("updateQuantity"); // selects HTML element to display quantity
+      var addBtn = document.getElementById("add"); // selects HTML add button
+      var removeBtn = document.getElementById("remove"); // selects HTML remove button
+
+      function addItem(){
+        quantity = quantity + 1; // adds 1 to current value of quantity
+        updateQuantity.value = quantity; // refresh the HTML quantity total to reflect new quantity
+      }
+      function removeItem(){
+        quantity = quantity - 1; // subtract 1 to current value of quantity
+        updateQuantity.value = quantity;// refresh the HTML quantity total to reflect new quantity
+      }
+
+      // executes the addItem() & removeItem() functions on button click
+      addBtn.onclick = addItem;
+      removeBtn.onclick = removeItem;
+    </script>
+  </body>
+</html>

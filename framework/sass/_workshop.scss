@@ -1,0 +1,81 @@
+/* Styles specific to this workshop
+------------------------------------*/
+.slide.intro {
+  background: linear-gradient(rgba($black, 0.7),
+              rgba($black, 0.7)), 
+              url(../img/banner-home1.jpg) no-repeat;
+  background-size: cover;
+}
+
+.steps {
+  img {
+    vertical-align: top;
+    margin: 0 20px 40px 10px;
+    width: 275px;
+  }
+}
+.triad {
+  img {
+    float: left;
+    margin-right: 20px;
+    width: 40%;
+  }
+}
+.llc-loves {
+  button {
+    font-size: 18px;
+    padding: 10px;
+    cursor: pointer;
+  }
+  img {
+    vertical-align: middle;
+  }
+  #update {
+    margin-left: 5px;
+  }
+}
+
+.exercise {
+  .quantities {
+    background: white;
+  	width: 200px;
+  	text-align: center;
+  	border: 2px solid #ccc;
+  	padding: 20px 5px;
+  	margin-right: 40px;
+  	font-size: 20px;
+    float: left;
+  }
+  .quantities button {
+  	margin: 5px 2px;
+  	font-size: 16px;
+  }	
+  .quantities input {
+  	width: 40px;
+  	margin: 10px 0 0 5px;
+  	font-size: 14px;
+  }
+}
+
+.comparison-table {
+  border: none;
+  background-color: #2b303b;
+  color: #dfe1e8;
+  padding: 10px;
+  font-size: 2.4rem;
+  float: left;
+  margin-bottom: 20px;
+  
+  th, td {
+    border: none;
+  }
+  td {
+    padding: 6px 10px;
+  }
+  tr:nth-child(2n) {
+    background-color: #343d46;
+  }
+}
+
+
+

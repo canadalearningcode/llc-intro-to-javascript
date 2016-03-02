@@ -1,0 +1,40 @@
+/* 
+	Exercises:
+	5-update-quantities.html 
+	6-conditional-quantities.html
+*/
+
+.quantities {
+	width: 200px;
+	text-align: center;
+	border: 2px solid #ccc;
+	padding: 20px;
+	margin: 40px auto;
+	font-size: 20px;
+}
+.quantities button {
+	margin: 20px 2px 5px;
+	font-size: 16px;
+	border: none;
+	padding: 6px 10px;
+	border-radius: 2px;
+	outline: none;
+	cursor: pointer;
+	border: 1px solid #ddd;
+	background: #eee;
+}	
+.quantities button:hover {
+	border: 1px solid white;
+}
+.quantities input {
+	width: 40px;
+	margin: 10px 0 10px 5px;
+	font-size: 14px;
+}
+
+.quantities .btn-checkout {
+	background: lightblue;
+	text-transform: uppercase;
+	font-size: 14px;
+}
+
