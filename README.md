@@ -1,5 +1,5 @@
-#Canada Learning Code
-##Intro to JavaScript
+# Canada Learning Code
+## Intro to JavaScript
 
 A full day introductory to JavaScript workshop.
 
