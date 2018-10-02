@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>Canada Learning Code</title>
+  <link rel="stylesheet" href="framework/css/slideshow.css" data-noprefix>
+  <link rel="stylesheet" href="framework/css/fonts.css" data-noprefix>
+  <link rel="stylesheet" href="framework/css/highlightjs/github.css" data-noprefix>
+  <link rel="stylesheet" href="framework/css/styles.css" data-noprefix>
+  <link rel="shortcut icon" href="framework/img/favicon.ico">
+
+  <!-- Takes care of CSS3 prefixes -->
+  <script src="framework/scripts/prefixfree.min.js"></script>
+
+  <!-- opens all links in a new window -->
+  <base target="_blank">
+</head>
+
+<!-- Timer/progress bar: Define the presentation duration using "data-duration" in minutes. -->
+<body class="en" data-duration="360">
+
+
+  <main>
+
+  <section class="slide" data-toc data-markdown>
+    <script type="text/template">
+      ##Instructor Notes
+
+      ##Ladies Learning Code: Intro to JavaScript
+
+      <br>
+      #Schedule
+
+      <strong> Important note:</strong>
+      This is a guideline, not a rule! It is more important that the learners are following along then it is to get to the end of the slides!
+
+      <em>Please note</em>: this schedule is for a single day workshop.
+      If you are leading two weekday evenings, you can split this schedule up accordingly. Please remember to take a 15-30 minute break on both days. The first 15-20 minutes of the second day should be allocated for review and questions from the prior session.
+
+      * <strong>Getting Started (10:00 am - 11:00 am)</strong>: Mentor intros, Development Environment, Technology Overview, mini exercise
+      * <strong>Intro to Functions and Variables (11:00 am - 12:30 pm)</strong>: Functions, first class exercise, intro to variables, second class exercise
+      * <strong>Lunch Break! (12:30 pm - 1:30 pm)</strong>
+      * <strong>Today's Project (1:30 pm -2:00 pm)</strong>: Overview of project, declaring and assigning variables, arithmetic operators, concatenation
+      * <strong>Custom Objects and functions (2:00 pm - 2:30 pm)</strong>: Object properties, methods, the DOM, custom functions,
+      * <strong>Conditionals (2:30 pm - 3:30 pm)</strong>: Quantities exercises, conditionals
+      * <strong>Wrapping up (3:30 pm - 4:00 pm)</strong>: Comparison and logical operators, bonus exercise (optional), next steps & resources
+
+
+      <br>
+      #General Notes
+
+      * <strong>Important!</strong> Please give learners enough time to download learner files from slide 1 - check in as people are entering the room to make sure they have learner files, Atom & Chrome ready so you can start the experience on time.
+      Encourage them to ask yourself or a mentor for help with installation!
+    * A common issue with leaner files - make sure Windows users extract the folder. If a learner sees the slides without any styles, that is probably why.
+      * Show learners how to open files. Go through the steps - e.g. Open Atom > File > add project folder. Do it slowly or show them twice if necessary.
+      * Show learners how to copy text from slides + paste into atom. Keyboard shortcuts can be new to some learners: Remember to mention them especially since they're invisible to them when you use keyboard shortcuts on the overhead projector. PLEASE mention both Windows & Mac shortcuts, not just 1 or the other!
+      * Remind learners to constantly SAVE + REFRESH (and show them how). Encourage them to make small changes at a time, save, and refresh. Show them how to Undo from shortcuts or the edit menu.
+      * Share shortcuts and tips on navigating between windows. Hot corners, shortcut keys, taskbar hovers. Whatever works.
+
+      <br>
+      #Specific Examples
+
+      <h2>Notes</h2>
+
+      <strong>Slide 12: What is JavaScript</strong>
+            When you read a recipe, you understand what "two egg whites" means. With computers, you have to be much more explicit about each step. Imagine programming a robot to get two egg whites. 1. Hold the egg on either side and squeeze, not so tight as to break the egg, and pull it out of the carton. 2. Turn the egg so it is parallel to the table, and hold either end of the egg. 3. Move the egg towards the edge of a bowl. 4. Tap the center of the egg along the edge of the bowl. Repeat this step (loop!) until a small crack begins to appear. etc.
+
+      <strong>Slide 19: Server-side vs client-side</strong>
+            Although JavaScript is considered a client-side language, it CAN run on a server. The next slide makes clear that we are focused on the client-side in this workshop.
+
+      <strong>Slide 31: Automating Repetitive Tasks</strong>
+            This is exactly what a Presto card does!
+
+      <strong>Slide 62: Concatenation</strong>
+            Concatenation is like stringing beads onto a friendship bracelet.
+            You can show how adding two integers is different from concatenating two strings, eg.<br>
+            4 + 6 = 10<br>
+            vs.<br>
+            "4" + "6" = "46"
+
+      <strong>Slide 70: Methods vs Functions</strong>
+            Methods first need the object, and then they can execute a command. This line is saying "Find the document. Then write to it."
+
+      <strong>Slide 75: Document Object Model (DOM)</strong>
+            You can get even more granular here! Walk up to the projector and draw boxes with your fingers around form fields & labels, around product names and buttons.
+
+      <strong>Slide 79: HTML Element Objects</strong>
+            This might be a good time to elaborate on what an <code>id</code> attribute is. You could describe it as a tape label on a ziploc container. Make sure to mention that IDs must be unique, no ID can be used twice!
+
+      <strong>Slide 87: Quantities, Step 2</strong>
+            You may want to talk about scope here and why we declare the variable outside of the function. Otherwise the quantity will reset to 0 every time we click the add item button.
+
+      <strong>Slide 99: Assignment is not the same as equality</strong>
+            == will convert the operands (values you are comparing) to the same type, then compares them
+
+      <strong>Slide 106: Exercise Solution Review</strong>
+            Ask what solution the learners came up with. This is a good chance to remind learners that there are many ways to solve any one problem!
+
+      <strong>Slide 108: &lt;script src=""&gt;</strong>
+            You can walk through this if you have extra time, but this is meant as an extra tid bit of information for future reference.
+
+    </script>
+  </section>
+
+  </main><!-- cls main section -->
+
+  <script src="framework/scripts/jquery-1.11.0.min.js"></script>
+  <script src="framework/scripts/slideshow.js"></script>
+
+  <!-- Uncomment the plugins you need -->
+  <script src="framework/scripts/plugins/css-edit.js"></script>
+  <script src="framework/scripts/plugins/css-snippets.js"></script>
+  <script src="framework/scripts/plugins/css-controls.js"></script>
+  <!-- <script src="plugins/code-highlight.js"></script>-->
+
+  <script src="framework/scripts/plugins/markdown/marked.js"></script>
+  <script src="framework/scripts/plugins/markdown/markdown.js"></script>
+  <script src="framework/scripts/plugins/highlight/highlight-8.4.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <script src="framework/scripts/llc.js"></script>
+  <script>
+    var slideshow = new SlideShow();
+
+    // Grabs all the .snippet elements
+    var snippets = document.querySelectorAll('.snippet');
+    for(var i=0; i<snippets.length; i++) {
+      new CSSSnippet(snippets[i]);
+    }
+  </script>
+</body>
+</html>

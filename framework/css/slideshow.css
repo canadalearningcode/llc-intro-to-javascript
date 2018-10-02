@@ -3,7 +3,7 @@
 	@author Lea Verou
 	@version 1.0
 
-	Don't alter - CSSS slide deck needs it to work 
+	Don't alter - CSS slide deck needs it to work
 	https://github.com/LeaVerou/csss
  */
 
@@ -353,4 +353,39 @@ iframe.csss-import.show {
 
 .presenter .slide:target > .presenter-notes {
 	display: block;
+}
+
+
+/**
+	Responsive improvements for Instructor Notes
+	@author Stacie DaPonte
+	@version 1.0
+
+	stacie.daponte@canadalearningcode.ca
+	Twitter: @staciedev
+ */
+
+ .slide{
+	 word-wrap: break-word;
+ }
+
+@media screen and (max-width: 376px){
+	body .slide {
+    padding: 45px 5%;
+	}
+	body * {
+		font-size: 85%;
+	}
+	body h1{
+		font-size: 2.6rem;
+	}
+	body h2{
+		font-size: 2.4rem;
+	}
+	body table h2{
+		font-size: 1.5rem;
+	}
+	body code{
+		font-size: 126%;
+	}
 }
