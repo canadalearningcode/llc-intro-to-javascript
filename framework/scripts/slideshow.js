@@ -75,6 +75,11 @@ var _ = window.SlideShow = function(slide) {
 	this.indicator = document.createElement('div');
 
 	this.indicator.id = 'indicator';
+	this.indicator.title = 'Click to go to slide';
+	this.indicator.onclick = function () {
+		var slide = prompt('Which slide?');
+		me.goto(+slide? slide - 1 : slide);
+	}
 	body.appendChild(this.indicator);
 	
 	// Add on screen navigation

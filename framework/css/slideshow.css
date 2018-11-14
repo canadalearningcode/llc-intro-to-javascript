@@ -78,6 +78,9 @@
   	border-radius: 999px;
 }
 
+#indicator:hover {
+	cursor: pointer;
+}
 /**
  	On-screen navigation
  */
@@ -388,4 +391,12 @@ iframe.csss-import.show {
 	body code{
 		font-size: 126%;
 	}
+}
+
+.white {
+	color: white;
+}
+
+.dark-gray {
+	color:#444;
 }
