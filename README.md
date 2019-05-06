@@ -5,8 +5,9 @@ A full day introductory to JavaScript workshop.
 
 ### Quick Links
 
-Instructor Notes: ladieslearningcode.github.io/llc-intro-to-javascript/notes-en.html
-Preview Slides: ladieslearningcode.github.io/llc-intro-to-javascript/slides.html
+Instructor Notes: https://ladieslearningcode.github.io/llc-intro-to-javascript/notes-en.html
+
+Preview Slides: https://ladieslearningcode.github.io/llc-intro-to-javascript/slides.html
 
 ### Attributions
 
