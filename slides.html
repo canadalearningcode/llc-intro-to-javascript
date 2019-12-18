@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="framework/css/fonts.css" data-noprefix>
   <link rel="stylesheet" href="framework/css/highlightjs/github.css" data-noprefix>
   <link rel="stylesheet" href="framework/css/styles.css" data-noprefix>
+  <link rel="stylesheet" href="framework/css/a11y/plugin.css">
   <link rel="shortcut icon" href="framework/img/workshop/favicon.ico">
 
   <!-- Takes care of CSS3 prefixes -->
@@ -243,7 +244,7 @@
 
         ## Java
 
-        ```
+        ```java
         Scanner userInput = new Scanner(System.in);
         String name;
         System.out.print("What's your name? ");
@@ -252,7 +253,7 @@
         ```
 
         ## Javascript
-        ```
+        ```javascript
         var name;
         name = window.prompt("What's your name?",'');
         document.write("Hello, " + name);
@@ -486,7 +487,7 @@
 
         If the credit card tap was a function in JavaScript, it could look something like this:
 
-        ```
+        ```javascript
         tapCard()
         ```
       </script>
@@ -518,7 +519,7 @@
 
         **Statements** are commands that tell the computer what to do.
 
-        ```
+        ```javascript
         prompt("Hello, what is your name?");
         ```
       </script>
@@ -563,7 +564,7 @@
         <hr class="clear">
         **In your editor**, open `1-hello.html` and add the following snippet:
 
-        ```
+        ```javascript
         prompt("What is your name?");
         ```
 
@@ -603,18 +604,18 @@
 
         Declare (create) variables with the keyword `var` and give it a name.
 
-        ```
+        ```javascript
         var name;
         ```
 
         Assign a value to the variable using the equals `=` symbol. Remember, to end the statement with a semicolon. Now the computer will remember your name!
 
-        ```
+        ```javascript
         name = "Your name";
         ```
         You can also assign a value and declare a variable at the same time.
 
-        ```
+        ```javascript
         var name = "Your name";
         ```
       </script>
@@ -628,12 +629,12 @@
 
         This time, the function will be attached to the HTML page, aka the **document**.  The text to be outputted should be included within the parentheses.
 
-        ```
+        ```javascript
         document.write("hello"); // will output "hello" onto the page.
         ```
         It can also output the value of the variable. Note that the variable doesn't require quotes.
 
-        ```
+        ```javascript
         var name = "Your name";
         document.write(name); // will output "Your name" onto the page.
         ```
@@ -646,7 +647,7 @@
 
         The previous example showed how to assign a specific value to the `name` variable.
 
-        ```
+        ```javascript
         var name = "Your name";
         ```
 
@@ -687,7 +688,7 @@
 
         Back in `1-hello.html`, update your program.  It should look something like this:
 
-        ```
+        ```javascript
         var name = prompt("What is your name?");
         document.write("Hello ");
         document.write(name);
@@ -813,20 +814,20 @@
         Variables can hold different *types* of values.
 
         Numeric variables (integers & decimals)
-        ```
+        ```javascript
         var someIntegerNumber = 10;
         var someDecimalNumber = 10.5;
         ```
 
         String variables (letters and words) - must be contained in quotes
-        ```
+        ```javascript
         var singleWordString = "hello";
         var sentenceString = "Hello, good day to you!";
         var numberString = "10";
         ```
 
         Boolean variables (true/false)
-        ```
+        ```javascript
         var isSaturday = true;
         var isSunday = false;
         ```
@@ -896,7 +897,7 @@
       <script type="text/template">
         #Exercise solution review
 
-        ```
+        ```javascript
         // 1. Declare a variable to store the name value.
         // 2. Declare a variable to store the postal code value.
         var name = prompt("What is your name?");
@@ -960,7 +961,7 @@
 
         There are 3 variables defined in the exercise file:
 
-        ```
+        ```javascript
         var tshirtPrice = 25;
         var androidPrice = 10;
         var discount = 0.15; // 15%
@@ -1228,7 +1229,7 @@ function moreLove(){
 
         For example, the `toFixed()` method is used to set the number of digits after the decimal point.
 
-        ```
+        ```javascript
         var price = 25;
         var priceInDollars = price.toFixed(2);
         document.write("$" + priceInDollars);
@@ -1237,7 +1238,7 @@ function moreLove(){
 
         The below example will work too. What's the difference?
 
-        ```
+        ```javascript
         var price = 25;
         document.write("$" + price.toFixed(2));
         ```
@@ -1255,7 +1256,7 @@ function moreLove(){
 
         Let's say you want to have a 50% off sale.  All the prices can be multiplied by 50% (or divided by 2) but you also want to ensure that the value always rounds to two decimal points.
 
-        ```
+        ```javascript
         var sale = 0.5; // 50% off
         var tshirt = 20 * sale;
         var android = 35 * sale;
@@ -1326,7 +1327,7 @@ function moreLove(){
 
         Methods can be applied to these **objects** using dot notation. Does this look familiar?
 
-        ```
+        ```javascript
         document.write();
         ```
 
@@ -1344,10 +1345,10 @@ function moreLove(){
 
         You will need to add an `id` attribute to the HTML to do this!
 
-        ```
+        ```html
         <div id="update">0</div>
         ```
-        ```
+        ```javascript
         document.getElementById("update");
         ```
         This means it will look for any HTML element, in the document, with the `id` of "update".  You can now use this to make changes to the HTML directly!
@@ -1360,13 +1361,13 @@ function moreLove(){
 
         Let's look at the "loves" button again, this time with the HTML as well.
 
-        ```
+        ```html
         <button id="moreButton">
           <img src="framework/img/workshop/llc-logo.png" alt=""> Love!
           <span id="update">0</span>
         </button>
         ```
-        ```
+        ```javascript
         // starts the count at 0
         var loves = 0;
         // targets the "update" element
@@ -1412,7 +1413,7 @@ function moreLove(){
 
         The statements or instructions to be executed are enclosed within curly brackets `{}`.
 
-        ```
+        ```javascript
         function nameOfFunction(){
           // instructions to execute
         }
@@ -1585,7 +1586,7 @@ function moreLove(){
         ![](framework/img/workshop/update-quantities.png) <!-- .element: class="left" height="340" -->
 
         In the HTML, the `<input>` tag is used to display the quantity value.
-        ```
+        ```html
         <input type="text" value="0">
         ```
 
@@ -1648,13 +1649,13 @@ function moreLove(){
         ---
         In the previous step, we selected the HTML element used to display the quantity value.
 
-        ```
+        ```javascript
         var updateQuantity = document.getElementById('updateQuantity');
 
         ```
 
         However, the `quantity` variable is holding the quantity value.
-        ```
+        ```javascript
         var quantity = 0;
         ```
 
@@ -1678,7 +1679,7 @@ function moreLove(){
 
         We can do the same here and use the `.value` property to set the value of `updateQuantity`.
 
-        ```
+        ```javascript
         var quantity = 0;
         var updateQuantity = document.getElementById('updateQuantity');
 
@@ -1688,7 +1689,7 @@ function moreLove(){
 
         The quantity needs to be updated every time the user adds or removes an item. Update both the `addItem()` and `removeItem()` functions to include the `updateQuantity` statement.
 
-        ```
+        ```javascript
         var quantity = 0;
         var updateQuantity = document.getElementById('updateQuantity');
 
@@ -1716,10 +1717,10 @@ function moreLove(){
 
         Similar to the HTML quantity box, we can select the "Add" button by adding and `id` and using `getElementById`.
 
-        ```
+        ```html
         <button id="add">Add</button>
         ```
-        ```
+        ```javascript
         var addBtn = document.getElementById("add");
         ```
 
@@ -1743,7 +1744,7 @@ function moreLove(){
 
         So to run the `addItem()` function on when the Add button is clicked, do this:
 
-        ```
+        ```javascript
         addBtn.onclick = addItem;
         ```
 
@@ -1790,7 +1791,7 @@ function moreLove(){
 
         In JavaScript, it might look like this:
 
-        ```
+        ```javascript
         if ( weather === rain ) {
           bringUmbrella();
         }
@@ -1833,7 +1834,7 @@ function moreLove(){
 
         `else` will give you a catch-all state if your condition fails.
 
-        ```
+        ```javascript
         if ( weather == rain ) {
             bringUmbrella();
         } else {
@@ -1849,7 +1850,7 @@ function moreLove(){
 
         Take it a step further by adding `else if` to add more conditions. You can use as many as you need.
 
-        ```
+        ```javascript
         if ( weather == rain ) {
           bringUmbrella();
         } else if ( weather == snow ) {
@@ -2150,6 +2151,7 @@ if ( price <= 100 ) {
 
   <script src="framework/scripts/plugins/markdown/marked.js"></script>
   <script src="framework/scripts/plugins/markdown/markdown.js"></script>
+  <script src="framework/scripts/plugins/a11y/plugin.js"></script>
   <script src="framework/scripts/plugins/highlight/highlight-8.4.min.js"></script>
   <script>hljs.initHighlightingOnLoad();</script>
   <script src="framework/scripts/llc.js"></script>
